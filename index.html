@@ -23,6 +23,10 @@
             padding: 0;
         }
 
+        html {
+             scroll-behavior: smooth; /* スムーズスクロール */
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: 16px;
@@ -59,7 +63,7 @@
 
         h2 {
             font-size: 1.6rem;
-            margin: 1.5em 0 1em;
+            margin: 2em 0 1em; /* 上マージン少し追加 */
             padding-bottom: 0.5em;
             border-bottom: 1px solid var(--border);
         }
@@ -85,11 +89,13 @@
             margin: 10px 0;
             text-align: center;
             transition: all 0.3s ease;
+            cursor: pointer; /* クリック可能を示す */
         }
 
         .btn:hover {
             background: #003d7a;
             transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .btn-secondary {
@@ -130,6 +136,7 @@
             display: flex; /* Flexbox を適用 */
             flex-direction: column; /* 子要素を縦方向に配置 */
             height: 100%; /* Gridアイテムの高さを100%に */
+            background-color: #fff; /* 背景色を明示 */
         }
 
         .course-card:hover {
@@ -148,15 +155,36 @@
             border-top: 5px solid var(--accent);
         }
 
-        .popular-badge { /* スタンダードコースの装飾 */
-            position: absolute;
-            top: -12px;
-            right: 20px;
-            background: var(--primary);
+        .standard .free-trial-banner { /* 14日間無料バナー */
+             position: absolute;
+             top: 15px;
+             right: -35px;
+             background: #e63946;
+             color: white;
+             padding: 5px 40px;
+             transform: rotate(45deg);
+             font-weight: bold;
+             font-size: 0.85em;
+             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+             z-index: 1;
+             overflow: hidden; /* はみ出し部分隠す */
+        }
+        .standard h3 .popular-badge { /* 1番人気バッジ */
+            display: inline-flex;
+            align-items: center;
+            vertical-align: middle;
+            margin-left: 8px;
+            font-size: 0.7em;
+            font-weight: normal;
+            background: linear-gradient(135deg, #0056b3, #007bff);
             color: white;
-            font-size: 0.8rem;
-            padding: 4px 12px;
-            border-radius: 20px;
+            padding: 2px 8px;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .standard h3 .popular-badge span { /* 星マーク */
+            margin-right: 4px;
+            font-size: 1.1em;
         }
 
         .course-card h3 {
@@ -170,7 +198,38 @@
             font-size: 1.4rem;
             font-weight: bold;
             margin: 20px 0 10px 0; /* ボタンとの間隔調整 */
-            color: #e63946;
+            color: #e63946; /* 基本価格の色 */
+        }
+        .price .original-price { /* VIPの通常価格 */
+            text-decoration: line-through;
+            color: #999;
+            font-size: 0.9rem;
+            font-weight: normal;
+            margin-right: 5px;
+        }
+        .price .discount-badge { /* 割引バッジ */
+            background: var(--accent);
+            color: #333;
+            font-size: 0.8rem;
+            padding: 3px 10px;
+            border-radius: 12px;
+            margin-left: 5px;
+            font-weight: bold;
+            vertical-align: middle;
+        }
+        .price .discount-price { /* VIPの割引後価格 */
+             font-weight: bold;
+             color: #333; /* 黒色など目立たせる */
+        }
+        .price .free-trial-info { /* 14日間無料情報 */
+            background: #e63946;
+            color: white;
+            font-size: 0.8rem;
+            padding: 3px 10px;
+            border-radius: 12px;
+            margin-right: 5px;
+            font-weight: bold;
+            vertical-align: middle;
         }
 
         .price-note {
@@ -185,7 +244,6 @@
             margin: 20px 0;
             padding: 0;
             flex-grow: 1; /* 残りのスペースを埋めるように拡張 */
-            /* min-height は不要に */
         }
 
         .features-list li {
@@ -199,7 +257,7 @@
             align-items: flex-start; /* テキストが複数行でもチェックマークを上揃えに */
         }
 
-        .features-list li:before {
+        .features-list li::before {
             content: "✓";
             position: absolute;
             left: 0;
@@ -228,46 +286,75 @@
             min-height: 80px; /* 価値提案部分の高さを確保 (約3-4行) */
             line-height: 1.5;
         }
+         .value-prop .campaign-note { /* キャンペーン注釈 */
+             color: #e63946;
+             font-size: 0.85em;
+             font-weight: bold;
+             display: block; /* 改行させる */
+             margin-top: 5px;
+         }
 
         .course-card .button-wrapper { /* ボタンをラップするDiv */
              margin-top: auto; /* フレックスアイテムとして、上部のマージンを自動調整（＝下部に押しやる） */
+             padding-top: 15px; /* リストとの間に少し余白 */
         }
 
+        /* Table comparison container */
+        .table-container {
+            display: flex;          /* Flexbox を使用 */
+            justify-content: center;/* テーブルを中央に配置 */
+            margin: 30px 0;         /* 上下のマージン */
+            overflow-x: auto;       /* テーブルがはみ出す場合に横スクロール */
+            width: 100%;            /* コンテナは親要素の幅に合わせる */
+            -webkit-overflow-scrolling: touch; /* スマホでの慣性スクロール */
+        }
 
         /* Table comparison */
         .comparison-table {
-            width: 100%;
             border-collapse: collapse;
-            margin: 30px 0;
-            overflow-x: auto; /* スマホ表示で横スクロール可能に */
-            display: block; /* overflow-x を有効にするため */
+            min-width: 600px; /* テーブルの最小幅を設定 */
+            flex-shrink: 0; /* flexアイテムとして縮まないように */
         }
 
         .comparison-table th, .comparison-table td {
-            padding: 12px;
+            padding: 12px 15px; /* パディング少し調整 */
             text-align: center;
             border: 1px solid var(--border);
-            min-width: 80px; /* 列の最小幅 */
+            white-space: nowrap; /* セル内での改行を防ぐ（横スクロールしやすくするため） */
         }
 
         .comparison-table th {
             background: var(--primary);
             color: white;
-            position: sticky; /* スクロール時にヘッダーを固定 */
-            top: 0;
-            z-index: 1;
+            position: sticky;
+            top: 0; /* スクロール時にヘッダー行を固定 */
+            z-index: 2; /* 最初の列より手前 */
         }
 
         .comparison-table tr:nth-child(even) {
             background: #f9f9f9;
         }
 
-        .comparison-table td:first-child {
+        .comparison-table td:first-child,
+        .comparison-table th:first-child {
             text-align: left;
             font-weight: 500;
-            min-width: 150px; /* 最初の列の最小幅を広げる */
-            background: #fdfdfd; /* 最初の列の背景色を少し変える */
+            background: #fdfdfd; /* 固定列の背景色 */
+            position: sticky; /* 横スクロール時に最初の列を固定 */
+            left: 0;
+            z-index: 1;
         }
+        /* 最初のヘッダーセル（左上角） */
+        .comparison-table th:first-child {
+             background: var(--primary); /* ヘッダーの色に合わせる */
+             color: white;
+             z-index: 3; /* 最も手前に */
+        }
+        /* 固定ヘッダー行と固定列が重なる部分の調整 */
+        .comparison-table th:first-child {
+            top: 0; /* 上にも固定 */
+        }
+
 
         /* FAQ */
         .faq-item {
@@ -292,6 +379,7 @@
             content: "Q.";
             margin-right: 0.5em;
             white-space: nowrap;
+            font-weight: bold;
         }
 
         .answer {
@@ -314,12 +402,97 @@
             padding: 20px;
             border-left: 3px solid var(--primary);
             margin: 20px 0;
+            border-radius: 4px;
         }
 
         .testimonial-author {
             font-weight: bold;
             text-align: right;
             margin-top: 10px;
+            color: var(--light-text);
+        }
+
+        /* Feature blocks */
+        .feature-block {
+             margin-bottom: 30px;
+             background: #f8f9fa;
+             border-radius: 8px;
+             padding: 25px;
+             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+             display: flex; /* アイコンとテキストを横並び */
+             align-items: flex-start; /* 上揃え */
+             gap: 20px; /* アイコンとテキストの間隔 */
+        }
+        .feature-block .icon {
+            background: var(--primary);
+            color: white;
+            min-width: 40px; /* 幅固定 */
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            flex-shrink: 0; /* 縮まないように */
+        }
+         .feature-block .text-content h3 {
+             margin: 0 0 10px 0; /* h3のマージン調整 */
+             padding: 0; /* h3のパディングリセット */
+             border: none; /* h3の線削除 */
+             font-size: 1.2rem; /* 少し小さく */
+         }
+        .feature-block .text-content p {
+            margin: 0; /* pのマージンリセット */
+        }
+
+        /* Campaign Banner */
+        .campaign-banner {
+            background: linear-gradient(135deg, #0056b3, #007bff);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
+        }
+        .campaign-banner h3 {
+            color: white;
+            margin: 0 0 10px 0;
+            font-size: 1.3rem;
+        }
+        .campaign-banner p {
+             margin: 0;
+             font-size: 1.1rem;
+        }
+        .campaign-banner .note {
+             font-size: 0.9rem;
+             opacity: 0.9;
+             display: block;
+             margin-top: 5px;
+        }
+
+        /* Final CTA */
+        .final-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            line-height: 1.8;
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .final-cta .cta-button {
+            background: linear-gradient(135deg, #0056b3, #007bff);
+            color: white;
+            font-weight: bold;
+            padding: 15px 24px;
+            font-size: 1.1rem;
+        }
+        .final-cta .cta-button .subtext {
+             display: block;
+             font-size: 0.8em;
+             margin-top: 5px;
+             font-weight: normal;
         }
 
         /* Helper classes */
@@ -329,7 +502,7 @@
         }
 
         .highlight-accent {
-            color: #c69500;
+            color: #c69500; /* 少し濃い黄色 */
             font-weight: bold;
         }
 
@@ -338,7 +511,7 @@
         }
 
         .mb-2 {
-            margin-bottom: 2rem;
+            margin-bottom: 2rem !important;
         }
 
         /* Responsive adjustments */
@@ -351,16 +524,40 @@
             .courses {
                 grid-template-columns: 1fr; /* スマホでは1カラムに */
             }
-            .course-card h3 { min-height: auto; } /* スマホではmin-height解除も検討 */
+            .course-card h3 { min-height: auto; } /* スマホではmin-height解除 */
             .target-audience { min-height: auto; }
             .value-prop { min-height: auto; }
             .features-list li { min-height: auto; }
+
+            .comparison-table { min-width: auto; } /* スマホでは最小幅解除 */
+            .comparison-table th, .comparison-table td { white-space: normal; } /* スマホでは改行許可 */
+            .comparison-table td:first-child,
+            .comparison-table th:first-child {
+                position: static; /* スマホでは列固定解除 */
+                background: inherit; /* 背景色リセット */
+            }
+            .comparison-table th {
+                position: static; /* スマホではヘッダー固定解除 */
+            }
+             .feature-block {
+                 flex-direction: column; /* スマホではアイコンを上に */
+                 align-items: center; /* 中央揃え */
+                 text-align: center;
+             }
+             .feature-block .icon {
+                 margin-bottom: 15px; /* アイコンとテキストの間 */
+             }
+             .feature-block .text-content h3 { text-align: center;}
         }
          @media (max-width: 480px) {
             body { font-size: 15px; }
             .btn { padding: 10px 20px; }
             h1 { font-size: 1.6rem; }
             h2 { font-size: 1.4rem; }
+            .campaign-banner h3 { font-size: 1.2rem; }
+            .campaign-banner p { font-size: 1rem; }
+            .final-cta p { font-size: 1rem; }
+            .final-cta .cta-button { font-size: 1rem; padding: 12px 20px; }
          }
     </style>
 </head>
@@ -376,21 +573,21 @@
                 将来の不安を「生涯稼げる自信」に変える
             </p>
             <div style="background: #f5f9ff; padding: 20px; border-radius: 8px; margin: 0 auto 30px; max-width: 600px;">
-                <p style="margin-bottom: 10px;">
+                <p style="margin-bottom: 10px; text-align: center;">
                     <strong>Alpha Pips トレードスクールの特徴：</strong>
                 </p>
                 <ul style="list-style-type: none; text-align: left; display: inline-block; padding-left: 0;">
                     <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">
-                        <span style="position: absolute; left: 0; top: 2px; color: #28a745;">✓</span> トレード歴10年以上の認定プロトレーダー直伝
+                        <span style="position: absolute; left: 0; top: 4px; color: #28a745; font-weight: bold;">✓</span> トレード歴10年以上の認定プロトレーダー直伝
                     </li>
                     <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">
-                        <span style="position: absolute; left: 0; top: 2px; color: #28a745;">✓</span> 再現性とシンプルさを追求した手法
+                        <span style="position: absolute; left: 0; top: 4px; color: #28a745; font-weight: bold;">✓</span> 再現性とシンプルさを追求した手法
                     </li>
                     <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">
-                        <span style="position: absolute; left: 0; top: 2px; color: #28a745;">✓</span> 初心者・兼業・シニアの方も大歓迎
+                        <span style="position: absolute; left: 0; top: 4px; color: #28a745; font-weight: bold;">✓</span> 初心者・兼業・シニアの方も大歓迎
                     </li>
-                    <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">
-                        <span style="position: absolute; left: 0; top: 2px; color: #28a745;">✓</span> 生活リズムに左右されないデイ～スイングトレード
+                    <li style="margin-bottom: 0; position: relative; padding-left: 25px;">
+                        <span style="position: absolute; left: 0; top: 4px; color: #28a745; font-weight: bold;">✓</span> 生活リズムに左右されないデイ～スイングトレード
                     </li>
                 </ul>
             </div>
@@ -410,17 +607,17 @@
                     <li>メンバー限定交流部屋の閲覧</li>
                 </ul>
                 <p class="price">2,980円<span class="price-note">/ 月 (税込)</span></p>
-                <div class="button-wrapper"> <!-- ボタンラッパー -->
+                <div class="button-wrapper">
                     <a href="#payment-light" class="btn btn-secondary btn-block">ライトコース申込</a>
                 </div>
             </div>
 
             <!-- Standard Course -->
             <div class="course-card standard" style="position: relative; overflow: hidden;">
-                 <div style="position: absolute; top: 15px; right: -35px; background: #e63946; color: white; padding: 5px 40px; transform: rotate(45deg); font-weight: bold; font-size: 0.85em; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 1;">14日間無料</div>
-                <h3 class="highlight">スタンダードコース <span style="display: inline-flex; align-items: center; vertical-align: middle; margin-left: 8px; font-size: 0.7em; font-weight: normal; background: linear-gradient(135deg, #0056b3, #007bff); color: white; padding: 2px 8px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><span style="margin-right: 4px; font-size: 1.1em;">★</span>１番人気</span></h3>
+                 <div class="free-trial-banner">14日間無料</div>
+                <h3 class="highlight">スタンダードコース <span class="popular-badge"><span>★</span>１番人気</span></h3>
                 <p class="target-audience">本気でスキルを習得したい全ての方 (初心者～経験者)へ</p>
-                <p class="value-prop">実践力を高め、仲間と共に成長する。<br><strong class="highlight">最も満足度、コストパフォーマンスが高いコースです。</strong><br><span style="color: #e63946; font-size: 0.85em; font-weight: bold;">※ 今なら14日間無料体験キャンペーン実施中！</span></p>
+                <p class="value-prop">実践力を高め、仲間と共に成長する。<br><strong class="highlight">最も満足度、コストパフォーマンスが高いコースです。</strong><span class="campaign-note">※ 今なら14日間無料体験キャンペーン実施中！</span></p>
                 <ul class="features-list">
                     <li>ライトコース全内容</li>
                     <li><strong class="highlight">オリジナルインジケーター4種の利用権</strong></li>
@@ -428,11 +625,11 @@
                     <li><strong class="highlight">メンバー限定交流部屋へのアクセス</strong></li>
                 </ul>
                  <p class="price">
-                    <span style="background: #e63946; color: white; font-size: 0.8rem; padding: 3px 10px; border-radius: 12px; margin-right: 5px;">14日間¥0</span>
+                    <span class="free-trial-info">14日間¥0</span>
                     9,800円<span class="price-note">/ 月 (税込)</span>
                 </p>
-                <div class="button-wrapper"> <!-- ボタンラッパー -->
-                    <a href="#payment-standard" class="btn btn-block" style="background: linear-gradient(135deg, #0056b3, #007bff);">スタンダードコース申込<span style="display: block; font-size: 0.8em; margin-top: 5px;">※今なら14日間無料体験！</span></a>
+                <div class="button-wrapper">
+                    <a href="#payment-standard" class="btn btn-block" style="background: linear-gradient(135deg, #0056b3, #007bff);">スタンダードコース申込<span style="display: block; font-size: 0.8em; margin-top: 5px; font-weight: normal;">※今なら14日間無料体験！</span></a>
                 </div>
             </div>
 
@@ -440,21 +637,21 @@
             <div class="course-card priority">
                 <h3 class="highlight-accent">VIPコース</h3>
                 <p class="target-audience">最短で結果を出したい方、徹底的なサポートを求める方へ</p>
-                <p class="value-prop">講師による徹底指導で、成功への<strong class="highlight-accent">「最短ルート」</strong>を掴む。<br><span style="color: #e63946; font-size: 0.85em; font-weight: bold;">※ 今なら入会金半額キャンペーン実施中！</span></p>
+                <p class="value-prop">講師による徹底指導で、成功への<strong class="highlight-accent">「最短ルート」</strong>を掴む。<span class="campaign-note">※ 今なら入会金半額キャンペーン実施中！</span></p>
                 <ul class="features-list">
                     <li>スタンダードコース全内容</li>
                     <li><strong class="highlight-accent">エントリ―精度UPのオリジナルインジケーター3種</strong></li>
                     <li><strong class="highlight-accent">Discord上での講師による個別指導</strong></li>
                 </ul>
                  <p class="price">
-                    <span style="display: block; margin-bottom: 5px;">
-                        入会金：<span style="text-decoration: line-through; color: #999;">15万円</span>
-                        <span style="background: var(--accent); color: #333; font-size: 0.8rem; padding: 3px 10px; border-radius: 12px; margin-left: 5px;">50%OFF</span>
-                        <strong>7.5万円</strong>
+                    <span style="display: block; margin-bottom: 5px; font-size: 1.1rem;">
+                        入会金：<span class="original-price">15万円</span>
+                        <span class="discount-price">7.5万円</span>
+                        <span class="discount-badge">50%OFF</span>
                     </span>
                     <span>29,800円<span class="price-note">/ 月 (税込)</span></span>
                 </p>
-                <div class="button-wrapper"> <!-- ボタンラッパー -->
+                <div class="button-wrapper">
                     <a href="#payment-priority" class="btn btn-accent btn-block">VIPコース申込</a>
                 </div>
             </div>
@@ -462,7 +659,7 @@
 
         <!-- Course Detail Comparison -->
         <h2>コース内容詳細比較</h2>
-        <div style="overflow-x: auto;"> <!-- テーブルがはみ出る場合スクロール -->
+        <div class="table-container">
             <table class="comparison-table">
                 <thead>
                     <tr>
@@ -519,64 +716,65 @@
             </table>
         </div>
 
+
         <!-- Alpha Pips Method Features -->
         <h2>Alpha Pips トレードスクールの特徴</h2>
 
-        <div style="margin-bottom: 30px; background: #f8f9fa; border-radius: 8px; padding: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
-            <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                <div style="background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; font-size: 1.2rem; flex-shrink: 0;">🎯</div>
-                <h3 style="margin: 0;">シンプルな勝ちパターンに集中</h3>
+        <div class="feature-block">
+            <div class="icon">🎯</div>
+            <div class="text-content">
+                <h3>シンプルな勝ちパターンに集中</h3>
+                <p>トレード歴10年超のプロ、マイティ―が膨大な時間と試行錯誤の末に辿り着いた、勝つための「本質」。複雑な分析や高度な知識・スキルは一切必要ありません。優位性の認められた<strong>貴重な「高確率な鉄板パターン」</strong>に集中するから、初心者の方も迷わずに再現できます。</p>
             </div>
-            <p>トレード歴10年超のプロ、マイティ―が膨大な時間と試行錯誤の末に辿り着いた、勝つための「本質」。複雑な分析や高度な知識・スキルは一切必要ありません。優位性の認められた<strong>貴重な「高確率な鉄板パターン」</strong>に集中するから、初心者の方も迷わずに再現できます。</p>
         </div>
 
-        <div style="margin-bottom: 30px; background: #f8f9fa; border-radius: 8px; padding: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
-            <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                <div style="background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; font-size: 1.2rem; flex-shrink: 0;">🏆</div>
-                <h3 style="margin: 0;">厳しい基準に合格した高再現性トレード</h3>
-            </div>
-            <p>合格率10％以下の厳しいプロ試験で実際に使用し、見事基準を突破した本物のトレード手法です。机上の空論ではない、リアルな市場で通用する<strong>「再現性」</strong>が証明されています。</p>
+        <div class="feature-block">
+            <div class="icon">🏆</div>
+             <div class="text-content">
+                <h3>厳しい基準に合格した高再現性トレード</h3>
+                <p>合格率10％以下の厳しいプロ試験で実際に使用し、見事基準を突破した本物のトレード手法です。机上の空論ではない、リアルな市場で通用する<strong>「再現性」</strong>が証明されています。</p>
+             </div>
         </div>
 
-        <div style="margin-bottom: 30px; background: #f8f9fa; border-radius: 8px; padding: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
-            <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                <div style="background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; font-size: 1.2rem; flex-shrink: 0;">⏱️</div>
-                <h3 style="margin: 0;">生活と両立できるトレードスタイル</h3>
-            </div>
-            <p>推奨するのは<strong>「デイ～スイングトレード」</strong>。1日中PCに張り付く必要はありません。仕事のスキマ時間でのチェックや、1日数回のチャンスを狙うスタイル。仕事や趣味、家族との時間を大切にしながら、着実に資産形成を目指せます。</p>
+        <div class="feature-block">
+             <div class="icon">⏱️</div>
+             <div class="text-content">
+                 <h3>生活と両立できるトレードスタイル</h3>
+                 <p>推奨するのは<strong>「デイ～スイングトレード」</strong>。1日中PCに張り付く必要はありません。仕事のスキマ時間でのチェックや、1日数回のチャンスを狙うスタイル。仕事や趣味、家族との時間を大切にしながら、着実に資産形成を目指せます。</p>
+             </div>
         </div>
 
-        <div style="margin-bottom: 30px; background: #f8f9fa; border-radius: 8px; padding: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
-            <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                <div style="background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; font-size: 1.2rem; flex-shrink: 0;">🤝</div>
-                <h3 style="margin: 0;">充実したサポート体制</h3>
-            </div>
-            <p>毎日のチャート考察、リアルタイム分析で、<strong>プロの「目線」</strong>を学習できます。また、スタンダードコース以上はメンバー限定コミュニティで、疑問を解消し、仲間とともに成長できる環境をご用意しました。さらにVIPコースでは、<strong>講師による個別指導</strong>で最短ルートでの成長を目指します。</p>
+        <div class="feature-block">
+             <div class="icon">🤝</div>
+             <div class="text-content">
+                 <h3>充実したサポート体制</h3>
+                 <p>毎日のチャート考察、リアルタイム分析で、<strong>プロの「目線」</strong>を学習できます。また、スタンダードコース以上はメンバー限定コミュニティで、疑問を解消し、仲間とともに成長できる環境をご用意しました。さらにVIPコースでは、<strong>講師による個別指導</strong>で最短ルートでの成長を目指します。</p>
+             </div>
         </div>
 
         <!-- メンバーの声タイトル-->
         <h2>メンバーの声</h2>
 
         <!-- 特別キャンペーンの告知を追加 -->
-        <div style="background: linear-gradient(135deg, #0056b3, #007bff); color: white; padding: 15px 25px; border-radius: 8px; text-align: center; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);">
-            <h3 style="color: white; margin: 0 0 10px 0;">＼ 期間限定キャンペーン実施中 ／</h3>
-            <p style="margin: 0; font-size: 1.1rem;">今だけスタンダードコース<strong>14日間無料体験</strong>！<br>
-            <span style="font-size: 0.9rem; opacity: 0.9;">※ 予告なく終了する場合があります。お早めにお申し込みください。</span></p>
+        <div class="campaign-banner">
+            <h3>＼ 期間限定キャンペーン実施中 ／</h3>
+            <p>今だけスタンダードコース<strong>14日間無料体験</strong>！
+            <span class="note">※ 予告なく終了する場合があります。お早めにお申し込みください。</span></p>
         </div>
 
         <div class="testimonial">
             <p>「正直、何年もFXで負け続けて諦めかけていました。何をやっても勝てない…。でもスクールで学べる『鉄板パターン』だけに絞ったら、あれほど複雑に考えていたことが嘘のように、シンプルに見えるようになったんです。入会から3ヶ月目で月利8%達成できました。昨日も、エントリーポイントが来るのを待って、1トレードで3万円の利益。こんな日常が当たり前になるなんて、本当に想像できませんでした。」</p>
-            <p class="testimonial-author">T.S. (52歳・会社員)</p>
+            <p class="testimonial-author">- T.S. 様 (52歳・会社員)</p>
         </div>
 
         <div class="testimonial">
             <p>「退職して年金生活が始まり、毎月の収支を見るたびに不安でした。最初は『自分の年齢でFXなんて無理だろう』と思っていましたが、マイティ―さんの考察を毎日見ているうちに、相場の見方がわかってきました。先月は15万円のプラス。孫へのお小遣いも気兼ねなく渡せるようになりました。老後の不安が希望に変わりつつあります。」</p>
-            <p class="testimonial-author">K.M. (67歳・元教員)</p>
+            <p class="testimonial-author">- K.M. 様 (67歳・元教員)</p>
         </div>
 
         <div class="testimonial">
             <p>「システムエンジニアとして毎日残業続きで、正直トレードする時間なんてないと思っていました。でも夜10時の相場チェックと朝の準備だけで十分トレードできています。4カ月目くらいからこんな自分でも毎月5〜8万円のペースで利益が出せるように。『自分の給料以外の収入源』ができた安心感は何にも代えがたいです。正直、娘の学費のことで悩んでいましたが、今は気持ちに余裕が生まれました。」</p>
-            <p class="testimonial-author">Y.N. (43歳・エンジニア)</p>
+            <p class="testimonial-author">- Y.N. 様 (43歳・エンジニア)</p>
         </div>
 
         <!-- FAQ -->
@@ -613,19 +811,27 @@
         </div>
 
         <!-- Final CTA -->
-        <h2>再現性あるトレードで安心を</h2>
-        <p style="font-size: 1.1rem; margin-bottom: 30px; line-height: 1.8; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto;">
-            仕事に家庭に忙しい40代、会社での責任が重くなる50代、そして年金だけではこの先不安な60代の皆様へ。<br>
-            将来への不安は、誰もが感じるものです。給料は上がらず、税負担だけが上がり続ける時代だからこそ、<br>
-            「自分の力で稼ぐスキル」が必要です。<br><br>
-            Alpha Pips トレードスクールでは、あなたと同じ悩みを持つ方々が、<br>
-            シンプルで再現性の高いトレード手法を学び、<br>
-            少しずつ確実に、経済的な安心を積み上げています。<br><br>
-            １人で悩むより、共に歩む仲間と一緒なら、必ず前に進めます。<br>
-            第２の人生を、より豊かなものにするための１歩を、今踏み出しませんか？
-        </p>
+        <div class="final-cta">
+            <h2>再現性あるトレードで安心を</h2>
+            <p>
+                仕事に家庭に忙しい40代、会社での責任が重くなる50代、そして年金だけではこの先不安な60代の皆様へ。<br>
+                将来への不安は、誰もが感じるものです。給料は上がらず、税負担だけが上がり続ける時代だからこそ、<br>
+                「自分の力で稼ぐスキル」が必要です。<br><br>
+                Alpha Pips トレードスクールでは、あなたと同じ悩みを持つ方々が、<br>
+                シンプルで再現性の高いトレード手法を学び、<br>
+                少しずつ確実に、経済的な安心を積み上げています。<br><br>
+                １人で悩むより、共に歩む仲間と一緒なら、必ず前に進めます。<br>
+                第２の人生を、より豊かなものにするための１歩を、今踏み出しませんか？
+            </p>
 
-        <a href="#payment-standard" class="btn btn-block" style="background: linear-gradient(135deg, #0056b3, #007bff); color: white; font-weight: bold; padding: 15px 24px; font-size: 1.1rem;">スタンダードコースに申し込む<span style="display: block; font-size: 0.8em; margin-top: 5px; font-weight: normal;">※期間限定：14日間無料体験キャンペーン実施中！</span></a>
+            <a href="#payment-standard" class="btn btn-block cta-button">スタンダードコースに申し込む<span class="subtext">※期間限定：14日間無料体験キャンペーン実施中！</span></a>
+        </div>
     </div>
+
+    <!-- Placeholder for payment section anchors -->
+    <div id="payment-light" style="height: 1px; margin-top: -1px;"></div>
+    <div id="payment-standard" style="height: 1px; margin-top: -1px;"></div>
+    <div id="payment-priority" style="height: 1px; margin-top: -1px;"></div>
+
 </body>
 </html>
