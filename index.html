@@ -3,594 +3,580 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alpha Pips - 40代・50代からの逆転戦略 | 再現性の高いシンプルFX</title>
-    <meta name="description" content="将来不安を「生涯稼げる自信」に変える。海外認定プロトレーダーが教える再現性の高いシンプルFXで、第2の安定収入を築きませんか？初心者・兼業・シニア歓迎。">
+    <title>Alpha Pips | シンプルFXトレード コース詳細</title>
+    <meta name="description" content="Alpha Pipsの各種コース詳細。再現性の高いシンプルFXで、第2の安定収入を築きましょう。初心者・兼業・シニア歓迎。">
     <style>
-        /* --- Reset & Basic Styles --- */
-        *, *::before, *::after { box-sizing: border-box; }
-        body {
+        /* Base styles */
+        :root {
+            --primary: #0056b3;
+            --secondary: #f8f9fa;
+            --accent: #ffc107;
+            --text: #333;
+            --light-text: #666;
+            --border: #e0e0e0;
+        }
+        
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-            font-size: 17px; /* Base font size for readability */
-            line-height: 1.75;
-            color: #333;
-            background-color: #f8f9fa; /* Light background */
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            padding: 0;
         }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--secondary);
+        }
+        
         .container {
-            max-width: 900px; /* Content max width */
+            max-width: 800px;
             margin: 0 auto;
-            padding: 0 20px;
-            background-color: #fff; /* White content background */
-            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+            padding: 40px 20px;
+            background: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
         }
-        img { max-width: 100%; height: auto; vertical-align: middle; }
-        h1, h2, h3, h4, h5, h6 { font-weight: bold; line-height: 1.4; margin-top: 0; margin-bottom: 0.75em; }
-        h1 { font-size: clamp(2em, 5vw, 2.8em); margin-bottom: 0.5em;} /* Responsive H1 */
-        h2 { font-size: clamp(1.8em, 4vw, 2.4em); margin-bottom: 1.5em; text-align: center; color: #1a3a6b; } /* Section title color */
-        h3 { font-size: clamp(1.4em, 3.5vw, 1.8em); margin-bottom: 1em; color: #0056b3; }
-        h4 { font-size: clamp(1.2em, 3vw, 1.4em); margin-bottom: 0.8em; }
-        p { margin-top: 0; margin-bottom: 1.5em; }
-        a { color: #007bff; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        strong, b { font-weight: 600; }
-        ul, ol { margin-top: 0; margin-bottom: 1.5em; padding-left: 1.8em; }
-        li { margin-bottom: 0.8em; }
-        section { padding: clamp(50px, 8vw, 80px) 0; } /* Responsive padding */
-        .text-center { text-align: center; }
-        .mb-small { margin-bottom: 0.5em; }
-        .mb-large { margin-bottom: 2.5em; }
-
-        /* --- Button Styles --- */
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Typography */
+        h1, h2, h3 {
+            line-height: 1.3;
+            margin-bottom: 0.8em;
+            color: var(--primary);
+        }
+        
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1.5em;
+        }
+        
+        h2 {
+            font-size: 1.6rem;
+            margin: 1.5em 0 1em;
+            padding-bottom: 0.5em;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+            margin: 1.2em 0 0.5em;
+        }
+        
+        p {
+            margin-bottom: 1em;
+        }
+        
+        /* Buttons */
         .btn {
             display: inline-block;
-            padding: 14px 30px;
-            font-size: 1.1em;
-            font-weight: bold;
-            text-align: center;
-            text-decoration: none;
+            padding: 12px 24px;
+            background: var(--primary);
             color: #fff;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            line-height: 1.4; /* Ensure text fits */
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 10px 0;
+            text-align: center;
+            transition: all 0.3s ease;
         }
+        
         .btn:hover {
-            text-decoration: none;
+            background: #003d7a;
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
         }
-        .btn-primary { background: linear-gradient(135deg, #007bff, #0056b3); }
-        .btn-primary:hover { background: linear-gradient(135deg, #0069d9, #004a99); }
-        .btn-secondary { background: linear-gradient(135deg, #6c757d, #5a6268); }
-        .btn-secondary:hover { background: linear-gradient(135deg, #5a6268, #4e555b); }
-        .btn-gold { background: linear-gradient(135deg, #ffc107, #e0a800); color: #333; }
-        .btn-gold:hover { background: linear-gradient(135deg, #e0a800, #c69500); }
-        .btn-block { display: block; width: 100%; }
-        .btn-large { padding: 16px 35px; font-size: 1.2em; }
-        .btn-outline { background: transparent; border: 2px solid #007bff; color: #007bff; box-shadow: none;}
-        .btn-outline:hover { background: #007bff; color: #fff; box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);}
-
-        /* --- Helper Classes --- */
-        .highlight { color: #007bff; font-weight: bold; } /* Blue highlight */
-        .highlight-red { color: #dc3545; font-weight: bold; } /* Red highlight */
-        .highlight-gold { color: #c69500; font-weight: bold; } /* Gold highlight */
-        .subtle { color: #6c757d; font-size: 0.9em; }
-        .section-bg { background-color: #f0f5fa; padding: clamp(50px, 8vw, 80px) 20px; margin-left: -20px; margin-right: -20px;}
-        .section-bg-dark { background-color: #1a3a6b; color: #fff; padding: clamp(50px, 8vw, 80px) 20px; margin-left: -20px; margin-right: -20px;}
-        .section-bg-dark h2, .section-bg-dark h3 { color: #fff; }
-        .section-bg-dark .highlight { color: #80bdff; } /* Lighter blue for dark bg */
-
-        /* --- 1. First View (FV) --- */
-        .fv {
-            background: linear-gradient(rgba(26, 58, 107, 0.85), rgba(26, 58, 107, 0.9)), url('placeholder-fv-bg.jpg') no-repeat center center; /* Replace with actual image */
-            background-size: cover;
-            color: #fff;
-            text-align: center;
-            padding: clamp(60px, 15vw, 100px) 20px;
-            margin: 0 -20px; /* Extend to container edges */
-            border-bottom: 5px solid #ffc107; /* Gold accent */
+        
+        .btn-secondary {
+            background: #555;
         }
-        .fv h1 { color: #fff; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); }
-        .fv h1 span { display: block; font-size: 0.7em; font-weight: normal; opacity: 0.9; margin-top: 10px; }
-        .fv .sub-copy { font-size: 1.15em; opacity: 0.95; margin: 25px auto; max-width: 700px; }
-        .fv .sub-copy strong { color: #ffc107; } /* Gold highlight for subcopy */
-        .fv .bullets { list-style: none; padding: 0; margin: 35px 0; }
-        .fv .bullets li {
-            display: inline-block;
-            margin: 5px 12px;
-            font-size: 1em;
-            opacity: 0.9;
+        
+        .btn-accent {
+            background: var(--accent);
+            color: #333;
         }
-        .fv .bullets li::before { content: '✓ '; color: #28a745; /* Green check */ font-weight: bold; margin-right: 5px; }
-        .fv .cta-container { margin-top: 40px; }
-        .fv .cta-container .btn { margin-bottom: 15px; }
-        .fv .cta-container .subtle-cta { font-size: 0.9em; margin-top: 15px; opacity: 0.8; }
-        .fv .fv-images { margin-top: 40px; display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;}
-        .fv .fv-images img { max-height: 50px; }
-        .fv .fv-images .character-img { max-height: 120px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        .fv .fv-images .proof-thumb { max-height: 60px; opacity: 0.8; border: 1px solid #aaa; border-radius: 4px; }
-
-        /* --- 2. Why FX Now? --- */
-        .why-fx { text-align: center; }
-        .why-fx .lead-text { font-size: 1.2em; color: #555; max-width: 700px; margin: 0 auto 30px auto;}
-        .why-fx .problems p { font-size: 1.1em; margin-bottom: 0.8em; }
-        .why-fx .solution-direction {
-            margin-top: 40px;
-            padding: 25px;
-            background-color: #eaf4ff;
-            border-left: 5px solid #007bff;
-            border-radius: 5px;
-            font-size: 1.1em;
-            font-weight: 500;
+        
+        .btn-block {
+            display: block;
+            width: 100%;
         }
-
-        /* --- 3. Reasons to Choose --- */
-        .reasons ol { list-style: none; padding: 0; counter-reset: reason-counter; }
-        .reasons li {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 40px;
-            position: relative;
-            padding-top: 10px; /* Space for number */
+        
+        /* Course cards */
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
         }
-        .reasons li::before {
-            counter-increment: reason-counter;
-            content: counter(reason-counter);
-            position: absolute;
-            left: -10px;
-            top: 0;
-            font-size: 3.5em;
-            font-weight: 700;
-            color: #e9f2ff; /* Light blue number */
-            z-index: 0;
-            line-height: 1;
-        }
-        .reasons .reason-icon {
-            flex-shrink: 0;
-            width: 50px;
-            height: 50px;
-            margin-right: 25px;
-            /* Placeholder for actual icons - use background images or icon fonts */
-            background-color: #007bff;
-            border-radius: 50%;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.5em;
-            font-weight: bold;
-            z-index: 1;
-        }
-         /* Example: Replace with actual icons */
-        .reasons li:nth-child(1) .reason-icon::after { content: '🎯'; } /* Simple */
-        .reasons li:nth-child(2) .reason-icon::after { content: '🏆'; } /* Proof */
-        .reasons li:nth-child(3) .reason-icon::after { content: '⏳'; } /* Time */
-        .reasons li:nth-child(4) .reason-icon::after { content: '🤝'; } /* Support */
-        .reasons .reason-content { z-index: 1; }
-        .reasons .reason-content h4 { margin-bottom: 0.5em; color: #0056b3; }
-        .reasons .proof-img { display: block; max-width: 250px; margin-top: 20px; border-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-
-        /* --- 4. Course Introduction --- */
-        .courses .course-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px;}
+        
         .course-card {
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            padding: 30px;
-            background-color: #fff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
             display: flex;
             flex-direction: column;
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            height: 100%;
         }
+        
         .course-card:hover {
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
             transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-        .course-card.standard { border-top: 5px solid #007bff; } /* Highlight Standard */
-        .course-card.priority { border-top: 5px solid #ffc107; } /* Highlight Priority */
-        .course-card .popular-badge {
+        
+        .course-card.standard {
+            border-top: 5px solid var(--primary);
+        }
+        
+        .course-card.priority {
+            border-top: 5px solid var(--accent);
+        }
+        
+        .popular-badge {
             position: absolute;
-            top: 15px;
-            right: -35px;
-            background-color: #007bff;
+            top: -12px;
+            right: 20px;
+            background: var(--primary);
             color: white;
-            padding: 5px 40px;
-            font-size: 0.9em;
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+        
+        .course-card h3 {
+            margin-top: 5px;
+            margin-bottom: 15px;
+            min-height: 30px; /* タイトルの高さを固定 */
+        }
+        
+        .price {
+            font-size: 1.4rem;
             font-weight: bold;
-            transform: rotate(45deg);
-            transform-origin: top right;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            color: #e63946;
         }
-        .course-card h4 { margin-top: 0; margin-bottom: 10px; }
-        .course-card .target { font-size: 0.95em; color: #666; margin-bottom: 20px; }
-        .course-card .value-prop { font-weight: 500; margin-bottom: 20px; }
-        .course-card .features { list-style: none; padding: 0; margin: 0 0 25px 0; flex-grow: 1; /* Pushes price/button down */ }
-        .course-card .features li { padding-left: 25px; position: relative; margin-bottom: 10px; font-size: 0.95em; }
-        .course-card .features li::before { content: '+'; position: absolute; left: 0; color: #28a745; font-weight: bold; font-size: 1.2em; }
-        .course-card .price { font-size: 1.4em; font-weight: bold; margin-bottom: 20px; text-align: center; color: #dc3545; }
-        .course-card .price .note { font-size: 0.7em; font-weight: normal; color: #666; display: block; line-height: 1.3; }
-        .course-card .btn { margin-top: auto; /* Pushes button to bottom */ }
-
-        /* --- 5. Testimonials --- */
-        .testimonials .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .testimonial-item {
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            padding: 30px;
-            border-left: 5px solid #ffc107; /* Gold accent */
+        
+        .price-note {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: normal;
+            color: var(--light-text);
+        }
+        
+        .features-list {
+            list-style-type: none;
+            margin: 20px 0;
+            padding: 0;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 200px; /* さらに高さを増やす */
+        }
+        
+        .features-list li {
+            margin-bottom: 12px;
             position: relative;
-            font-size: 1.05em;
+            padding-left: 25px;
+            font-size: 0.95rem; /* 文字サイズの統一 */
+            line-height: 1.5;
         }
-        .testimonial-item::before { /* Quotation mark */
-            content: '“';
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 6em;
-            color: #e9ecef;
+        
+        .features-list li:before {
+            content: "✓";
             position: absolute;
-            top: -10px;
-            left: 10px;
-            line-height: 1;
-            z-index: 0;
-            opacity: 0.8;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
         }
-        .testimonial-item p { position: relative; z-index: 1; margin-bottom: 1em; }
-        .testimonial-item .before-after strong { display: block; margin-bottom: 5px; font-size: 0.9em; }
-        .testimonial-item .before-after .before { color: #6c757d; }
-        .testimonial-item .before-after .after { color: #28a745; }
-        .testimonial-item .attribution { text-align: right; font-weight: bold; color: #555; margin-top: 25px; font-size: 1em; }
-        .result-images { text-align: center; margin-bottom: 50px; }
-        .result-images img {
-            max-width: 45%; /* Adjust as needed */
-            margin: 10px 2%;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            border: 1px solid #ddd;
+        
+        .target-audience {
+            font-size: 0.95rem;
+            color: var(--light-text);
+            margin-bottom: 15px;
+            font-style: italic;
+            min-height: 40px; /* ターゲットオーディエンス部分の高さを固定 */
         }
-
-        /* --- 6. Instructor --- */
-        .instructor .profile-container { display: flex; flex-direction: column; align-items: center; gap: 30px; }
-        .instructor .profile-image { flex-shrink: 0; }
-        .instructor .profile-image img {
-            max-width: 200px; /* Adjust size */
-            border-radius: 50%;
-            border: 5px solid #fff;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-        .instructor .profile-details h3 { text-align: center; margin-bottom: 5px; }
-        .instructor .profile-details .titles { text-align: center; font-size: 1em; color: #555; margin-bottom: 25px; display: block;}
-        .instructor .profile-story { font-size: 1.05em; }
-        .instructor .profile-message {
-            margin-top: 30px;
-            padding: 25px;
-            background-color: #eaf4ff;
-            border-radius: 8px;
-            border-left: 5px solid #007bff;
-            font-size: 1.1em;
+        
+        .value-prop {
             font-weight: 500;
+            margin-bottom: 20px;
+            font-size: 1rem; /* 文字サイズの統一 */
+            min-height: 60px; /* 価値提案部分の高さを固定 */
+        }
+        
+        /* Table comparison */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+        
+        .comparison-table th {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .comparison-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+        }
+        
+        /* FAQ */
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .question {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .question::before {
+            content: "Q. ";
+        }
+        
+        .answer {
+            padding-left: 1.5em;
+        }
+        
+        .answer::before {
+            content: "A. ";
+            font-weight: bold;
+            margin-left: -1.5em;
+        }
+        
+        /* Testimonials */
+        .testimonial {
+            background: #f9f9f9;
+            padding: 20px;
+            border-left: 3px solid var(--primary);
+            margin: 20px 0;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            text-align: right;
+            margin-top: 10px;
+        }
+        
+        /* Helper classes */
+        .highlight {
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .highlight-accent {
+            color: #c69500;
+            font-weight: bold;
+        }
+        
+        .text-center {
             text-align: center;
         }
-
-        /* --- 7. FAQ --- */
-        .faq .faq-item { margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px dashed #ccc; }
-        .faq .faq-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-        .faq .question { font-weight: 600; color: #0056b3; margin-bottom: 10px; font-size: 1.1em; }
-        .faq .question::before { content: 'Q. '; }
-        .faq .answer { color: #444; padding-left: 2em; }
-        .faq .answer::before { content: 'A. '; font-weight: 600; display: block; float: left; margin-left: -2em; }
-
-        /* --- 8. Final CTA --- */
-        .final-cta { text-align: center; }
-        .final-cta .strong-message { font-size: 1.3em; font-weight: 500; margin-bottom: 40px; max-width: 750px; margin-left: auto; margin-right: auto;}
-        .final-cta .cta-buttons-container { margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 800px; margin-left: auto; margin-right: auto;}
-        .final-cta .btn { width: 100%; }
-        .final-cta .btn .price-info { font-size: 0.85em; font-weight: normal; opacity: 0.9; display: block; margin-top: 5px;}
-        .final-cta .standard-btn { /* Make standard button slightly larger or brighter */
-            padding-top: 18px; padding-bottom: 18px; font-size: 1.15em;
+        
+        .mb-2 {
+            margin-bottom: 2rem;
         }
-        .final-cta .note { margin-top: 30px; font-size: 0.9em; color: #666; }
-
-        /* --- P.S. Section --- */
-        .ps-section { text-align: center; font-style: italic; color: #555; padding: 40px 0; font-size: 1.05em; }
-
-        /* --- Footer --- */
+        
         footer {
-            background-color: #343a40;
-            color: #f8f9fa;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
             text-align: center;
-            padding: 30px 20px;
-            font-size: 0.9em;
-            margin: 0 -20px; /* Extend to container edges */
+            font-size: 0.9rem;
+            color: var(--light-text);
         }
-        footer ul { list-style: none; padding: 0; margin: 0 0 15px 0; }
-        footer li { display: inline-block; margin: 0 10px; }
-        footer a { color: #adb5bd; }
-        footer a:hover { color: #fff; }
-        footer .copyright { margin-top: 15px; color: #6c757d; }
-
-        /* --- Responsive Adjustments --- */
-        @media (min-width: 768px) {
-            body { font-size: 18px; }
-            .instructor .profile-container { flex-direction: row; text-align: left; gap: 40px; }
-            .instructor .profile-details h3, .instructor .profile-details .titles { text-align: left; }
-            .section-bg, .section-bg-dark { margin-left: 0; margin-right: 0; padding-left: 40px; padding-right: 40px; border-radius: 8px; }
-            .fv { margin-left: 0; margin-right: 0; border-radius: 8px 8px 0 0; }
-            footer { margin-left: 0; margin-right: 0; border-radius: 0 0 8px 8px;}
+        
+        footer a {
+            color: var(--primary);
+            margin: 0 10px;
+            text-decoration: none;
         }
-
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-
     <div class="container">
-
-        <!-- 1. First View (FV) -->
-        <header class="fv">
-            <h1>
-                40代・50代からの逆転戦略。
-                <span>将来不安を<strong class="highlight-gold">「生涯稼げる自信」</strong>に変える、<br>海外プロ認定 <strong class="highlight-gold">“再現性の高い”</strong>シンプルFX</span>
-            </h1>
-            <p class="sub-copy">
-                経験ゼロ、PC苦手でも大丈夫。忙しい現役世代も、時間にゆとりのあるシニア世代も。<br>
-                チャートに張り付かない<strong>「ゆとりあるトレード」</strong>で、着実に結果を目指す。
+        <header style="text-align: center; margin-bottom: 40px;">
+            <h1>もっと深く、もっと近くで<br>プロのトレードを学びたいあなたへ</h1>
+            <p style="font-size: 1.2rem; margin-bottom: 20px; text-align: center;">
+                再現性の高いシンプルトレードで<br>
+                将来の不安を「生涯稼げる自信」に変える
             </p>
-            <ul class="bullets">
-                <li>海外認定プロトレーダー (マイティ―)</li>
-                <li>FX歴10年以上・高再現性メソッド</li>
-                <li>初心者・兼業・シニア歓迎</li>
-                <li>シンプルなデイ～スイング</li>
-            </ul>
-            <div class="fv-images">
-                 <img src="placeholder-logo.png" alt="Alpha Pips Logo">
-                 <img src="placeholder-character.png" alt="講師 マイティ― キャラクター" class="character-img">
-                 <img src="placeholder-proof-thumb.png" alt="海外認定サムネイル" class="proof-thumb">
+            <div style="background: #f5f9ff; padding: 20px; border-radius: 8px; margin: 0 auto 30px; max-width: 600px;">
+                <p style="margin-bottom: 10px;">
+                    <strong>Alpha Pips トレードスクールの特徴：</strong>
+                </p>
+                <ul style="list-style-type: none; text-align: left; display: inline-block;">
+                    <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">
+                        <span style="position: absolute; left: 0; color: #28a745;">✓</span> トレード歴10年以上の認定プロトレーダー直伝
+                    </li>
+                    <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">
+                        <span style="position: absolute; left: 0; color: #28a745;">✓</span> 再現性とシンプルさを追求した手法
+                    </li>
+                    <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">
+                        <span style="position: absolute; left: 0; color: #28a745;">✓</span> 初心者・兼業・シニア歓迎
+                    </li>
+                    <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">
+                        <span style="position: absolute; left: 0; color: #28a745;">✓</span> 生活リズムに左右されないデイ～スイングトレード
+                    </li>
+                </ul>
             </div>
-            <div class="cta-container">
-                <a href="#courses" class="btn btn-primary btn-large">今すぐ詳細を確認し、未来を変える一歩を踏み出す</a>
-                <!-- <p class="subtle-cta">まずは無料で概要を知りたい方はこちら → <a href="#free-guide-or-line">LINE登録</a></p> -->
-            </div>
+            <p>あなたのレベルと目標に合わせた、3つのコースをご用意しています。</p>
         </header>
-
-        <!-- 2. Why FX Now? -->
-        <section class="why-fx">
-            <h2>なぜ、今FXなのか？</h2>
-            <p class="lead-text">
-                「人生100年時代」…でも、今の収入だけで本当に大丈夫でしょうか？
-            </p>
-            <div class="problems">
-                <p><span class="highlight-red">給料は上がらない。</span></p>
-                <p><span class="highlight-red">年金だけでは心許ない。</span></p>
-                <p>気づけばもう40代、50代…<br>「何か始めないと」と思いつつ、時間だけが過ぎていく。</p>
-                <p>…そんな<strong class="highlight">漠然とした不安</strong>、感じていませんか？</p>
-            </div>
-            <div class="solution-direction">
-                その不安を解消する<strong>「自分の力で稼ぐスキル」</strong>として、FXは有効な選択肢です。<br>
-                しかし、多くの人が<strong>間違った情報</strong>や<strong>複雑すぎる手法</strong>で挫折しています。<br>
-                <strong class="highlight">大切なのは、「何を学ぶか」ではなく<br>「誰から、本質だけを学ぶか」です。</strong>
-            </div>
-        </section>
-
-        <!-- 3. Reasons to Choose Alpha Pips -->
-        <section class="reasons section-bg">
-            <h2>Alpha Pipsが選ばれる理由<br><small>(なぜFX初心者でも「再現性高く」結果を出せるのか？)</small></h2>
-            <ol>
-                <li>
-                    <span class="reason-icon"></span>
-                    <div class="reason-content">
-                        <h4>【超シンプル】覚えるべきは「勝ちパターン」だけ</h4>
-                        <p>FX歴10年超のプロ、マイティ―が膨大な時間と試行錯誤の末に辿り着いた、勝つための「本質」。<br>複雑な分析、無数のインジケーターは不要。<strong>数少ない「高確率な鉄板パターン」</strong>に集中するから、迷わず、再現できる。</p>
-                        <p class="subtle"><em>「FXは難しくない。難しくしている情報が多すぎるだけ。」</em></p>
-                    </div>
-                </li>
-                <li>
-                    <span class="reason-icon"></span>
-                    <div class="reason-content">
-                        <h4>【高再現性】海外プロが認めた「本物」の手法</h4>
-                        <p>講師マイティ―は、厳しい基準で知られる<strong>海外プロップファームのテストに合格</strong>した認定プロトレーダー。机上の空論ではない、リアルな市場で通用する<strong>「再現性」</strong>が証明されています。</p>
-                        <img src="placeholder-proof.png" alt="プロップファーム合格証明書イメージ" class="proof-img">
-                    </div>
-                </li>
-                <li>
-                    <span class="reason-icon"></span>
-                    <div class="reason-content">
-                        <h4>【無理なく継続】忙しくても大丈夫。ゆとりあるトレードスタイル</h4>
-                        <p>推奨するのは<strong>「デイ～スイングトレード」</strong>。一日中PCに張り付く必要なし。スキマ時間でのチェックや、1日数回のチャンスを狙うスタイル。<br>仕事や趣味、家族との時間を大切にしながら、着実に資産形成を目指せます。</p>
-                    </div>
-                </li>
-                <li>
-                    <span class="reason-icon"></span>
-                    <div class="reason-content">
-                        <h4>【信頼のサポート】プロの思考を直接インストール</h4>
-                        <p>毎日のチャート考察、リアルタイム分析（スタンダード以上）で、<strong>プロの「目線」</strong>を学習。<br>メンバー限定コミュニティ（スタンダード以上）で、疑問を解消し、仲間と成長。プライオリティコースでは、<strong>講師によるマンツーマン指導</strong>で最短ルートへ。</p>
-                    </div>
-                </li>
-            </ol>
-        </section>
-
-        <!-- 4. Course Introduction -->
-        <section class="courses" id="courses">
-            <h2>あなたに最適な学び方を</h2>
-            <p class="text-center mb-large">
-                あなたのレベルと目標に合わせて、最適な環境を選べます。<br>
-                どのコースでも、シンプルで再現性の高い「Alpha Pipsメソッド」の核心に触れることができます。
-            </p>
-            <div class="course-cards">
-                <!-- Light Course Card -->
-                <div class="course-card light">
-                    <h4>【LIGHT - ライト】</h4>
-                    <p class="target">まずは体験したい方、<br>プロの手法を知りたい方</p>
-                    <p class="value-prop">Alpha Pipsの核心手法を学び、<br>プロの相場観に触れる。</p>
-                    <ul class="features">
-                        <li>手法解説教材</li>
-                        <li>毎日の考察閲覧</li>
-                        <li>分析部屋閲覧</li>
-                    </ul>
-                    <p class="price">2,980円<span class="note">/ 月 (税込)</span></p>
-                    <a href="#payment-light" class="btn btn-secondary btn-block">＞ ライトコース詳細・申込</a>
-                </div>
-
-                <!-- Standard Course Card (Most Popular) -->
-                <div class="course-card standard">
-                     <div class="popular-badge">一番人気</div>
-                    <h4 class="highlight">【STANDARD - スタンダード】</h4>
-                    <p class="target">本気でスキルを習得したい<br>全ての方 (初心者～経験者)</p>
-                    <p class="value-prop">実践力を高め、仲間と共に成長する。<br><strong class="highlight">最もコストパフォーマンスが高い。</strong></p>
-                    <ul class="features">
-                        <li>ライト全内容</li>
-                        <li><strong class="highlight">オリジナルインジ4種</strong></li>
-                        <li><strong class="highlight">リアルタイム考察</strong></li>
-                        <li><strong class="highlight">メンバー交流</strong></li>
-                     </ul>
-                    <p class="price">9,800円<span class="note">/ 月 (税込)</span></p>
-                    <a href="#payment-standard" class="btn btn-primary btn-block">＞ スタンダードコース詳細・申込</a>
-                </div>
-
-                <!-- Priority Course Card -->
-                <div class="course-card priority">
-                    <h4 class="highlight-gold">【PRIORITY - プライオリティ】</h4>
-                    <p class="target">最短で結果を出したい方、<br>徹底的なサポートを求める方</p>
-                    <p class="value-prop">講師の個別指導で、<br>成功への<strong class="highlight-gold">「最短ルート」</strong>を歩む。</p>
-                    <ul class="features">
-                        <li>スタンダード全内容</li>
-                        <li><strong class="highlight-gold">専用インジ3種</strong></li>
-                        <li><strong class="highlight-gold">講師との独占コンサル (Discord)</strong></li>
-                    </ul>
-                    <p class="price">30,000円<span class="note">/ 月 ＋ 入会費 30万円 (税込)</span></p>
-                    <a href="#payment-priority" class="btn btn-gold btn-block">＞ プライオリティコース詳細・申込</a>
+        
+        <!-- Course Cards -->
+        <div class="courses">
+            <!-- Light Course -->
+            <div class="course-card light">
+                <h3>ライトコース</h3>
+                <p class="target-audience">1日100円以下でプロのトレードに触れてみたい方</p>
+                <p class="value-prop"><strong>Alpha Pipsの手法を知り、プロの相場観に触れられます。</strong></p>
+                <ul class="features-list">
+                    <li>Alpha Pipsオリジナル手法解説教材</li>
+                    <li>講師による定期チャート考察</li>
+                    <li>メンバー限定交流部屋の閲覧</li>
+                    <li style="visibility: hidden;">ダミーテキスト</li>
+                </ul>
+                <p class="price">2,980円<span class="price-note">/ 月 (税込)</span></p>
+                <div style="margin-top: auto;">
+                    <a href="#payment-light" class="btn btn-secondary btn-block">ライトコース申込</a>
                 </div>
             </div>
-        </section>
-
-        <!-- 5. Testimonials -->
-        <section class="testimonials section-bg">
-            <h2>信頼の証 <br class="sp-br">～ メンバーの声と実績 ～</h2>
-            <div class="result-images">
-                 <p style="font-weight: bold; margin-bottom: 20px; font-size: 1.1em;">メンバーのリアルな実績をご覧ください！</p>
-                 <img src="placeholder-result1.png" alt="メンバーの実績例1">
-                 <img src="placeholder-result2.png" alt="メンバーの実績例2">
-            </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-item">
-                    <p class="before-after">
-                        <strong class="before">Before:</strong> 情報過多で何をやっても勝てず、FXに絶望しかけていた。
-                        <strong class="after">After:</strong> Alpha Pipsの<strong>「鉄板パターン」</strong>に絞り、<strong>わずか3ヶ月で月次プラスに！</strong> 迷いが消え、チャートを見るのが楽しみに。諦めなくて本当に良かった。
-                    </p>
-                    <p class="attribution">T.Sさん (50代・会社員)</p>
-                </div>
-                <div class="testimonial-item">
-                     <p class="before-after">
-                        <strong class="before">Before:</strong> 年金だけでは不安…でも投資は難しそうで手が出せない。
-                        <strong class="after">After:</strong> マイティ―さんの<strong>「本物の思考」</strong>に触れ、視界が開けた。スタンダードコースのリアルタイム考察は特に役立つ。<strong>着実に利益を積み重ね</strong>、老後の不安が安心に変わった。<strong>一生モノのスキル</strong>です。
-                     </p>
-                    <p class="attribution">K.Mさん (60代・元教員)</p>
-                </div>
-                <div class="testimonial-item">
-                    <p class="before-after">
-                        <strong class="before">Before:</strong> 忙しくてFXは無理だと諦めていた。独学では挫折続き。
-                        <strong class="after">After:</strong> デイ～スイングなら<strong>無理なく継続可能</strong>。スタンダードの<strong>仲間との交流</strong>が大きな支え。給料以外の収入がある安心感は何物にも代えがたい。
-                    </p>
-                    <p class="attribution">Y.Nさん (40代・エンジニア)</p>
+            
+            <!-- Standard Course -->
+            <div class="course-card standard" style="position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 15px; right: -35px; background: #e63946; color: white; padding: 5px 40px; transform: rotate(45deg); font-weight: bold; font-size: 0.85em; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 1;">14日間無料</div>
+                <h3 class="highlight">スタンダードコース <span style="display: inline-flex; align-items: center; vertical-align: middle; margin-left: 8px; font-size: 0.7em; font-weight: normal; background: linear-gradient(135deg, #0056b3, #007bff); color: white; padding: 2px 8px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><span style="margin-right: 4px; font-size: 1.1em;">★</span>１番人気</span></h3>
+                <p class="target-audience">本気でスキルを習得したい全ての方 (初心者～経験者)</p>
+                <p class="value-prop">実践力を高め、仲間と共に成長する。<br><strong class="highlight">最も満足度、コストパフォーマンスが高いコースです。</strong><br><span style="color: #e63946; font-size: 0.85em; font-weight: bold;">※ 今なら14日間無料キャンペーン実施中！</span></p>
+                <ul class="features-list">
+                    <li>ライトコース全内容</li>
+                    <li><strong class="highlight">オリジナルインジケーター4種の利用権</strong></li>
+                    <li><strong class="highlight">講師による<strong>リアルタイム相場考察</strong></strong></li>
+                    <li><strong class="highlight">メンバー限定交流部屋へのアクセス</strong></li>
+                </ul>
+                <p class="price">
+                    <span style="background: #e63946; color: white; font-size: 0.8rem; padding: 3px 10px; border-radius: 12px; margin-right: 5px;">14日間¥0</span>
+                    9,800円<span class="price-note">/ 月 (税込)</span>
+                </p>
+                <div style="margin-top: auto;">
+                    <a href="#payment-standard" class="btn btn-block" style="background: linear-gradient(135deg, #0056b3, #007bff);">スタンダードコース申込<span style="display: block; font-size: 0.8em; margin-top: 5px;">※今なら14日間無料！</span></a>
                 </div>
             </div>
-        </section>
-
-        <!-- 6. Instructor -->
-        <section class="instructor">
-            <h2>あなたを導く講師</h2>
-            <div class="profile-container">
-                <div class="profile-image">
-                    <img src="placeholder-character.png" alt="講師 マイティ―">
-                </div>
-                <div class="profile-details">
-                    <h3 class="highlight">マイティ―</h3>
-                    <span class="titles">Alpha Pips 主宰 / 海外認定プロトレーダー / FX歴10年以上</span>
-                    <p class="profile-story">
-                        多くのトレーダーと同じように、<strong>私もかつては勝てずに悩み、膨大な時間とお金を失いました。</strong> しかし、諦めずに<strong>「シンプルに勝ち続ける本質」</strong>だけを追求し続けた結果、独自の高再現性手法を確立。厳しい海外プロップファームのテストにも合格しました。
-                    </p>
-                    <p class="profile-story">
-                        私の使命は、<strong>過去の私のように「不要な情報」に惑わされ、貴重な時間を浪費している人を一人でも多く救うこと。</strong> 有象無象の情報が溢れるFXの世界で、<strong>「本物」だけを学べる場所</strong>を提供したい。その想いでAlpha Pipsを設立しました。
-                    </p>
-                     <p class="profile-message">
-                        「正しい知識とシンプルな手法、そして適切な環境があれば、FXは決して怖くありません。私と一緒に、経済的な自由と精神的なゆとりを掴み取りましょう。」
-                    </p>
+            
+            <!-- Priority/VIP Course -->
+            <div class="course-card priority" style="position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 15px; right: -35px; background: #ffc107; color: #333; padding: 5px 40px; transform: rotate(45deg); font-weight: bold; font-size: 0.85em; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 1;">入会金半額</div>
+                <h3 class="highlight-accent">VIPコース</h3>
+                <p class="target-audience">最短で結果を出したい方、徹底的なサポートを求める方</p>
+                <p class="value-prop">講師による徹底指導で、成功への<strong class="highlight-accent">「最短ルート」</strong>を掴む。<br><span style="color: #e63946; font-size: 0.85em; font-weight: bold;">※ 今なら入会金半額キャンペーン実施中！</span></p>
+                <ul class="features-list">
+                    <li>スタンダードコース全内容</li>
+                    <li><strong class="highlight-accent">エントリ―精度UPのオリジナルインジケーター3種</strong></li>
+                    <li><strong class="highlight-accent">Discord上での講師による個別指導</strong></li>
+                </ul>
+                <p class="price">
+                    <span style="display: block; margin-bottom: 5px;">
+                        入会金：<span style="text-decoration: line-through; color: #999;">15万円</span>
+                        <span style="background: #ffc107; color: #333; font-size: 0.8rem; padding: 3px 10px; border-radius: 12px; margin-left: 5px;">50%OFF</span>
+                        <strong>7.5万円</strong>
+                    </span>
+                    <span>29,800円<span class="price-note">/ 月 (税込)</span></span>
+                </p>
+                <div style="margin-top: auto;">
+                    <a href="#payment-priority" class="btn btn-accent btn-block">VIPコース申込<span style="display: block; font-size: 0.8em; margin-top: 5px;">※期間限定：入会金半額キャンペーン実施中！</span></a>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- 7. FAQ -->
-        <section class="faq section-bg">
-            <h2>よくあるご質問</h2>
-            <div class="faq-item">
-                <p class="question">全くの初心者でも大丈夫？</p>
-                <p class="answer">はい、大丈夫です。Alpha Pipsの手法は極めてシンプル。複雑な分析やPC操作は不要ですので、ご安心ください。</p>
+        <!-- Course Detail Comparison -->
+        <h2>コース内容詳細比較</h2>
+        <table class="comparison-table">
+            <tr>
+                <th>機能 / サービス</th>
+                <th>ライト</th>
+                <th>スタンダード</th>
+                <th>VIP</th>
+            </tr>
+            <tr>
+                <td>基本手法解説</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+            </tr>
+            <tr>
+                <td>定期チャート考察</td>
+                <td>閲覧のみ</td>
+                <td>✓</td>
+                <td>✓</td>
+            </tr>
+            <tr>
+                <td>リアルタイム相場分析</td>
+                <td>-</td>
+                <td>✓</td>
+                <td>✓</td>
+            </tr>
+            <tr>
+                <td>オリジナルインジケーター</td>
+                <td>-</td>
+                <td>4種</td>
+                <td>7種 (専用3種含む)</td>
+            </tr>
+            <tr>
+                <td>メンバー同士の交流</td>
+                <td>閲覧のみ</td>
+                <td>✓</td>
+                <td>✓</td>
+            </tr>
+            <tr>
+                <td>質問対応</td>
+                <td>-</td>
+                <td>全体対応</td>
+                <td>個別対応</td>
+            </tr>
+            <tr>
+                <td>講師による個別指導</td>
+                <td>-</td>
+                <td>-</td>
+                <td>✓</td>
+            </tr>
+        </table>
+
+        <!-- Alpha Pips Method Features -->
+        <h2>Alpha Pipsコミュニティの特徴</h2>
+        
+        <div style="margin-bottom: 30px; background: #f8f9fa; border-radius: 8px; padding: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                <div style="background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; font-size: 1.2rem;">🎯</div>
+                <h3 style="margin: 0;">シンプルな勝ちパターンに集中</h3>
             </div>
-            <div class="faq-item">
-                 <p class="question">忙しいけど続けられる？</p>
-                 <p class="answer">推奨するのはデイ～スイングトレードなので、一日中チャートに張り付く必要はありません。あなたのライフスタイルに合わせて無理なく続けられます。</p>
-             </div>
-            <div class="faq-item">
-                 <p class="question">本当に稼げるようになるの？</p>
-                 <p class="answer">FXに「絶対」はありませんが、当手法の再現性は海外プロも認めています。多くのメンバーが成果を出されていますが、利益を保証するものではなく、ご自身の学習と実践が結果に繋がります。</p>
-             </div>
-            <div class="faq-item">
-                 <p class="question">どのコースを選べば良い？</p>
-                 <p class="answer">まずは体験してみたい方は「ライト」、本格的にスキルを習得したい方は「スタンダード（一番人気）」、最短で結果を出し徹底サポートを受けたい方は「プライオリティ」がおすすめです。</p>
-             </div>
-             <div class="faq-item">
-                  <p class="question">必要な資金は？</p>
-                  <p class="answer">FXは少額から始められますが、適切なリスク管理が重要です。推奨資金額や資金管理法はコミュニティ内で詳しく解説します。無理のない範囲で始めましょう。</p>
-              </div>
-        </section>
+            <p>トレード歴10年超のプロ、マイティ―が膨大な時間と試行錯誤の末に辿り着いた、勝つための「本質」。複雑な分析や高度な知識・スキルは一切必要ありません。優位性の認められた<strong>数少ない「高確率な鉄板パターン」</strong>に集中するから、迷わず、再現できます。</p>
+        </div>
+        
+        <div style="margin-bottom: 30px; background: #f8f9fa; border-radius: 8px; padding: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                <div style="background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; font-size: 1.2rem;">🏆</div>
+                <h3 style="margin: 0;">厳しい基準に合格した高再現性トレード</h3>
+            </div>
+            <p>合格率10％以下の厳しいプロ試験で実際に使用し、見事基準を突破した本物のトレード手法です。机上の空論ではない、リアルな市場で通用する<strong>「再現性」</strong>が証明されています。</p>
+        </div>
+        
+        <div style="margin-bottom: 30px; background: #f8f9fa; border-radius: 8px; padding: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                <div style="background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; font-size: 1.2rem;">⏱️</div>
+                <h3 style="margin: 0;">生活と両立できるトレードスタイル</h3>
+            </div>
+            <p>推奨するのは<strong>「デイ～スイングトレード」</strong>。1日中PCに張り付く必要はありません。仕事のスキマ時間でのチェックや、1日数回のチャンスを狙うスタイル。仕事や趣味、家族との時間を大切にしながら、着実に資産形成を目指せます。</p>
+        </div>
+        
+        <div style="margin-bottom: 30px; background: #f8f9fa; border-radius: 8px; padding: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                <div style="background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; font-size: 1.2rem;">🤝</div>
+                <h3 style="margin: 0;">充実したサポート体制</h3>
+            </div>
+            <p>毎日のチャート考察、リアルタイム分析（スタンダード以上）で、<strong>プロの「目線」</strong>を学習できます。また、スタンダードコース以上はメンバー限定コミュニティで、疑問を解消し、仲間とともに成長できる環境をご用意しました。またVIPコースでは、<strong>講師による個別指導</strong>で最短ルートへでの成長を目指します。</p>
+        </div>
 
-        <!-- 8. Final CTA -->
-        <section class="final-cta section-bg-dark">
-            <h2>最後の決断 ～ 未来への投資 ～</h2>
-            <p class="strong-message">
-                将来への不安を、指をくわえて見ているだけですか？<br>
-                それとも、<strong class="highlight-gold">自らの手で未来を切り開く「決断」</strong>をしますか？<br><br>
-                Alpha Pipsは、あなたの<strong class="highlight">人生を変えるきっかけ</strong>になるかもしれません。<br>
-                必要なのは、複雑な知識ではなく、<br><strong class="highlight">「本質」を学び、実践する勇気</strong>だけです。
-            </p>
-            <h3>さあ、今すぐ「稼げる自信」を手に入れる<br class="sp-br">第一歩を踏み出しましょう。</h3>
-            <div class="cta-buttons-container">
-                <a href="#payment-light" class="btn btn-secondary">
-                    ＞ ライトコースに申し込む
-                    <span class="price-info">2,980円/月 (税込)</span>
-                </a>
-                <a href="#payment-standard" class="btn btn-primary standard-btn">
-                    ＞ スタンダードコースに申し込む<br>(一番人気！)
-                    <span class="price-info">9,800円/月 (税込)</span>
-                </a>
-                <a href="#payment-priority" class="btn btn-gold">
-                    ＞ プライオリティコースに申し込む
-                    <span class="price-info">個別コンサル付</span>
-                 </a>
-             </div>
-             <p class="note">※各ボタンクリックでお申し込み（決済）フォームへ移動します。不安な点はFAQをご確認ください。</p>
-        </section>
+        <!-- Member Testimonials -->
+        <!-- メンバーの声タイトル-->
+        <h2>メンバーの声</h2>
+        
+        <!-- 特別キャンペーンの告知を追加 -->
+        <div style="background: linear-gradient(135deg, #0056b3, #007bff); color: white; padding: 15px 25px; border-radius: 8px; text-align: center; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);">
+            <h3 style="color: white; margin: 0 0 10px 0;">＼ 期間限定キャンペーン実施中 ／</h3>
+            <p style="margin: 0; font-size: 1.1rem;">今だけスタンダードコース<strong>14日間無料体験</strong>！<br>
+            <span style="font-size: 0.9rem; opacity: 0.9;">※ 予告なく終了する場合があります。お早めにお申し込みください。</span></p>
+        </div>
+        
+        <div class="testimonial">
+            <p>「正直、何年もFXで負け続けて諦めかけていました。何をやっても勝てない…。でもAlpha Pipsの『鉄板パターン』だけに絞ったら、あれほど複雑に考えていたことが嘘のように、シンプルに見えるようになったんです。入会から3ヶ月目で月利8%達成できました。昨日も、エントリーポイントが来るのを待って、1トレードで3万円の利益。こんな日常が当たり前になるなんて、本当に想像できませんでした。」</p>
+            <p class="testimonial-author">T.S. (52歳・会社員)</p>
+        </div>
+        
+        <div class="testimonial">
+            <p>「退職して年金生活が始まり、毎月の収支を見るたびに不安でした。最初は『自分の年齢でFXなんて無理だろう』と思っていましたが、マイティ―さんの考察を毎日見ているうちに、相場の見方がわかってきました。先月は15万円のプラス。孫へのお小遣いも気兼ねなく渡せるようになりました。老後の不安が希望に変わりつつあります。」</p>
+            <p class="testimonial-author">K.M. (65歳・元教員)</p>
+        </div>
+        
+        <div class="testimonial">
+            <p>「システムエンジニアとして毎日残業続きで、正直トレードする時間なんてないと思っていました。でも夜10時の相場チェックと朝の準備だけで十分トレードできています。4カ月目くらいからこんな自分でも毎月5〜8万円のペースで利益が出せるように。『自分の給料以外の収入源』ができた安心感は何にも代えがたいです。正直、娘の学費のことで悩んでいましたが、今は気持ちに余裕が生まれました。」</p>
+            <p class="testimonial-author">Y.N. (43歳・エンジニア)</p>
+        </div>
 
-        <!-- P.S. Section -->
-        <section class="ps-section">
-             <p>
-                P.S. 迷っている間にも、時間は過ぎていきます。<br>海外認定プロトレーダーが、あなたの挑戦を直接サポートします。<br>コミュニティで、あなたとお会いできるのを楽しみにしています！
-            </p>
-        </section>
+        <!-- FAQ -->
+        <h2>よくあるご質問</h2>
+        
+        <div class="faq-item">
+            <p class="question">全くの初心者でも大丈夫ですか？</p>
+            <p class="answer">はい、大丈夫です。Alpha Pipsの手法は極めてシンプルです。複雑な分析やPC操作は不要ですので、ご安心ください。</p>
+        </div>
+        
+        <div class="faq-item">
+            <p class="question">忙しいけど続けられますか？</p>
+            <p class="answer">推奨するのはデイ～スイングトレードなので、１日中チャートに張り付く必要はありません。仕事や家事の合間にチェックするだけでも十分に実践可能です。あなたのライフスタイルに合わせて無理なく続けられます。</p>
+        </div>
+        
+        <div class="faq-item">
+            <p class="question">本当に稼げるようになりますか？</p>
+            <p class="answer">FXに「絶対」はありませんが、当手法の再現性は厳しいプロ試験にも合格するものです。多くのメンバーが成果を出されていますが、利益を保証するものではなく、ご自身の学習と実践が結果に繋がります。コツコツと地道に実践することが重要です。</p>
+        </div>
+        
+        <div class="faq-item">
+            <p class="question">どのコースを選べば良いですか？</p>
+            <p class="answer">まずは体験してみたい方は「ライト」、本格的にスキルを習得したい方は「スタンダード」、最短で結果を出し徹底サポートを受けたい方は「VIP」がおすすめです。迷われた場合は、現在14日間無料体験ができ、満足度＆コストパフォーマンスの高いスタンダードコースがおすすめです。</p>
+        </div>
+        
+        <div class="faq-item">
+            <p class="question">必要な資金はいくらですか？</p>
+            <p class="answer">FXは少額から始められますが、適切なリスク管理が重要です。推奨資金額や資金管理法はコミュニティ内で詳しく解説します。まずは小さく始めて、スキルと共に徐々に資金を増やしていくことをお勧めします。</p>
+        </div>
+        
+        <div class="faq-item">
+            <p class="question">途中で解約することはできますか？</p>
+            <p class="answer">はい、可能です。全コース月額制のサブスクリプションのため、いつでも解約可能です。</p>
+        </div>
 
-    </div><!-- /.container -->
-
-    <!-- Footer -->
-    <footer>
-        <ul>
-            <li><a href="#link-to-tokushoho">特定商取引法に基づく表記</a></li>
-            <li><a href="#link-to-privacy">プライバシーポリシー</a></li>
-            <li><a href="#link-to-contact">お問い合わせ</a></li>
-        </ul>
-        <p class="copyright">© 2024 Alpha Pips. All Rights Reserved.</p>
-    </footer>
-
+        <!-- Final CTA -->
+        <h2>再現性あるトレードで安心を</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 30px; line-height: 1.8; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto;">
+            忙しい40代、現役世代の50代、そして年金だけでは不安な60代の皆様へ。<br>
+            将来への不安は、誰もが感じるものです。給料は上がらず、年金は減り続ける時代だからこそ、<br>
+            「自分の力で稼ぐスキル」が必要です。<br><br>
+            Alpha Pipsコミュニティでは、あなたと同じ悩みを持つ方々が、<br>
+            シンプルで再現性の高いトレード手法を学び、<br>
+            少しずつでも確実に、経済的な安心を積み上げています。<br><br>
+            一人で悩むより、共に歩む仲間と一緒なら、必ず前に進めます。<br>
+            第二の人生を、より豊かなものにするための一歩を、今踏み出しませんか？
+        </p>
+        
+        <a href="#payment-standard" class="btn btn-block" style="background: linear-gradient(135deg, #0056b3, #007bff); color: white; font-weight: bold;">スタンダードコースに申し込む<span style="display: block; font-size: 0.8em; margin-top: 5px;">※期間限定：14日間無料キャンペーン実施中！</span></a>
+    </div>
 </body>
 </html>
