@@ -200,14 +200,14 @@
             margin: 20px 0 10px 0; /* ボタンとの間隔調整 */
             color: #e63946; /* 基本価格の色 */
         }
-        .price .original-price { /* VIPの通常価格 */
+        .price .original-price { /* VIPの通常価格 (削除予定だが念のため残す) */
             text-decoration: line-through;
             color: #999;
             font-size: 0.9rem;
             font-weight: normal;
             margin-right: 5px;
         }
-        .price .discount-badge { /* 割引バッジ */
+        .price .discount-badge { /* 割引バッジ (削除予定だが念のため残す) */
             background: var(--accent);
             color: #333;
             font-size: 0.8rem;
@@ -217,7 +217,7 @@
             font-weight: bold;
             vertical-align: middle;
         }
-        .price .discount-price { /* VIPの割引後価格 */
+        .price .discount-price { /* VIPの割引後価格 (削除予定だが念のため残す) */
              font-weight: bold;
              color: #333; /* 黒色など目立たせる */
         }
@@ -637,17 +637,15 @@
             <div class="course-card priority">
                 <h3 class="highlight-accent">VIPコース</h3>
                 <p class="target-audience">最短で結果を出したい方、徹底的なサポートを求める方へ</p>
-                <p class="value-prop">講師による徹底指導で、成功への<strong class="highlight-accent">「最短ルート」</strong>を掴む。<span class="campaign-note">※ 今なら入会金半額キャンペーン実施中！</span></p>
+                <p class="value-prop">講師による徹底指導で、成功への<strong class="highlight-accent">「最短ルート」</strong>を掴む。</p> {/* キャンペーン注釈を削除 */}
                 <ul class="features-list">
                     <li>スタンダードコース全内容</li>
                     <li><strong class="highlight-accent">エントリ―精度UPのオリジナルインジケーター3種</strong></li>
                     <li><strong class="highlight-accent">Discord上での講師による個別指導</strong></li>
                 </ul>
                  <p class="price">
-                    <span style="display: block; margin-bottom: 5px; font-size: 1.1rem;">
-                        入会金：<span class="original-price">15万円</span>
-                        <span class="discount-price">7.5万円</span>
-                        <span class="discount-badge">50%OFF</span>
+                    <span style="display: block; margin-bottom: 5px; font-size: 1.1rem; color: var(--text);"> {/* 価格の色を通常テキスト色に */}
+                        入会金：30万円 {/* 価格変更、割引表示削除 */}
                     </span>
                     <span>29,800円<span class="price-note">/ 月 (税込)</span></span>
                 </p>
@@ -678,7 +676,7 @@
                     </tr>
                     <tr>
                         <td>定期チャート考察</td>
-                        <td>閲覧のみ</td>
+                        <td>✓</td> {/* 変更: 閲覧のみ -> ✓ */}
                         <td>✓</td>
                         <td>✓</td>
                     </tr>
@@ -696,7 +694,7 @@
                     </tr>
                     <tr>
                         <td>メンバー同士の交流</td>
-                        <td>閲覧のみ</td>
+                        <td>-</td> {/* 変更: 閲覧のみ -> - (なし) */}
                         <td>✓</td>
                         <td>✓</td>
                     </tr>
@@ -775,6 +773,14 @@
         <div class="testimonial">
             <p>「システムエンジニアとして毎日残業続きで、正直トレードする時間なんてないと思っていました。でも夜10時の相場チェックと朝の準備だけで十分トレードできています。4カ月目くらいからこんな自分でも毎月5〜8万円のペースで利益が出せるように。『自分の給料以外の収入源』ができた安心感は何にも代えがたいです。正直、娘の学費のことで悩んでいましたが、今は気持ちに余裕が生まれました。」</p>
             <p class="testimonial-author">- Y.N. 様 (43歳・エンジニア)</p>
+        </div>
+
+        <!-- スタンダードコース申込ボタンをメンバーの声の最後に配置 -->
+        <div style="text-align: center; margin: 40px 0 20px 0;"> {/* 上下マージン調整 */}
+            <a href="#payment-standard" class="btn cta-button" style="background: linear-gradient(135deg, #0056b3, #007bff); color: white; font-weight: bold; padding: 15px 24px; font-size: 1.1rem; text-decoration: none;">
+                スタンダードコースに申し込む
+                <span class="subtext" style="display: block; font-size: 0.8em; margin-top: 5px; font-weight: normal;">※期間限定：14日間無料体験キャンペーン実施中！</span>
+            </a>
         </div>
 
         <!-- FAQ -->
