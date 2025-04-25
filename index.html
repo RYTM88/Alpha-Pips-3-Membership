@@ -466,6 +466,9 @@
             margin: 20px 0;
             border-radius: 4px;
         }
+        .testimonial p:last-of-type { /* 最後のpタグ（著者名）のマージン調整 */
+             margin-bottom: 0;
+        }
 
         .testimonial-author {
             font-weight: bold;
@@ -506,9 +509,12 @@
              line-height: 1.4;
          }
         .feature-block .text-content p {
-            margin: 0;
+            margin: 0 0 1em 0; /* pタグの下に少しマージンを追加 */
             line-height: 1.7;
             color: #444;
+        }
+        .feature-block .text-content p:last-child { /* 各ブロックの最後のpタグのマージンは削除 */
+             margin-bottom: 0;
         }
         .feature-block .text-content p .highlight {
             color: var(--primary);
@@ -516,7 +522,8 @@
         }
 
 
-        /* Campaign Banner */
+        /* Campaign Banner (削除されたが念のため残す) */
+        /*
         .campaign-banner {
             background: linear-gradient(135deg, #0056b3, #007bff);
             color: white;
@@ -541,6 +548,7 @@
              display: block;
              margin-top: 5px;
         }
+        */
 
         /* Final CTA */
         .final-cta p {
@@ -640,8 +648,8 @@
 
             .btn { padding: 10px 20px; }
             .feature-block .text-content h3 { font-size: 1.2rem; }
-            .campaign-banner h3 { font-size: 1.2rem; }
-            .campaign-banner p { font-size: 1rem; }
+            /* .campaign-banner h3 { font-size: 1.2rem; } */ /*削除された要素*/
+            /* .campaign-banner p { font-size: 1rem; } */ /*削除された要素*/
             .final-cta p { font-size: 1rem; }
             .final-cta .cta-button { font-size: 1rem; padding: 12px 20px; }
          }
@@ -824,36 +832,24 @@
         </div>
 
         <!-- メンバーの声タイトル-->
-        <h2>メンバーの声</h2>
+        <h2>「1人じゃ無理だった」を乗り越えた方々の声</h2> {/* タイトル変更 */}
 
-        <!-- 特別キャンペーンの告知を追加 -->
-        <div class="campaign-banner">
-            <h3>＼ 期間限定キャンペーン実施中 ／</h3>
-            <p>今だけスタンダードコース<strong>14日間無料体験</strong>！
-            <span class="note">※ 予告なく終了する場合があります。お早めにお申し込みください。</span></p>
-        </div>
+        {/* キャンペーンバナー削除 */}
+        {/* スタンダードコース申込ボタン削除 */}
 
         <div class="testimonial">
-            <p>「正直、何年もFXで負け続けて諦めかけていました。何をやっても勝てない…。でもスクールで学べる『鉄板パターン』だけに絞ったら、あれほど複雑に考えていたことが嘘のように、シンプルに見えるようになったんです。入会から3ヶ月目で月利8%達成できました。昨日も、エントリーポイントが来るのを待って、1トレードで3万円の利益。こんな日常が当たり前になるなんて、本当に想像できませんでした。」</p>
+            <p>「長年、独学でFXをやってきましたが、勝ったり負けたりで全く資産が増えず…。正直、もう自分には無理だと諦めかけていました。でも、このコミュニティに入って『環境』の大切さを痛感しました。マイティ―さんの考察は勿論、コミュニティ内で質問できる安心感が大きいです。先日、メンバーさんの投稿を見て『あ、ここだ！』とエントリーし、1トレードで4万円の利益が出ました。1人で悶々としていた頃が嘘のようです。」</p> {/* テキスト変更 */}
             <p class="testimonial-author">- T.S. 様 (52歳・会社員)</p>
         </div>
 
         <div class="testimonial">
-            <p>「退職して年金生活が始まり、毎月の収支を見るたびに不安でした。最初は『自分の年齢でFXなんて無理だろう』と思っていましたが、マイティ―さんの考察を毎日見ているうちに、相場の見方がわかってきました。先月は15万円のプラス。孫へのお小遣いも気兼ねなく渡せるようになりました。老後の不安が希望に変わりつつあります。」</p>
+            <p>「定年後の生活に不安を感じ、FXを始めましたが、ネットの情報だけではさっぱり…。『年のせいかな』と自信をなくしていました。Alpha Pipsさんの手法は本当にシンプルで、私のようなPC初心者でも理解できました。スタンダードコースのコミュニティでは、同じような年代の方もいて心強いです。先月は月18万円ほどの利益ですが、『自分でもできるんだ』という実感が何より嬉しいです。」</p> {/* テキスト変更 */}
             <p class="testimonial-author">- K.M. 様 (67歳・元教員)</p>
         </div>
 
         <div class="testimonial">
             <p>「システムエンジニアとして毎日残業続きで、正直トレードする時間なんてないと思っていました。でも夜10時の相場チェックと朝の準備だけで十分トレードできています。4カ月目くらいからこんな自分でも毎月5〜8万円のペースで利益が出せるように。『自分の給料以外の収入源』ができた安心感は何にも代えがたいです。正直、娘の学費のことで悩んでいましたが、今は気持ちに余裕が生まれました。」</p>
             <p class="testimonial-author">- Y.N. 様 (43歳・エンジニア)</p>
-        </div>
-
-        <!-- スタンダードコース申込ボタンをメンバーの声の最後に配置 -->
-        <div style="text-align: center; margin: 40px 0 20px 0;">
-            <a href="#payment-standard" class="btn cta-button" style="background: linear-gradient(135deg, #0056b3, #007bff); color: white; font-weight: bold; padding: 15px 24px; font-size: 1.1rem; text-decoration: none;">
-                スタンダードコースに申し込む
-                <span class="subtext" style="display: block; font-size: 0.8em; margin-top: 5px; font-weight: normal;">※期間限定：14日間無料体験キャンペーン実施中！</span>
-            </a>
         </div>
 
         <!-- FAQ -->
