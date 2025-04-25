@@ -67,6 +67,10 @@
             padding-bottom: 0.5em;
             border-bottom: 1px solid var(--border);
         }
+         /* Final CTAのH2サイズ調整 */
+         .final-cta h2 {
+             font-size: 1.8rem;
+         }
 
         h3 {
             font-size: 1.3rem; /* Feature blockの見出しサイズ調整 */
@@ -571,6 +575,7 @@
             }
             h1 { font-size: 1.8rem; }
             h2 { font-size: 1.5rem; }
+            .final-cta h2 { font-size: 1.6rem; } /* スマホでのCTA見出し調整 */
             .academy-badge { font-size: 1.1rem; padding: 6px 20px;}
             .intro-text { font-size: 1rem; }
             .features-box { padding: 20px; }
@@ -611,6 +616,7 @@
             body { font-size: 15px; }
             h1 { font-size: 1.5rem; }
             h2 { font-size: 1.4rem; }
+            .final-cta h2 { font-size: 1.5rem; } /* スマホ(小)でのCTA見出し調整 */
             .academy-badge { font-size: 1rem; padding: 5px 18px;}
             .intro-text { font-size: 0.95rem; }
             .features-box { padding: 15px; }
@@ -621,6 +627,7 @@
             .feature-block .text-content h3 { font-size: 1.2rem; }
             .final-cta p { font-size: 1rem; }
             .final-cta .cta-button { font-size: 1rem; padding: 12px 20px; }
+            .final-cta .cta-button .subtext { font-size: 0.75em; } /* ボタン内サブテキスト調整 */
          }
     </style>
 </head>
@@ -628,7 +635,7 @@
     <div class="container">
         <header style="text-align: center; margin-bottom: 40px;">
             <h1>「もう1人で悩まない」<br>40代からの資産形成トレード</h1>
-            <div class="academy-badge">Alpha Pips トレードアカデミー</div>
+            <div class="academy-badge">Alpha Pips トレードコミュニティ</div> {/* テキスト変更 */}
             <p class="intro-text">
                 「また同じ失敗…」「結局、才能がないのか？」<br>
                 そんな<strong>“稼げないループ”</strong>から抜け出し、<strong>“勝てる自分”</strong>に生まれ変わりませんか？
@@ -659,7 +666,7 @@
                 </ul>
                 <p class="price">2,980円<span class="price-note">/ 月 (税込)</span></p>
                 <div class="button-wrapper">
-                    <a href="#payment-light" class="btn btn-secondary btn-block">ライトコース申込</a>
+                    <a href="#payment-light" class="btn btn-secondary btn-block">ライトコースから始めてみる</a> {/* テキスト変更 */}
                 </div>
             </div>
 
@@ -680,7 +687,7 @@
                     9,800円<span class="price-note">/ 月 (税込)</span>
                 </p>
                 <div class="button-wrapper">
-                    <a href="#payment-standard" class="btn btn-block" style="background: linear-gradient(135deg, #0056b3, #007bff);">スタンダードコース申込<span style="display: block; font-size: 0.8em; margin-top: 5px; font-weight: normal;">※今なら14日間無料体験！</span></a>
+                    <a href="#payment-standard" class="btn btn-block" style="background: linear-gradient(135deg, #0056b3, #007bff);">14日間無料で本格体験してみる<span style="display: block; font-size: 0.8em; margin-top: 5px; font-weight: normal;">※今なら14日間無料体験！</span></a> {/* テキスト変更 */}
                 </div>
             </div>
 
@@ -701,7 +708,7 @@
                     <span>29,800円<span class="price-note">/ 月 (税込)</span></span>
                 </p>
                 <div class="button-wrapper">
-                    <a href="#payment-priority" class="btn btn-accent btn-block">VIPコース申込</a>
+                    <a href="#payment-priority" class="btn btn-accent btn-block">VIPコースで最短上達を目指す</a> {/* テキスト変更 */}
                 </div>
             </div>
         </div>
@@ -810,7 +817,7 @@
 
         <div class="testimonial">
             <p>「定年後の生活に不安を感じ、FXを始めましたが、ネットの情報だけではさっぱり…。『年のせいかな』と自信をなくしていました。Alpha Pipsさんの手法は本当にシンプルで、私のようなPC初心者でも理解できました。スタンダードコースのコミュニティでは、同じような年代の方もいて心強いです。先月は月18万円ほどの利益ですが、『自分でもできるんだ』という実感が何より嬉しいです。」</p>
-            <p class="testimonial-author">- K.M. 様 (67歳・元教員)</p>
+            <p class="testimonial-author">- S.T. 様 (65歳・元会社員)</p> {/* 著者情報変更 */}
         </div>
 
         <div class="testimonial">
@@ -853,19 +860,19 @@
 
         <!-- Final CTA -->
         <div class="final-cta">
-            <h2>再現性あるトレードで安心を</h2>
+            <h2>「努力が報われない」<br>そんな毎日を終わりにしませんか？</h2> {/* 見出し変更 */}
             <p>
                 仕事に家庭に忙しい40代、会社での責任が重くなる50代、そして年金だけではこの先不安な60代の皆様へ。<br>
                 将来への不安は、誰もが感じるものです。給料は上がらず、税負担だけが上がり続ける時代だからこそ、<br>
                 「自分の力で稼ぐスキル」が必要です。<br><br>
-                Alpha Pips トレードスクールでは、あなたと同じ悩みを持つ方々が、<br>
+                Alpha Pips トレードコミュニティでは、あなたと同じ悩みを持つ方々が、<br> {/* スクール名をコミュニティに変更 */}
                 シンプルで再現性の高いトレード手法を学び、<br>
                 少しずつ確実に、経済的な安心を積み上げています。<br><br>
                 １人で悩むより、共に歩む仲間と一緒なら、必ず前に進めます。<br>
                 第２の人生を、より豊かなものにするための１歩を、今踏み出しませんか？
             </p>
 
-            <a href="#payment-standard" class="btn btn-block cta-button">スタンダードコースに申し込む<span class="subtext">※期間限定：14日間無料体験キャンペーン実施中！</span></a>
+            <a href="#payment-standard" class="btn btn-block cta-button">14日間無料で本格体験してみる<span class="subtext">※期間限定：14日間無料体験キャンペーン実施中！</span></a> {/* ボタンテキスト変更 */}
         </div>
     </div>
 
