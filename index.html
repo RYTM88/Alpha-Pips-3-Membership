@@ -159,7 +159,7 @@
             list-style-type: none;
             padding-left: 0;
             margin: 0 auto; /* 中央寄せ */
-            display: inline-block; /* 幅を内容に合わせる */
+            display: table; /* 中央寄せのためのtable display */
             text-align: left; /* リストアイテムは左揃え */
         }
         .features-list-header li {
@@ -176,7 +176,7 @@
             color: #28a745;
             font-weight: bold;
         }
-         .features-list-header li .highlight { /* 強調テキスト */
+         .features-list-header li .highlight { /* 強調テキスト（青色） */
              color: var(--primary);
              font-weight: bold;
          }
@@ -558,7 +558,7 @@
         }
 
         /* Helper classes */
-        .highlight {
+        .highlight { /* グローバルなハイライトクラス */
             color: var(--primary);
             font-weight: bold;
         }
@@ -587,7 +587,8 @@
             .intro-text { font-size: 1rem; }
             .features-box { padding: 20px; }
             .features-box-title { font-size: 1rem; }
-            .features-list-header li { font-size: 0.95rem; }
+            .features-list-header { display: block; text-align: center;} /* スマホでは中央寄せ解除 */
+            .features-list-header li { font-size: 0.95rem; display: inline-block; text-align: left; } /* インラインブロックで左寄せ */
 
             .courses {
                 grid-template-columns: 1fr; /* スマホでは1カラムに */
@@ -647,10 +648,10 @@
             <div class="features-box">
                 <p class="features-box-title">Alpha Pipsが選ばれる理由：</p>
                 <ul class="features-list-header">
-                    <li>講師と仲間がいる環境だから、成長できる</li>
-                    <li>シンプル手法だから、何歳からでも再現可能</li>
-                    <li>再現性の高い鉄板パターンをマスターできる</li>
-                    <li>自分のペースでOK。<span class="highlight">焦らないトレードスタイル</span></li>
+                    <li><span class="highlight">講師と仲間がいる環境</span>だから、成長できる</li>
+                    <li><span class="highlight">シンプル手法</span>だから、<span class="highlight">未経験でも</span>再現可能</li>
+                    <li><span class="highlight">再現性の高い鉄板パターン</span>をマスターできる</li>
+                    <li>自分のペースでOK。<span class="highlight">時間にとらわれない</span>トレードスタイル</li>
                 </ul>
             </div>
             <p style="text-align: center;">あなたのレベルと目標に合わせた、3つのコースをご用意しています。</p>
