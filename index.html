@@ -15,6 +15,8 @@
             --light-text: #666;
             --border: #e0e0e0;
             --error: #e63946;
+            --light-pink: #e83e8c; /* ライトコース用のピンク色 */
+            --dark-gray: #6c757d; /* 濃いグレー */
         }
 
         * {
@@ -56,7 +58,7 @@
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 2.3rem; /* サイズを大きく */
             text-align: center;
             margin-bottom: 1em; /* h1下のマージン調整 */
         }
@@ -67,9 +69,10 @@
             padding-bottom: 0.5em;
             border-bottom: 1px solid var(--border);
         }
-         /* Final CTAのH2サイズ調整 */
+         /* Final CTAのH2サイズと配置調整 */
          .final-cta h2 {
              font-size: 1.8rem;
+             text-align: center; /* 中央揃え */
          }
 
         h3 {
@@ -213,7 +216,7 @@
         }
 
         .course-card.light {
-            border-top: 5px solid #6c757d;
+            border-top: 5px solid var(--light-pink); /* ピンクに変更 */
         }
         .course-card.standard {
             border-top: 5px solid var(--primary);
@@ -261,7 +264,18 @@
             margin-bottom: 15px;
             min-height: 40px;
             line-height: 1.4;
+            color: var(--primary);
         }
+        .course-card.light h3 {
+            color: var(--light-pink);
+        }
+        .course-card.standard h3 {
+             color: var(--primary);
+        }
+         .course-card.priority h3 {
+            color: #c69500;
+         }
+
 
         .price {
             font-size: 1.4rem;
@@ -392,20 +406,36 @@
             white-space: nowrap;
         }
 
-        .comparison-table th {
-            background: var(--primary);
-            color: white;
+        /* Table Header Styles */
+        .comparison-table thead th {
+            color: white; /* 基本の文字色 */
             position: sticky;
             top: 0;
             z-index: 2;
         }
+        .comparison-table thead th:first-child { /* 機能/サービス列 */
+            background: var(--dark-gray); /* 濃いグレー */
+            text-align: left;
+            font-weight: 500;
+            z-index: 3; /* 他のヘッダーより手前 */
+        }
+        .comparison-table thead th:nth-child(2) { /* ライト列 */
+            background: var(--light-pink);
+        }
+        .comparison-table thead th:nth-child(3) { /* スタンダード列 */
+            background: var(--primary);
+        }
+        .comparison-table thead th:nth-child(4) { /* VIP列 */
+            background: var(--accent);
+            color: var(--text); /* VIPのみ文字色を黒に */
+        }
 
-        .comparison-table tr:nth-child(even) {
+        .comparison-table tbody tr:nth-child(even) {
             background: #f9f9f9;
         }
 
-        .comparison-table td:first-child,
-        .comparison-table th:first-child {
+        /* First column (body) styles */
+        .comparison-table tbody td:first-child {
             text-align: left;
             font-weight: 500;
             background: #fdfdfd;
@@ -413,15 +443,6 @@
             left: 0;
             z-index: 1;
         }
-        .comparison-table th:first-child {
-             background: var(--primary);
-             color: white;
-             z-index: 3;
-        }
-        .comparison-table th:first-child {
-            top: 0;
-        }
-
 
         /* FAQ */
         .faq-item {
@@ -578,7 +599,7 @@
             .container {
                 padding: 30px 15px;
             }
-            h1 { font-size: 1.8rem; }
+            h1 { font-size: 2rem; } /* タブレットでのh1サイズ調整 */
             h2 { font-size: 1.5rem; }
             .final-cta h2 { font-size: 1.6rem; }
             .course-card h3 { font-size: 1.4rem; }
@@ -599,14 +620,21 @@
 
             .comparison-table { min-width: auto; }
             .comparison-table th, .comparison-table td { white-space: normal; }
-            .comparison-table td:first-child,
-            .comparison-table th:first-child {
+            .comparison-table thead th, /* ヘッダー固定解除 */
+            .comparison-table tbody td:first-child, /* 列固定解除 */
+            .comparison-table thead th:first-child {
                 position: static;
-                background: inherit;
+                background: inherit; /* 背景色リセット（必要なら個別指定） */
             }
-            .comparison-table th {
-                position: static;
-            }
+            /* スマホでのヘッダー背景色再指定 */
+             .comparison-table thead th:first-child { background: var(--dark-gray); color: white; text-align: left;}
+             .comparison-table thead th:nth-child(2) { background: var(--light-pink); color: white; }
+             .comparison-table thead th:nth-child(3) { background: var(--primary); color: white; }
+             .comparison-table thead th:nth-child(4) { background: var(--accent); color: var(--text); }
+
+             .comparison-table tbody td:first-child { text-align: left; font-weight: 500; background: #fdfdfd; } /* ボディの1列目スタイル */
+
+
              .feature-block {
                  flex-direction: column;
                  align-items: center;
@@ -623,7 +651,7 @@
         }
          @media (max-width: 480px) {
             body { font-size: 15px; }
-            h1 { font-size: 1.5rem; }
+            h1 { font-size: 1.8rem; } /* スマホ(小)でのh1サイズ調整 */
             h2 { font-size: 1.4rem; }
             .final-cta h2 { font-size: 1.5rem; }
             .course-card h3 { font-size: 1.3rem; }
@@ -641,6 +669,7 @@
             .question::before { font-size: 1.1em; } /* スマホ(小)でのQサイズ */
             .answer { padding-left: 2.5em; } /* スマホ(小)でのAのインデント調整 */
             .answer::before { margin-left: -2.5em; } /* スマホ(小)でのAのインデント調整 */
+            .comparison-table thead th, .comparison-table tbody td { padding: 10px 8px; } /* スマホでのテーブルパディング調整 */
          }
     </style>
 </head>
