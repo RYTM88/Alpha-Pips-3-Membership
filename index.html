@@ -58,7 +58,7 @@
         h1 {
             font-size: 2rem;
             text-align: center;
-            margin-bottom: 1.5em;
+            margin-bottom: 1em; /* h1下のマージン調整 */
         }
 
         h2 {
@@ -117,6 +117,70 @@
             display: block;
             width: 100%;
         }
+
+        /* Header Specific Styles */
+        .academy-badge { /* Alpha Pips トレードアカデミーバッジ */
+            display: inline-block;
+            font-size: 1.2rem; /* 少し小さく調整 */
+            font-weight: bold;
+            color: var(--primary);
+            padding: 8px 25px; /* パディング調整 */
+            border: 2px solid var(--primary);
+            border-radius: 30px;
+            background: #fff; /* 背景を白に */
+            margin: 15px 0 25px; /* 上下マージン調整 */
+        }
+        .intro-text { /* 導入文スタイル */
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            text-align: center;
+            color: #555; /* 少し薄い色 */
+        }
+        .intro-text strong { /* 強調部分 */
+            color: #e63946; /* 赤系で強調 */
+            font-weight: bold;
+        }
+        .features-box { /* 特徴リストのボックス */
+            background: #f5f9ff;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 0 auto 30px;
+            max-width: 600px;
+            text-align: left; /* ボックス内は左揃え */
+        }
+        .features-box-title { /* 特徴リストのタイトル */
+             font-weight: bold;
+             margin-bottom: 15px;
+             text-align: center;
+             color: var(--primary);
+             font-size: 1.1rem;
+        }
+        .features-list-header { /* 特徴リストの箇条書き */
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0 auto; /* 中央寄せ */
+            display: inline-block; /* 幅を内容に合わせる */
+            text-align: left; /* リストアイテムは左揃え */
+        }
+        .features-list-header li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1rem; /* フォントサイズ調整 */
+        }
+        .features-list-header li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: #28a745;
+            font-weight: bold;
+        }
+         .features-list-header li .highlight { /* 強調テキスト */
+             color: var(--primary);
+             font-weight: bold;
+         }
+
 
         /* Course cards */
         .courses {
@@ -200,14 +264,14 @@
             margin: 20px 0 10px 0; /* ボタンとの間隔調整 */
             color: #e63946; /* 基本価格の色 */
         }
-        .price .original-price { /* VIPの通常価格 (削除予定だが念のため残す) */
+        .price .original-price {
             text-decoration: line-through;
             color: #999;
             font-size: 0.9rem;
             font-weight: normal;
             margin-right: 5px;
         }
-        .price .discount-badge { /* 割引バッジ (削除予定だが念のため残す) */
+        .price .discount-badge {
             background: var(--accent);
             color: #333;
             font-size: 0.8rem;
@@ -217,11 +281,11 @@
             font-weight: bold;
             vertical-align: middle;
         }
-        .price .discount-price { /* VIPの割引後価格 (削除予定だが念のため残す) */
+        .price .discount-price {
              font-weight: bold;
-             color: #333; /* 黒色など目立たせる */
+             color: #333;
         }
-        .price .free-trial-info { /* 14日間無料情報 */
+        .price .free-trial-info {
             background: #e63946;
             color: white;
             font-size: 0.8rem;
@@ -301,34 +365,34 @@
 
         /* Table comparison container */
         .table-container {
-            display: flex;          /* Flexbox を使用 */
-            justify-content: center;/* テーブルを中央に配置 */
-            margin: 30px 0;         /* 上下のマージン */
-            overflow-x: auto;       /* テーブルがはみ出す場合に横スクロール */
-            width: 100%;            /* コンテナは親要素の幅に合わせる */
-            -webkit-overflow-scrolling: touch; /* スマホでの慣性スクロール */
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            overflow-x: auto;
+            width: 100%;
+            -webkit-overflow-scrolling: touch;
         }
 
         /* Table comparison */
         .comparison-table {
             border-collapse: collapse;
-            min-width: 600px; /* テーブルの最小幅を設定 */
-            flex-shrink: 0; /* flexアイテムとして縮まないように */
+            min-width: 600px;
+            flex-shrink: 0;
         }
 
         .comparison-table th, .comparison-table td {
-            padding: 12px 15px; /* パディング少し調整 */
+            padding: 12px 15px;
             text-align: center;
             border: 1px solid var(--border);
-            white-space: nowrap; /* セル内での改行を防ぐ（横スクロールしやすくするため） */
+            white-space: nowrap;
         }
 
         .comparison-table th {
             background: var(--primary);
             color: white;
             position: sticky;
-            top: 0; /* スクロール時にヘッダー行を固定 */
-            z-index: 2; /* 最初の列より手前 */
+            top: 0;
+            z-index: 2;
         }
 
         .comparison-table tr:nth-child(even) {
@@ -339,20 +403,18 @@
         .comparison-table th:first-child {
             text-align: left;
             font-weight: 500;
-            background: #fdfdfd; /* 固定列の背景色 */
-            position: sticky; /* 横スクロール時に最初の列を固定 */
+            background: #fdfdfd;
+            position: sticky;
             left: 0;
             z-index: 1;
         }
-        /* 最初のヘッダーセル（左上角） */
         .comparison-table th:first-child {
-             background: var(--primary); /* ヘッダーの色に合わせる */
+             background: var(--primary);
              color: white;
-             z-index: 3; /* 最も手前に */
+             z-index: 3;
         }
-        /* 固定ヘッダー行と固定列が重なる部分の調整 */
         .comparison-table th:first-child {
-            top: 0; /* 上にも固定 */
+            top: 0;
         }
 
 
@@ -371,7 +433,7 @@
             font-weight: bold;
             margin-bottom: 10px;
             color: var(--primary);
-            display: flex; /* Q. と質問文のレイアウト調整 */
+            display: flex;
             align-items: flex-start;
         }
 
@@ -383,8 +445,8 @@
         }
 
         .answer {
-            padding-left: 2.2em; /* Q. の幅に合わせて調整 */
-            display: flex; /* A. と回答文のレイアウト調整 */
+            padding-left: 2.2em;
+            display: flex;
             align-items: flex-start;
         }
 
@@ -392,7 +454,7 @@
             content: "A.";
             font-weight: bold;
             margin-right: 0.5em;
-            margin-left: -2.2em; /* 左に移動 */
+            margin-left: -2.2em;
             white-space: nowrap;
         }
 
@@ -419,30 +481,30 @@
              border-radius: 8px;
              padding: 25px;
              box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-             display: flex; /* アイコンとテキストを横並び */
-             align-items: flex-start; /* 上揃え */
-             gap: 20px; /* アイコンとテキストの間隔 */
+             display: flex;
+             align-items: flex-start;
+             gap: 20px;
         }
         .feature-block .icon {
             background: var(--primary);
             color: white;
-            min-width: 40px; /* 幅固定 */
+            min-width: 40px;
             height: 40px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 1.2rem;
-            flex-shrink: 0; /* 縮まないように */
+            flex-shrink: 0;
         }
          .feature-block .text-content h3 {
-             margin: 0 0 10px 0; /* h3のマージン調整 */
-             padding: 0; /* h3のパディングリセット */
-             border: none; /* h3の線削除 */
-             font-size: 1.2rem; /* 少し小さく */
+             margin: 0 0 10px 0;
+             padding: 0;
+             border: none;
+             font-size: 1.2rem;
          }
         .feature-block .text-content p {
-            margin: 0; /* pのマージンリセット */
+            margin: 0;
         }
 
         /* Campaign Banner */
@@ -521,6 +583,12 @@
             }
             h1 { font-size: 1.8rem; }
             h2 { font-size: 1.5rem; }
+            .academy-badge { font-size: 1.1rem; padding: 6px 20px;}
+            .intro-text { font-size: 1rem; }
+            .features-box { padding: 20px; }
+            .features-box-title { font-size: 1rem; }
+            .features-list-header li { font-size: 0.95rem; }
+
             .courses {
                 grid-template-columns: 1fr; /* スマホでは1カラムに */
             }
@@ -551,9 +619,15 @@
         }
          @media (max-width: 480px) {
             body { font-size: 15px; }
-            .btn { padding: 10px 20px; }
-            h1 { font-size: 1.6rem; }
+            h1 { font-size: 1.5rem; } /* さらに小さく */
             h2 { font-size: 1.4rem; }
+            .academy-badge { font-size: 1rem; padding: 5px 18px;}
+            .intro-text { font-size: 0.95rem; }
+            .features-box { padding: 15px; }
+            .features-list-header li { font-size: 0.9rem; padding-left: 22px; }
+            .features-list-header li::before { top: 3px; }
+
+            .btn { padding: 10px 20px; }
             .campaign-banner h3 { font-size: 1.2rem; }
             .campaign-banner p { font-size: 1rem; }
             .final-cta p { font-size: 1rem; }
@@ -564,34 +638,22 @@
 <body>
     <div class="container">
         <header style="text-align: center; margin-bottom: 40px;">
-            <h1>もっと深く、もっと近くで<br>プロのトレードを学びたいあなたへ</h1>
-            <div style="text-align: center; margin-bottom: 25px;">
-                <span style="display: inline-block; font-size: 1.4rem; font-weight: bold; color: #0056b3; padding: 6px 20px; border: 2px solid #0056b3; border-radius: 30px; background: rgba(0, 86, 179, 0.05);">Alpha Pips トレードスクール</span>
-            </div>
-            <p style="font-size: 1.2rem; margin-bottom: 20px; text-align: center;">
-                再現性の高いシンプルトレードで<br>
-                将来の不安を「生涯稼げる自信」に変える
+            <h1>「もう1人で悩まない」<br>40代からの資産形成トレード</h1>
+            <div class="academy-badge">Alpha Pips トレードアカデミー</div>
+            <p class="intro-text">
+                「また同じ失敗…」「結局、才能がないのか？」<br>
+                そんな<strong>“稼げないループ”</strong>から抜け出し、<strong>“勝てる自分”</strong>に生まれ変わりませんか？
             </p>
-            <div style="background: #f5f9ff; padding: 20px; border-radius: 8px; margin: 0 auto 30px; max-width: 600px;">
-                <p style="margin-bottom: 10px; text-align: center;">
-                    <strong>Alpha Pips トレードスクールの特徴：</strong>
-                </p>
-                <ul style="list-style-type: none; text-align: left; display: inline-block; padding-left: 0;">
-                    <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">
-                        <span style="position: absolute; left: 0; top: 4px; color: #28a745; font-weight: bold;">✓</span> トレード歴10年以上の認定プロトレーダー直伝
-                    </li>
-                    <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">
-                        <span style="position: absolute; left: 0; top: 4px; color: #28a745; font-weight: bold;">✓</span> 再現性とシンプルさを追求した手法
-                    </li>
-                    <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">
-                        <span style="position: absolute; left: 0; top: 4px; color: #28a745; font-weight: bold;">✓</span> 初心者・兼業・シニアの方も大歓迎
-                    </li>
-                    <li style="margin-bottom: 0; position: relative; padding-left: 25px;">
-                        <span style="position: absolute; left: 0; top: 4px; color: #28a745; font-weight: bold;">✓</span> 生活リズムに左右されないデイ～スイングトレード
-                    </li>
+            <div class="features-box">
+                <p class="features-box-title">Alpha Pipsが選ばれる理由：</p>
+                <ul class="features-list-header">
+                    <li>講師と仲間がいる環境だから、成長できる</li>
+                    <li>シンプル手法だから、何歳からでも再現可能</li>
+                    <li>再現性の高い鉄板パターンをマスターできる</li>
+                    <li>自分のペースでOK。<span class="highlight">焦らないトレードスタイル</span></li>
                 </ul>
             </div>
-            <p>あなたのレベルと目標に合わせた、3つのコースをご用意しています。</p>
+            <p style="text-align: center;">あなたのレベルと目標に合わせた、3つのコースをご用意しています。</p>
         </header>
 
         <!-- Course Cards -->
@@ -776,7 +838,7 @@
         </div>
 
         <!-- スタンダードコース申込ボタンをメンバーの声の最後に配置 -->
-        <div style="text-align: center; margin: 40px 0 20px 0;"> {/* 上下マージン調整 */}
+        <div style="text-align: center; margin: 40px 0 20px 0;">
             <a href="#payment-standard" class="btn cta-button" style="background: linear-gradient(135deg, #0056b3, #007bff); color: white; font-weight: bold; padding: 15px 24px; font-size: 1.1rem; text-decoration: none;">
                 スタンダードコースに申し込む
                 <span class="subtext" style="display: block; font-size: 0.8em; margin-top: 5px; font-weight: normal;">※期間限定：14日間無料体験キャンペーン実施中！</span>
