@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- タイトルとディスクリプションを修正 -->
     <title>「稼げないループ」を断ち切る | Alpha Pips FXトレードアカデミー</title>
     <meta name="description" content="40代から始める資産形成トレード。一人で悩むFXから卒業し、再現性の高いスキルを身につけるならAlpha Pips トレードアカデミー。">
     <style>
@@ -357,8 +356,7 @@
             top: 0; /* 上にも固定 */
         }
 
-
-        /* FAQ */
+        /* --- FAQ Styles Revised --- */
         .faq-item {
             margin-bottom: 20px;
             border-bottom: 1px solid var(--border);
@@ -369,34 +367,40 @@
             border-bottom: none;
         }
 
+        .question, .answer {
+            position: relative; /* for ::before positioning */
+            padding-left: 2.5em; /* Space for Q./A. label */
+        }
+
         .question {
             font-weight: bold;
             margin-bottom: 10px;
             color: var(--primary);
-            display: flex; /* Q. と質問文のレイアウト調整 */
-            align-items: flex-start;
+        }
+
+        .question::before, .answer::before {
+            position: absolute;
+            left: 0;
+            top: 0; /* Adjust if needed based on line-height */
+            font-weight: bold;
+            width: 2.5em; /* Ensure consistent width for labels */
+            text-align: left;
+            white-space: nowrap;
+            padding-right: 0.7em; /* Space between label and text */
+            box-sizing: border-box;
         }
 
         .question::before {
             content: "Q.";
-            margin-right: 0.5em;
-            white-space: nowrap;
-            font-weight: bold;
-        }
-
-        .answer {
-            padding-left: 2.2em; /* Q. の幅に合わせて調整 */
-            display: flex; /* A. と回答文のレイアウト調整 */
-            align-items: flex-start;
+            color: var(--primary); /* Ensure Q label has same color */
         }
 
         .answer::before {
             content: "A.";
-            font-weight: bold;
-            margin-right: 0.5em;
-            margin-left: -2.2em; /* 左に移動 */
-            white-space: nowrap;
+            color: var(--text); /* A label color */
         }
+        /* --- End of FAQ Styles Revised --- */
+
 
         /* Testimonials */
         .testimonial {
@@ -550,6 +554,15 @@
                  margin-bottom: 15px; /* アイコンとテキストの間 */
              }
              .feature-block .text-content h3 { text-align: center;}
+
+             /* Responsive FAQ adjustments */
+             .question, .answer {
+                 padding-left: 2.2em; /* Adjust padding for smaller screens if needed */
+             }
+             .question::before, .answer::before {
+                 width: 2.2em; /* Adjust width for smaller screens if needed */
+                 padding-right: 0.5em; /* Adjust space for smaller screens if needed */
+             }
         }
          @media (max-width: 480px) {
             body { font-size: 15px; }
@@ -560,19 +573,25 @@
             .campaign-banner p { font-size: 1rem; }
             .final-cta p { font-size: 1rem; }
             .final-cta .cta-button { font-size: 1rem; padding: 12px 20px; }
+
+             /* Smaller screen FAQ adjustments */
+             .question, .answer {
+                 padding-left: 2em;
+             }
+             .question::before, .answer::before {
+                 width: 2em;
+                 padding-right: 0.4em;
+             }
          }
     </style>
 </head>
 <body>
     <div class="container">
         <header style="text-align: center; margin-bottom: 40px;">
-            <!-- ヘッダータイトル修正 -->
             <h1>「もう一人で悩まない」<br>40代からの資産形成トレード</h1>
             <div style="text-align: center; margin-bottom: 25px;">
-                 <!-- アカデミー名修正 -->
                 <span style="display: inline-block; font-size: 1.4rem; font-weight: bold; color: #0056b3; padding: 6px 20px; border: 2px solid #0056b3; border-radius: 30px; background: rgba(0, 86, 179, 0.05);">Alpha Pips トレードアカデミー</span>
             </div>
-             <!-- リード文修正 -->
             <p style="font-size: 1.2rem; margin-bottom: 20px; text-align: center;">
                 「また同じ失敗…」「結局、才能がないのか？」<br>
                 そんな<span class="highlight">“稼げないループ”</span>から抜け出し、<span class="highlight">“勝てる自分”</span>に生まれ変わりませんか？
@@ -583,20 +602,19 @@
                 </p>
                 <ul style="list-style-type: none; text-align: left; display: inline-block; padding-left: 0;">
                     <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">
-                        <span style="position: absolute; left: 0; top: 4px; color: #28a745; font-weight: bold;">✓</span> <span class="highlight">講師と仲間がいる環境</span>だから、成長できる <!-- 修正 -->
+                        <span style="position: absolute; left: 0; top: 4px; color: #28a745; font-weight: bold;">✓</span> <span class="highlight">講師と仲間がいる環境</span>だから、成長できる
                     </li>
                     <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">
                         <span style="position: absolute; left: 0; top: 4px; color: #28a745; font-weight: bold;">✓</span> <span class="highlight">シンプル手法</span>だから、何歳からでも再現可能
                     </li>
                     <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">
-                        <span style="position: absolute; left: 0; top: 4px; color: #28a745; font-weight: bold;">✓</span> <span class="highlight">再現性の高い鉄板パターン</span>をマスターできる <!-- 修正 -->
+                        <span style="position: absolute; left: 0; top: 4px; color: #28a745; font-weight: bold;">✓</span> <span class="highlight">再現性の高い鉄板パターン</span>をマスターできる
                     </li>
                     <li style="margin-bottom: 0; position: relative; padding-left: 25px;">
                         <span style="position: absolute; left: 0; top: 4px; color: #28a745; font-weight: bold;">✓</span> 自分のペースでOK。<span class="highlight">焦らないトレードスタイル</span>
                     </li>
                 </ul>
             </div>
-            <!-- ヘッダー締め修正 -->
             <p>あなたのレベルと目標に合わせた、3つのコースをご用意しています。</p>
         </header>
 
@@ -788,7 +806,7 @@
 
         <div class="faq-item">
             <p class="question">FXは全くの初心者で、PC操作も自信がないのですが…</p>
-            <p class="answer">ご安心ください。当スクールの手法は<span class="highlight">複雑な分析や難しいPC操作は不要</span>です。「覚えることは最小限」を徹底していますので、50代、60代から始められた方も多数いらっしゃいます。</p>
+            <p class="answer">ご安心ください。当アカデミーの手法は<span class="highlight">複雑な分析や難しいPC操作は不要</span>です。「覚えることは最小限」を徹底していますので、40代、50代、60代から始められた方も多数いらっしゃいます。</p> <!-- 年代調整 -->
         </div>
 
         <div class="faq-item">
@@ -798,7 +816,7 @@
 
          <div class="faq-item">
             <p class="question">これまで色々な教材を試しましたが、成果が出ませんでした。本当に変われますか？</p>
-            <p class="answer">お気持ちお察しします。「一人で頑張っても変われなかった」という方は多いです。当スクールが重視するのは<span class="highlight">手法だけでなく「続けられる環境」</span>です。質問できる相手、励まし合える仲間がいることで、多くの方が<span class="highlight">「今度こそ変われた」</span>と実感されています。まずは無料体験で、その「環境」を確かめてみてください。</p>
+            <p class="answer">お気持ちお察しします。「一人で頑張っても変われなかった」という方は多いです。当アカデミーが重視するのは<span class="highlight">手法だけでなく「続けられる環境」</span>です。質問できる相手、励まし合える仲間がいることで、多くの方が<span class="highlight">「今度こそ変われた」</span>と実感されています。まずは無料体験で、その「環境」を確かめてみてください。</p>
         </div>
 
         <div class="faq-item">
