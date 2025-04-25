@@ -73,7 +73,7 @@
          }
 
         h3 {
-            font-size: 1.3rem; /* Feature blockの見出しサイズ調整 */
+            font-size: 1.3rem; /* デフォルトのH3サイズ */
             margin: 1.2em 0 0.5em;
         }
 
@@ -255,7 +255,8 @@
             font-size: 1.1em;
         }
 
-        .course-card h3 {
+        .course-card h3 { /* コースカードの見出し */
+            font-size: 1.5rem; /* サイズを大きく */
             margin-top: 5px;
             margin-bottom: 15px;
             min-height: 40px;
@@ -446,10 +447,14 @@
             margin-right: 0.5em;
             white-space: nowrap;
             font-weight: bold;
+            font-size: 1.2em; /* Q.のサイズを大きく */
+            line-height: 1.3; /* 行の高さを調整 */
+            position: relative;
+            top: -0.1em;
         }
 
         .answer {
-            padding-left: 2.2em;
+            padding-left: 2.8em; /* Q. が大きくなった分、左のスペースを調整 */
             display: flex;
             align-items: flex-start;
         }
@@ -458,7 +463,7 @@
             content: "A.";
             font-weight: bold;
             margin-right: 0.5em;
-            margin-left: -2.2em;
+            margin-left: -2.8em; /* 左に移動する距離を調整 */
             white-space: nowrap;
         }
 
@@ -576,6 +581,7 @@
             h1 { font-size: 1.8rem; }
             h2 { font-size: 1.5rem; }
             .final-cta h2 { font-size: 1.6rem; }
+            .course-card h3 { font-size: 1.4rem; }
             .academy-badge { font-size: 1.1rem; padding: 6px 20px;}
             .intro-text { font-size: 1rem; }
             .features-box { padding: 20px; }
@@ -611,12 +617,16 @@
              }
              .feature-block .text-content h3 { text-align: center;}
              .feature-block .text-content p { text-align: left; }
+             .question::before { font-size: 1.1em; top: -0.05em;} /* スマホでのQサイズ微調整 */
+             .answer { padding-left: 2.5em; } /* スマホでのAのインデント調整 */
+             .answer::before { margin-left: -2.5em; } /* スマホでのAのインデント調整 */
         }
          @media (max-width: 480px) {
             body { font-size: 15px; }
             h1 { font-size: 1.5rem; }
             h2 { font-size: 1.4rem; }
             .final-cta h2 { font-size: 1.5rem; }
+            .course-card h3 { font-size: 1.3rem; }
             .academy-badge { font-size: 1rem; padding: 5px 18px;}
             .intro-text { font-size: 0.95rem; }
             .features-box { padding: 15px; }
@@ -628,6 +638,9 @@
             .final-cta p { font-size: 1rem; }
             .final-cta .cta-button { font-size: 1rem; padding: 12px 20px; }
             .final-cta .cta-button .subtext { font-size: 0.75em; }
+            .question::before { font-size: 1.1em; } /* スマホ(小)でのQサイズ */
+            .answer { padding-left: 2.5em; } /* スマホ(小)でのAのインデント調整 */
+            .answer::before { margin-left: -2.5em; } /* スマホ(小)でのAのインデント調整 */
          }
     </style>
 </head>
@@ -839,21 +852,6 @@
         </div>
 
         <div class="faq-item">
-            <p class="question">本当に稼げるようになりますか？</p>
-            <p class="answer">FXに「絶対」はありませんが、当手法の再現性は厳しいプロ試験にも合格するものです。多くのメンバーが成果を出されていますが、利益を保証するものではなく、ご自身の学習と実践が結果に繋がります。コツコツと地道に実践することが重要です。</p>
-        </div>
-
-        <div class="faq-item">
-            <p class="question">どのコースを選べば良いですか？</p>
-            <p class="answer">手軽に始めてみたい方は「ライトコース」、本格的にスキルを習得したい方は「スタンダードコース」、最短で結果を出し徹底サポートを受けたい方は「VIPコース」がおすすめです。迷われた場合は、現在14日間無料体験ができ、満足度＆コストパフォーマンスの高い「スタンダードコース」がおすすめです。</p>
-        </div>
-
-        <div class="faq-item">
-            <p class="question">必要な資金はいくらですか？</p>
-            <p class="answer">FXは少額から始められますが、適切なリスク管理が重要です。推奨資金額や資金管理法はコミュニティ内で詳しく解説します。まずは小さく始めて、スキルと共に徐々に資金を増やしていくことをお勧めします。</p>
-        </div>
-
-        <div class="faq-item">
             <p class="question">途中で解約することはできますか？</p>
             <p class="answer">はい、可能です。全コース月額制のサブスクリプションのため、いつでも解約可能です。</p>
         </div>
@@ -864,12 +862,12 @@
             <p>
                 仕事に家庭に忙しい40代、会社での責任が重くなる50代、そして年金だけではこの先不安な60代の皆様へ。<br>
                 将来への不安は、誰もが感じるものです。給料は上がらず、税負担だけが上がり続ける時代だからこそ、<br>
-                「自分の力で稼ぐスキル」が必要です。<br><br>
+                <span class="highlight">「自分の力で稼ぐスキル」</span>が必要です。<br><br>
                 Alpha Pips トレードコミュニティでは、あなたと同じ悩みを持つ方々が、<br>
-                シンプルで再現性の高いトレード手法を学び、<br>
-                少しずつ確実に、経済的な安心を積み上げています。<br><br>
-                １人で悩むより、共に歩む仲間と一緒なら、必ず前に進めます。<br>
-                第２の人生を、より豊かなものにするための１歩を、今踏み出しませんか？
+                <span class="highlight">シンプルで再現性の高いトレード手法</span>を学び、<br>
+                少しずつ確実に、<span class="highlight">経済的な安心</span>を積み上げています。<br><br>
+                １人で悩むより、<span class="highlight">共に歩む仲間と一緒</span>なら、必ず前に進めます。<br>
+                第２の人生を、より豊かなものにするための<span class="highlight">１歩を、今踏み出しませんか？</span>
             </p>
 
             <a href="#payment-standard" class="btn btn-block cta-button">14日間無料で本格体験してみる<span class="subtext">※期間限定：14日間無料体験キャンペーン実施中！</span></a>
