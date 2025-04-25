@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- タイトルとディスクリプションを修正 -->
-    <title>「稼げないループ」を断ち切る | Alpha Pips FXトレードアカデミー</title>
-    <meta name="description" content="40代から始める資産形成トレード。1人で悩むFXから卒業し、再現性の高いスキルを身につけるならAlpha Pips トレードアカデミー。"> <!-- 「1人」に修正 -->
+    <title>Alpha Pips | シンプルFXトレード</title>
+    <meta name="description" content="再現性の高いシンプルトレードで、将来の不安を「生涯稼げる自信」に変える。プロトレーダーが教えるFXトレードスクール。">
     <style>
         /* Base styles */
         :root {
@@ -272,15 +271,14 @@
             font-weight: bold; /* 太字を確実に適用 */
         }
 
-        /* ペルソナに合わせたテキスト */
         .target-audience {
-            font-size: 0.9rem; /* 少し小さく */
+            font-size: 0.95rem;
             color: var(--light-text);
             margin-bottom: 15px;
+            font-style: italic;
             min-height: 45px; /* ターゲットオーディエンス部分の高さを確保 (約2-3行) */
         }
 
-        /* ペルソナに合わせたテキスト */
         .value-prop {
             font-weight: 500;
             margin-bottom: 20px;
@@ -357,7 +355,8 @@
             top: 0; /* 上にも固定 */
         }
 
-        /* --- FAQ Styles Revised --- */
+
+        /* FAQ */
         .faq-item {
             margin-bottom: 20px;
             border-bottom: 1px solid var(--border);
@@ -368,40 +367,34 @@
             border-bottom: none;
         }
 
-        .question, .answer {
-            position: relative; /* for ::before positioning */
-            padding-left: 2.5em; /* Space for Q./A. label */
-        }
-
         .question {
             font-weight: bold;
             margin-bottom: 10px;
             color: var(--primary);
-        }
-
-        .question::before, .answer::before {
-            position: absolute;
-            left: 0;
-            top: 0; /* Adjust if needed based on line-height */
-            font-weight: bold;
-            width: 2.5em; /* Ensure consistent width for labels */
-            text-align: left;
-            white-space: nowrap;
-            padding-right: 0.7em; /* Space between label and text */
-            box-sizing: border-box;
+            display: flex; /* Q. と質問文のレイアウト調整 */
+            align-items: flex-start;
         }
 
         .question::before {
             content: "Q.";
-            color: var(--primary); /* Ensure Q label has same color */
+            margin-right: 0.5em;
+            white-space: nowrap;
+            font-weight: bold;
+        }
+
+        .answer {
+            padding-left: 2.2em; /* Q. の幅に合わせて調整 */
+            display: flex; /* A. と回答文のレイアウト調整 */
+            align-items: flex-start;
         }
 
         .answer::before {
             content: "A.";
-            color: var(--text); /* A label color */
+            font-weight: bold;
+            margin-right: 0.5em;
+            margin-left: -2.2em; /* 左に移動 */
+            white-space: nowrap;
         }
-        /* --- End of FAQ Styles Revised --- */
-
 
         /* Testimonials */
         .testimonial {
@@ -555,15 +548,6 @@
                  margin-bottom: 15px; /* アイコンとテキストの間 */
              }
              .feature-block .text-content h3 { text-align: center;}
-
-             /* Responsive FAQ adjustments */
-             .question, .answer {
-                 padding-left: 2.2em; /* Adjust padding for smaller screens if needed */
-             }
-             .question::before, .answer::before {
-                 width: 2.2em; /* Adjust width for smaller screens if needed */
-                 padding-right: 0.5em; /* Adjust space for smaller screens if needed */
-             }
         }
          @media (max-width: 480px) {
             body { font-size: 15px; }
@@ -574,45 +558,36 @@
             .campaign-banner p { font-size: 1rem; }
             .final-cta p { font-size: 1rem; }
             .final-cta .cta-button { font-size: 1rem; padding: 12px 20px; }
-
-             /* Smaller screen FAQ adjustments */
-             .question, .answer {
-                 padding-left: 2em;
-             }
-             .question::before, .answer::before {
-                 width: 2em;
-                 padding-right: 0.4em;
-             }
          }
     </style>
 </head>
 <body>
     <div class="container">
         <header style="text-align: center; margin-bottom: 40px;">
-            <h1>「もう1人で悩まない」<br>40代からの資産形成トレード</h1> <!-- 「1人」に修正 -->
+            <h1>もっと深く、もっと近くで<br>プロのトレードを学びたいあなたへ</h1>
             <div style="text-align: center; margin-bottom: 25px;">
-                <span style="display: inline-block; font-size: 1.4rem; font-weight: bold; color: #0056b3; padding: 6px 20px; border: 2px solid #0056b3; border-radius: 30px; background: rgba(0, 86, 179, 0.05);">Alpha Pips トレードアカデミー</span>
+                <span style="display: inline-block; font-size: 1.4rem; font-weight: bold; color: #0056b3; padding: 6px 20px; border: 2px solid #0056b3; border-radius: 30px; background: rgba(0, 86, 179, 0.05);">Alpha Pips トレードスクール</span>
             </div>
             <p style="font-size: 1.2rem; margin-bottom: 20px; text-align: center;">
-                「また同じ失敗…」「結局、才能がないのか？」<br>
-                そんな<span class="highlight">“稼げないループ”</span>から抜け出し、<span class="highlight">“勝てる自分”</span>に生まれ変わりませんか？
+                再現性の高いシンプルトレードで<br>
+                将来の不安を「生涯稼げる自信」に変える
             </p>
             <div style="background: #f5f9ff; padding: 20px; border-radius: 8px; margin: 0 auto 30px; max-width: 600px;">
                 <p style="margin-bottom: 10px; text-align: center;">
-                    <strong>Alpha Pipsが選ばれる理由：</strong>
+                    <strong>Alpha Pips トレードスクールの特徴：</strong>
                 </p>
                 <ul style="list-style-type: none; text-align: left; display: inline-block; padding-left: 0;">
                     <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">
-                        <span style="position: absolute; left: 0; top: 4px; color: #28a745; font-weight: bold;">✓</span> <span class="highlight">講師と仲間がいる環境</span>だから、成長できる
+                        <span style="position: absolute; left: 0; top: 4px; color: #28a745; font-weight: bold;">✓</span> トレード歴10年以上の認定プロトレーダー直伝
                     </li>
                     <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">
-                        <span style="position: absolute; left: 0; top: 4px; color: #28a745; font-weight: bold;">✓</span> <span class="highlight">シンプル手法</span>だから、何歳からでも再現可能
+                        <span style="position: absolute; left: 0; top: 4px; color: #28a745; font-weight: bold;">✓</span> 再現性とシンプルさを追求した手法
                     </li>
                     <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">
-                        <span style="position: absolute; left: 0; top: 4px; color: #28a745; font-weight: bold;">✓</span> <span class="highlight">再現性の高い鉄板パターン</span>をマスターできる
+                        <span style="position: absolute; left: 0; top: 4px; color: #28a745; font-weight: bold;">✓</span> 初心者・兼業・シニアの方も大歓迎
                     </li>
                     <li style="margin-bottom: 0; position: relative; padding-left: 25px;">
-                        <span style="position: absolute; left: 0; top: 4px; color: #28a745; font-weight: bold;">✓</span> 自分のペースでOK。<span class="highlight">焦らないトレードスタイル</span>
+                        <span style="position: absolute; left: 0; top: 4px; color: #28a745; font-weight: bold;">✓</span> 生活リズムに左右されないデイ～スイングトレード
                     </li>
                 </ul>
             </div>
@@ -624,60 +599,60 @@
             <!-- Light Course -->
             <div class="course-card light">
                 <h3>ライトコース</h3>
-                <p class="target-audience">まずは「1人で抱え込む」のをやめたい、プロの考えを知りたい方へ</p> <!-- 「1人」に修正 -->
-                <p class="value-prop"><strong>複雑な分析はもう不要。プロが使うシンプルな「型」を学び、トレードの迷いを減らします。</strong></p>
+                <p class="target-audience">1日100円以下でプロのトレードに触れてみたい方へ</p>
+                <p class="value-prop"><strong>シンプルで再現性の高い手法を知り、プロのトレードを体感できます。</strong></p>
                 <ul class="features-list">
-                    <li>プロの「鉄板パターン」解説教材</li>
-                    <li>講師による定期チャート考察（プロの見方を学ぶ）</li>
-                    <li>メンバー交流部屋の<span class="highlight">閲覧権</span>（他の人の頑張りが見える）</li>
+                    <li>Alpha Pipsオリジナル手法解説教材</li>
+                    <li>講師による定期チャート考察</li>
+                    <li>メンバー限定交流部屋の閲覧</li>
                 </ul>
                 <p class="price">2,980円<span class="price-note">/ 月 (税込)</span></p>
                 <div class="button-wrapper">
-                    <a href="#payment-light" class="btn btn-secondary btn-block">ライトコースで始める</a>
+                    <a href="#payment-light" class="btn btn-secondary btn-block">ライトコース申込</a>
                 </div>
             </div>
 
             <!-- Standard Course -->
             <div class="course-card standard" style="position: relative; overflow: hidden;">
-                 <div class="free-trial-banner">試して損なし</div>
+                 <div class="free-trial-banner">14日間無料</div>
                 <h3 class="highlight">スタンダードコース <span class="popular-badge"><span>★</span>１番人気</span></h3>
-                <p class="target-audience">本気で「変わりたい」、<span class="highlight">仲間や講師と繋がり、質問できる環境</span>が欲しい方へ</p>
-                <p class="value-prop">もう1人で悩まない。<span class="highlight">質問し放題、見守られ型コミュニティ</span>で、着実に前進する。<strong class="highlight">「これなら続けられる」と実感してください。</strong><span class="campaign-note">※ まずは14日間、無料で体験できます！</span></p> <!-- 「1人」に修正 -->
+                <p class="target-audience">本気でスキルを習得したい全ての方 (初心者～経験者)へ</p>
+                <p class="value-prop">実践力を高め、仲間と共に成長する。<br><strong class="highlight">最も満足度、コストパフォーマンスが高いコースです。</strong><span class="campaign-note">※ 今なら14日間無料体験キャンペーン実施中！</span></p>
                 <ul class="features-list">
                     <li>ライトコース全内容</li>
-                    <li><strong class="highlight">勝率UPをサポートするオリジナルインジケーター4種</strong></li>
-                    <li><strong class="highlight">講師のリアルタイム考察（プロの思考を間近で）</strong></li>
-                    <li><strong class="highlight">メンバー限定コミュニティ参加権（質問＆交流）</strong></li>
+                    <li><strong class="highlight">オリジナルインジケーター4種の利用権</strong></li>
+                    <li><strong class="highlight">講師によるリアルタイム相場考察</strong></li>
+                    <li><strong class="highlight">メンバー限定交流部屋へのアクセス</strong></li>
                 </ul>
                  <p class="price">
                     <span class="free-trial-info">14日間¥0</span>
                     9,800円<span class="price-note">/ 月 (税込)</span>
                 </p>
                 <div class="button-wrapper">
-                    <a href="#payment-standard" class="btn btn-block" style="background: linear-gradient(135deg, #0056b3, #007bff);">無料でスタンダードコースを試す<span style="display: block; font-size: 0.8em; margin-top: 5px; font-weight: normal;">※ リスクなく始められます</span></a>
+                    <a href="#payment-standard" class="btn btn-block" style="background: linear-gradient(135deg, #0056b3, #007bff);">スタンダードコース申込<span style="display: block; font-size: 0.8em; margin-top: 5px; font-weight: normal;">※今なら14日間無料体験！</span></a>
                 </div>
             </div>
 
             <!-- VIP Course -->
             <div class="course-card priority">
                 <h3 class="highlight-accent">VIPコース</h3>
-                <p class="target-audience">「遠回りはしたくない」、<span class="highlight-accent">専属サポーター</span>に徹底的に見てほしい方へ</p>
-                <p class="value-prop">あなたのトレードを<strong class="highlight-accent">講師が個別指導</strong>。迷いを即解消し、成功への<strong class="highlight-accent">「最短ルート」</strong>を歩む。<span class="campaign-note">※ 今なら入会金半額！本気の方限定</span></p>
+                <p class="target-audience">最短で結果を出したい方、徹底的なサポートを求める方へ</p>
+                <p class="value-prop">講師による徹底指導で、成功への<strong class="highlight-accent">「最短ルート」</strong>を掴む。<span class="campaign-note">※ 今なら入会金半額キャンペーン実施中！</span></p>
                 <ul class="features-list">
                     <li>スタンダードコース全内容</li>
-                    <li><strong class="highlight-accent">さらに精度を高める専用インジケーター3種</strong></li>
-                    <li><strong class="highlight-accent">講師によるマンツーマン個別指導（Discord）</strong></li>
+                    <li><strong class="highlight-accent">エントリ―精度UPのオリジナルインジケーター3種</strong></li>
+                    <li><strong class="highlight-accent">Discord上での講師による個別指導</strong></li>
                 </ul>
                  <p class="price">
                     <span style="display: block; margin-bottom: 5px; font-size: 1.1rem;">
                         入会金：<span class="original-price">15万円</span>
                         <span class="discount-price">7.5万円</span>
-                        <span class="discount-badge">今だけ半額</span>
+                        <span class="discount-badge">50%OFF</span>
                     </span>
                     <span>29,800円<span class="price-note">/ 月 (税込)</span></span>
                 </p>
                 <div class="button-wrapper">
-                    <a href="#payment-priority" class="btn btn-accent btn-block">VIPコースで最短を目指す</a>
+                    <a href="#payment-priority" class="btn btn-accent btn-block">VIPコース申込</a>
                 </div>
             </div>
         </div>
@@ -688,7 +663,7 @@
             <table class="comparison-table">
                 <thead>
                     <tr>
-                        <th>サポート内容</th>
+                        <th>機能 / サービス</th>
                         <th>ライト</th>
                         <th>スタンダード</th>
                         <th>VIP</th>
@@ -696,7 +671,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>プロの手法解説</td>
+                        <td>オリジナル手法解説</td>
                         <td>✓</td>
                         <td>✓</td>
                         <td>✓</td>
@@ -716,26 +691,26 @@
                     <tr>
                         <td>オリジナルインジケーター</td>
                         <td>-</td>
-                        <td>基本4種</td>
-                        <td>全7種</td>
+                        <td>4種</td>
+                        <td>7種 (専用3種含む)</td>
                     </tr>
-                     <tr>
-                        <td>メンバーコミュニティ</td>
+                    <tr>
+                        <td>メンバー同士の交流</td>
                         <td>閲覧のみ</td>
-                        <td>参加OK</td>
-                        <td>参加OK</td>
+                        <td>✓</td>
+                        <td>✓</td>
                     </tr>
                     <tr>
                         <td>質問対応</td>
                         <td>-</td>
-                        <td><span class="highlight">コミュニティ内OK</span></td>
-                        <td><span class="highlight-accent">個別で随時OK</span></td>
+                        <td>全体対応</td>
+                        <td>個別対応</td>
                     </tr>
                     <tr>
                         <td>講師による個別指導</td>
                         <td>-</td>
                         <td>-</td>
-                        <td><span class="highlight-accent">✓ マンツーマン</span></td>
+                        <td>✓</td>
                     </tr>
                 </tbody>
             </table>
@@ -743,113 +718,113 @@
 
 
         <!-- Alpha Pips Method Features -->
-        <h2>1人で悩む日々から抜け出すために</h2> <!-- 「1人」に修正 -->
+        <h2>Alpha Pips トレードスクールの特徴</h2>
 
         <div class="feature-block">
             <div class="icon">🎯</div>
             <div class="text-content">
-                <h3>もう複雑な分析で消耗しない</h3>
-                <p>勝つための「本質」は驚くほどシンプル。プロが使う<span class="highlight">高確率な「鉄板パターン」</span>だけに集中するから、初心者の方、PCが苦手な方でも迷わず実践できます。「あれこれ試して結局勝てない…」そんな日々はもう終わりにしませんか？</p>
+                <h3>シンプルな勝ちパターンに集中</h3>
+                <p>トレード歴10年超のプロ、マイティ―が膨大な時間と試行錯誤の末に辿り着いた、勝つための「本質」。複雑な分析や高度な知識・スキルは一切必要ありません。優位性の認められた<strong>貴重な「高確率な鉄板パターン」</strong>に集中するから、初心者の方も迷わずに再現できます。</p>
             </div>
         </div>
 
         <div class="feature-block">
-            <div class="icon">🤝</div>
+            <div class="icon">🏆</div>
              <div class="text-content">
-                <h3>あなたを見守る「環境」が力になる</h3>
-                <p>1人で勉強しても続かない、結果が出ないのは<span class="highlight">あなたのせいではありません</span>。「正しい環境」に身を置けば、自然と前へ進めます。ここは、あなたのペースで<span class="highlight">見守られながら続けられる、大人のための空間</span>です。</p> <!-- 「1人」に修正 -->
+                <h3>厳しい基準に合格した高再現性トレード</h3>
+                <p>合格率10％以下の厳しいプロ試験で実際に使用し、見事基準を突破した本物のトレード手法です。机上の空論ではない、リアルな市場で通用する<strong>「再現性」</strong>が証明されています。</p>
              </div>
         </div>
 
         <div class="feature-block">
              <div class="icon">⏱️</div>
              <div class="text-content">
-                 <h3>無理なく、焦らず、自分のペースで</h3>
-                 <p>1日中PCに張り付く必要はありません。推奨するのは<span class="highlight">「デイ～スイングトレード」</span>。仕事や趣味、家族との時間を大切にしながら、<span class="highlight">あなたの生活リズムに合わせて</span>着実にスキルアップを目指せます。</p>
+                 <h3>生活と両立できるトレードスタイル</h3>
+                 <p>推奨するのは<strong>「デイ～スイングトレード」</strong>。1日中PCに張り付く必要はありません。仕事のスキマ時間でのチェックや、1日数回のチャンスを狙うスタイル。仕事や趣味、家族との時間を大切にしながら、着実に資産形成を目指せます。</p>
              </div>
         </div>
 
         <div class="feature-block">
-             <div class="icon">❓</div>
+             <div class="icon">🤝</div>
              <div class="text-content">
-                 <h3>「聞ける相手がいる」という安心感</h3>
-                 <p>トレードの疑問、相場の見方、メンタルの保ち方…<span class="highlight">いつでも質問できる相手</span>がいます。プロのリアルタイム考察で「なるほど」が増え、コミュニティでは仲間と励まし合える。<span class="highlight">孤独を感じさせないサポート体制</span>が自慢です。</p>
+                 <h3>充実したサポート体制</h3>
+                 <p>毎日のチャート考察、リアルタイム分析で、<strong>プロの「目線」</strong>を学習できます。また、スタンダードコース以上はメンバー限定コミュニティで、疑問を解消し、仲間とともに成長できる環境をご用意しました。さらにVIPコースでは、<strong>講師による個別指導</strong>で最短ルートでの成長を目指します。</p>
              </div>
         </div>
 
         <!-- メンバーの声タイトル-->
-        <h2>「1人じゃ無理だった」を乗り越えた方々の声</h2> <!-- 「1人」に修正 -->
+        <h2>メンバーの声</h2>
 
         <!-- 特別キャンペーンの告知を追加 -->
         <div class="campaign-banner">
-            <h3>＼ 今がチャンス！／</h3>
-            <p>スタンダードコースが<span style="font-weight: bold; font-size: 1.2em;">14日間 ¥0</span> で試せます！
-            <span class="note">※ リスクなく、ご自身に合うか確かめてください。</span></p>
+            <h3>＼ 期間限定キャンペーン実施中 ／</h3>
+            <p>今だけスタンダードコース<strong>14日間無料体験</strong>！
+            <span class="note">※ 予告なく終了する場合があります。お早めにお申し込みください。</span></p>
         </div>
 
         <div class="testimonial">
-            <p>「長年、独学でFXをやってきましたが、勝ったり負けたりで全く資産が増えず…。正直、<span class="highlight">もう自分には無理</span>だと諦めかけていました。でも、このアカデミーに入って『環境』の大切さを痛感しました。マイティ―さんの考察は勿論、<span class="highlight">コミュニティで質問できる安心感</span>が大きいです。先日、メンバーさんの投稿を見て『あ、ここだ！』とエントリーし、久しぶりに納得のいく利益が出ました。1人で悶々としていた頃が嘘のようです。」</p> <!-- 「1人」に修正 -->
-            <p class="testimonial-author">- M.K. 様 (58歳・自営業)</p>
+            <p>「正直、何年もFXで負け続けて諦めかけていました。何をやっても勝てない…。でもスクールで学べる『鉄板パターン』だけに絞ったら、あれほど複雑に考えていたことが嘘のように、シンプルに見えるようになったんです。入会から3ヶ月目で月利8%達成できました。昨日も、エントリーポイントが来るのを待って、1トレードで3万円の利益。こんな日常が当たり前になるなんて、本当に想像できませんでした。」</p>
+            <p class="testimonial-author">- T.S. 様 (52歳・会社員)</p>
         </div>
 
         <div class="testimonial">
-            <p>「定年後の生活に不安を感じ、FXを始めましたが、ネットの情報だけではさっぱり…。<span class="highlight">『年のせいかな』</span>と自信をなくしていました。Alpha Pipsさんの手法は本当にシンプルで、私のような<span class="highlight">PC初心者でも理解できました</span>。スタンダードコースのコミュニティでは、同じような年代の方もいて心強いです。先月は月5万円ほどの利益ですが、<span class="highlight">『自分でもできるんだ』という実感</span>が何より嬉しいです。」</p>
-            <p class="testimonial-author">- S.T. 様 (65歳・元会社員)</p>
+            <p>「退職して年金生活が始まり、毎月の収支を見るたびに不安でした。最初は『自分の年齢でFXなんて無理だろう』と思っていましたが、マイティ―さんの考察を毎日見ているうちに、相場の見方がわかってきました。先月は15万円のプラス。孫へのお小遣いも気兼ねなく渡せるようになりました。老後の不安が希望に変わりつつあります。」</p>
+            <p class="testimonial-author">- K.M. 様 (67歳・元教員)</p>
         </div>
 
         <div class="testimonial">
-            <p>「仕事が忙しく、なかなか勉強時間が取れないのが悩みでした。以前入っていたスクールは情報量が多すぎて消化不良に…。ここは<span class="highlight">『鉄板パターン』に絞られている</span>ので、ポイントが明確で助かります。リアルタイム考察で『今日の狙い目』が分かるのも効率的です。おかげで、少ない時間でも<span class="highlight">少しずつ利益を積み重ねられるように</span>なりました。<span class="highlight">『前に進んでる』という感覚</span>が、日々のモチベーションになっています。」</p>
-            <p class="testimonial-author">- H.Y. 様 (51歳・管理職)</p>
+            <p>「システムエンジニアとして毎日残業続きで、正直トレードする時間なんてないと思っていました。でも夜10時の相場チェックと朝の準備だけで十分トレードできています。4カ月目くらいからこんな自分でも毎月5〜8万円のペースで利益が出せるように。『自分の給料以外の収入源』ができた安心感は何にも代えがたいです。正直、娘の学費のことで悩んでいましたが、今は気持ちに余裕が生まれました。」</p>
+            <p class="testimonial-author">- Y.N. 様 (43歳・エンジニア)</p>
         </div>
 
         <!-- FAQ -->
-        <h2>よくあるご質問</h2>
+        <h2>よくある質問</h2>
 
         <div class="faq-item">
-            <p class="question">FXは全くの初心者で、PC操作も自信がないのですが…</p>
-            <p class="answer">ご安心ください。当アカデミーの手法は<span class="highlight">複雑な分析や難しいPC操作は不要</span>です。「覚えることは最小限」を徹底していますので、40代、50代、60代から始められた方も多数いらっしゃいます。</p>
-        </div>
-
-        <div class="faq-item">
-            <p class="question">仕事が忙しくて、毎日チャートを見る時間がありません。</p>
-            <p class="answer">推奨するトレードスタイルは、1日数回のチェックでも実践可能です。あなたの生活リズムを崩す必要はありません。<span class="highlight">無理なく続けられること</span>を最優先に考えています。コミュニティで他のメンバーさんの時間の使い方なども参考にできますよ。</p>
-        </div>
-
-         <div class="faq-item">
-            <p class="question">これまで色々な教材を試しましたが、成果が出ませんでした。本当に変われますか？</p>
-            <p class="answer">お気持ちお察しします。「1人で頑張っても変われなかった」という方は多いです。当アカデミーが重視するのは<span class="highlight">手法だけでなく「続けられる環境」</span>です。質問できる相手、励まし合える仲間がいることで、多くの方が<span class="highlight">「今度こそ変われた」</span>と実感されています。まずは無料体験で、その「環境」を確かめてみてください。</p> <!-- 「1人」に修正 -->
+            <p class="question">全くの初心者でも大丈夫ですか？</p>
+            <p class="answer">はい、大丈夫です。Alpha Pipsの手法は極めてシンプルです。複雑な分析やPC操作は不要ですので、ご安心ください。</p>
         </div>
 
         <div class="faq-item">
-            <p class="question">どのコースを選べば良いか迷っています。</p>
-            <p class="answer">まず試してみたい方は「ライト」、<span class="highlight">本気で変わりたい、質問や交流をしたい方は「スタンダード」</span>、最短で結果を出し個別サポートを受けたい方は「VIP」がおすすめです。多くの方が選ばれ、<span class="highlight">現在14日間無料体験ができる「スタンダードコース」</span>から始められるのが、リスクもなく最もおすすめです。</p>
-        </div>
-
-         <div class="faq-item">
-            <p class="question">分からないことがあった場合、質問はできますか？</p>
-            <p class="answer">はい、スタンダードコース以上であれば、<span class="highlight">メンバー限定コミュニティ内でいつでもご質問いただけます</span>。講師や他のメンバーさんが回答してくれますので、1人で悩む必要はありません。VIPコースでは<span class="highlight">講師による個別対応</span>も行います。</p> <!-- 「1人」に修正 -->
+            <p class="question">忙しいけど続けられますか？</p>
+            <p class="answer">推奨するのはデイ～スイングトレードなので、１日中チャートに張り付く必要はありません。仕事や家事の合間にチェックするだけでも十分に実践可能です。あなたのライフスタイルに合わせて無理なく続けられます。</p>
         </div>
 
         <div class="faq-item">
-            <p class="question">途中で辞めたくなった場合、解約は簡単ですか？</p>
-            <p class="answer">はい、全コース月額制ですので、<span class="highlight">いつでも簡単に解約手続きが可能</span>です。縛りなどはありませんのでご安心ください。</p>
+            <p class="question">本当に稼げるようになりますか？</p>
+            <p class="answer">FXに「絶対」はありませんが、当手法の再現性は厳しいプロ試験にも合格するものです。多くのメンバーが成果を出されていますが、利益を保証するものではなく、ご自身の学習と実践が結果に繋がります。コツコツと地道に実践することが重要です。</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question">どのコースを選べば良いですか？</p>
+            <p class="answer">手軽に始めてみたい方は「ライトコース」、本格的にスキルを習得したい方は「スタンダードコース」、最短で結果を出し徹底サポートを受けたい方は「VIPコース」がおすすめです。迷われた場合は、現在14日間無料体験ができ、満足度＆コストパフォーマンスの高い「スタンダードコース」がおすすめです。</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question">必要な資金はいくらですか？</p>
+            <p class="answer">FXは少額から始められますが、適切なリスク管理が重要です。推奨資金額や資金管理法はコミュニティ内で詳しく解説します。まずは小さく始めて、スキルと共に徐々に資金を増やしていくことをお勧めします。</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="question">途中で解約することはできますか？</p>
+            <p class="answer">はい、可能です。全コース月額制のサブスクリプションのため、いつでも解約可能です。</p>
         </div>
 
         <!-- Final CTA -->
         <div class="final-cta">
-            <h2>努力が報われない、そんな毎日を終わりにしませんか？</h2>
+            <h2>再現性あるトレードで安心を</h2>
             <p>
-                「このままじゃマズい」と感じながらも、何から手をつければ良いか分からない。<br>
-                1人で本や動画を見ても、結局は元の場所に戻ってしまう…<br> <!-- 「1人」に修正 -->
-                そんな<span class="highlight">「変わりたいけど変われない」もどかしさ</span>を、私たちはよく知っています。<br><br>
-                でも、諦めるのはまだ早い。<span class="highlight">正しい場所に身を置くこと</span>が、何よりの近道です。<br>
-                Alpha Pipsは、あなたと同じ悩みを持つ仲間が集い、<br>
-                お互いを認め合い、<span class="highlight">見守られながら、自分のペースで成長できる場所</span>です。<br><br>
-                あなたの資産形成は、もうあなた1人だけの戦いではありません。<br> <!-- 「1人」に修正 -->
-                <span class="highlight">「聞ける安心感」</span>と<span class="highlight">「前に進んでる実感」</span>を手に入れ、<br>
-                将来への漠然とした不安を、<span class="highlight">「自分で稼げる自信」</span>に変えましょう。
+                仕事に家庭に忙しい40代、会社での責任が重くなる50代、そして年金だけではこの先不安な60代の皆様へ。<br>
+                将来への不安は、誰もが感じるものです。給料は上がらず、税負担だけが上がり続ける時代だからこそ、<br>
+                「自分の力で稼ぐスキル」が必要です。<br><br>
+                Alpha Pips トレードスクールでは、あなたと同じ悩みを持つ方々が、<br>
+                シンプルで再現性の高いトレード手法を学び、<br>
+                少しずつ確実に、経済的な安心を積み上げています。<br><br>
+                １人で悩むより、共に歩む仲間と一緒なら、必ず前に進めます。<br>
+                第２の人生を、より豊かなものにするための１歩を、今踏み出しませんか？
             </p>
-            <a href="#payment-standard" class="btn btn-block cta-button">まずは無料で「変われる環境」を体験する<span class="subtext">※スタンダードコース 14日間無料・いつでも解約OK</span></a>
+
+            <a href="#payment-standard" class="btn btn-block cta-button">スタンダードコースに申し込む<span class="subtext">※期間限定：14日間無料体験キャンペーン実施中！</span></a>
         </div>
     </div>
 
