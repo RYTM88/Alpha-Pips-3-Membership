@@ -187,6 +187,15 @@
              color: var(--primary);
              font-weight: bold;
          }
+         /* 期間限定募集の告知スタイル */
+         .limited-notice {
+             font-size: 1.6rem; /* h2相当のサイズ */
+             font-weight: bold;
+             color: var(--error); /* 赤色で強調 */
+             text-align: center;
+             margin-top: 1.5em; /* 上の<p>との間隔 */
+             margin-bottom: 0; /* 下のコースカードとの間隔は .courses で確保 */
+         }
 
 
         /* Course cards */
@@ -569,11 +578,8 @@
             padding: 15px 24px;
             font-size: 1.1rem;
         }
-        .final-cta .cta-button .subtext {
-             display: block;
-             font-size: 0.8em;
-             margin-top: 5px;
-             font-weight: normal;
+        .final-cta .cta-button .subtext { /* 削除されたが念のため残す */
+             /* display: none; */
         }
 
         /* Helper classes */
@@ -603,6 +609,7 @@
             h1 { font-size: 2rem; } /* タブレットでのh1サイズ調整 */
             h2 { font-size: 1.5rem; }
             .final-cta h2 { font-size: 1.6rem; }
+            .limited-notice { font-size: 1.4rem; } /* スマホでの告知サイズ調整 */
             .course-card h3 { font-size: 1.4rem; }
             .course-card.priority h3 .limited-badge { font-size: 0.65em; } /* スマホでの限定枠サイズ調整 */
             .academy-badge { font-size: 1.1rem; padding: 6px 20px;}
@@ -656,6 +663,7 @@
             h1 { font-size: 1.8rem; } /* スマホ(小)でのh1サイズ調整 */
             h2 { font-size: 1.4rem; }
             .final-cta h2 { font-size: 1.5rem; }
+            .limited-notice { font-size: 1.3rem; } /* スマホ(小)での告知サイズ調整 */
             .course-card h3 { font-size: 1.3rem; }
             .course-card.priority h3 .limited-badge { font-size: 0.6em; } /* スマホ(小)での限定枠サイズ調整 */
             .academy-badge { font-size: 1rem; padding: 5px 18px;}
@@ -668,7 +676,7 @@
             .feature-block .text-content h3 { font-size: 1.2rem; }
             .final-cta p { font-size: 1rem; }
             .final-cta .cta-button { font-size: 1rem; padding: 12px 20px; }
-            .final-cta .cta-button .subtext { font-size: 0.75em; }
+             /* .final-cta .cta-button .subtext は削除 */
             .question::before { font-size: 1.1em; } /* スマホ(小)でのQサイズ */
             .answer { padding-left: 2.5em; } /* スマホ(小)でのAのインデント調整 */
             .answer::before { margin-left: -2.5em; } /* スマホ(小)でのAのインデント調整 */
@@ -695,6 +703,7 @@
                 </ul>
             </div>
             <p style="text-align: center;">あなたのレベルと目標に合わせた、3つのコースをご用意しています。</p>
+            <p class="limited-notice">コミュニティは期間限定での募集となります。</p> {/* 追加 */}
         </header>
 
         <!-- Course Cards -->
@@ -895,7 +904,7 @@
                 第２の人生を、より豊かなものにするための<span class="highlight">１歩を、今踏み出しませんか？</span>
             </p>
 
-            <a href="#payment-standard" class="btn btn-block cta-button">14日間無料で本格体験してみる<span class="subtext">※期間限定：14日間無料体験キャンペーン実施中！</span></a>
+            <a href="#payment-standard" class="btn btn-block cta-button">14日間無料で本格体験してみる！</a> {/* ボタンテキスト変更、サブテキスト削除 */}
         </div>
     </div>
 
