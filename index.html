@@ -275,6 +275,15 @@
          .course-card.priority h3 {
             color: #c69500;
          }
+         /* VIPコース限定枠表示 */
+         .course-card.priority h3 .limited-badge {
+             display: inline-block; /* 横並びにする */
+             font-size: 0.7em; /* 文字サイズ調整 */
+             color: var(--error); /* 赤文字 */
+             font-weight: normal; /* 通常の太さ */
+             margin-left: 8px; /* 左に余白 */
+             vertical-align: middle; /* 垂直位置調整 */
+         }
 
 
         .price {
@@ -595,6 +604,7 @@
             h2 { font-size: 1.5rem; }
             .final-cta h2 { font-size: 1.6rem; }
             .course-card h3 { font-size: 1.4rem; }
+            .course-card.priority h3 .limited-badge { font-size: 0.65em; } /* スマホでの限定枠サイズ調整 */
             .academy-badge { font-size: 1.1rem; padding: 6px 20px;}
             .intro-text { font-size: 1rem; }
             .features-box { padding: 20px; }
@@ -647,6 +657,7 @@
             h2 { font-size: 1.4rem; }
             .final-cta h2 { font-size: 1.5rem; }
             .course-card h3 { font-size: 1.3rem; }
+            .course-card.priority h3 .limited-badge { font-size: 0.6em; } /* スマホ(小)での限定枠サイズ調整 */
             .academy-badge { font-size: 1rem; padding: 5px 18px;}
             .intro-text { font-size: 0.95rem; }
             .features-box { padding: 15px; }
@@ -725,7 +736,7 @@
 
             <!-- VIP Course -->
             <div class="course-card priority">
-                <h3 class="highlight-accent">VIPコース</h3>
+                <h3 class="highlight-accent">VIPコース <span class="limited-badge">（毎月限定5名）</span></h3> {/* 限定枠追加 */}
                 <p class="value-prop">講師による徹底指導で、成功への<strong class="highlight-accent">「最短ルート」</strong>を掴む。</p>
                 <ul class="features-list">
                     <li>スタンダードコース全内容</li>
@@ -733,10 +744,8 @@
                     <li><strong class="highlight-accent">Discord上での講師による個別指導</strong></li>
                 </ul>
                  <p class="price">
-                    <span style="display: block; margin-bottom: 5px; font-size: 1.1rem; color: var(--text);">
-                        入会金：30万円
-                    </span>
-                    <span>29,800円<span class="price-note">/ 月 (税込)</span></span>
+                     {/* 入会金表示削除 */}
+                    <span>49,800円<span class="price-note">/ 月 (税込)</span></span> {/* 月額料金変更 */}
                 </p>
                 <div class="button-wrapper">
                     <a href="#payment-priority" class="btn btn-accent btn-block">VIPコースで最短上達を目指す</a>
@@ -784,8 +793,8 @@
                     <tr>
                         <td>オリジナルインジケーター</td>
                         <td>-</td>
-                        <td>4種</td>
-                        <td>7種 (専用3種含む)</td>
+                        <td>✓</td> {/* チェックマークに変更 */}
+                        <td>✓</td> {/* チェックマークに変更 */}
                     </tr>
                     <tr>
                         <td>質問対応</td>
