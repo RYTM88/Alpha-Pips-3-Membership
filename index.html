@@ -354,20 +354,11 @@
             font-weight: bold;
         }
 
-        .target-audience { /* 削除されたが念のため残す */
-            /* display: none; */ /* 表示しない場合はこちらを使用 */
-            font-size: 0.95rem;
-            color: var(--light-text);
-            margin-bottom: 15px;
-            font-style: italic;
-            min-height: 45px;
-        }
-
         .value-prop {
             font-weight: 500;
             margin-bottom: 20px;
             font-size: 1rem;
-            min-height: 80px; /* ある程度の高さを確保 */
+            min-height: 80px; /* 高さを再度確保 */
             line-height: 1.5;
         }
          .value-prop .campaign-note {
@@ -615,7 +606,7 @@
                 grid-template-columns: 1fr;
             }
             .course-card h3 { min-height: auto; }
-            .target-audience { display: none; } /* スマホでも削除 */
+             /* .target-audience は削除したので不要 */
             .value-prop { min-height: auto; } /* スマホではmin-height解除 */
             .features-list li { min-height: auto; }
 
@@ -700,8 +691,7 @@
             <!-- Light Course -->
             <div class="course-card light">
                 <h3>ライトコース</h3>
-                {/* <p class="target-audience">1日100円以下でプロのトレードに触れてみたい方へ</p> */} {/* 削除 */}
-                <p class="value-prop">プロの分析・思考を手軽に体験できます。</p> {/* テキスト変更 */}
+                <p class="value-prop">プロの分析・思考を手軽に体験できます。</p>
                 <ul class="features-list">
                     <li>講師による定期チャート考察</li>
                     <li>メンバー限定交流部屋の閲覧</li>
@@ -716,11 +706,10 @@
             <div class="course-card standard" style="position: relative; overflow: hidden;">
                  <div class="free-trial-banner">14日間無料</div>
                 <h3 class="highlight">スタンダードコース <span class="popular-badge"><span>★</span>１番人気</span></h3>
-                 {/* <p class="target-audience">本気でスキルを習得したい全ての方 (初心者～経験者)へ</p> */} {/* 削除 */}
-                <p class="value-prop">プロが愛用するシンプルで再現性の高い手法のマスターを目指すコースです。</p> {/* テキスト変更 */}
+                <p class="value-prop">プロが愛用するシンプルで再現性の高い手法のマスターを目指すコースです。</p>
                 <ul class="features-list">
                     <li>ライトコース全内容</li>
-                    <li><strong class="highlight">Alpha Pipsオリジナル手法解説教材</strong></li> {/* 強調表示追加 */}
+                    <li><strong class="highlight">Alpha Pipsオリジナル手法解説教材</strong></li>
                     <li><strong class="highlight">オリジナルインジケーター4種の利用権</strong></li>
                     <li><strong class="highlight">講師によるリアルタイム相場考察</strong></li>
                     <li><strong class="highlight">メンバー限定交流部屋へのアクセス</strong></li>
@@ -737,7 +726,6 @@
             <!-- VIP Course -->
             <div class="course-card priority">
                 <h3 class="highlight-accent">VIPコース</h3>
-                 {/* <p class="target-audience">最短で結果を出したい方、徹底的なサポートを求める方へ</p> */} {/* 削除 */}
                 <p class="value-prop">講師による徹底指導で、成功への<strong class="highlight-accent">「最短ルート」</strong>を掴む。</p>
                 <ul class="features-list">
                     <li>スタンダードコース全内容</li>
@@ -775,7 +763,7 @@
                         <td>✓</td>
                         <td>✓</td>
                     </tr>
-                    <tr>
+                     <tr>
                         <td>メンバー同士の交流</td>
                         <td>閲覧のみ</td>
                         <td>✓</td>
