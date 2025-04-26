@@ -702,7 +702,6 @@
                 <p class="target-audience">1日100円以下でプロのトレードに触れてみたい方へ</p>
                 <p class="value-prop"><strong>シンプルで再現性の高い手法を知り、プロのトレードを体感できます。</strong></p>
                 <ul class="features-list">
-                    <li>Alpha Pipsオリジナル手法解説教材</li>
                     <li>講師による定期チャート考察</li>
                     <li>メンバー限定交流部屋の閲覧</li>
                 </ul>
@@ -720,6 +719,7 @@
                 <p class="value-prop">実践力を高め、仲間と共に成長する。<br><strong class="highlight">最も満足度、コストパフォーマンスが高いコースです。</strong><span class="campaign-note">※ 今なら14日間無料体験キャンペーン実施中！</span></p>
                 <ul class="features-list">
                     <li>ライトコース全内容</li>
+                    <li>Alpha Pipsオリジナル手法解説教材</li> {/* 追加 */}
                     <li><strong class="highlight">オリジナルインジケーター4種の利用権</strong></li>
                     <li><strong class="highlight">講師によるリアルタイム相場考察</strong></li>
                     <li><strong class="highlight">メンバー限定交流部屋へのアクセス</strong></li>
@@ -768,18 +768,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>オリジナル手法解説</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
+                    {/* 行の順番を変更 */}
                     <tr>
                         <td>定期チャート考察</td>
                         <td>✓</td>
                         <td>✓</td>
                         <td>✓</td>
                     </tr>
+                    <tr>
+                        <td>オリジナル手法解説</td>
+                        <td>-</td> {/* 変更 */}
+                        <td>✓</td> {/* 変更 */}
+                        <td>✓</td> {/* 変更 */}
+                    </tr>
+                    <tr>
+                        <td>メンバー同士の交流</td>
+                        <td>閲覧のみ</td> {/* 変更 */}
+                        <td>✓</td>
+                        <td>✓</td>
+                    </tr>
+                    {/* 以降は元の順番 */}
                     <tr>
                         <td>リアルタイム相場分析</td>
                         <td>-</td>
@@ -791,12 +799,6 @@
                         <td>-</td>
                         <td>4種</td>
                         <td>7種 (専用3種含む)</td>
-                    </tr>
-                    <tr>
-                        <td>メンバー同士の交流</td>
-                        <td>-</td>
-                        <td>✓</td>
-                        <td>✓</td>
                     </tr>
                     <tr>
                         <td>質問対応</td>
