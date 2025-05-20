@@ -1,3 +1,14 @@
+      <!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Pips | 投資×AIで日常をアップデート</title>
+    <meta name="description" content="Alpha Pips - 投資×AIで日常をアップデート。未来の錬金術をあなたに。AI初心者から始める資産形成とライフハックコミュニティ。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
         /* Reset and Base Styles */
         :root {
             /* Cyberpunk Palette */
@@ -16,8 +27,8 @@
 
             /* Standard colors (retained for specific elements if needed) */
             --error: #e63946;
-            --accent-vip: var(--cyber-accent-pink); /* VIP can use pink */
-            --light-pink-course: var(--cyber-accent-pink); /* Light course can use pink */
+            --accent-vip-color: var(--cyber-accent-pink); /* VIP can use pink, renamed to avoid confusion with --accent-vip class name */
+            --light-pink-course-color: var(--cyber-accent-pink); /* Light course can use pink, renamed */
 
             --font-primary: 'Roboto', 'Noto Sans JP', sans-serif;
             --font-secondary: 'Noto Sans JP', sans-serif;
@@ -98,7 +109,7 @@
             margin-bottom: 1.2em;
             color: var(--cyber-text-secondary);
         }
-        .intro-text p, .final-cta p {
+        .intro-text p, .final-cta p { /* These p tags were already primary, kept for clarity */
             font-size: 1.1rem;
             color: var(--cyber-text-primary);
         }
@@ -109,7 +120,7 @@
             display: inline-block;
             padding: 14px 32px;
             background: var(--cyber-accent-cyan);
-            color: var(--cyber-bg-dark);
+            color: var(--cyber-bg-dark); /* Text color for cyan button */
             font-weight: bold;
             text-decoration: none;
             border-radius: 8px;
@@ -117,7 +128,7 @@
             text-align: center;
             transition: all 0.3s ease;
             cursor: pointer;
-            border: 1px solid var(--cyber-accent-cyan); /* Adding border for definition */
+            border: 1px solid var(--cyber-accent-cyan);
             font-family: var(--font-primary);
             letter-spacing: 0.5px;
             font-size: 1rem;
@@ -131,10 +142,10 @@
             box-shadow: 0 0 20px rgba(0, 242, 234, 0.5), 0 0 5px var(--cyber-accent-cyan);
         }
 
-        .btn-secondary { /* For less prominent buttons, could use pink or purple */
+        .btn-secondary {
             background: var(--cyber-accent-pink);
             border-color: var(--cyber-accent-pink);
-            color: var(--cyber-bg-dark);
+            color: var(--cyber-bg-dark); /* Text color for pink button */
             box-shadow: 0 0 15px rgba(255, 0, 224, 0.3), inset 0 0 5px rgba(255,255,255,0.2);
         }
         .btn-secondary:hover {
@@ -143,32 +154,32 @@
             box-shadow: 0 0 20px rgba(255, 0, 224, 0.5), 0 0 5px var(--cyber-accent-pink);
         }
 
-        .btn-accent { /* VIP button (could keep yellow or switch to pink/purple) */
-            background: var(--accent-vip); /* Retaining yellow for VIP for now, or switch to var(--cyber-accent-pink) */
-            border-color: var(--accent-vip);
-            color: var(--cyber-bg-dark);
-            box-shadow: 0 0 15px rgba(255, 193, 7, 0.3);
+        .btn-accent { /* VIP button, using pink now */
+            background: var(--accent-vip-color);
+            border-color: var(--accent-vip-color);
+            color: var(--cyber-bg-dark); /* Text color for pink button */
+            box-shadow: 0 0 15px rgba(255, 0, 224, 0.3);
         }
          .btn-accent:hover {
             background: transparent;
-            color: var(--accent-vip);
-            box-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+            color: var(--accent-vip-color);
+            box-shadow: 0 0 20px rgba(255, 0, 224, 0.5);
          }
 
         .btn-block {
             display: block;
             width: 100%;
         }
-        .btn-cta { /* Main CTA - Strong Cyan */
+        .btn-cta {
             padding: 16px 36px;
             font-size: 1.15rem;
-            background: linear-gradient(135deg, var(--cyber-accent-cyan), #00b8d4);
+            background: linear-gradient(135deg, var(--cyber-accent-cyan), #00b8d4); /* Adjusted gradient slightly */
             border: none;
             color: var(--cyber-bg-dark);
             box-shadow: 0 5px 25px rgba(0, 242, 234, 0.3);
         }
         .btn-cta:hover {
-            background: linear-gradient(135deg, #00e0c8, var(--cyber-accent-cyan));
+            background: linear-gradient(135deg, #00e0c8, var(--cyber-accent-cyan)); /* Adjusted hover gradient */
             box-shadow: 0 8px 30px rgba(0, 242, 234, 0.4);
             transform: translateY(-4px);
         }
@@ -204,14 +215,14 @@
             color: var(--cyber-text-primary);
         }
         .hero-section .intro-text strong {
-            color: var(--cyber-accent-pink); /* Using pink for strong emphasis here */
+            color: var(--cyber-accent-pink);
             font-weight: bold;
             text-shadow: 0 0 8px rgba(255, 0, 224, 0.3);
         }
 
         /* Features Box (選ばれる理由など) */
         .features-overview {
-            background-color: rgba(26, 10, 56, 0.7); /* semi-transparent */
+            background-color: rgba(26, 10, 56, 0.7);
             backdrop-filter: blur(5px);
             padding: 30px;
             border-radius: 12px;
@@ -239,17 +250,17 @@
             color: var(--cyber-text-secondary);
         }
         .features-list-header li::before {
-            content: "✧"; /* Cyber-style bullet */
+            content: "✧";
             position: absolute;
             left: 0;
-            top: 0px;
+            top: 0px; /* Adjusted for better alignment */
             color: var(--cyber-accent-cyan);
             font-weight: bold;
             font-size: 1.5em;
             text-shadow: 0 0 5px var(--cyber-accent-cyan);
         }
          .features-list-header li .highlight {
-             color: var(--cyber-accent-pink); /* Highlight in pink for contrast */
+             color: var(--cyber-accent-pink);
              font-weight: 500;
          }
 
@@ -257,7 +268,7 @@
          .price-notice {
              font-size: 1.2rem;
              font-weight: 500;
-             color: var(--cyber-accent-pink); /* Pink for urgency/special offer */
+             color: var(--cyber-accent-pink);
              text-align: center;
              margin-top: 2.5em;
              margin-bottom: 1em;
@@ -294,40 +305,38 @@
             display: flex;
             flex-direction: column;
             box-shadow: 0 5px 20px rgba(13, 2, 33, 0.5),
-                        inset 0 0 0 1px var(--cyber-border-color); /* Inner border */
+                        inset 0 0 0 1px var(--cyber-border-color);
         }
 
         .course-card:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: 0 10px 30px rgba(0, 242, 234, 0.15),
-                        0 0 20px var(--cyber-accent-cyan),
+                        0 0 20px var(--cyber-accent-cyan), /* Default hover glow */
                         inset 0 0 0 1px var(--cyber-accent-cyan);
         }
 
         .course-card.light {
-            border-top: 5px solid var(--light-pink-course);
+            border-top: 5px solid var(--light-pink-course-color);
         }
         .course-card.light:hover {
              box-shadow: 0 10px 30px rgba(255, 0, 224, 0.15),
-                         0 0 20px var(--light-pink-course),
-                         inset 0 0 0 1px var(--light-pink-course);
+                         0 0 20px var(--light-pink-course-color),
+                         inset 0 0 0 1px var(--light-pink-course-color);
         }
-        .course-card.light h3 { color: var(--light-pink-course); text-shadow: 0 0 5px var(--light-pink-course);}
+        .course-card.light h3 { color: var(--light-pink-course-color); text-shadow: 0 0 5px var(--light-pink-course-color);}
 
 
         .course-card.standard {
             border-top: 5px solid var(--cyber-accent-cyan);
-            transform: scale(1.03); /* Already scaled */
+            transform: scale(1.03);
             box-shadow: 0 10px 35px rgba(0, 242, 234, 0.2),
                         0 0 15px var(--cyber-accent-cyan),
                         inset 0 0 0 1px var(--cyber-accent-cyan);
             z-index: 10;
         }
-        .course-card.standard:hover {
+        .course-card.standard:hover { /* Standard hover already has cyan glow from general .course-card:hover */
             transform: scale(1.05) translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 242, 234, 0.3),
-                        0 0 25px var(--cyber-accent-cyan),
-                        inset 0 0 0 1.5px var(--cyber-accent-cyan);
+            /* box-shadow can be more intense if needed, but general hover is good */
         }
         .course-card.standard h3 {
              color: var(--cyber-accent-cyan);
@@ -354,35 +363,35 @@
              position: absolute;
              top: 20px;
              right: -40px;
-             background: var(--cyber-accent-pink); /* Pink banner */
+             background: var(--cyber-accent-pink);
              color: var(--cyber-bg-dark);
              padding: 6px 45px;
              transform: rotate(45deg);
              font-weight: bold;
              font-size: 0.9em;
              box-shadow: 0 0 10px rgba(255,0,224,0.4);
-             z-index: 1;
+             z-index: 1; /* Ensure it's above card content */
              overflow: hidden;
              letter-spacing: 0.5px;
         }
 
 
         .course-card.priority {
-            border-top: 5px solid var(--accent-vip); /* Using pink from var(--accent-vip) */
+            border-top: 5px solid var(--accent-vip-color);
         }
          .course-card.priority:hover {
-             box-shadow: 0 10px 30px rgba(255, 0, 224, 0.15), /* Assuming VIP uses pink */
-                         0 0 20px var(--accent-vip),
-                         inset 0 0 0 1px var(--accent-vip);
+             box-shadow: 0 10px 30px rgba(255, 0, 224, 0.15),
+                         0 0 20px var(--accent-vip-color),
+                         inset 0 0 0 1px var(--accent-vip-color);
         }
         .course-card.priority h3 {
-            color: var(--accent-vip); /* Using pink from var(--accent-vip) */
-            text-shadow: 0 0 8px var(--accent-vip);
+            color: var(--accent-vip-color);
+            text-shadow: 0 0 8px var(--accent-vip-color);
         }
          .course-card.priority h3 .limited-badge {
              display: inline-block;
              font-size: 0.7em;
-             color: var(--cyber-accent-pink); /* Pink for badge text */
+             color: var(--cyber-accent-pink);
              font-weight: bold;
              margin-left: 8px;
              vertical-align: middle;
@@ -399,12 +408,12 @@
             margin: 25px 0 10px 0;
             color: var(--cyber-text-primary);
         }
-        .course-card.light .price { color: var(--light-pink-course); }
+        .course-card.light .price { color: var(--light-pink-course-color); }
         .course-card.standard .price { color: var(--cyber-accent-cyan); }
-        .course-card.priority .price { color: var(--accent-vip); }
+        .course-card.priority .price { color: var(--accent-vip-color); }
 
         .price .free-trial-info {
-            background: var(--cyber-accent-pink); /* Pink for trial info */
+            background: var(--cyber-accent-pink);
             color: var(--cyber-bg-dark);
             font-size: 0.9rem;
             padding: 5px 12px;
@@ -436,10 +445,10 @@
             color: var(--cyber-text-secondary);
         }
         .features-list li::before {
-            content: "»"; /* Cyber bullet */
+            content: "»";
             position: absolute;
             left: 0;
-            top: 1px;
+            top: 1px; /* Adjusted for better alignment */
             color: var(--cyber-accent-cyan);
             font-weight: bold;
             font-size: 1.3em;
@@ -450,7 +459,7 @@
             font-weight: 500;
         }
         .features-list li strong.highlight-vip {
-            color: var(--accent-vip);
+            color: var(--accent-vip-color);
             font-weight: 500;
         }
 
@@ -459,7 +468,7 @@
             font-weight: 500;
             margin-bottom: 20px;
             font-size: 1.05rem;
-            min-height: 70px;
+            min-height: 70px; /* Adjust as needed */
             line-height: 1.6;
             color: var(--cyber-text-secondary);
         }
@@ -471,12 +480,12 @@
              margin-top: auto;
              padding-top: 20px;
         }
-        .course-card.standard .btn { /* Already styled with gradient */
-            background: linear-gradient(135deg, var(--cyber-accent-cyan), #00b8d4);
+        .course-card.standard .btn {
+            background: linear-gradient(135deg, var(--cyber-accent-cyan), #00b8d4); /* Consistent with .btn-cta */
             color: var(--cyber-bg-dark);
             padding: 15px 32px;
             font-size: 1.05rem;
-            border: none;
+            border: none; /* Remove border for gradient buttons if preferred */
             box-shadow: 0 4px 20px rgba(0, 242, 234, 0.3);
         }
         .course-card.standard .btn:hover {
@@ -519,23 +528,23 @@
         .comparison-table thead th:nth-child(3) { /* Standard col header */
             background-color: var(--cyber-accent-cyan);
             color: var(--cyber-bg-dark);
-            text-shadow: none;
+            text-shadow: none; /* Remove shadow for better readability on solid bg */
         }
         .comparison-table tbody tr:nth-child(even) td {
-            background-color: rgba(13,2,33,0.3); /* Darker row striping */
+            background-color: rgba(13,2,33,0.3);
         }
         .comparison-table tbody td:first-child {
             text-align: left;
             font-weight: 500;
             color: var(--cyber-text-primary);
-            background-color: var(--cyber-bg-light-hover);
+            background-color: var(--cyber-bg-light-hover); /* Changed from dark */
         }
-        .comparison-table tbody td strong { color: var(--cyber-accent-pink); } /* Pink for strong in table */
+        .comparison-table tbody td strong { color: var(--cyber-accent-pink); }
         .comparison-table tbody td:nth-child(3) {
-            background-color: rgba(0, 242, 234, 0.05); /* Cyan tint for standard col cells */
+            background-color: rgba(0, 242, 234, 0.05);
         }
         .comparison-table tbody td:nth-child(3) strong {
-            color: var(--cyber-accent-cyan); /* Cyan for strong in standard col */
+            color: var(--cyber-accent-cyan);
         }
 
 
@@ -608,9 +617,9 @@
         .testimonial {
             background: var(--cyber-bg-medium);
             padding: 30px;
-            border-left: 5px solid var(--cyber-accent-pink); /* Pink border for testimonials */
+            border-left: 5px solid var(--cyber-accent-pink);
             margin: 30px 0;
-            border-radius: 0 8px 8px 0;
+            border-radius: 0 8px 8px 0; /* Keep this style */
             box-shadow: 0 0 20px rgba(255,0,224,0.1);
         }
         .testimonial p {
@@ -620,7 +629,7 @@
             margin-bottom: 1em;
         }
         .testimonial p .highlight {
-            background-color: rgba(0, 242, 234, 0.1); /* Cyan highlight bg */
+            background-color: rgba(0, 242, 234, 0.1);
             padding: 2px 5px;
             border-radius: 4px;
             font-weight: 500;
@@ -655,22 +664,22 @@
             font-size: 1.2rem;
         }
         .question::before {
-            content: "Q ►"; /* Cyber Q */
+            content: "Q ►";
             margin-right: 0.8em;
             font-weight: bold;
-            font-size: 1em;
+            font-size: 1em; /* Adjusted size */
             color: var(--cyber-accent-cyan);
         }
         .answer {
-            padding-left: 3.5em; /* Adjust for Q ► */
+            padding-left: 3.5em; /* Adjusted for new Q icon */
             color: var(--cyber-text-secondary);
             line-height: 1.8;
         }
         .answer::before {
-            content: "A ►"; /* Cyber A */
+            content: "A ►";
             font-weight: bold;
             margin-right: 0.8em;
-            margin-left: -3.5em;
+            margin-left: -3.5em; /* Adjusted for new A icon */
             color: var(--cyber-accent-pink);
         }
         .answer .highlight {
@@ -691,7 +700,7 @@
         .final-cta h2 {
             font-size: 2.4rem;
             color: var(--cyber-text-primary);
-            border-bottom: none;
+            border-bottom: none; /* Ensure no accidental border */
             margin-bottom: 0.8em;
             text-shadow: 0 0 10px var(--cyber-accent-cyan);
         }
@@ -709,10 +718,10 @@
             font-weight: 500;
         }
         .final-cta p .highlight-strong {
-            color: var(--cyber-accent-pink); /* Strong highlight in pink */
+            color: var(--cyber-accent-pink);
             font-weight: bold;
             font-size: 1.1em;
-            padding: 2px 4px;
+            padding: 2px 4px; /* Keep padding for bg effect if any */
             text-shadow: 0 0 8px var(--cyber-accent-pink);
         }
 
@@ -723,7 +732,7 @@
             padding: 40px 20px;
             border-top: 1px solid var(--cyber-border-color);
             margin-top: 50px;
-            background-color: var(--cyber-bg-dark); /* Ensure footer bg matches */
+            background-color: var(--cyber-bg-dark);
         }
         .site-footer p {
             color: var(--cyber-text-secondary);
@@ -732,7 +741,7 @@
         }
         .site-footer .risk-notice {
             font-size: 0.8rem;
-            color: #7a8aa0; /* Slightly lighter secondary for very small text */
+            color: #7a8aa0; /* A bit lighter for very small text */
         }
 
         /* Responsive adjustments */
@@ -762,7 +771,7 @@
 
             .courses { grid-template-columns: 1fr; gap: 25px; }
             .course-card { padding: 25px; }
-            .course-card h3 { font-size: 1.6rem; min-height: auto; }
+            .course-card h3 { font-size: 1.6rem; min-height: auto; } /* Ensure min-height is auto for mobile */
              .standard .free-trial-banner { font-size: 0.85em; padding: 5px 35px; top: 15px; right: -35px;}
              .standard .popular-badge { font-size: 0.65em; }
 
@@ -780,7 +789,7 @@
              .feature-block .text-content p { text-align: left; font-size: 0.95rem;}
 
              .question { font-size: 1.1rem; }
-             .answer { padding-left: 3em; font-size: 0.95rem; } /* Adjust for cyber Q/A icons */
+             .answer { padding-left: 3em; font-size: 0.95rem; }
              .answer::before { margin-left: -3em;}
 
              .final-cta { padding: 50px 20px;}
@@ -805,3 +814,304 @@
             .btn-cta { padding: 14px 28px; font-size: 1rem;}
             .comparison-table th, .comparison-table td { padding: 10px 8px; font-size: 0.85rem;}
          }
+    </style>
+</head>
+<body>
+    <header class="hero-section">
+        <div class="container">
+            <!-- ロゴがあればここに配置 -->
+            <!-- <img src="logo-cyberpunk.svg" alt="Alpha Pips Logo" style="width: 150px; margin-bottom: 20px; filter: drop-shadow(0 0 5px var(--cyber-accent-cyan));"> -->
+            <p class="tagline">Alpha Pips - 投資×AIで日常をアップデート。未来の錬金術をあなたに。</p>
+            <h1>もう、<span class="highlight-ai">時代遅れの稼ぎ方</span>で<br>消耗するのはやめにしませんか？</h1>
+            <div class="intro-text">
+                <p>労働収入だけでは先が見えない…そんな不安を抱えるあなたへ。<br>
+                Alpha Pipsは、<strong>投資トレード・AI活用・ライフハック</strong>の三本柱で、<br>
+                あなたの資産と人生を、<strong>次世代レベルへと引き上げます。</strong><br>
+                AI初心者でも大丈夫。私たちと一緒に、未来をデザインしましょう。
+                </p>
+            </div>
+             <div class="features-overview">
+                <p class="features-overview-title">Alpha Pipsが選ばれる理由：</p>
+                <ul class="features-list-header">
+                    <li><span class="highlight">未経験でも大丈夫！</span>ChatGPTから始めるAI活用入門！</li>
+                    <li>あなた専用のAI分析官<span class="highlight">「AIマイティ―」</span>がトレード判断を強力サポート！</li>
+                    <li>市場を先読み？AIインジケーター<span class="highlight">「AlgoX」</span>で高精度トレード！</li>
+                    <li>投資も日常もAIで効率化！<span class="highlight">時間とお金を生み出す</span>ライフハック術！</li>
+                    <li><span class="highlight">講師と仲間がいる環境</span>だから、挫折せずに続けられる！</li>
+                </ul>
+            </div>
+            <a href="#courses" class="btn btn-cta">
+                今すぐ未来への投資を始める
+                <span class="subtext">AIと共に新しい自分へ</span>
+            </a>
+            <p class="price-notice">この充実内容とサポートで、この価格は今だけの初期メンバー限定価格です！</p>
+            <p class="price-notice-subtext">将来的な値上げを予定しています。このチャンスをお見逃しなく。</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="courses" class="container">
+            <h2>あなたの未来をデザインする3つのコース</h2>
+            <div class="courses">
+                <!-- Light Course -->
+                <div class="course-card light">
+                    <h3>ライトコース</h3>
+                    <p class="value-prop">まずはAIと投資の世界を手軽に体験。日常に役立つAIライフハックから始めたいあなたへ。</p>
+                    <ul class="features-list">
+                        <li>講師による定期チャート考察</li>
+                        <li>メンバー限定交流部屋の閲覧</li>
+                        <li><strong class="highlight-feature">AI活用（ライフハック）情報提供</strong><br><small>(ChatGPT基本操作、お得情報事例など)</small></li>
+                    </ul>
+                    <p class="price">5,980円<span class="price-note">/ 月 (税込)</span></p>
+                    <div class="button-wrapper">
+                        <a href="#payment-light" class="btn btn-secondary btn-block">ライトコースから試す</a>
+                    </div>
+                </div>
+
+                <!-- Standard Course -->
+                <div class="course-card standard">
+                    <div class="free-trial-banner">14日間無料</div>
+                    <h3>スタンダードコース <span class="popular-badge"><span class="star-icon">★</span>No.1 人気</span></h3>
+                    <p class="value-prop"><strong>本気で資産を増やし、人生を豊かにしたいあなたへ。</strong>AIトレードツールとプロのノウハウで最速で結果を目指す決定版！</p>
+                    <ul class="features-list">
+                        <li>ライトコース全内容</li>
+                        <li>Alpha Pipsオリジナル手法解説教材</li>
+                        <li><strong class="highlight-feature">自社開発AIトレードツール「AIマイティ―」利用権</strong></li>
+                        <li><strong class="highlight-feature">AIインジケーター「AlgoX」利用権</strong></li>
+                        <li>リアルタイム相場部屋へのアクセス</li>
+                        <li>メンバー限定交流部屋 (投稿・交流可)</li>
+                        <li><small>AIライフハック (応用編プロンプト等も提供)</small></li>
+                    </ul>
+                    <p class="price">
+                        <span class="free-trial-info">14日間 ¥0</span>
+                        9,800円<span class="price-note">/ 月 (税込)</span>
+                    </p>
+                    <div class="button-wrapper">
+                        <a href="#payment-standard" class="btn btn-block">
+                            14日間無料で最強AI体験
+                            <span class="subtext">リスクゼロで新しい自分へ</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- VIP Course -->
+                <div class="course-card priority">
+                    <h3>VIPコース <span class="limited-badge">（毎月限定5名）</span></h3>
+                    <p class="value-prop">講師マイティ―による<strong style="color: var(--accent-vip-color);">トレード個別徹底指導</strong>で、成功への「最短・最速ルート」を掴む特別プラン。</p>
+                    <ul class="features-list">
+                        <li>スタンダードコース全内容</li>
+                        <li><strong class="highlight-vip">Discordでの講師によるトレード個別指導</strong></li>
+                        <li><strong class="highlight-vip">最優先での質問回答サポート</strong></li>
+                    </ul>
+                    <p class="price">49,800円<span class="price-note">/ 月 (税込)</span></p>
+                    <div class="button-wrapper">
+                        <a href="#payment-priority" class="btn btn-accent btn-block">VIPコースで最速上達</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="comparison" class="container">
+            <h2>コース内容詳細比較</h2>
+            <div class="table-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>機能 / サービス</th>
+                            <th>ライト</th>
+                            <th>スタンダード <small>(おすすめ)</small></th>
+                            <th>VIP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>定期チャート考察</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>メンバー交流部屋</td>
+                            <td>閲覧のみ</td>
+                            <td><strong>✓ 参加可能</strong></td>
+                            <td><strong>✓ 参加可能</strong></td>
+                        </tr>
+                        <tr>
+                            <td>AI活用(ライフハック)情報</td>
+                            <td>基本編</td>
+                            <td><strong>✓ 応用編含む</strong></td>
+                            <td><strong>✓ 応用編含む</strong></td>
+                        </tr>
+                        <tr>
+                            <td>オリジナル手法解説</td>
+                            <td>-</td>
+                            <td><strong>✓</strong></td>
+                            <td><strong>✓</strong></td>
+                        </tr>
+                        <tr>
+                            <td>リアルタイム相場分析</td>
+                            <td>-</td>
+                            <td><strong>✓</strong></td>
+                            <td><strong>✓</strong></td>
+                        </tr>
+                        <tr>
+                            <td>AIトレードツール「AIマイティ―」</td>
+                            <td>-</td>
+                            <td><strong>✓</strong></td>
+                            <td><strong>✓</strong></td>
+                        </tr>
+                        <tr>
+                            <td>AIインジケーター「AlgoX」</td>
+                            <td>-</td>
+                            <td><strong>✓</strong></td>
+                            <td><strong>✓</strong></td>
+                        </tr>
+                        <tr>
+                            <td>質問対応</td>
+                            <td>-</td>
+                            <td>全体チャット</td>
+                            <td><strong>個別優先</strong></td>
+                        </tr>
+                        <tr>
+                            <td>講師によるトレード個別指導</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td><strong>✓</strong></td>
+                        </tr>
+                        <tr>
+                            <td>無料お試し期間</td>
+                            <td>-</td>
+                            <td><strong>✓ 14日間</strong></td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="why-alpha-pips" class="container feature-block-section">
+            <h2>Alpha Pipsで<span class="highlight-ai">未来の自分</span>を創造する</h2>
+            <div class="feature-block">
+                <div class="icon-container">🧠</div> <!-- Icon: Brain / AI -->
+                <div class="text-content">
+                    <h3>AIと共に進化するトレード戦略
+                        <span class="sub-heading">「AIマイティ―」＆「AlgoX」があなたの右腕に</span>
+                    </h3>
+                    <p>
+                        もう複雑な分析や感情論に振り回されるのは終わりです。講師マイティ―のトレードロジックを学習した<span class="highlight">「AIマイティ―」</span>が、あなたの疑問に答え、分析をサポート。
+                        さらに、値動きに自動最適化するAIインジケーター<span class="highlight">「AlgoX」</span>が、高精度なエントリーポイントを示唆。
+                        データとAIに基づいた、再現性の高いトレード手法をマスターできます。
+                    </p>
+                     <div class="feature-image-placeholder">（「AIマイティ―」や「AlgoX」のダッシュボードやチャート画面のモックアップ画像など）</div>
+                </div>
+            </div>
+
+            <div class="feature-block">
+                <div class="icon-container">💡</div> <!-- Icon: Lightbulb / Idea / Lifehack -->
+                <div class="text-content">
+                    <h3>日常をAIでハック。時間とお金を生み出す新習慣
+                        <span class="sub-heading">ChatGPT初心者でも大丈夫！お得と効率を手に入れる</span>
+                    </h3>
+                    <p>
+                        「AIって難しそう…」そんなあなたも大丈夫。Alpha Pipsでは、ChatGPTの基本的な使い方から、日常生活を豊かにする具体的な活用法まで丁寧に解説。
+                        <span class="highlight">最安値の商品を瞬時に見つけたり、格安旅行プランをAIに作らせたり、面倒な情報収集を自動化</span>したり…。
+                        AIを使いこなして、賢くお得に、そして時間にゆとりのある生活を実現しましょう。
+                    </p>
+                    <div class="feature-image-placeholder">（ChatGPTでお得な情報を見つけている様子のスクショや、旅行プランの画像など）</div>
+                </div>
+            </div>
+
+            <div class="feature-block">
+                 <div class="icon-container">🚀</div> <!-- Icon: Rocket / Growth -->
+                <div class="text-content">
+                    <h3>論より証拠。講師のAI活用実績
+                        <span class="sub-heading">トレード収益から日常のお得まで、リアルな成果を公開</span>
+                    </h3>
+                    <p>
+                        机上の空論ではありません。講師マイティ―はChatGPTリリース直後からのヘビーユーザー。
+                        AIを活用したトレードで実際に収益を上げ、日常生活でもAIを駆使してお得な体験を積み重ねています。
+                        その<span class="highlight">リアルな実績や活用事例（収益画像やお得情報GETのスクショなど）</span>をコミュニティで共有。
+                        あなたも再現可能なノウハウがここにあります。
+                    </p>
+                    <div class="feature-image-placeholder">（講師のトレード収益グラフや、AIでお得に買い物した履歴のスクショなど）</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="container testimonials-section">
+            <h2><span class="highlight-ai">AI</span>で人生が変わった！先輩たちの声</h2>
+            <div class="testimonial">
+                <p>「正直、AIなんて自分には無縁だと思ってました。でもAlpha Pipsの<span class="highlight">分かりやすい解説でChatGPTを使い始めたら、世界が変わりました！</span>トレードの相談相手ができたみたいで心強いし、AIマイティ―のアドバイスで感情的な失敗トレードが激減。先日はAIに海外旅行のプランを組んでもらったら、<span class="highlight">航空券とホテル代が以前より5万円も安くなってビックリ！</span>トレードも日常も、こんなにお得になるなんて最高です！」</p>
+                <p class="testimonial-author">- K.Y. 様 (45歳・会社員) <span>スタンダードコース利用</span></p>
+            </div>
+            <div class="testimonial">
+                <p>「AlgoXの精度には驚かされています。今までインジケーターは色々試しましたが、<span class="highlight">AIが最適化してくれるというのは次元が違いますね。</span>エントリーに迷いがなくなり、安定して利益を出せるようになりました。また、コミュニティで共有されるライフハック情報も目からウロコ。<span class="highlight">AIを使って情報収集の時間が1/10くらいになった</span>ので、家族と過ごす時間が増えました。まさに一石二鳥以上の価値があります。」</p>
+                <p class="testimonial-author">- T.S. 様 (58歳・自営業) <span>スタンダードコース利用</span></p>
+            </div>
+             <div class="testimonial">
+                <p>「最初は『トレードもAIも学べてお得だな』くらいの軽い気持ちでスタンダードの無料体験に。でも、<span class="highlight">『AIマイティ―』が本当に優秀！</span>自分の分析に自信が持てなかったんですが、まるでベテラントレーダーが隣にいるような安心感。おかげで<span class="highlight">月々の収支がプラスに転じました。</span>ChatGPTも日常で使いまくりで、もう手放せません。この値段でこの内容は破格だと思います。」</p>
+                <p class="testimonial-author">- M.N. 様 (39歳・主婦) <span>スタンダードコース利用</span></p>
+            </div>
+        </section>
+
+        <section id="faq" class="container faq-section">
+            <h2>よくある質問</h2>
+            <div class="faq-item">
+                <p class="question">全くのAI初心者・投資初心者でも大丈夫ですか？</p>
+                <p class="answer">はい、もちろんです！Alpha Pipsは、AIや投資が初めての方でも安心して学べるように設計されています。特にChatGPTの使い方は基本から丁寧に解説しますし、<span class="highlight">投資手法もAIサポートでシンプルに実践できます。</span>多くの方が未経験からスタートしていますのでご安心ください。</p>
+            </div>
+            <div class="faq-item">
+                <p class="question">「AIマイティ―」や「AlgoX」は難しいツールですか？</p>
+                <p class="answer">いいえ、ご安心ください。「AIマイティ―」はチャット形式で質問に答えてくれる直感的なツールですし、「AlgoX」もチャート上に分かりやすくサインを表示します。<span class="highlight">複雑な設定や専門知識は不要で、どなたでも簡単に使いこなせるように工夫されています。</span>スタンダードコースの無料体験でぜひお試しください。</p>
+            </div>
+            <div class="faq-item">
+                <p class="question">スタンダードコースの14日間無料体験について詳しく教えてください。</p>
+                <p class="answer">スタンダードコースの<span class="highlight">全機能を14日間、完全に無料でお試しいただけます。</span>「AIマイティ―」や「AlgoX」の利用、オリジナル手法教材の閲覧、リアルタイム相場部屋や交流部屋への参加も可能です。もしご満足いただけない場合は、14日以内に解約すれば料金は一切発生しません。リスクなくAlpha Pipsの価値を体験してください。</p>
+            </div>
+            <div class="faq-item">
+                <p class="question">途中で解約できますか？料金は？</p>
+                <p class="answer">はい、いつでもオンラインで簡単に解約可能です。全コース月額制のため、<span class="highlight">解約手数料や違約金は一切かかりません。</span></p>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="container">
+                <h2>「もう稼げない」と諦める前に。<br><span class="highlight-ai">AI</span>があなたの<span class="highlight-strong">人生のゲームチェンジャー</span>になる。</h2>
+                <p>
+                    今の働き方、今の収入、今の生活…本当に満足していますか？<br>
+                    もし、ほんの少しでも「変わりたい」「もっと豊かになりたい」と願うなら、<br>
+                    Alpha Pipsがその<span class="highlight">強力な武器</span>となります。<br><br>
+                    投資のプロの知見と、最先端のAI技術を組み合わせた<span class="highlight">独自のノウハウ</span>を、<br>
+                    あなたも手に入れるチャンスです。<br>
+                    <span class="highlight-strong">AI初心者でも、投資未経験でも大丈夫。</span><br>
+                    必要なのは「未来を変えたい」という、ほんの少しの勇気だけ。<br><br>
+                    さあ、私たちと一緒に、<span class="highlight">経済的な自由と、心から楽しめる毎日</span>を創造しませんか？<br>
+                    <span class="highlight-strong">その第一歩を、今こそ踏み出しましょう！</span>
+                </p>
+                <a href="#payment-standard" class="btn btn-block btn-cta">
+                    スタンダードコースを14日間無料で体験する
+                    <span class="subtext">AIと共に、新しい未来を掴む！</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2024 Alpha Pips. All Rights Reserved.</p>
+            <p class="risk-notice">
+                当コミュニティで提供される情報は、教育および情報提供を目的としており、特定の金融商品の売買を推奨するものではありません。<br>
+                投資にはリスクが伴い、元本を失う可能性があります。AIツールやインジケーターは判断を補助するものであり、将来の利益を保証するものではありません。<br>
+                最終的な投資判断はご自身の責任において行ってください。
+            </p>
+            <!-- 必要であればプライバシーポリシーや特商法へのリンクを記載 -->
+        </div>
+    </footer>
+
+    <!-- Placeholder for payment section anchors -->
+    <div id="payment-light" style="height: 1px; margin-top: -1px;"></div>
+    <div id="payment-standard" style="height: 1px; margin-top: -1px;"></div>
+    <div id="payment-priority" style="height: 1px; margin-top: -1px;"></div>
+
+</body>
+</html>
