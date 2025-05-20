@@ -1,28 +1,23 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alpha Pips | 投資×AIで日常をアップデート</title>
-    <meta name="description" content="Alpha Pips - 投資×AIで日常をアップデート。未来の錬金術をあなたに。AI初心者から始める資産形成とライフハックコミュニティ。">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <style>
         /* Reset and Base Styles */
         :root {
-            --primary-dark-bg: #1a1c23; /* メインの暗い背景 */
-            --primary-medium-bg: #2c2f3b; /* カードなどの背景 */
-            --primary-light-bg: #393d4a; /* ホバー時など */
-            --accent-blue: #00aeff; /* AIや先進性を表すアクセント */
-            --accent-green: #00e676; /* もう一つのアクセント、成功など */
-            --accent-vip: #ffc107; /* VIPコース用 */
-            --text-primary: #f0f4f8; /* メインテキスト（白に近い） */
-            --text-secondary: #a9b4c2; /* サブテキスト */
-            --text-dark: #333; /* ライトテーマのテキスト */
-            --border-color: #4a4e5f;
+            /* Cyberpunk Palette */
+            --cyber-bg-dark: #0d0221; /* Deep space blue/purple */
+            --cyber-bg-medium: #1a0a38; /* Slightly lighter bg for cards */
+            --cyber-bg-light-hover: #2a1053; /* Hover bg */
+
+            --cyber-text-primary: #e0fbfc; /* Very light cyan/white for main text */
+            --cyber-text-secondary: #a0b8d0; /* Lighter cool gray/blue for subtext */
+
+            --cyber-accent-cyan: #00f2ea; /* Bright electric cyan - Main AI Accent */
+            --cyber-accent-pink: #ff00e0; /* Bright magenta/pink - Secondary Accent */
+            --cyber-accent-purple: #7d26cb; /* Supporting purple */
+
+            --cyber-border-color: #3c1053; /* Border color */
+
+            /* Standard colors (retained for specific elements if needed) */
             --error: #e63946;
-            --light-pink: #e83e8c; /* ライトコースの色（調整が必要かも） */
+            --accent-vip: var(--cyber-accent-pink); /* VIP can use pink */
+            --light-pink-course: var(--cyber-accent-pink); /* Light course can use pink */
 
             --font-primary: 'Roboto', 'Noto Sans JP', sans-serif;
             --font-secondary: 'Noto Sans JP', sans-serif;
@@ -42,8 +37,8 @@
             font-family: var(--font-secondary);
             font-size: 16px;
             line-height: 1.7;
-            color: var(--text-primary);
-            background-color: var(--primary-dark-bg);
+            color: var(--cyber-text-primary);
+            background-color: var(--cyber-bg-dark);
         }
 
         .container {
@@ -62,7 +57,7 @@
             font-family: var(--font-primary);
             line-height: 1.3;
             margin-bottom: 0.7em;
-            color: var(--text-primary);
+            color: var(--cyber-text-primary);
             font-weight: 700;
         }
 
@@ -72,25 +67,26 @@
             text-align: center;
             margin-bottom: 0.5em;
             letter-spacing: -0.5px;
+            text-shadow: 0 0 10px rgba(0, 242, 234, 0.3); /* Cyan glow */
         }
         h1 .highlight-ai {
-            color: var(--accent-blue);
-            /* text-shadow: 0 0 8px rgba(0, 174, 255, 0.5); */
+            color: var(--cyber-accent-cyan);
         }
 
         h2 {
             font-size: 2.2rem;
             margin: 2.5em 0 1.2em;
             padding-bottom: 0.6em;
-            border-bottom: 2px solid var(--accent-blue);
+            border-bottom: 2px solid var(--cyber-accent-cyan);
             text-align: center;
+            text-shadow: 0 0 8px rgba(0, 242, 234, 0.2);
         }
 
         h3 {
             font-size: 1.6rem;
-            color: var(--accent-blue);
+            color: var(--cyber-accent-cyan); /* Default H3 to cyan */
         }
-        .course-card h3 { /* コースカードの見出し */
+        .course-card h3 {
             font-size: 1.8rem;
             margin-top: 10px;
             margin-bottom: 20px;
@@ -100,11 +96,11 @@
 
         p {
             margin-bottom: 1.2em;
-            color: var(--text-secondary);
+            color: var(--cyber-text-secondary);
         }
         .intro-text p, .final-cta p {
             font-size: 1.1rem;
-            color: var(--text-primary);
+            color: var(--cyber-text-primary);
         }
 
 
@@ -112,8 +108,8 @@
         .btn {
             display: inline-block;
             padding: 14px 32px;
-            background: var(--accent-blue);
-            color: var(--primary-dark-bg);
+            background: var(--cyber-accent-cyan);
+            color: var(--cyber-bg-dark);
             font-weight: bold;
             text-decoration: none;
             border-radius: 8px;
@@ -121,49 +117,60 @@
             text-align: center;
             transition: all 0.3s ease;
             cursor: pointer;
-            border: none;
+            border: 1px solid var(--cyber-accent-cyan); /* Adding border for definition */
             font-family: var(--font-primary);
             letter-spacing: 0.5px;
             font-size: 1rem;
+            box-shadow: 0 0 15px rgba(0, 242, 234, 0.3), inset 0 0 5px rgba(255,255,255,0.2);
         }
 
         .btn:hover {
-            background: #008cdd; /* 少し濃いアクセントブルー */
+            background: transparent;
+            color: var(--cyber-accent-cyan);
             transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 174, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 242, 234, 0.5), 0 0 5px var(--cyber-accent-cyan);
         }
 
-        .btn-secondary { /* ライトコースボタンなど */
-            background: var(--primary-light-bg);
-            color: var(--text-primary);
+        .btn-secondary { /* For less prominent buttons, could use pink or purple */
+            background: var(--cyber-accent-pink);
+            border-color: var(--cyber-accent-pink);
+            color: var(--cyber-bg-dark);
+            box-shadow: 0 0 15px rgba(255, 0, 224, 0.3), inset 0 0 5px rgba(255,255,255,0.2);
         }
         .btn-secondary:hover {
-            background: #4a4e5f; /* 少し濃い */
+            background: transparent;
+            color: var(--cyber-accent-pink);
+            box-shadow: 0 0 20px rgba(255, 0, 224, 0.5), 0 0 5px var(--cyber-accent-pink);
         }
 
-        .btn-accent { /* VIPコースボタン */
-            background: var(--accent-vip);
-            color: var(--text-dark);
+        .btn-accent { /* VIP button (could keep yellow or switch to pink/purple) */
+            background: var(--accent-vip); /* Retaining yellow for VIP for now, or switch to var(--cyber-accent-pink) */
+            border-color: var(--accent-vip);
+            color: var(--cyber-bg-dark);
+            box-shadow: 0 0 15px rgba(255, 193, 7, 0.3);
         }
          .btn-accent:hover {
-            background: #e0a800;
-            box-shadow: 0 6px 15px rgba(255, 193, 7, 0.2);
+            background: transparent;
+            color: var(--accent-vip);
+            box-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
          }
 
         .btn-block {
             display: block;
             width: 100%;
         }
-        .btn-cta { /* メインのCTAボタン */
+        .btn-cta { /* Main CTA - Strong Cyan */
             padding: 16px 36px;
             font-size: 1.15rem;
-            background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
-            color: var(--primary-dark-bg);
-            box-shadow: 0 5px 20px rgba(0, 230, 118, 0.2);
+            background: linear-gradient(135deg, var(--cyber-accent-cyan), #00b8d4);
+            border: none;
+            color: var(--cyber-bg-dark);
+            box-shadow: 0 5px 25px rgba(0, 242, 234, 0.3);
         }
         .btn-cta:hover {
-            background: linear-gradient(135deg, #00c262, #0098cc);
-            box-shadow: 0 8px 25px rgba(0, 174, 255, 0.3);
+            background: linear-gradient(135deg, #00e0c8, var(--cyber-accent-cyan));
+            box-shadow: 0 8px 30px rgba(0, 242, 234, 0.4);
+            transform: translateY(-4px);
         }
         .btn .subtext {
             display: block;
@@ -178,14 +185,15 @@
         .hero-section {
             text-align: center;
             padding: 80px 20px 60px;
-            background: linear-gradient(160deg, var(--primary-dark-bg) 60%, #23252d 100%);
-            border-bottom: 1px solid var(--border-color);
+            background: linear-gradient(160deg, var(--cyber-bg-dark) 60%, var(--cyber-bg-medium) 100%);
+            border-bottom: 1px solid var(--cyber-border-color);
         }
         .tagline {
             font-size: 1.3rem;
-            color: var(--accent-blue);
+            color: var(--cyber-accent-cyan);
             margin-bottom: 30px;
             font-weight: 500;
+            text-shadow: 0 0 5px rgba(0, 242, 234, 0.3);
         }
         .hero-section .intro-text p {
             max-width: 750px;
@@ -193,28 +201,30 @@
             margin-right: auto;
             font-size: 1.15rem;
             line-height: 1.8;
-            color: var(--text-secondary);
+            color: var(--cyber-text-primary);
         }
         .hero-section .intro-text strong {
-            color: var(--accent-green);
+            color: var(--cyber-accent-pink); /* Using pink for strong emphasis here */
             font-weight: bold;
+            text-shadow: 0 0 8px rgba(255, 0, 224, 0.3);
         }
 
         /* Features Box (選ばれる理由など) */
         .features-overview {
-            background-color: var(--primary-medium-bg);
+            background-color: rgba(26, 10, 56, 0.7); /* semi-transparent */
+            backdrop-filter: blur(5px);
             padding: 30px;
             border-radius: 12px;
             margin: 40px auto;
             max-width: 700px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            border: 1px solid var(--border-color);
+            box-shadow: 0 0 25px rgba(0, 242, 234, 0.1), 0 0 15px rgba(255,0,224,0.1);
+            border: 1px solid var(--cyber-border-color);
         }
         .features-overview-title {
              font-weight: 700;
              margin-bottom: 25px;
              text-align: center;
-             color: var(--text-primary);
+             color: var(--cyber-text-primary);
              font-size: 1.4rem;
         }
         .features-list-header {
@@ -226,19 +236,20 @@
             position: relative;
             padding-left: 35px;
             font-size: 1.05rem;
-            color: var(--text-secondary);
+            color: var(--cyber-text-secondary);
         }
         .features-list-header li::before {
-            content: "✓"; /* FontAwesomeなどのアイコンに置き換え推奨 */
+            content: "✧"; /* Cyber-style bullet */
             position: absolute;
             left: 0;
-            top: 2px;
-            color: var(--accent-green);
+            top: 0px;
+            color: var(--cyber-accent-cyan);
             font-weight: bold;
-            font-size: 1.3em;
+            font-size: 1.5em;
+            text-shadow: 0 0 5px var(--cyber-accent-cyan);
         }
          .features-list-header li .highlight {
-             color: var(--accent-blue);
+             color: var(--cyber-accent-pink); /* Highlight in pink for contrast */
              font-weight: 500;
          }
 
@@ -246,19 +257,20 @@
          .price-notice {
              font-size: 1.2rem;
              font-weight: 500;
-             color: var(--accent-vip);
+             color: var(--cyber-accent-pink); /* Pink for urgency/special offer */
              text-align: center;
              margin-top: 2.5em;
              margin-bottom: 1em;
              padding: 15px;
-             background-color: rgba(255, 193, 7, 0.1);
-             border: 1px dashed var(--accent-vip);
+             background-color: rgba(255, 0, 224, 0.05);
+             border: 1px dashed var(--cyber-accent-pink);
              border-radius: 8px;
+             text-shadow: 0 0 5px rgba(255,0,224,0.3);
          }
          .price-notice-subtext {
             font-size: 0.95rem;
             text-align: center;
-            color: var(--text-secondary);
+            color: var(--cyber-text-secondary);
             margin-bottom: 2em;
          }
 
@@ -273,70 +285,82 @@
         }
 
         .course-card {
-            background-color: var(--primary-medium-bg);
-            border: 1px solid var(--border-color);
+            background-color: var(--cyber-bg-medium);
+            border: 1px solid var(--cyber-border-color);
             border-radius: 12px;
             padding: 30px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(13, 2, 33, 0.5),
+                        inset 0 0 0 1px var(--cyber-border-color); /* Inner border */
         }
 
         .course-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 242, 234, 0.15),
+                        0 0 20px var(--cyber-accent-cyan),
+                        inset 0 0 0 1px var(--cyber-accent-cyan);
         }
 
         .course-card.light {
-            /* border-top: 5px solid var(--light-pink);  ライトピンクはダークテーマと合わない可能性あり、要調整 */
-            border-top: 5px solid #7f8c8d; /* グレー系で代用 */
+            border-top: 5px solid var(--light-pink-course);
         }
-        .course-card.light h3 { color: #bdc3c7; }
+        .course-card.light:hover {
+             box-shadow: 0 10px 30px rgba(255, 0, 224, 0.15),
+                         0 0 20px var(--light-pink-course),
+                         inset 0 0 0 1px var(--light-pink-course);
+        }
+        .course-card.light h3 { color: var(--light-pink-course); text-shadow: 0 0 5px var(--light-pink-course);}
 
 
         .course-card.standard {
-            border-top: 5px solid var(--accent-blue);
-            transform: scale(1.03);
-            box-shadow: 0 10px 35px rgba(0, 174, 255, 0.15);
+            border-top: 5px solid var(--cyber-accent-cyan);
+            transform: scale(1.03); /* Already scaled */
+            box-shadow: 0 10px 35px rgba(0, 242, 234, 0.2),
+                        0 0 15px var(--cyber-accent-cyan),
+                        inset 0 0 0 1px var(--cyber-accent-cyan);
             z-index: 10;
         }
         .course-card.standard:hover {
             transform: scale(1.05) translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 174, 255, 0.25);
+            box-shadow: 0 15px 40px rgba(0, 242, 234, 0.3),
+                        0 0 25px var(--cyber-accent-cyan),
+                        inset 0 0 0 1.5px var(--cyber-accent-cyan);
         }
         .course-card.standard h3 {
-             color: var(--accent-blue);
+             color: var(--cyber-accent-cyan);
+             text-shadow: 0 0 8px var(--cyber-accent-cyan);
         }
-        .standard .popular-badge { /* 1番人気バッジ */
+        .standard .popular-badge {
             display: inline-flex;
             align-items: center;
             vertical-align: middle;
             margin-left: 10px;
             font-size: 0.7em;
             font-weight: bold;
-            background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
-            color: var(--primary-dark-bg);
+            background: linear-gradient(135deg, var(--cyber-accent-cyan), var(--cyber-accent-pink));
+            color: var(--cyber-bg-dark);
             padding: 5px 12px;
             border-radius: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+            box-shadow: 0 0 10px rgba(0, 242, 234, 0.3), 0 0 10px rgba(255,0,224,0.3);
         }
-        .standard .popular-badge .star-icon { /* ★ FontAwesomeなどに置き換え推奨 */
+        .standard .popular-badge .star-icon {
             margin-right: 5px;
             font-size: 1.1em;
         }
-        .standard .free-trial-banner { /* 14日間無料バナー */
+        .standard .free-trial-banner {
              position: absolute;
              top: 20px;
              right: -40px;
-             background: var(--error);
-             color: white;
+             background: var(--cyber-accent-pink); /* Pink banner */
+             color: var(--cyber-bg-dark);
              padding: 6px 45px;
              transform: rotate(45deg);
              font-weight: bold;
              font-size: 0.9em;
-             box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+             box-shadow: 0 0 10px rgba(255,0,224,0.4);
              z-index: 1;
              overflow: hidden;
              letter-spacing: 0.5px;
@@ -344,22 +368,28 @@
 
 
         .course-card.priority {
-            border-top: 5px solid var(--accent-vip);
+            border-top: 5px solid var(--accent-vip); /* Using pink from var(--accent-vip) */
+        }
+         .course-card.priority:hover {
+             box-shadow: 0 10px 30px rgba(255, 0, 224, 0.15), /* Assuming VIP uses pink */
+                         0 0 20px var(--accent-vip),
+                         inset 0 0 0 1px var(--accent-vip);
         }
         .course-card.priority h3 {
-            color: var(--accent-vip);
+            color: var(--accent-vip); /* Using pink from var(--accent-vip) */
+            text-shadow: 0 0 8px var(--accent-vip);
         }
-         .course-card.priority h3 .limited-badge { /* 限定枠バッジ */
+         .course-card.priority h3 .limited-badge {
              display: inline-block;
              font-size: 0.7em;
-             color: var(--error);
+             color: var(--cyber-accent-pink); /* Pink for badge text */
              font-weight: bold;
              margin-left: 8px;
              vertical-align: middle;
-             background-color: rgba(230, 57, 70, 0.1);
+             background-color: rgba(255, 0, 224, 0.1);
              padding: 3px 7px;
              border-radius: 4px;
-             border: 1px solid var(--error);
+             border: 1px solid var(--cyber-accent-pink);
          }
 
 
@@ -367,31 +397,31 @@
             font-size: 1.8rem;
             font-weight: 700;
             margin: 25px 0 10px 0;
-            color: var(--text-primary);
+            color: var(--cyber-text-primary);
         }
-        .course-card.light .price { color: #bdc3c7; }
-        .course-card.standard .price { color: var(--accent-blue); }
+        .course-card.light .price { color: var(--light-pink-course); }
+        .course-card.standard .price { color: var(--cyber-accent-cyan); }
         .course-card.priority .price { color: var(--accent-vip); }
 
-        .price .free-trial-info { /* スタンダードの無料体験価格表示 */
-            background: var(--error);
-            color: white;
+        .price .free-trial-info {
+            background: var(--cyber-accent-pink); /* Pink for trial info */
+            color: var(--cyber-bg-dark);
             font-size: 0.9rem;
             padding: 5px 12px;
             border-radius: 5px;
             margin-right: 10px;
             font-weight: bold;
             vertical-align: middle;
-            box-shadow: 0 2px 4px rgba(230,57,70,0.3);
+            box-shadow: 0 0 8px rgba(255,0,224,0.3);
         }
         .price-note {
             display: block;
             font-size: 0.85rem;
             font-weight: normal;
-            color: var(--text-secondary);
+            color: var(--cyber-text-secondary);
         }
 
-        .features-list { /* 各コースの特徴リスト */
+        .features-list {
             list-style-type: none;
             margin: 20px 0;
             padding: 0;
@@ -403,19 +433,20 @@
             padding-left: 30px;
             font-size: 0.98rem;
             line-height: 1.6;
-            color: var(--text-secondary);
+            color: var(--cyber-text-secondary);
         }
-        .features-list li::before { /* チェックマーク */
-            content: "✓"; /* FontAwesomeなどに置き換え推奨 */
+        .features-list li::before {
+            content: "»"; /* Cyber bullet */
             position: absolute;
             left: 0;
-            top: 3px;
-            color: var(--accent-green);
+            top: 1px;
+            color: var(--cyber-accent-cyan);
             font-weight: bold;
-            font-size: 1.1em;
+            font-size: 1.3em;
+            text-shadow: 0 0 3px var(--cyber-accent-cyan);
         }
-        .features-list li strong.highlight-feature { /* 特に重要な機能 */
-            color: var(--accent-blue);
+        .features-list li strong.highlight-feature {
+            color: var(--cyber-accent-cyan);
             font-weight: 500;
         }
         .features-list li strong.highlight-vip {
@@ -424,33 +455,34 @@
         }
 
 
-        .value-prop { /* コースの価値提案文 */
+        .value-prop {
             font-weight: 500;
             margin-bottom: 20px;
             font-size: 1.05rem;
             min-height: 70px;
             line-height: 1.6;
-            color: var(--text-secondary);
+            color: var(--cyber-text-secondary);
         }
          .value-prop strong {
-             color: var(--text-primary);
+             color: var(--cyber-text-primary);
          }
 
         .course-card .button-wrapper {
              margin-top: auto;
              padding-top: 20px;
         }
-        /* スタンダードコースのボタンを特に目立たせる */
-        .course-card.standard .btn {
-            background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
-            color: var(--primary-dark-bg);
+        .course-card.standard .btn { /* Already styled with gradient */
+            background: linear-gradient(135deg, var(--cyber-accent-cyan), #00b8d4);
+            color: var(--cyber-bg-dark);
             padding: 15px 32px;
             font-size: 1.05rem;
-            box-shadow: 0 4px 15px rgba(0, 174, 255, 0.2);
+            border: none;
+            box-shadow: 0 4px 20px rgba(0, 242, 234, 0.3);
         }
         .course-card.standard .btn:hover {
-            background: linear-gradient(135deg, #00c262, #0098cc);
-            box-shadow: 0 6px 20px rgba(0, 174, 255, 0.3);
+            background: linear-gradient(135deg, #00e0c8, var(--cyber-accent-cyan));
+            box-shadow: 0 6px 25px rgba(0, 242, 234, 0.4);
+            transform: translateY(-3px);
         }
 
 
@@ -459,184 +491,190 @@
             margin: 50px 0;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
-            background-color: var(--primary-medium-bg);
+            background-color: var(--cyber-bg-medium);
             border-radius: 10px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border: 1px solid var(--cyber-border-color);
+            box-shadow: 0 0 20px rgba(13,2,33,0.4);
         }
         .comparison-table {
             border-collapse: collapse;
-            min-width: 700px; /* 必要に応じて調整 */
+            min-width: 700px;
             width: 100%;
         }
         .comparison-table th, .comparison-table td {
             padding: 16px 20px;
             text-align: center;
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--cyber-border-color);
             white-space: nowrap;
-            color: var(--text-secondary);
+            color: var(--cyber-text-secondary);
         }
         .comparison-table thead th {
-            color: var(--text-primary);
-            background-color: var(--primary-light-bg);
+            color: var(--cyber-text-primary);
+            background-color: var(--cyber-bg-light-hover);
             font-size: 0.95rem;
             font-weight: 500;
+            border-bottom: 2px solid var(--cyber-accent-cyan);
         }
         .comparison-table thead th:first-child { text-align: left; }
-        .comparison-table thead th:nth-child(3) { /* スタンダード列ヘッダー */
-            background-color: var(--accent-blue);
-            color: var(--primary-dark-bg);
+        .comparison-table thead th:nth-child(3) { /* Standard col header */
+            background-color: var(--cyber-accent-cyan);
+            color: var(--cyber-bg-dark);
+            text-shadow: none;
         }
         .comparison-table tbody tr:nth-child(even) td {
-            background-color: rgba(0,0,0,0.05); /* ごく薄い黒 */
+            background-color: rgba(13,2,33,0.3); /* Darker row striping */
         }
-        .comparison-table tbody td:first-child { /* 機能名列 */
+        .comparison-table tbody td:first-child {
             text-align: left;
             font-weight: 500;
-            color: var(--text-primary);
-            background-color: var(--primary-light-bg);
+            color: var(--cyber-text-primary);
+            background-color: var(--cyber-bg-light-hover);
         }
-        .comparison-table tbody td strong { color: var(--accent-green); }
-        .comparison-table tbody td:nth-child(3) { /* スタンダード列のセル */
-            background-color: rgba(0, 174, 255, 0.08);
+        .comparison-table tbody td strong { color: var(--cyber-accent-pink); } /* Pink for strong in table */
+        .comparison-table tbody td:nth-child(3) {
+            background-color: rgba(0, 242, 234, 0.05); /* Cyan tint for standard col cells */
         }
         .comparison-table tbody td:nth-child(3) strong {
-            color: var(--accent-blue);
+            color: var(--cyber-accent-cyan); /* Cyan for strong in standard col */
         }
 
 
-        /* Feature Blocks (Alpha Pipsの強みなど) */
+        /* Feature Blocks */
         .feature-block-section {
             padding: 40px 0;
         }
         .feature-block {
              margin-bottom: 35px;
-             background: var(--primary-medium-bg);
+             background: linear-gradient(145deg, var(--cyber-bg-medium), var(--cyber-bg-dark));
              border-radius: 12px;
              padding: 35px;
-             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+             box-shadow: 0 0 25px rgba(13,2,33,0.6), inset 0 0 0 1px var(--cyber-border-color);
              display: flex;
              align-items: flex-start;
              gap: 30px;
-             border: 1px solid var(--border-color);
+             border: 1px solid var(--cyber-border-color);
         }
-        .feature-block .icon-container { /* FontAwesomeなどのアイコンコンテナ */
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
-            color: var(--primary-dark-bg);
+        .feature-block .icon-container {
+            background: linear-gradient(135deg, var(--cyber-accent-cyan), var(--cyber-accent-pink));
+            color: var(--cyber-bg-dark);
             min-width: 60px;
             height: 60px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.8rem; /* アイコンサイズ */
+            font-size: 1.8rem;
             flex-shrink: 0;
-            box-shadow: 0 4px 12px rgba(0, 174, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 242, 234, 0.3), 0 0 15px rgba(255,0,224,0.3);
         }
          .feature-block .text-content h3 {
              margin: 0 0 12px 0;
              font-size: 1.5rem;
-             color: var(--text-primary);
+             color: var(--cyber-text-primary);
+             text-shadow: 0 0 5px var(--cyber-accent-cyan);
          }
          .feature-block .text-content h3 .sub-heading {
              font-size: 0.7em;
-             color: var(--text-secondary);
+             color: var(--cyber-text-secondary);
              font-weight: 400;
              display: block;
+             text-shadow: none;
          }
         .feature-block .text-content p {
             line-height: 1.8;
-            color: var(--text-secondary);
+            color: var(--cyber-text-secondary);
         }
         .feature-block .text-content p .highlight {
-            color: var(--accent-blue);
+            color: var(--cyber-accent-cyan);
             font-weight: 500;
+            text-shadow: 0 0 3px var(--cyber-accent-cyan);
         }
-        .feature-block .feature-image-placeholder { /* 画像実証用 */
+        .feature-block .feature-image-placeholder {
             margin-top: 15px;
-            background-color: var(--primary-light-bg);
+            background-color: var(--cyber-bg-light-hover);
             height: 150px;
             border-radius: 8px;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: var(--text-secondary);
+            color: var(--cyber-text-secondary);
             font-style: italic;
+            border: 1px dashed var(--cyber-border-color);
         }
 
 
         /* Testimonials */
         .testimonials-section { padding: 40px 0; }
         .testimonial {
-            background: var(--primary-medium-bg);
+            background: var(--cyber-bg-medium);
             padding: 30px;
-            border-left: 5px solid var(--accent-blue);
+            border-left: 5px solid var(--cyber-accent-pink); /* Pink border for testimonials */
             margin: 30px 0;
             border-radius: 0 8px 8px 0;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 0 20px rgba(255,0,224,0.1);
         }
         .testimonial p {
             font-size: 1rem;
             line-height: 1.8;
-            color: var(--text-secondary);
+            color: var(--cyber-text-secondary);
             margin-bottom: 1em;
         }
         .testimonial p .highlight {
-            background-color: rgba(0, 174, 255, 0.1);
+            background-color: rgba(0, 242, 234, 0.1); /* Cyan highlight bg */
             padding: 2px 5px;
             border-radius: 4px;
             font-weight: 500;
-            color: var(--accent-blue);
+            color: var(--cyber-accent-cyan);
         }
         .testimonial-author {
             font-weight: 500;
             text-align: right;
             margin-top: 15px;
-            color: var(--text-primary);
+            color: var(--cyber-text-primary);
             font-size: 0.95rem;
         }
         .testimonial-author span {
             font-weight: normal;
-            color: var(--text-secondary);
+            color: var(--cyber-text-secondary);
         }
 
         /* FAQ */
         .faq-section { padding: 40px 0; }
         .faq-item {
             margin-bottom: 25px;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--cyber-border-color);
             padding-bottom: 25px;
         }
         .faq-item:last-child { border-bottom: none; }
         .question {
             font-weight: 700;
             margin-bottom: 12px;
-            color: var(--text-primary);
+            color: var(--cyber-text-primary);
             display: flex;
             align-items: flex-start;
             font-size: 1.2rem;
         }
-        .question::before { /* Q. アイコン */
-            content: "Q.";
+        .question::before {
+            content: "Q ►"; /* Cyber Q */
             margin-right: 0.8em;
             font-weight: bold;
-            font-size: 1.1em;
-            color: var(--accent-blue);
+            font-size: 1em;
+            color: var(--cyber-accent-cyan);
         }
         .answer {
-            padding-left: 3.2em; /* Q.の幅に応じて調整 */
-            color: var(--text-secondary);
+            padding-left: 3.5em; /* Adjust for Q ► */
+            color: var(--cyber-text-secondary);
             line-height: 1.8;
         }
-        .answer::before { /* A. アイコン */
-            content: "A.";
+        .answer::before {
+            content: "A ►"; /* Cyber A */
             font-weight: bold;
             margin-right: 0.8em;
-            margin-left: -3.2em;
-            color: var(--accent-green);
+            margin-left: -3.5em;
+            color: var(--cyber-accent-pink);
         }
         .answer .highlight {
-            color: var(--accent-blue);
+            color: var(--cyber-accent-cyan);
             font-weight: 500;
         }
 
@@ -644,17 +682,18 @@
         .final-cta {
             margin-top: 50px;
             padding: 60px 30px;
-            background: linear-gradient(145deg, var(--primary-medium-bg), var(--primary-dark-bg));
+            background: linear-gradient(145deg, var(--cyber-bg-medium), var(--cyber-bg-dark));
             border-radius: 15px;
             text-align: center;
-            border-top: 3px solid var(--accent-blue);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            border-top: 3px solid var(--cyber-accent-cyan);
+            box-shadow: 0 0 40px rgba(0, 242, 234, 0.15), 0 0 20px rgba(255,0,224,0.1);
         }
         .final-cta h2 {
             font-size: 2.4rem;
-            color: var(--text-primary);
+            color: var(--cyber-text-primary);
             border-bottom: none;
             margin-bottom: 0.8em;
+            text-shadow: 0 0 10px var(--cyber-accent-cyan);
         }
         .final-cta p {
             font-size: 1.15rem;
@@ -663,18 +702,18 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-            color: var(--text-secondary);
+            color: var(--cyber-text-primary);
         }
         .final-cta p .highlight {
-            color: var(--accent-blue);
+            color: var(--cyber-accent-cyan);
             font-weight: 500;
         }
         .final-cta p .highlight-strong {
-            color: var(--accent-green);
+            color: var(--cyber-accent-pink); /* Strong highlight in pink */
             font-weight: bold;
             font-size: 1.1em;
-            /* background-color: rgba(0, 230, 118, 0.1); */
             padding: 2px 4px;
+            text-shadow: 0 0 8px var(--cyber-accent-pink);
         }
 
 
@@ -682,17 +721,18 @@
         .site-footer {
             text-align: center;
             padding: 40px 20px;
-            border-top: 1px solid var(--border-color);
+            border-top: 1px solid var(--cyber-border-color);
             margin-top: 50px;
+            background-color: var(--cyber-bg-dark); /* Ensure footer bg matches */
         }
         .site-footer p {
-            color: var(--text-secondary);
+            color: var(--cyber-text-secondary);
             font-size: 0.9rem;
             margin-bottom: 8px;
         }
         .site-footer .risk-notice {
             font-size: 0.8rem;
-            color: #7f8c8d; /* さらに薄いグレー */
+            color: #7a8aa0; /* Slightly lighter secondary for very small text */
         }
 
         /* Responsive adjustments */
@@ -700,8 +740,13 @@
             h1 { font-size: 2.5rem; }
             h2 { font-size: 2rem; }
             .final-cta h2 { font-size: 2.2rem; }
-            .course-card.standard { transform: scale(1); } /* タブレットでは拡大解除 */
-            .course-card.standard:hover { transform: translateY(-10px) scale(1.02); }
+            .course-card.standard { transform: scale(1); }
+            .course-card.standard:hover {
+                 transform: translateY(-10px) scale(1.02);
+                 box-shadow: 0 15px 40px rgba(0, 242, 234, 0.25),
+                             0 0 20px var(--cyber-accent-cyan),
+                             inset 0 0 0 1.5px var(--cyber-accent-cyan);
+            }
         }
 
         @media (max-width: 768px) {
@@ -735,8 +780,8 @@
              .feature-block .text-content p { text-align: left; font-size: 0.95rem;}
 
              .question { font-size: 1.1rem; }
-             .answer { padding-left: 2.8em; font-size: 0.95rem; }
-             .answer::before { margin-left: -2.8em;}
+             .answer { padding-left: 3em; font-size: 0.95rem; } /* Adjust for cyber Q/A icons */
+             .answer::before { margin-left: -3em;}
 
              .final-cta { padding: 50px 20px;}
              .btn { padding: 12px 28px; font-size: 0.95rem;}
@@ -760,304 +805,3 @@
             .btn-cta { padding: 14px 28px; font-size: 1rem;}
             .comparison-table th, .comparison-table td { padding: 10px 8px; font-size: 0.85rem;}
          }
-    </style>
-</head>
-<body>
-    <header class="hero-section">
-        <div class="container">
-            <!-- ロゴがあればここに配置 -->
-            <!-- <img src="logo-dark-theme.svg" alt="Alpha Pips Logo" style="width: 150px; margin-bottom: 20px;"> -->
-            <p class="tagline">Alpha Pips - 投資×AIで日常をアップデート。未来の錬金術をあなたに。</p>
-            <h1>もう、<span class="highlight-ai">時代遅れの稼ぎ方</span>で<br>消耗するのはやめにしませんか？</h1>
-            <div class="intro-text">
-                <p>労働収入だけでは先が見えない…そんな不安を抱えるあなたへ。<br>
-                Alpha Pipsは、<strong>投資トレード・AI活用・ライフハック</strong>の三本柱で、<br>
-                あなたの資産と人生を、<strong>次世代レベルへと引き上げます。</strong><br>
-                AI初心者でも大丈夫。私たちと一緒に、未来をデザインしましょう。
-                </p>
-            </div>
-             <div class="features-overview">
-                <p class="features-overview-title">Alpha Pipsが選ばれる理由：</p>
-                <ul class="features-list-header">
-                    <li><span class="highlight">未経験でも大丈夫！</span>ChatGPTから始めるAI活用入門！</li>
-                    <li>あなた専用のAI分析官<span class="highlight">「AIマイティ―」</span>がトレード判断を強力サポート！</li>
-                    <li>市場を先読み？AIインジケーター<span class="highlight">「AlgoX」</span>で高精度トレード！</li>
-                    <li>投資も日常もAIで効率化！<span class="highlight">時間とお金を生み出す</span>ライフハック術！</li>
-                    <li><span class="highlight">講師と仲間がいる環境</span>だから、挫折せずに続けられる！</li>
-                </ul>
-            </div>
-            <a href="#courses" class="btn btn-cta">
-                今すぐ未来への投資を始める
-                <span class="subtext">AIと共に新しい自分へ</span>
-            </a>
-            <p class="price-notice">この充実内容とサポートで、この価格は今だけの初期メンバー限定価格です！</p>
-            <p class="price-notice-subtext">将来的な値上げを予定しています。このチャンスをお見逃しなく。</p>
-        </div>
-    </header>
-
-    <main>
-        <section id="courses" class="container">
-            <h2>あなたの未来をデザインする3つのコース</h2>
-            <div class="courses">
-                <!-- Light Course -->
-                <div class="course-card light">
-                    <h3>ライトコース</h3>
-                    <p class="value-prop">まずはAIと投資の世界を手軽に体験。日常に役立つAIライフハックから始めたいあなたへ。</p>
-                    <ul class="features-list">
-                        <li>講師による定期チャート考察</li>
-                        <li>メンバー限定交流部屋の閲覧</li>
-                        <li><strong class="highlight-feature">AI活用（ライフハック）情報提供</strong><br><small>(ChatGPT基本操作、お得情報事例など)</small></li>
-                    </ul>
-                    <p class="price">5,980円<span class="price-note">/ 月 (税込)</span></p>
-                    <div class="button-wrapper">
-                        <a href="#payment-light" class="btn btn-secondary btn-block">ライトコースから試す</a>
-                    </div>
-                </div>
-
-                <!-- Standard Course -->
-                <div class="course-card standard">
-                    <div class="free-trial-banner">14日間無料</div>
-                    <h3>スタンダードコース <span class="popular-badge"><span class="star-icon">★</span>No.1 人気</span></h3>
-                    <p class="value-prop"><strong>本気で資産を増やし、人生を豊かにしたいあなたへ。</strong>AIトレードツールとプロのノウハウで最速で結果を目指す決定版！</p>
-                    <ul class="features-list">
-                        <li>ライトコース全内容</li>
-                        <li>Alpha Pipsオリジナル手法解説教材</li>
-                        <li><strong class="highlight-feature">自社開発AIトレードツール「AIマイティ―」利用権</strong></li>
-                        <li><strong class="highlight-feature">AIインジケーター「AlgoX」利用権</strong></li>
-                        <li>リアルタイム相場部屋へのアクセス</li>
-                        <li>メンバー限定交流部屋 (投稿・交流可)</li>
-                        <li><small>AIライフハック (応用編プロンプト等も提供)</small></li>
-                    </ul>
-                    <p class="price">
-                        <span class="free-trial-info">14日間 ¥0</span>
-                        9,800円<span class="price-note">/ 月 (税込)</span>
-                    </p>
-                    <div class="button-wrapper">
-                        <a href="#payment-standard" class="btn btn-block">
-                            14日間無料で最強AI体験
-                            <span class="subtext">リスクゼロで新しい自分へ</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- VIP Course -->
-                <div class="course-card priority">
-                    <h3>VIPコース <span class="limited-badge">（毎月限定5名）</span></h3>
-                    <p class="value-prop">講師マイティ―による<strong style="color: var(--accent-vip);">トレード個別徹底指導</strong>で、成功への「最短・最速ルート」を掴む特別プラン。</p>
-                    <ul class="features-list">
-                        <li>スタンダードコース全内容</li>
-                        <li><strong class="highlight-vip">Discordでの講師によるトレード個別指導</strong></li>
-                        <li><strong class="highlight-vip">最優先での質問回答サポート</strong></li>
-                    </ul>
-                    <p class="price">49,800円<span class="price-note">/ 月 (税込)</span></p>
-                    <div class="button-wrapper">
-                        <a href="#payment-priority" class="btn btn-accent btn-block">VIPコースで最速上達</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="comparison" class="container">
-            <h2>コース内容詳細比較</h2>
-            <div class="table-container">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>機能 / サービス</th>
-                            <th>ライト</th>
-                            <th>スタンダード <small>(おすすめ)</small></th>
-                            <th>VIP</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>定期チャート考察</td>
-                            <td>✓</td>
-                            <td>✓</td>
-                            <td>✓</td>
-                        </tr>
-                        <tr>
-                            <td>メンバー交流部屋</td>
-                            <td>閲覧のみ</td>
-                            <td><strong>✓ 参加可能</strong></td>
-                            <td><strong>✓ 参加可能</strong></td>
-                        </tr>
-                        <tr>
-                            <td>AI活用(ライフハック)情報</td>
-                            <td>基本編</td>
-                            <td><strong>✓ 応用編含む</strong></td>
-                            <td><strong>✓ 応用編含む</strong></td>
-                        </tr>
-                        <tr>
-                            <td>オリジナル手法解説</td>
-                            <td>-</td>
-                            <td><strong>✓</strong></td>
-                            <td><strong>✓</strong></td>
-                        </tr>
-                        <tr>
-                            <td>リアルタイム相場分析</td>
-                            <td>-</td>
-                            <td><strong>✓</strong></td>
-                            <td><strong>✓</strong></td>
-                        </tr>
-                        <tr>
-                            <td>AIトレードツール「AIマイティ―」</td>
-                            <td>-</td>
-                            <td><strong>✓</strong></td>
-                            <td><strong>✓</strong></td>
-                        </tr>
-                        <tr>
-                            <td>AIインジケーター「AlgoX」</td>
-                            <td>-</td>
-                            <td><strong>✓</strong></td>
-                            <td><strong>✓</strong></td>
-                        </tr>
-                        <tr>
-                            <td>質問対応</td>
-                            <td>-</td>
-                            <td>全体チャット</td>
-                            <td><strong>個別優先</strong></td>
-                        </tr>
-                        <tr>
-                            <td>講師によるトレード個別指導</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td><strong>✓</strong></td>
-                        </tr>
-                        <tr>
-                            <td>無料お試し期間</td>
-                            <td>-</td>
-                            <td><strong>✓ 14日間</strong></td>
-                            <td>-</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section id="why-alpha-pips" class="container feature-block-section">
-            <h2>Alpha Pipsで<span class="highlight-ai">未来の自分</span>を創造する</h2>
-            <div class="feature-block">
-                <div class="icon-container">🧠</div> <!-- Icon: Brain / AI -->
-                <div class="text-content">
-                    <h3>AIと共に進化するトレード戦略
-                        <span class="sub-heading">「AIマイティ―」＆「AlgoX」があなたの右腕に</span>
-                    </h3>
-                    <p>
-                        もう複雑な分析や感情論に振り回されるのは終わりです。講師マイティ―のトレードロジックを学習した<span class="highlight">「AIマイティ―」</span>が、あなたの疑問に答え、分析をサポート。
-                        さらに、値動きに自動最適化するAIインジケーター<span class="highlight">「AlgoX」</span>が、高精度なエントリーポイントを示唆。
-                        データとAIに基づいた、再現性の高いトレード手法をマスターできます。
-                    </p>
-                     <div class="feature-image-placeholder">（「AIマイティ―」や「AlgoX」のダッシュボードやチャート画面のモックアップ画像など）</div>
-                </div>
-            </div>
-
-            <div class="feature-block">
-                <div class="icon-container">💡</div> <!-- Icon: Lightbulb / Idea / Lifehack -->
-                <div class="text-content">
-                    <h3>日常をAIでハック。時間とお金を生み出す新習慣
-                        <span class="sub-heading">ChatGPT初心者でも大丈夫！お得と効率を手に入れる</span>
-                    </h3>
-                    <p>
-                        「AIって難しそう…」そんなあなたも大丈夫。Alpha Pipsでは、ChatGPTの基本的な使い方から、日常生活を豊かにする具体的な活用法まで丁寧に解説。
-                        <span class="highlight">最安値の商品を瞬時に見つけたり、格安旅行プランをAIに作らせたり、面倒な情報収集を自動化</span>したり…。
-                        AIを使いこなして、賢くお得に、そして時間にゆとりのある生活を実現しましょう。
-                    </p>
-                    <div class="feature-image-placeholder">（ChatGPTでお得な情報を見つけている様子のスクショや、旅行プランの画像など）</div>
-                </div>
-            </div>
-
-            <div class="feature-block">
-                 <div class="icon-container">🚀</div> <!-- Icon: Rocket / Growth -->
-                <div class="text-content">
-                    <h3>論より証拠。講師のAI活用実績
-                        <span class="sub-heading">トレード収益から日常のお得まで、リアルな成果を公開</span>
-                    </h3>
-                    <p>
-                        机上の空論ではありません。講師マイティ―はChatGPTリリース直後からのヘビーユーザー。
-                        AIを活用したトレードで実際に収益を上げ、日常生活でもAIを駆使してお得な体験を積み重ねています。
-                        その<span class="highlight">リアルな実績や活用事例（収益画像やお得情報GETのスクショなど）</span>をコミュニティで共有。
-                        あなたも再現可能なノウハウがここにあります。
-                    </p>
-                    <div class="feature-image-placeholder">（講師のトレード収益グラフや、AIでお得に買い物した履歴のスクショなど）</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="testimonials" class="container testimonials-section">
-            <h2><span class="highlight-ai">AI</span>で人生が変わった！先輩たちの声</h2>
-            <div class="testimonial">
-                <p>「正直、AIなんて自分には無縁だと思ってました。でもAlpha Pipsの<span class="highlight">分かりやすい解説でChatGPTを使い始めたら、世界が変わりました！</span>トレードの相談相手ができたみたいで心強いし、AIマイティ―のアドバイスで感情的な失敗トレードが激減。先日はAIに海外旅行のプランを組んでもらったら、<span class="highlight">航空券とホテル代が以前より5万円も安くなってビックリ！</span>トレードも日常も、こんなにお得になるなんて最高です！」</p>
-                <p class="testimonial-author">- K.Y. 様 (45歳・会社員) <span>スタンダードコース利用</span></p>
-            </div>
-            <div class="testimonial">
-                <p>「AlgoXの精度には驚かされています。今までインジケーターは色々試しましたが、<span class="highlight">AIが最適化してくれるというのは次元が違いますね。</span>エントリーに迷いがなくなり、安定して利益を出せるようになりました。また、コミュニティで共有されるライフハック情報も目からウロコ。<span class="highlight">AIを使って情報収集の時間が1/10くらいになった</span>ので、家族と過ごす時間が増えました。まさに一石二鳥以上の価値があります。」</p>
-                <p class="testimonial-author">- T.S. 様 (58歳・自営業) <span>スタンダードコース利用</span></p>
-            </div>
-             <div class="testimonial">
-                <p>「最初は『トレードもAIも学べてお得だな』くらいの軽い気持ちでスタンダードの無料体験に。でも、<span class="highlight">『AIマイティ―』が本当に優秀！</span>自分の分析に自信が持てなかったんですが、まるでベテラントレーダーが隣にいるような安心感。おかげで<span class="highlight">月々の収支がプラスに転じました。</span>ChatGPTも日常で使いまくりで、もう手放せません。この値段でこの内容は破格だと思います。」</p>
-                <p class="testimonial-author">- M.N. 様 (39歳・主婦) <span>スタンダードコース利用</span></p>
-            </div>
-        </section>
-
-        <section id="faq" class="container faq-section">
-            <h2>よくある質問</h2>
-            <div class="faq-item">
-                <p class="question">全くのAI初心者・投資初心者でも大丈夫ですか？</p>
-                <p class="answer">はい、もちろんです！Alpha Pipsは、AIや投資が初めての方でも安心して学べるように設計されています。特にChatGPTの使い方は基本から丁寧に解説しますし、<span class="highlight">投資手法もAIサポートでシンプルに実践できます。</span>多くの方が未経験からスタートしていますのでご安心ください。</p>
-            </div>
-            <div class="faq-item">
-                <p class="question">「AIマイティ―」や「AlgoX」は難しいツールですか？</p>
-                <p class="answer">いいえ、ご安心ください。「AIマイティ―」はチャット形式で質問に答えてくれる直感的なツールですし、「AlgoX」もチャート上に分かりやすくサインを表示します。<span class="highlight">複雑な設定や専門知識は不要で、どなたでも簡単に使いこなせるように工夫されています。</span>スタンダードコースの無料体験でぜひお試しください。</p>
-            </div>
-            <div class="faq-item">
-                <p class="question">スタンダードコースの14日間無料体験について詳しく教えてください。</p>
-                <p class="answer">スタンダードコースの<span class="highlight">全機能を14日間、完全に無料でお試しいただけます。</span>「AIマイティ―」や「AlgoX」の利用、オリジナル手法教材の閲覧、リアルタイム相場部屋や交流部屋への参加も可能です。もしご満足いただけない場合は、14日以内に解約すれば料金は一切発生しません。リスクなくAlpha Pipsの価値を体験してください。</p>
-            </div>
-            <div class="faq-item">
-                <p class="question">途中で解約できますか？料金は？</p>
-                <p class="answer">はい、いつでもオンラインで簡単に解約可能です。全コース月額制のため、<span class="highlight">解約手数料や違約金は一切かかりません。</span></p>
-            </div>
-        </section>
-
-        <section class="final-cta">
-            <div class="container">
-                <h2>「もう稼げない」と諦める前に。<br><span class="highlight-ai">AI</span>があなたの<span class="highlight-strong">人生のゲームチェンジャー</span>になる。</h2>
-                <p>
-                    今の働き方、今の収入、今の生活…本当に満足していますか？<br>
-                    もし、ほんの少しでも「変わりたい」「もっと豊かになりたい」と願うなら、<br>
-                    Alpha Pipsがその<span class="highlight">強力な武器</span>となります。<br><br>
-                    投資のプロの知見と、最先端のAI技術を組み合わせた<span class="highlight">独自のノウハウ</span>を、<br>
-                    あなたも手に入れるチャンスです。<br>
-                    <span class="highlight-strong">AI初心者でも、投資未経験でも大丈夫。</span><br>
-                    必要なのは「未来を変えたい」という、ほんの少しの勇気だけ。<br><br>
-                    さあ、私たちと一緒に、<span class="highlight">経済的な自由と、心から楽しめる毎日</span>を創造しませんか？<br>
-                    <span class="highlight-strong">その第一歩を、今こそ踏み出しましょう！</span>
-                </p>
-                <a href="#payment-standard" class="btn btn-block btn-cta">
-                    スタンダードコースを14日間無料で体験する
-                    <span class="subtext">AIと共に、新しい未来を掴む！</span>
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p>© 2024 Alpha Pips. All Rights Reserved.</p>
-            <p class="risk-notice">
-                当コミュニティで提供される情報は、教育および情報提供を目的としており、特定の金融商品の売買を推奨するものではありません。<br>
-                投資にはリスクが伴い、元本を失う可能性があります。AIツールやインジケーターは判断を補助するものであり、将来の利益を保証するものではありません。<br>
-                最終的な投資判断はご自身の責任において行ってください。
-            </p>
-            <!-- 必要であればプライバシーポリシーや特商法へのリンクを記載 -->
-        </div>
-    </footer>
-
-    <!-- Placeholder for payment section anchors -->
-    <div id="payment-light" style="height: 1px; margin-top: -1px;"></div>
-    <div id="payment-standard" style="height: 1px; margin-top: -1px;"></div>
-    <div id="payment-priority" style="height: 1px; margin-top: -1px;"></div>
-
-</body>
-</html>
