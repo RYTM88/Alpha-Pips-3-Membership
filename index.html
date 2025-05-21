@@ -27,8 +27,8 @@
             --error: #e63946; /* For urgency notice */
             --accent-vip-color: var(--cyber-accent-pink);
             --light-pink-course-color: var(--cyber-accent-pink);
-            --popular-badge-bg: rgba(255, 255, 255, 0.9); /* NEW: For popular badge background */
-            --popular-badge-text: var(--cyber-bg-dark);    /* NEW: For popular badge text */
+            --popular-badge-bg: rgba(255, 255, 255, 0.9);
+            --popular-badge-text: var(--cyber-bg-dark);
 
 
             --font-primary: 'Roboto', 'Noto Sans JP', sans-serif;
@@ -266,18 +266,18 @@
             z-index: 10;
         }
         .course-card.standard h3 { color: var(--cyber-accent-cyan); text-shadow: 0 0 8px var(--cyber-accent-cyan); }
-        .standard .popular-badge { /* MODIFIED for better visibility */
+        .standard .popular-badge {
             display: inline-flex; align-items: center; vertical-align: middle; margin-left: 10px;
             font-size: 0.7em; font-weight: bold;
-            background-color: var(--popular-badge-bg); /* Light background */
-            color: var(--popular-badge-text); /* Dark text */
+            background-color: var(--popular-badge-bg);
+            color: var(--popular-badge-text);
             padding: 5px 12px; border-radius: 15px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Softer shadow */
-            border: 1px solid rgba(0,0,0,0.1); /* Subtle border */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            border: 1px solid rgba(0,0,0,0.1);
         }
         .standard .popular-badge .star-icon {
             margin-right: 5px; font-size: 1.1em;
-            color: var(--cyber-accent-pink); /* Star color can be pink or cyan */
+            color: var(--cyber-accent-pink);
             text-shadow: 0 0 3px var(--cyber-accent-pink);
         }
         .standard .free-trial-banner {
@@ -436,65 +436,6 @@
             filter: drop-shadow(0 0 4px var(--cyber-accent-cyan));
         }
 
-
-        /* Feature Blocks */
-        .feature-block-section { padding: 40px 0; }
-        .feature-block {
-             margin-bottom: 35px;
-             background: linear-gradient(145deg, var(--cyber-bg-medium), var(--cyber-bg-dark));
-             border-radius: 12px; padding: 35px;
-             box-shadow: 0 0 25px rgba(13,2,33,0.6), inset 0 0 0 1px var(--cyber-border-color);
-             display: flex; align-items: flex-start; gap: 30px;
-             border: 1px solid var(--cyber-border-color);
-        }
-        .feature-block .icon-container {
-            background: linear-gradient(135deg, var(--cyber-accent-cyan), var(--cyber-accent-pink));
-            color: var(--cyber-bg-dark); min-width: 60px; height: 60px; border-radius: 50%;
-            display: flex; justify-content: center; align-items: center;
-            font-size: 1.8rem; flex-shrink: 0;
-            box-shadow: 0 0 15px rgba(0, 242, 234, 0.3), 0 0 15px rgba(255,0,224,0.3);
-        }
-         .feature-block .text-content h3 {
-             margin: 0 0 12px 0; font-size: 1.5rem; color: var(--cyber-text-primary);
-             text-shadow: 0 0 5px var(--cyber-accent-cyan);
-         }
-         .feature-block .text-content h3 .sub-heading {
-             font-size: 0.7em; color: var(--cyber-text-secondary); font-weight: 400;
-             display: block; text-shadow: none;
-         }
-        .feature-block .text-content p { line-height: 1.8; color: var(--cyber-text-secondary); }
-        .feature-block .text-content p .highlight {
-            color: var(--cyber-accent-cyan); font-weight: 500;
-            text-shadow: 0 0 3px var(--cyber-accent-cyan);
-        }
-        .feature-block .feature-image-placeholder {
-            margin-top: 15px; background-color: var(--cyber-bg-light-hover);
-            height: 150px; border-radius: 8px; display: flex; justify-content: center;
-            align-items: center; color: var(--cyber-text-secondary); font-style: italic;
-            border: 1px dashed var(--cyber-border-color);
-        }
-
-        /* Testimonials */
-        .testimonials-section { padding: 40px 0; }
-        .testimonial {
-            background: var(--cyber-bg-medium); padding: 30px;
-            border-left: 5px solid var(--cyber-accent-pink); margin: 30px 0;
-            border-radius: 0 8px 8px 0; box-shadow: 0 0 20px rgba(255,0,224,0.1);
-        }
-        .testimonial p {
-            font-size: 1rem; line-height: 1.8; color: var(--cyber-text-secondary);
-            margin-bottom: 1em;
-        }
-        .testimonial p .highlight {
-            background-color: rgba(0, 242, 234, 0.1); padding: 2px 5px;
-            border-radius: 4px; font-weight: 500; color: var(--cyber-accent-cyan);
-        }
-        .testimonial-author {
-            font-weight: 500; text-align: right; margin-top: 15px;
-            color: var(--cyber-text-primary); font-size: 0.95rem;
-        }
-        .testimonial-author span { font-weight: normal; color: var(--cyber-text-secondary); }
-
         /* FAQ */
         .faq-section { padding: 40px 0; }
         .faq-item {
@@ -580,12 +521,6 @@
              .standard .popular-badge { font-size: 0.65em; }
             .comparison-table { min-width: auto; }
             .comparison-table th, .comparison-table td { white-space: normal; padding: 12px 15px; font-size: 0.9rem;}
-             .feature-block {
-                 flex-direction: column; align-items: center; text-align: center; padding: 30px;
-             }
-             .feature-block .icon-container { margin-bottom: 20px; }
-             .feature-block .text-content h3 { text-align: center; font-size: 1.4rem;}
-             .feature-block .text-content p { text-align: left; font-size: 0.95rem;}
              .question { font-size: 1.1rem; }
              .answer { padding-left: 3em; font-size: 0.95rem; }
              .answer::before { margin-left: -3em;}
@@ -810,71 +745,6 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
-        </section>
-
-        <section id="why-alpha-pips" class="container feature-block-section">
-            <h2>Alpha Pipsで<span class="highlight-ai">未来の自分</span>を創造する</h2>
-            <div class="feature-block">
-                <div class="icon-container">🧠</div>
-                <div class="text-content">
-                    <h3>AIと共に進化するトレード戦略
-                        <span class="sub-heading">「AIマイティ―」＆「ATZ System」があなたの右腕に</span>
-                    </h3>
-                    <p>
-                        もう複雑な分析や感情論に振り回されるのは終わりです。講師マイティ―のトレードロジックを学習した<span class="highlight">「AIマイティ―」</span>が、あなたの疑問に答え、分析をサポート。
-                        さらに、値動きに自動最適化するAIトレードセットアップ<span class="highlight">「ATZ System」</span>が、高精度なエントリーポイントを示唆。
-                        データとAIに基づいた、再現性の高いトレード手法をマスターできます。
-                    </p>
-                     <div class="feature-image-placeholder">（「AIマイティ―」や「ATZ System」のダッシュボードやチャート画面のモックアップ画像など）</div>
-                </div>
-            </div>
-
-            <div class="feature-block">
-                <div class="icon-container">💡</div>
-                <div class="text-content">
-                    <h3>日常をAIでハック。時間とお金を生み出す新習慣
-                        <span class="sub-heading">ChatGPT初心者でも大丈夫！お得と効率を手に入れる</span>
-                    </h3>
-                    <p>
-                        「AIって難しそう…」そんなあなたも大丈夫。Alpha Pipsでは、ChatGPTの基本的な使い方から、日常生活を豊かにする具体的な活用法まで丁寧に解説。
-                        <span class="highlight">最安値の商品を瞬時に見つけたり、格安旅行プランをAIに作らせたり、面倒な情報収集を自動化</span>したり…。
-                        AIを使いこなして、賢くお得に、そして時間にゆとりのある生活を実現しましょう。
-                    </p>
-                    <div class="feature-image-placeholder">（ChatGPTでお得な情報を見つけている様子のスクショや、旅行プランの画像など）</div>
-                </div>
-            </div>
-
-            <div class="feature-block">
-                 <div class="icon-container">🚀</div>
-                <div class="text-content">
-                    <h3>論より証拠。講師のAI活用実績
-                        <span class="sub-heading">トレード収益から日常のお得まで、リアルな成果を公開</span>
-                    </h3>
-                    <p>
-                        机上の空論ではありません。講師マイティ―はChatGPTリリース直後からのヘビーユーザー。
-                        AIを活用したトレードで実際に収益を上げ、日常生活でもAIを駆使してお得な体験を積み重ねています。
-                        その<span class="highlight">リアルな実績や活用事例（収益画像やお得情報GETのスクショなど）</span>をコミュニティで共有。
-                        あなたも再現可能なノウハウがここにあります。
-                    </p>
-                    <div class="feature-image-placeholder">（講師のトレード収益グラフや、AIでお得に買い物した履歴のスクショなど）</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="testimonials" class="container testimonials-section">
-            <h2><span class="highlight-ai">AI</span>で人生が変わった！先輩たちの声</h2>
-            <div class="testimonial">
-                <p>「正直、AIなんて自分には無縁だと思ってました。でもAlpha Pipsの<span class="highlight">分かりやすい解説でChatGPTを使い始めたら、世界が変わりました！</span>トレードの相談相手ができたみたいで心強いし、AIマイティ―のアドバイスで感情的な失敗トレードが激減。先日はAIに海外旅行のプランを組んでもらったら、<span class="highlight">航空券とホテル代が以前より5万円も安くなってビックリ！</span>しかもクーポンで半額で始められたので、本当に感謝しかありません！」</p>
-                <p class="testimonial-author">- K.Y. 様 (45歳・会社員) <span>スタンダード利用</span></p>
-            </div>
-            <div class="testimonial">
-                <p>「ATZ Systemの精度には驚かされています。<span class="highlight">AIが最適化してくれるというのは次元が違いますね。</span>エントリーに迷いがなくなり、安定して利益を出せるようになりました。クーポンで月額も永久に半額なので、<span class="highlight">実質コストパフォーマンスが最強すぎます。</span>AIを使って情報収集の時間も減り、家族と過ごす時間が増えました。」</p>
-                <p class="testimonial-author">- T.S. 様 (58歳・自営業) <span>スタンダード利用</span></p>
-            </div>
-             <div class="testimonial">
-                <p>「スタンダードの無料体験後、クーポンを使って入会しました。<span class="highlight">『AIマイティ―』が本当に優秀で、月々の収支がプラスに転じました！</span>ChatGPTも日常で使いまくり。この内容が永久に半額で続けられるなんて信じられません。もっと早く出会いたかったです。」</p>
-                <p class="testimonial-author">- M.N. 様 (39歳・主婦) <span>スタンダード利用</span></p>
             </div>
         </section>
 
