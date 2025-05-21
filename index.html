@@ -289,6 +289,12 @@
              box-shadow: 0 0 10px rgba(255, 217, 0, 0.4);
              z-index: 1; overflow: hidden; letter-spacing: 0.5px;
         }
+        .standard .free-trial-banner .now-only { /* For "今だけ" */
+            display: block;
+            font-size: 0.8em;
+            font-weight: normal; /* Or bold if preferred */
+        }
+
 
         .course-card.priority { border-top: 5px solid var(--accent-vip-color); }
         .course-card.priority:hover {
@@ -330,6 +336,10 @@
             margin-right: 10px; font-weight: bold; vertical-align: middle;
             box-shadow: 0 0 8px rgba(255, 217, 0, 0.3);
             display: inline-block; margin-bottom: 5px;
+        }
+        .price-container .free-trial-info .now-only-text { /* For "今だけ" in price box */
+            font-weight: bolder; /* Make "今だけ" stand out */
+            color: var(--error); /* Optional: Use error color for urgency */
         }
         .price-container .price-note {
             display: block; font-size: 0.85rem; font-weight: normal;
@@ -477,11 +487,23 @@
             max-width: 800px; margin-left: auto; margin-right: auto;
             color: var(--cyber-text-primary);
         }
-        .final-cta p .highlight { color: var(--cyber-accent-cyan); font-weight: 500; }
-        .final-cta p .highlight-strong {
-            color: var(--cyber-accent-pink); font-weight: bold; font-size: 1.1em;
-            padding: 2px 4px; text-shadow: 0 0 8px var(--cyber-accent-pink);
+        .final-cta p .highlight { /* General highlight in CTA */
+             color: var(--cyber-accent-cyan);
+             font-weight: 500;
         }
+        .final-cta p .highlight-strong,
+        .final-cta p .highlight-cta-strong { /* Stronger, specific highlights */
+            color: var(--cyber-accent-pink);
+            font-weight: bold;
+            font-size: 1.1em; /* Make it slightly larger */
+            padding: 0 2px; /* Minimal padding */
+            text-shadow: 0 0 8px var(--cyber-accent-pink);
+        }
+        .final-cta p .highlight-cta-subtle { /* For less emphasis but still highlighted */
+            color: var(--cyber-accent-cyan);
+            font-weight: 500;
+        }
+
 
         /* Footer */
         .site-footer {
@@ -613,7 +635,7 @@
 
                 <!-- Standard Course -->
                 <div class="course-card standard">
-                    <div class="free-trial-banner">14日間無料</div>
+                    <div class="free-trial-banner"><span class="now-only">今だけ</span>14日間無料</div>
                     <h3>スタンダード <span class="popular-badge"><span class="star-icon">★</span>No.1 人気</span></h3>
                     <p class="value-prop">AIトレードツールとプロのノウハウで最速で結果を目指します！</p>
                     <ul class="features-list">
@@ -626,7 +648,7 @@
                         <li><strong class="highlight-feature">AIトレードセットアップ「ATZ System」利用権</strong></li>
                     </ul>
                     <div class="price-container">
-                        <span class="free-trial-info">14日間 ¥0</span>
+                        <span class="free-trial-info"><span class="now-only-text">今だけ!</span> 14日間 ¥0</span>
                         <span class="original-price">通常 14,800円/月</span>
                         <span class="discounted-price">7,400円<span class="price-note">/ 月 (税込)</span></span>
                         <span class="coupon-applied-info">クーポン【AITRADE】適用で永久50%OFF!</span>
@@ -734,7 +756,7 @@
                         <tr class="highlight-row trial-row">
                             <td><span class="icon-placeholder">🎁</span> 無料お試し期間</td>
                             <td>-</td>
-                            <td><strong>✓ 14日間</strong></td>
+                            <td><strong><span class="now-only-text" style="color: var(--error); font-weight: bold;">今だけ</span> ✓ 14日間</strong></td> <!-- Emphasized "今だけ" -->
                             <td>-</td>
                         </tr>
                          <tr class="highlight-row coupon-row">
@@ -776,16 +798,17 @@
             <div class="container">
                 <h2>「もう稼げない」と諦める前に。<br><span class="highlight-ai">AI</span>があなたの<span class="highlight-strong">人生のゲームチェンジャー</span>になる。</h2>
                 <p>
-                    今の働き方、今の収入、今の生活…本当に満足していますか？<br>
-                    もし、ほんの少しでも「変わりたい」「もっと豊かになりたい」と願うなら、<br>
-                    Alpha Pipsがその強力な武器となります。<br><br>
-                    トレードのプロの知見と、最先端のAI技術を組み合わせた独自のノウハウを、<br>
+                    今の働き方、今の収入、今の生活…<span class="highlight-cta-strong">本当に満足していますか？</span><br>
+                    もし、ほんの少しでも<span class="highlight-cta-subtle">「変わりたい」「もっと豊かになりたい」</span>と願うなら、<br>
+                    Alpha Pipsがその<span class="highlight-cta-strong">強力な武器</span>となります。<br><br>
+                    トレードのプロの知見と、最先端のAI技術を組み合わせた<span class="highlight-cta-subtle">独自のノウハウ</span>を、<br>
                     あなたも手に入れるチャンスです。<br>
-                    AI初心者でも、トレード未経験でも大丈夫。<br>
-                    必要なのは「未来を変えたい」という、ほんの少しの勇気だけ。<br><br>
-                    さあ、私たちと一緒に、経済的な自由と、心から楽しめる毎日を描きませんか？<br>
-                    クーポン【AITRADE】で永久50%OFF！<br>
-                    この絶好の機会を逃さず、第一歩を踏み出しましょう！
+                    <span class="highlight-cta-strong">AI初心者でも、トレード未経験でも大丈夫。</span><br>
+                    必要なのは「未来を変えたい」という、<span class="highlight-cta-subtle">ほんの少しの勇気</span>だけ。<br><br>
+                    さあ、私たちと一緒に、<span class="highlight-cta-strong">経済的な自由</span>と、<span class="highlight-cta-strong">心から楽しめる毎日</span>を描きませんか？<br>
+                    クーポン【AITRADE】で<span class="highlight-cta-strong">永久50%OFF！</span><br>
+                    さらにスタンダードコースなら<span class="highlight-cta-strong">今だけ14日間無料体験</span>できます。<br> <!-- ADDED "今だけ" -->
+                    この<span class="highlight-cta-subtle">絶好の機会</span>を逃さず、<span class="highlight-cta-strong">新しい未来への第一歩</span>を踏み出しましょう！
                 </p>
                 <a href="#payment-standard" class="btn btn-block btn-cta">
                     スタンダードコースをクーポンでお得に体験する
