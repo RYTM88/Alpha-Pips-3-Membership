@@ -27,6 +27,9 @@
             --error: #e63946; /* For urgency notice */
             --accent-vip-color: var(--cyber-accent-pink);
             --light-pink-course-color: var(--cyber-accent-pink);
+            --popular-badge-bg: rgba(255, 255, 255, 0.9); /* NEW: For popular badge background */
+            --popular-badge-text: var(--cyber-bg-dark);    /* NEW: For popular badge text */
+
 
             --font-primary: 'Roboto', 'Noto Sans JP', sans-serif;
             --font-secondary: 'Noto Sans JP', sans-serif; /* Gothic font */
@@ -118,7 +121,7 @@
             background: linear-gradient(135deg, #00e0c8, var(--cyber-accent-cyan));
             box-shadow: 0 8px 30px rgba(0, 242, 234, 0.4); transform: translateY(-4px);
         }
-        .btn .subtext { /* For general subtext in buttons if needed elsewhere */
+        .btn .subtext {
             display: block; font-size: 0.8em; font-weight: normal;
             opacity: 0.9; margin-top: 2px;
         }
@@ -218,7 +221,7 @@
             font-weight: 500;
             color: var(--cyber-text-primary);
             margin: 0;
-            line-height: 1.5; /* Added for better readability of two lines */
+            line-height: 1.5;
         }
         .urgency-box p strong {
             color: var(--error);
@@ -263,14 +266,20 @@
             z-index: 10;
         }
         .course-card.standard h3 { color: var(--cyber-accent-cyan); text-shadow: 0 0 8px var(--cyber-accent-cyan); }
-        .standard .popular-badge {
+        .standard .popular-badge { /* MODIFIED for better visibility */
             display: inline-flex; align-items: center; vertical-align: middle; margin-left: 10px;
             font-size: 0.7em; font-weight: bold;
-            background: linear-gradient(135deg, var(--cyber-accent-cyan), var(--cyber-accent-pink));
-            color: var(--cyber-bg-dark); padding: 5px 12px; border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0, 242, 234, 0.3), 0 0 10px rgba(255,0,224,0.3);
+            background-color: var(--popular-badge-bg); /* Light background */
+            color: var(--popular-badge-text); /* Dark text */
+            padding: 5px 12px; border-radius: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Softer shadow */
+            border: 1px solid rgba(0,0,0,0.1); /* Subtle border */
         }
-        .standard .popular-badge .star-icon { margin-right: 5px; font-size: 1.1em; }
+        .standard .popular-badge .star-icon {
+            margin-right: 5px; font-size: 1.1em;
+            color: var(--cyber-accent-pink); /* Star color can be pink or cyan */
+            text-shadow: 0 0 3px var(--cyber-accent-pink);
+        }
         .standard .free-trial-banner {
              position: absolute; top: 20px; right: -40px;
              background: var(--cyber-accent-yellow-highlight);
@@ -611,7 +620,7 @@
 <body>
     <header class="hero-section">
         <div class="container">
-            <h1>投資・トレードと<span class="highlight-ai">AI活用</span>で<br>人生の勝者ルートを最短攻略</h1>
+            <h1>AIとトレードで<br>人類の勝ち組ルートを最短攻略</h1>
             <div class="intro-text">
                 <p>労働収入だけでは先が見えない…そんな不安を抱えるあなたへ。<br>
                 Alpha Pipsは、<strong>投資トレード・AI活用・ライフハック</strong>の三本柱で、<br>
@@ -671,7 +680,7 @@
                 <div class="course-card standard">
                     <div class="free-trial-banner">14日間無料</div>
                     <h3>スタンダード <span class="popular-badge"><span class="star-icon">★</span>No.1 人気</span></h3>
-                    <p class="value-prop"><strong>本気で資産を増やし、人生を豊かにしたいあなたへ。</strong>AIトレードツールとプロのノウハウで最速で結果を目指す決定版！</p>
+                    <p class="value-prop">AIトレードツールとプロのノウハウで最速で結果を目指します！</p>
                     <ul class="features-list">
                         <li>マイティ―のチャート考察</li>
                         <li>オリジナル手法解説 (フルアクセス)</li>
@@ -857,15 +866,15 @@
             <h2><span class="highlight-ai">AI</span>で人生が変わった！先輩たちの声</h2>
             <div class="testimonial">
                 <p>「正直、AIなんて自分には無縁だと思ってました。でもAlpha Pipsの<span class="highlight">分かりやすい解説でChatGPTを使い始めたら、世界が変わりました！</span>トレードの相談相手ができたみたいで心強いし、AIマイティ―のアドバイスで感情的な失敗トレードが激減。先日はAIに海外旅行のプランを組んでもらったら、<span class="highlight">航空券とホテル代が以前より5万円も安くなってビックリ！</span>しかもクーポンで半額で始められたので、本当に感謝しかありません！」</p>
-                <p class="testimonial-author">- K.Y. 様 (45歳・会社員) <span>スタンダードコース利用</span></p>
+                <p class="testimonial-author">- K.Y. 様 (45歳・会社員) <span>スタンダード利用</span></p>
             </div>
             <div class="testimonial">
                 <p>「ATZ Systemの精度には驚かされています。<span class="highlight">AIが最適化してくれるというのは次元が違いますね。</span>エントリーに迷いがなくなり、安定して利益を出せるようになりました。クーポンで月額も永久に半額なので、<span class="highlight">実質コストパフォーマンスが最強すぎます。</span>AIを使って情報収集の時間も減り、家族と過ごす時間が増えました。」</p>
-                <p class="testimonial-author">- T.S. 様 (58歳・自営業) <span>スタンダードコース利用</span></p>
+                <p class="testimonial-author">- T.S. 様 (58歳・自営業) <span>スタンダード利用</span></p>
             </div>
              <div class="testimonial">
                 <p>「スタンダードの無料体験後、クーポンを使って入会しました。<span class="highlight">『AIマイティ―』が本当に優秀で、月々の収支がプラスに転じました！</span>ChatGPTも日常で使いまくり。この内容が永久に半額で続けられるなんて信じられません。もっと早く出会いたかったです。」</p>
-                <p class="testimonial-author">- M.N. 様 (39歳・主婦) <span>スタンダードコース利用</span></p>
+                <p class="testimonial-author">- M.N. 様 (39歳・主婦) <span>スタンダード利用</span></p>
             </div>
         </section>
 
