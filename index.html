@@ -1,16 +1,335 @@
-        /* ... (既存の:rootや基本スタイルはそのまま) ... */
-        /* :root に新しい色変数を追加 */
+  <!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Pips | 投資×AIで日常をアップデート</title>
+    <meta name="description" content="Alpha Pips - 投資×AIで日常をアップデート。未来の錬金術をあなたに。AI初心者から始める資産形成とライフハックコミュニティ。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
         :root {
-            /* (既存のカラー変数はそのまま) */
-            --cyber-highlight-row-bg: rgba(0, 242, 234, 0.08); /* Very subtle cyan tint for bg */
-            --cyber-highlight-row-border: rgba(0, 242, 234, 0.3); /* Slightly more visible cyan for border */
-            --cyber-highlight-icon-color: var(--cyber-accent-cyan);
-            --cyber-highlight-strong-text: var(--cyber-accent-pink); /* Pink for strong text in these rows for contrast */
+            /* Cyberpunk Palette */
+            --cyber-bg-dark: #0d0221;
+            --cyber-bg-medium: #1a0a38;
+            --cyber-bg-light-hover: #2a1053;
+            --cyber-text-primary: #e0fbfc;
+            --cyber-text-secondary: #a0b8d0;
+            --cyber-accent-cyan: #00f2ea;
+            --cyber-accent-pink: #ff00e0;
+            --cyber-accent-purple-highlight-bg: rgba(125, 38, 203, 0.2); /* Subtle purple for highlight row bg */
+            --cyber-accent-purple-highlight-border: rgba(125, 38, 203, 0.5); /* Slightly more visible purple border */
+            --cyber-border-color: #3c1053;
+            --error: #e63946;
+            --accent-vip-color: var(--cyber-accent-pink);
+            --light-pink-course-color: var(--cyber-accent-pink);
+
+            --font-primary: 'Roboto', 'Noto Sans JP', sans-serif;
+            --font-secondary: 'Noto Sans JP', sans-serif;
+
+            --coupon-highlight-bg: rgba(0, 242, 234, 0.1);
+            --coupon-code-color: var(--cyber-accent-pink);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-secondary);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--cyber-text-primary);
+            background-color: var(--cyber-bg-dark);
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+        img { max-width: 100%; height: auto; }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-primary);
+            line-height: 1.3;
+            margin-bottom: 0.7em;
+            color: var(--cyber-text-primary);
+            font-weight: 700;
+        }
+        h1 {
+            font-size: 2.8rem; font-weight: 900; text-align: center; margin-bottom: 0.5em;
+            letter-spacing: -0.5px; text-shadow: 0 0 10px rgba(0, 242, 234, 0.3);
+        }
+        h1 .highlight-ai { color: var(--cyber-accent-cyan); }
+        h2 {
+            font-size: 2.2rem; margin: 2.5em 0 1.2em; padding-bottom: 0.6em;
+            border-bottom: 2px solid var(--cyber-accent-cyan); text-align: center;
+            text-shadow: 0 0 8px rgba(0, 242, 234, 0.2);
+        }
+        h3 { font-size: 1.6rem; color: var(--cyber-accent-cyan); }
+        .course-card h3 {
+            font-size: 1.8rem; margin-top: 10px; margin-bottom: 20px;
+            min-height: 50px; line-height: 1.4;
+        }
+        p { margin-bottom: 1.2em; color: var(--cyber-text-secondary); }
+        .intro-text p, .final-cta p { font-size: 1.1rem; color: var(--cyber-text-primary); }
+
+
+        /* Buttons */
+        .btn {
+            display: inline-block; padding: 14px 32px; background: var(--cyber-accent-cyan);
+            color: var(--cyber-bg-dark); font-weight: bold; text-decoration: none;
+            border-radius: 8px; margin: 10px 0; text-align: center; transition: all 0.3s ease;
+            cursor: pointer; border: 1px solid var(--cyber-accent-cyan);
+            font-family: var(--font-primary); letter-spacing: 0.5px; font-size: 1rem;
+            box-shadow: 0 0 15px rgba(0, 242, 234, 0.3), inset 0 0 5px rgba(255,255,255,0.2);
+        }
+        .btn:hover {
+            background: transparent; color: var(--cyber-accent-cyan); transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(0, 242, 234, 0.5), 0 0 5px var(--cyber-accent-cyan);
+        }
+        .btn-secondary {
+            background: var(--cyber-accent-pink); border-color: var(--cyber-accent-pink);
+            color: var(--cyber-bg-dark);
+            box-shadow: 0 0 15px rgba(255, 0, 224, 0.3), inset 0 0 5px rgba(255,255,255,0.2);
+        }
+        .btn-secondary:hover {
+            background: transparent; color: var(--cyber-accent-pink);
+            box-shadow: 0 0 20px rgba(255, 0, 224, 0.5), 0 0 5px var(--cyber-accent-pink);
+        }
+        .btn-accent {
+            background: var(--accent-vip-color); border-color: var(--accent-vip-color);
+            color: var(--cyber-bg-dark);
+            box-shadow: 0 0 15px rgba(255, 0, 224, 0.3);
+        }
+         .btn-accent:hover {
+            background: transparent; color: var(--accent-vip-color);
+            box-shadow: 0 0 20px rgba(255, 0, 224, 0.5);
+         }
+        .btn-block { display: block; width: 100%; }
+        .btn-cta {
+            padding: 16px 36px; font-size: 1.15rem;
+            background: linear-gradient(135deg, var(--cyber-accent-cyan), #00b8d4);
+            border: none; color: var(--cyber-bg-dark);
+            box-shadow: 0 5px 25px rgba(0, 242, 234, 0.3);
+        }
+        .btn-cta:hover {
+            background: linear-gradient(135deg, #00e0c8, var(--cyber-accent-cyan));
+            box-shadow: 0 8px 30px rgba(0, 242, 234, 0.4); transform: translateY(-4px);
+        }
+        .btn .subtext {
+            display: block; font-size: 0.8em; font-weight: normal;
+            opacity: 0.9; margin-top: 2px;
+        }
+
+        /* Header Section */
+        .hero-section {
+            text-align: center; padding: 80px 20px 60px;
+            background: linear-gradient(160deg, var(--cyber-bg-dark) 60%, var(--cyber-bg-medium) 100%);
+            border-bottom: 1px solid var(--cyber-border-color);
+        }
+        .tagline {
+            font-size: 1.3rem; color: var(--cyber-accent-cyan); margin-bottom: 30px;
+            font-weight: 500; text-shadow: 0 0 5px rgba(0, 242, 234, 0.3);
+        }
+        .hero-section .intro-text p {
+            max-width: 750px; margin-left: auto; margin-right: auto;
+            font-size: 1.15rem; line-height: 1.8; color: var(--cyber-text-primary);
+        }
+        .hero-section .intro-text strong {
+            color: var(--cyber-accent-pink); font-weight: bold;
+            text-shadow: 0 0 8px rgba(255, 0, 224, 0.3);
+        }
+
+        /* Features Box */
+        .features-overview {
+            background-color: rgba(26, 10, 56, 0.7); backdrop-filter: blur(5px);
+            padding: 30px; border-radius: 12px; margin: 40px auto; max-width: 700px;
+            box-shadow: 0 0 25px rgba(0, 242, 234, 0.1), 0 0 15px rgba(255,0,224,0.1);
+            border: 1px solid var(--cyber-border-color);
+        }
+        .features-overview-title {
+             font-weight: 700; margin-bottom: 25px; text-align: center;
+             color: var(--cyber-text-primary); font-size: 1.4rem;
+        }
+        .features-list-header { list-style-type: none; padding-left: 0; }
+        .features-list-header li {
+            margin-bottom: 15px; position: relative; padding-left: 35px;
+            font-size: 1.05rem; color: var(--cyber-text-secondary);
+        }
+        .features-list-header li::before {
+            content: "✧"; position: absolute; left: 0; top: 0px;
+            color: var(--cyber-accent-cyan); font-weight: bold; font-size: 1.5em;
+            text-shadow: 0 0 5px var(--cyber-accent-cyan);
+        }
+         .features-list-header li .highlight { color: var(--cyber-accent-pink); font-weight: 500; }
+
+        /* Coupon Notice in Header */
+        .coupon-notice-container {
+            margin: 2.5em auto 1.5em; padding: 20px;
+            background-color: var(--coupon-highlight-bg);
+            border: 2px dashed var(--cyber-accent-pink); border-radius: 10px;
+            max-width: 600px; box-shadow: 0 0 15px rgba(255, 0, 224, 0.2);
+        }
+        .coupon-notice-container .coupon-title {
+            font-size: 1.3rem; font-weight: 700; color: var(--cyber-text-primary);
+            margin-bottom: 10px; text-shadow: 0 0 5px var(--cyber-accent-cyan);
+        }
+        .coupon-notice-container .coupon-code-label {
+            font-size: 1rem; color: var(--cyber-text-secondary); margin-bottom: 5px; display: block;
+        }
+        .coupon-notice-container .coupon-code {
+            display: inline-block; font-family: 'Courier New', Courier, monospace;
+            font-size: 1.8rem; font-weight: bold; color: var(--coupon-code-color);
+            background-color: rgba(13, 2, 33, 0.7); padding: 8px 15px;
+            border-radius: 5px; border: 1px solid var(--cyber-accent-pink);
+            margin-bottom: 10px; letter-spacing: 2px;
+            text-shadow: 0 0 8px var(--coupon-code-color);
+        }
+        .coupon-notice-container .coupon-benefit {
+            font-size: 1.1rem; font-weight: 500; color: var(--cyber-text-primary);
+        }
+        .coupon-notice-container .coupon-benefit strong {
+            color: var(--cyber-accent-cyan); font-size: 1.2em;
+        }
+
+        /* Course cards */
+        .courses {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px; margin: 40px 0; align-items: stretch;
+        }
+        .course-card {
+            background-color: var(--cyber-bg-medium); border: 1px solid var(--cyber-border-color);
+            border-radius: 12px; padding: 30px; transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative; display: flex; flex-direction: column;
+            box-shadow: 0 5px 20px rgba(13, 2, 33, 0.5), inset 0 0 0 1px var(--cyber-border-color);
+        }
+        .course-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 242, 234, 0.15),
+                        0 0 20px var(--cyber-accent-cyan),
+                        inset 0 0 0 1px var(--cyber-accent-cyan);
+        }
+        .course-card.light { border-top: 5px solid var(--light-pink-course-color); }
+        .course-card.light:hover {
+             box-shadow: 0 10px 30px rgba(255, 0, 224, 0.15),
+                         0 0 20px var(--light-pink-course-color),
+                         inset 0 0 0 1px var(--light-pink-course-color);
+        }
+        .course-card.light h3 { color: var(--light-pink-course-color); text-shadow: 0 0 5px var(--light-pink-course-color);}
+
+        .course-card.standard {
+            border-top: 5px solid var(--cyber-accent-cyan); transform: scale(1.03);
+            box-shadow: 0 10px 35px rgba(0, 242, 234, 0.2),
+                        0 0 15px var(--cyber-accent-cyan),
+                        inset 0 0 0 1px var(--cyber-accent-cyan);
+            z-index: 10;
+        }
+        .course-card.standard h3 { color: var(--cyber-accent-cyan); text-shadow: 0 0 8px var(--cyber-accent-cyan); }
+        .standard .popular-badge {
+            display: inline-flex; align-items: center; vertical-align: middle; margin-left: 10px;
+            font-size: 0.7em; font-weight: bold;
+            background: linear-gradient(135deg, var(--cyber-accent-cyan), var(--cyber-accent-pink));
+            color: var(--cyber-bg-dark); padding: 5px 12px; border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 242, 234, 0.3), 0 0 10px rgba(255,0,224,0.3);
+        }
+        .standard .popular-badge .star-icon { margin-right: 5px; font-size: 1.1em; }
+        .standard .free-trial-banner {
+             position: absolute; top: 20px; right: -40px; background: var(--cyber-accent-pink);
+             color: var(--cyber-bg-dark); padding: 6px 45px; transform: rotate(45deg);
+             font-weight: bold; font-size: 0.9em; box-shadow: 0 0 10px rgba(255,0,224,0.4);
+             z-index: 1; overflow: hidden; letter-spacing: 0.5px;
+        }
+
+        .course-card.priority { border-top: 5px solid var(--accent-vip-color); }
+        .course-card.priority:hover {
+             box-shadow: 0 10px 30px rgba(255, 0, 224, 0.15),
+                         0 0 20px var(--accent-vip-color),
+                         inset 0 0 0 1px var(--accent-vip-color);
+        }
+        .course-card.priority h3 { color: var(--accent-vip-color); text-shadow: 0 0 8px var(--accent-vip-color); }
+        .course-card.priority h3 .limited-badge {
+             display: inline-block; font-size: 0.7em; color: var(--cyber-accent-pink);
+             font-weight: bold; margin-left: 8px; vertical-align: middle;
+             background-color: rgba(255, 0, 224, 0.1); padding: 3px 7px;
+             border-radius: 4px; border: 1px solid var(--cyber-accent-pink);
+         }
+
+        .price-container {
+            margin: 25px 0 10px 0;
+        }
+        .price-container .original-price {
+            font-size: 1.1rem; color: var(--cyber-text-secondary);
+            text-decoration: line-through; margin-right: 10px; display: block;
+        }
+        .price-container .discounted-price {
+            font-size: 1.8rem; font-weight: 700;
+            color: var(--cyber-text-primary); display: inline-block;
+        }
+        .course-card.light .discounted-price { color: var(--light-pink-course-color); }
+        .course-card.standard .discounted-price { color: var(--cyber-accent-cyan); }
+        .course-card.priority .discounted-price { color: var(--accent-vip-color); }
+
+        .price-container .coupon-applied-info {
+            display: block; font-size: 0.8rem; color: var(--cyber-accent-cyan);
+            font-weight: 500; margin-top: -5px; margin-bottom: 5px;
+        }
+        .price-container .free-trial-info {
+            background: var(--cyber-accent-pink); color: var(--cyber-bg-dark);
+            font-size: 0.9rem; padding: 5px 12px; border-radius: 5px;
+            margin-right: 10px; font-weight: bold; vertical-align: middle;
+            box-shadow: 0 0 8px rgba(255,0,224,0.3);
+            display: inline-block; margin-bottom: 5px;
+        }
+        .price-container .price-note {
+            display: block; font-size: 0.85rem; font-weight: normal;
+            color: var(--cyber-text-secondary);
+        }
+
+        .features-list {
+            list-style-type: none; margin: 20px 0; padding: 0; flex-grow: 1;
+        }
+        .features-list li {
+            margin-bottom: 14px; position: relative; padding-left: 30px;
+            font-size: 0.98rem; line-height: 1.6; color: var(--cyber-text-secondary);
+        }
+        .features-list li::before {
+            content: "»"; position: absolute; left: 0; top: 1px;
+            color: var(--cyber-accent-cyan); font-weight: bold; font-size: 1.3em;
+            text-shadow: 0 0 3px var(--cyber-accent-cyan);
+        }
+        .features-list li strong.highlight-feature { color: var(--cyber-accent-cyan); font-weight: 500; }
+        .features-list li strong.highlight-vip { color: var(--accent-vip-color); font-weight: 500; }
+
+        .value-prop {
+            font-weight: 500; margin-bottom: 20px; font-size: 1.05rem;
+            min-height: 70px; line-height: 1.6; color: var(--cyber-text-secondary);
+        }
+         .value-prop strong { color: var(--cyber-text-primary); }
+
+        .course-card .button-wrapper { margin-top: auto; padding-top: 20px; }
+        .course-card.standard .btn {
+            background: linear-gradient(135deg, var(--cyber-accent-cyan), #00b8d4);
+            color: var(--cyber-bg-dark); padding: 15px 32px; font-size: 1.05rem;
+            border: none; box-shadow: 0 4px 20px rgba(0, 242, 234, 0.3);
+        }
+        .course-card.standard .btn:hover {
+            background: linear-gradient(135deg, #00e0c8, var(--cyber-accent-cyan));
+            box-shadow: 0 6px 25px rgba(0, 242, 234, 0.4); transform: translateY(-3px);
         }
 
         /* Table comparison */
-        /* ... (既存の .table-container, .comparison-table, th, td の基本スタイルはそのまま) ... */
-
+        .table-container {
+            margin: 50px 0; overflow-x: auto; -webkit-overflow-scrolling: touch;
+            background-color: var(--cyber-bg-medium); border-radius: 10px;
+            border: 1px solid var(--cyber-border-color); box-shadow: 0 0 20px rgba(13,2,33,0.4);
+        }
+        .comparison-table {
+            border-collapse: collapse; min-width: 700px; width: 100%;
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 16px 20px; text-align: center; border: 1px solid var(--cyber-border-color);
+            white-space: normal;
+            color: var(--cyber-text-secondary);
+            vertical-align: middle;
+        }
         .comparison-table thead th {
             color: var(--cyber-text-primary); background-color: var(--cyber-bg-light-hover);
             font-size: 0.95rem; font-weight: 500; border-bottom: 2px solid var(--cyber-accent-cyan);
@@ -19,57 +338,228 @@
         .comparison-table thead th:nth-child(3) { /* Standard col header */
             background-color: var(--cyber-accent-cyan); color: var(--cyber-bg-dark); text-shadow: none;
         }
-        .comparison-table tbody tr:nth-child(even) td { background-color: rgba(13,2,33,0.3); }
+        .comparison-table tbody tr:not(.highlight-row):nth-child(even) td { /* Exclude highlight-row from striping */
+            background-color: rgba(13,2,33,0.3);
+        }
 
         .comparison-table tbody td:first-child { /* 機能名列 */
             text-align: left; font-weight: 500; color: var(--cyber-text-primary);
-            background-color: var(--cyber-bg-light-hover);
+            background-color: var(--cyber-bg-light-hover); /* Ensures it's distinct if not highlight-row */
         }
+        .comparison-table tbody tr.highlight-row td:first-child { /* Specific for first-child in highlight */
+             background-color: var(--cyber-accent-purple-highlight-bg); /* Match highlight row bg */
+        }
+
         .comparison-table tbody td strong { color: var(--cyber-accent-pink); } /* Default strong */
 
         .comparison-table tbody td:nth-child(3) { /* スタンダード列のセル */
             background-color: rgba(0, 242, 234, 0.05);
             font-weight: 500;
         }
+        .comparison-table tbody tr.highlight-row td:nth-child(3) { /* スタンダード列のハイライト行セル */
+             background-color: var(--cyber-accent-purple-highlight-bg); /* Match highlight row bg */
+        }
+
+
         .comparison-table tbody td:nth-child(3) strong { color: var(--cyber-accent-cyan); }
 
-        /* MODIFIED STYLES FOR HIGHLIGHTING TABLE ROWS */
+        /* Highlighted rows in comparison table */
         .comparison-table tbody tr.highlight-row td {
-            background-color: var(--cyber-highlight-row-bg) !important; /* Subtle cyan tint */
-            color: var(--cyber-text-primary); /* Ensure text is primary color for readability */
-            font-weight: 500; /* Slightly bolder than normal text */
-            /* Add subtle top/bottom borders to distinguish */
-            border-top: 1px solid var(--cyber-highlight-row-border);
-            border-bottom: 1px solid var(--cyber-highlight-row-border);
-        }
-
-        /* Ensure even row striping doesn't override our highlight if it comes after */
-        .comparison-table tbody tr.highlight-row:nth-child(even) td {
-             background-color: var(--cyber-highlight-row-bg) !important;
-        }
-
-
-        .comparison-table tbody tr.highlight-row td:first-child { /* 機能名列のハイライト */
-            /* background-color can be same as other cells in highlight-row */
+            background-color: var(--cyber-accent-purple-highlight-bg); /* Subtle purple bg */
             color: var(--cyber-text-primary);
+            font-weight: 500;
+            border-top: 1px solid var(--cyber-accent-purple-highlight-border); /* Subtle border */
+            border-bottom: 1px solid var(--cyber-accent-purple-highlight-border);
         }
         .comparison-table tbody tr.highlight-row td strong {
-            color: var(--cyber-highlight-strong-text); /* Use Pink for strong text in these rows for good contrast */
-            text-shadow: 0 0 5px var(--cyber-highlight-strong-text);
+            color: var(--cyber-accent-cyan); /* Cyan for strong text in these specific rows */
+            text-shadow: 0 0 5px var(--cyber-accent-cyan);
         }
         .comparison-table .icon-placeholder {
             margin-right: 8px;
             font-size: 1.1em;
-            color: var(--cyber-highlight-icon-color); /* Cyan for icons */
-            filter: drop-shadow(0 0 4px var(--cyber-highlight-icon-color));
+            color: var(--cyber-accent-cyan); /* Cyan for icons */
+            filter: drop-shadow(0 0 4px var(--cyber-accent-cyan));
         }
-        /* END MODIFIED STYLES FOR HIGHLIGHTING TABLE ROWS */
 
-        /* ... (以降のCSSは前回と同様) ... */
+
+        /* Feature Blocks */
+        .feature-block-section { padding: 40px 0; }
+        .feature-block {
+             margin-bottom: 35px;
+             background: linear-gradient(145deg, var(--cyber-bg-medium), var(--cyber-bg-dark));
+             border-radius: 12px; padding: 35px;
+             box-shadow: 0 0 25px rgba(13,2,33,0.6), inset 0 0 0 1px var(--cyber-border-color);
+             display: flex; align-items: flex-start; gap: 30px;
+             border: 1px solid var(--cyber-border-color);
+        }
+        .feature-block .icon-container {
+            background: linear-gradient(135deg, var(--cyber-accent-cyan), var(--cyber-accent-pink));
+            color: var(--cyber-bg-dark); min-width: 60px; height: 60px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 1.8rem; flex-shrink: 0;
+            box-shadow: 0 0 15px rgba(0, 242, 234, 0.3), 0 0 15px rgba(255,0,224,0.3);
+        }
+         .feature-block .text-content h3 {
+             margin: 0 0 12px 0; font-size: 1.5rem; color: var(--cyber-text-primary);
+             text-shadow: 0 0 5px var(--cyber-accent-cyan);
+         }
+         .feature-block .text-content h3 .sub-heading {
+             font-size: 0.7em; color: var(--cyber-text-secondary); font-weight: 400;
+             display: block; text-shadow: none;
+         }
+        .feature-block .text-content p { line-height: 1.8; color: var(--cyber-text-secondary); }
+        .feature-block .text-content p .highlight {
+            color: var(--cyber-accent-cyan); font-weight: 500;
+            text-shadow: 0 0 3px var(--cyber-accent-cyan);
+        }
+        .feature-block .feature-image-placeholder {
+            margin-top: 15px; background-color: var(--cyber-bg-light-hover);
+            height: 150px; border-radius: 8px; display: flex; justify-content: center;
+            align-items: center; color: var(--cyber-text-secondary); font-style: italic;
+            border: 1px dashed var(--cyber-border-color);
+        }
+
+        /* Testimonials */
+        .testimonials-section { padding: 40px 0; }
+        .testimonial {
+            background: var(--cyber-bg-medium); padding: 30px;
+            border-left: 5px solid var(--cyber-accent-pink); margin: 30px 0;
+            border-radius: 0 8px 8px 0; box-shadow: 0 0 20px rgba(255,0,224,0.1);
+        }
+        .testimonial p {
+            font-size: 1rem; line-height: 1.8; color: var(--cyber-text-secondary);
+            margin-bottom: 1em;
+        }
+        .testimonial p .highlight {
+            background-color: rgba(0, 242, 234, 0.1); padding: 2px 5px;
+            border-radius: 4px; font-weight: 500; color: var(--cyber-accent-cyan);
+        }
+        .testimonial-author {
+            font-weight: 500; text-align: right; margin-top: 15px;
+            color: var(--cyber-text-primary); font-size: 0.95rem;
+        }
+        .testimonial-author span { font-weight: normal; color: var(--cyber-text-secondary); }
+
+        /* FAQ */
+        .faq-section { padding: 40px 0; }
+        .faq-item {
+            margin-bottom: 25px; border-bottom: 1px solid var(--cyber-border-color);
+            padding-bottom: 25px;
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .question {
+            font-weight: 700; margin-bottom: 12px; color: var(--cyber-text-primary);
+            display: flex; align-items: flex-start; font-size: 1.2rem;
+        }
+        .question::before {
+            content: "Q ►"; margin-right: 0.8em; font-weight: bold;
+            font-size: 1em; color: var(--cyber-accent-cyan);
+        }
+        .answer {
+            padding-left: 3.5em; color: var(--cyber-text-secondary); line-height: 1.8;
+        }
+        .answer::before {
+            content: "A ►"; font-weight: bold; margin-right: 0.8em;
+            margin-left: -3.5em; color: var(--cyber-accent-pink);
+        }
+        .answer .highlight { color: var(--cyber-accent-cyan); font-weight: 500; }
+
+        /* Final CTA */
+        .final-cta {
+            margin-top: 50px; padding: 60px 30px;
+            background: linear-gradient(145deg, var(--cyber-bg-medium), var(--cyber-bg-dark));
+            border-radius: 15px; text-align: center;
+            border-top: 3px solid var(--cyber-accent-cyan);
+            box-shadow: 0 0 40px rgba(0, 242, 234, 0.15), 0 0 20px rgba(255,0,224,0.1);
+        }
+        .final-cta h2 {
+            font-size: 2.4rem; color: var(--cyber-text-primary); border-bottom: none;
+            margin-bottom: 0.8em; text-shadow: 0 0 10px var(--cyber-accent-cyan);
+        }
+        .final-cta p {
+            font-size: 1.15rem; margin-bottom: 30px; line-height: 1.9;
+            max-width: 800px; margin-left: auto; margin-right: auto;
+            color: var(--cyber-text-primary);
+        }
+        .final-cta p .highlight { color: var(--cyber-accent-cyan); font-weight: 500; }
+        .final-cta p .highlight-strong {
+            color: var(--cyber-accent-pink); font-weight: bold; font-size: 1.1em;
+            padding: 2px 4px; text-shadow: 0 0 8px var(--cyber-accent-pink);
+        }
+
+        /* Footer */
+        .site-footer {
+            text-align: center; padding: 40px 20px;
+            border-top: 1px solid var(--cyber-border-color); margin-top: 50px;
+            background-color: var(--cyber-bg-dark);
+        }
+        .site-footer p { color: var(--cyber-text-secondary); font-size: 0.9rem; margin-bottom: 8px; }
+        .site-footer .risk-notice { font-size: 0.8rem; color: #7a8aa0; }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            h1 { font-size: 2.5rem; } h2 { font-size: 2rem; }
+            .final-cta h2 { font-size: 2.2rem; }
+            .course-card.standard { transform: scale(1); }
+            .course-card.standard:hover {
+                 transform: translateY(-10px) scale(1.02);
+                 box-shadow: 0 15px 40px rgba(0, 242, 234, 0.25),
+                             0 0 20px var(--cyber-accent-cyan),
+                             inset 0 0 0 1.5px var(--cyber-accent-cyan);
+            }
+        }
+        @media (max-width: 768px) {
+            .container { padding: 40px 15px; }
+            h1 { font-size: 2.2rem; } h2 { font-size: 1.8rem; }
+            .final-cta h2 { font-size: 2rem; }
+            .hero-section { padding: 60px 15px 40px; }
+            .tagline { font-size: 1.15rem; }
+            .hero-section .intro-text p, .final-cta p { font-size: 1.05rem; }
+            .features-overview { padding: 25px; }
+            .features-list-header li { font-size: 1rem; padding-left: 30px;}
+            .courses { grid-template-columns: 1fr; gap: 25px; }
+            .course-card { padding: 25px; }
+            .course-card h3 { font-size: 1.6rem; min-height: auto; }
+             .standard .free-trial-banner { font-size: 0.85em; padding: 5px 35px; top: 15px; right: -35px;}
+             .standard .popular-badge { font-size: 0.65em; }
+            .comparison-table { min-width: auto; }
+            .comparison-table th, .comparison-table td { white-space: normal; padding: 12px 15px; font-size: 0.9rem;}
+             .feature-block {
+                 flex-direction: column; align-items: center; text-align: center; padding: 30px;
+             }
+             .feature-block .icon-container { margin-bottom: 20px; }
+             .feature-block .text-content h3 { text-align: center; font-size: 1.4rem;}
+             .feature-block .text-content p { text-align: left; font-size: 0.95rem;}
+             .question { font-size: 1.1rem; }
+             .answer { padding-left: 3em; font-size: 0.95rem; }
+             .answer::before { margin-left: -3em;}
+             .final-cta { padding: 50px 20px;}
+             .btn { padding: 12px 28px; font-size: 0.95rem;}
+             .btn-cta { padding: 14px 32px; font-size: 1.05rem;}
+        }
+         @media (max-width: 480px) {
+            body { font-size: 15px; }
+            h1 { font-size: 1.9rem; } h2 { font-size: 1.6rem; }
+            .final-cta h2 { font-size: 1.8rem; }
+            .course-card h3 { font-size: 1.5rem; }
+            .price-container .original-price { font-size: 1rem; }
+            .price-container .discounted-price { font-size: 1.6rem; }
+             .standard .free-trial-banner { font-size: 0.8em; padding: 4px 30px; top: 12px; right: -30px;}
+             .standard .popular-badge { font-size: 0.6em; }
+            .hero-section .intro-text p, .final-cta p { font-size: 1rem; }
+            .features-overview-title { font-size: 1.2rem; }
+            .features-list-header li { font-size: 0.95rem; }
+            .coupon-notice-container .coupon-title {font-size: 1.1rem;}
+            .coupon-notice-container .coupon-code {font-size: 1.5rem;}
+            .coupon-notice-container .coupon-benefit {font-size: 1rem;}
+            .btn { padding: 12px 24px; }
+            .btn-cta { padding: 14px 28px; font-size: 1rem;}
+            .comparison-table th, .comparison-table td { padding: 10px 8px; font-size: 0.85rem;}
+         }
     </style>
 </head>
 <body>
-    <!-- HTML部分は前回と変更なし（比較表の行の順番と内容は最新版を想定） -->
     <header class="hero-section">
         <div class="container">
             <p class="tagline">Alpha Pips - 投資×AIで日常をアップデート。未来の錬金術をあなたに。</p>
