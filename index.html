@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -19,7 +19,7 @@
             --cyber-text-secondary: #a0b8d0;
             --cyber-accent-cyan: #00f2ea;
             --cyber-accent-pink: #ff00e0;
-            --cyber-accent-purple: #7d26cb;
+            --cyber-accent-purple: #7d26cb; /* Used for highlight rows */
             --cyber-border-color: #3c1053;
             --error: #e63946;
             --accent-vip-color: var(--cyber-accent-pink);
@@ -338,13 +338,35 @@
             background-color: var(--cyber-accent-cyan); color: var(--cyber-bg-dark); text-shadow: none;
         }
         .comparison-table tbody tr:nth-child(even) td { background-color: rgba(13,2,33,0.3); }
-        .comparison-table tbody td:first-child {
+        .comparison-table tbody td:first-child { /* 機能名列 */
             text-align: left; font-weight: 500; color: var(--cyber-text-primary);
             background-color: var(--cyber-bg-light-hover);
         }
-        .comparison-table tbody td strong { color: var(--cyber-accent-pink); }
-        .comparison-table tbody td:nth-child(3) { background-color: rgba(0, 242, 234, 0.05); }
-        .comparison-table tbody td:nth-child(3) strong { color: var(--cyber-accent-cyan); }
+        .comparison-table tbody td strong { color: var(--cyber-accent-pink); } /* Default strong */
+        .comparison-table tbody td:nth-child(3) { /* スタンダード列のセル */
+            background-color: rgba(0, 242, 234, 0.05);
+            font-weight: 500; /* Make standard column text slightly bolder */
+        }
+        .comparison-table tbody td:nth-child(3) strong { color: var(--cyber-accent-cyan); } /* スタンダード列のstrong */
+
+        .comparison-table tbody tr.highlight-row td {
+            background-color: var(--cyber-accent-purple);
+            color: var(--cyber-text-primary);
+            font-weight: 500;
+        }
+        .comparison-table tbody tr.highlight-row td:first-child {
+            background-color: var(--cyber-accent-purple);
+            color: var(--cyber-text-primary);
+        }
+        .comparison-table tbody tr.highlight-row td strong {
+            color: var(--cyber-accent-cyan);
+            text-shadow: 0 0 5px var(--cyber-accent-cyan);
+        }
+        .comparison-table .icon-placeholder {
+            margin-right: 8px;
+            font-size: 1.1em;
+            filter: drop-shadow(0 0 3px var(--cyber-accent-cyan)); /* Add glow to icons */
+        }
 
 
         /* Feature Blocks */
@@ -571,6 +593,7 @@
                         <li>オリジナル手法解説</li>
                         <li>メンバー交流部屋</li>
                         <li>AI活用（ライフハック）情報提供</li>
+                        <li>質問対応 (全体対応)</li>
                     </ul>
                     <div class="price-container">
                         <span class="original-price">通常 5,980円/月</span>
@@ -592,6 +615,7 @@
                         <li>オリジナル手法解説 (フルアクセス)</li>
                         <li>メンバー交流部屋</li>
                         <li>AI活用（ライフハック）情報提供</li>
+                        <li>質問対応 (全体対応)</li>
                         <li><strong class="highlight-feature">AIトレード支援ツール「AIマイティ―」利用権</strong></li>
                         <li><strong class="highlight-feature">AIトレードセットアップ「ATZ System」利用権</strong></li>
                     </ul>
@@ -654,12 +678,6 @@
                             <td><strong>✓</strong></td>
                         </tr>
                         <tr>
-                            <td>オリジナル手法解説</td>
-                            <td>✓</td>
-                            <td><strong>✓ フルアクセス</strong></td>
-                            <td><strong>✓ フルアクセス</strong></td>
-                        </tr>
-                        <tr>
                             <td>メンバー交流部屋</td>
                             <td>✓</td>
                             <td><strong>✓</strong></td>
@@ -670,6 +688,18 @@
                             <td>✓</td>
                             <td><strong>✓</strong></td>
                             <td><strong>✓</strong></td>
+                        </tr>
+                        <tr>
+                            <td>オリジナル手法解説</td>
+                            <td>✓</td>
+                            <td><strong>✓ フルアクセス</strong></td>
+                            <td><strong>✓ フルアクセス</strong></td>
+                        </tr>
+                        <tr>
+                            <td>質問対応</td>
+                            <td>全体対応</td>
+                            <td><strong>全体対応</strong></td>
+                            <td><strong>個別優先対応</strong></td>
                         </tr>
                         <tr>
                             <td>AIトレード支援ツール「AIマイティ―」</td>
@@ -683,20 +713,14 @@
                             <td><strong>✓ 利用可能</strong></td>
                             <td><strong>✓ 利用可能</strong></td>
                         </tr>
-                        <tr>
-                            <td>質問対応</td>
-                            <td>全体対応</td>
-                            <td><strong>全体対応</strong></td>
-                            <td><strong>個別優先対応</strong></td>
-                        </tr>
-                        <tr>
-                            <td>無料お試し期間</td>
+                        <tr class="highlight-row trial-row">
+                            <td><span class="icon-placeholder">🎁</span> 無料お試し期間</td>
                             <td>-</td>
                             <td><strong>✓ 14日間</strong></td>
                             <td>-</td>
                         </tr>
-                         <tr>
-                            <td>クーポン割引</td>
+                         <tr class="highlight-row coupon-row">
+                            <td><span class="icon-placeholder">✨</span> クーポン割引</td>
                             <td><strong>✓</strong></td>
                             <td><strong>✓</strong></td>
                             <td><strong>✓</strong></td>
