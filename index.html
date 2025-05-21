@@ -19,7 +19,9 @@
             --cyber-text-secondary: #a0b8d0;
             --cyber-accent-cyan: #00f2ea;
             --cyber-accent-pink: #ff00e0;
-            --cyber-accent-purple: #7d26cb; /* Used for highlight rows */
+            /* --cyber-accent-purple: #7d26cb; /* Replaced by yellow for highlight */
+            --cyber-accent-yellow-highlight: #ffd900; /* New yellow for highlight rows */
+            --cyber-accent-yellow-highlight-text: #1a0a38; /* Text color for yellow bg */
             --cyber-border-color: #3c1053;
             --error: #e63946;
             --accent-vip-color: var(--cyber-accent-pink);
@@ -338,34 +340,39 @@
             background-color: var(--cyber-accent-cyan); color: var(--cyber-bg-dark); text-shadow: none;
         }
         .comparison-table tbody tr:nth-child(even) td { background-color: rgba(13,2,33,0.3); }
+
         .comparison-table tbody td:first-child { /* 機能名列 */
             text-align: left; font-weight: 500; color: var(--cyber-text-primary);
             background-color: var(--cyber-bg-light-hover);
         }
         .comparison-table tbody td strong { color: var(--cyber-accent-pink); } /* Default strong */
+
         .comparison-table tbody td:nth-child(3) { /* スタンダード列のセル */
             background-color: rgba(0, 242, 234, 0.05);
-            font-weight: 500; /* Make standard column text slightly bolder */
+            font-weight: 500;
         }
         .comparison-table tbody td:nth-child(3) strong { color: var(--cyber-accent-cyan); } /* スタンダード列のstrong */
 
+        /* Highlighted rows in comparison table */
         .comparison-table tbody tr.highlight-row td {
-            background-color: var(--cyber-accent-purple);
-            color: var(--cyber-text-primary);
-            font-weight: 500;
+            background-color: var(--cyber-accent-yellow-highlight) !important; /* Important to override even row striping */
+            color: var(--cyber-accent-yellow-highlight-text) !important; /* Ensure text is readable */
+            font-weight: 700; /* Make text bolder */
+            border-top: 2px solid var(--cyber-bg-dark); /* Separator line */
+            border-bottom: 2px solid var(--cyber-bg-dark);
         }
-        .comparison-table tbody tr.highlight-row td:first-child {
-            background-color: var(--cyber-accent-purple);
-            color: var(--cyber-text-primary);
+        .comparison-table tbody tr.highlight-row td:first-child { /* 機能名列のハイライト */
+            background-color: var(--cyber-accent-yellow-highlight) !important;
+            color: var(--cyber-accent-yellow-highlight-text) !important;
         }
         .comparison-table tbody tr.highlight-row td strong {
-            color: var(--cyber-accent-cyan);
-            text-shadow: 0 0 5px var(--cyber-accent-cyan);
+            color: var(--cyber-bg-dark); /* Darker strong text on yellow */
+            text-shadow: none; /* Remove shadow for better readability on yellow */
         }
         .comparison-table .icon-placeholder {
             margin-right: 8px;
             font-size: 1.1em;
-            filter: drop-shadow(0 0 3px var(--cyber-accent-cyan)); /* Add glow to icons */
+            /* filter: drop-shadow(0 0 3px var(--cyber-accent-cyan)); /* No longer needed with yellow */
         }
 
 
@@ -636,7 +643,7 @@
                 <!-- VIP Course -->
                 <div class="course-card priority">
                     <h3>VIPコース <span class="limited-badge">（毎月限定5名）</span></h3>
-                    <p class="value-prop">講師マイティ―による<strong style="color: var(--accent-vip-color);">個別サポート</strong>で、成功への「最短・最速ルート」を掴む特別プラン。</p>
+                    <p class="value-prop">講師マイティ―による<strong style="color: var(--accent-vip-color);">個別サポートと指導</strong>で、成功への「最短・最速ルート」を掴む特別プラン。</p>
                     <ul class="features-list">
                         <li>マイティ―のチャート考察</li>
                         <li>オリジナル手法解説 (フルアクセス)</li>
@@ -645,6 +652,7 @@
                         <li><strong class="highlight-feature">AIトレード支援ツール「AIマイティ―」利用権</strong></li>
                         <li><strong class="highlight-feature">AIトレードセットアップ「ATZ System」利用権</strong></li>
                         <li><strong class="highlight-vip">質問への個別優先対応</strong></li>
+                        <li><strong class="highlight-vip">トレード個別指導</strong></li>
                     </ul>
                     <div class="price-container">
                         <span class="original-price">通常 49,800円/月</span>
@@ -712,6 +720,12 @@
                             <td>-</td>
                             <td><strong>✓ 利用可能</strong></td>
                             <td><strong>✓ 利用可能</strong></td>
+                        </tr>
+                        <tr> <!-- New Row for Individual Trade Coaching -->
+                            <td>トレード個別指導</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td><strong>✓</strong></td>
                         </tr>
                         <tr class="highlight-row trial-row">
                             <td><span class="icon-placeholder">🎁</span> 無料お試し期間</td>
