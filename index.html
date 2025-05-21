@@ -19,10 +19,10 @@
             --cyber-text-secondary: #a0b8d0;
             --cyber-accent-cyan: #00f2ea;
             --cyber-accent-pink: #ff00e0;
-            --cyber-accent-purple-highlight-bg: rgba(125, 38, 203, 0.2); /* Subtle purple for highlight row bg */
-            --cyber-accent-purple-highlight-border: rgba(125, 38, 203, 0.5); /* Slightly more visible purple border */
+            --cyber-accent-purple-highlight-bg: rgba(125, 38, 203, 0.2);
+            --cyber-accent-purple-highlight-border: rgba(125, 38, 203, 0.5);
             --cyber-border-color: #3c1053;
-            --error: #e63946;
+            --error: #e63946; /* For urgency notice */
             --accent-vip-color: var(--cyber-accent-pink);
             --light-pink-course-color: var(--cyber-accent-pink);
 
@@ -85,7 +85,7 @@
             background: transparent; color: var(--cyber-accent-cyan); transform: translateY(-3px);
             box-shadow: 0 0 20px rgba(0, 242, 234, 0.5), 0 0 5px var(--cyber-accent-cyan);
         }
-        .btn-secondary {
+        .btn-secondary { /* Light course button */
             background: var(--cyber-accent-pink); border-color: var(--cyber-accent-pink);
             color: var(--cyber-bg-dark);
             box-shadow: 0 0 15px rgba(255, 0, 224, 0.3), inset 0 0 5px rgba(255,255,255,0.2);
@@ -94,7 +94,7 @@
             background: transparent; color: var(--cyber-accent-pink);
             box-shadow: 0 0 20px rgba(255, 0, 224, 0.5), 0 0 5px var(--cyber-accent-pink);
         }
-        .btn-accent {
+        .btn-accent { /* VIP course button */
             background: var(--accent-vip-color); border-color: var(--accent-vip-color);
             color: var(--cyber-bg-dark);
             box-shadow: 0 0 15px rgba(255, 0, 224, 0.3);
@@ -104,8 +104,10 @@
             box-shadow: 0 0 20px rgba(255, 0, 224, 0.5);
          }
         .btn-block { display: block; width: 100%; }
-        .btn-cta {
-            padding: 16px 36px; font-size: 1.15rem;
+        .btn-cta { /* Main CTA, Standard course button */
+            padding: 16px 32px; /* Adjusted padding slightly for longer text */
+            font-size: 1.05rem; /* Adjusted font size slightly */
+            line-height: 1.3; /* Added for multi-line text */
             background: linear-gradient(135deg, var(--cyber-accent-cyan), #00b8d4);
             border: none; color: var(--cyber-bg-dark);
             box-shadow: 0 5px 25px rgba(0, 242, 234, 0.3);
@@ -114,7 +116,7 @@
             background: linear-gradient(135deg, #00e0c8, var(--cyber-accent-cyan));
             box-shadow: 0 8px 30px rgba(0, 242, 234, 0.4); transform: translateY(-4px);
         }
-        .btn .subtext {
+        .btn .subtext { /* No longer used for main CTA button, but kept for general use */
             display: block; font-size: 0.8em; font-weight: normal;
             opacity: 0.9; margin-top: 2px;
         }
@@ -125,11 +127,10 @@
             background: linear-gradient(160deg, var(--cyber-bg-dark) 60%, var(--cyber-bg-medium) 100%);
             border-bottom: 1px solid var(--cyber-border-color);
         }
-        /* .tagline class removed or commented out in HTML, so style is not needed */
         .hero-section .intro-text p {
             max-width: 750px; margin-left: auto; margin-right: auto;
             font-size: 1.15rem; line-height: 1.8; color: var(--cyber-text-primary);
-            margin-top: 1.5em; /* Added margin for spacing since tagline is removed */
+            margin-top: 1.5em;
         }
         .hero-section .intro-text strong {
             color: var(--cyber-accent-pink); font-weight: bold;
@@ -187,6 +188,43 @@
         .coupon-notice-container .coupon-benefit strong {
             color: var(--cyber-accent-cyan); font-size: 1.2em;
         }
+
+        /* Urgency Notice Section (NEW) */
+        .urgency-notice-section {
+            padding: 30px 20px;
+            margin: 30px auto 0; /* Placed after courses, before comparison */
+            max-width: 700px;
+            text-align: center;
+        }
+        .urgency-box {
+            background-color: rgba(230, 57, 70, 0.1); /* Error color, subtle bg */
+            border: 2px dashed var(--error);
+            border-radius: 10px;
+            padding: 20px;
+            display: inline-block; /* Center the box */
+            box-shadow: 0 0 15px rgba(230, 57, 70, 0.3);
+        }
+        .urgency-box .icon-alert { /* Placeholder for an icon */
+            font-size: 1.5em;
+            color: var(--error);
+            margin-right: 10px;
+            animation: blink-animation 1.5s infinite;
+        }
+        .urgency-box p {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--cyber-text-primary); /* Make text brighter */
+            margin: 0;
+        }
+        .urgency-box p strong {
+            color: var(--error); /* Error color for strong emphasis */
+        }
+
+        @keyframes blink-animation {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
 
         /* Course cards */
         .courses {
@@ -303,15 +341,20 @@
          .value-prop strong { color: var(--cyber-text-primary); }
 
         .course-card .button-wrapper { margin-top: auto; padding-top: 20px; }
-        .course-card.standard .btn {
+        .course-card.standard .btn { /* Standard's button now uses btn-cta styles directly or similar */
+            padding: 16px 32px;
+            font-size: 1.05rem;
+            line-height: 1.3;
             background: linear-gradient(135deg, var(--cyber-accent-cyan), #00b8d4);
-            color: var(--cyber-bg-dark); padding: 15px 32px; font-size: 1.05rem;
-            border: none; box-shadow: 0 4px 20px rgba(0, 242, 234, 0.3);
+            color: var(--cyber-bg-dark);
+            border: none;
+            box-shadow: 0 5px 25px rgba(0, 242, 234, 0.3);
         }
         .course-card.standard .btn:hover {
             background: linear-gradient(135deg, #00e0c8, var(--cyber-accent-cyan));
-            box-shadow: 0 6px 25px rgba(0, 242, 234, 0.4); transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 242, 234, 0.4); transform: translateY(-4px);
         }
+
 
         /* Table comparison */
         .table-container {
@@ -333,36 +376,34 @@
             font-size: 0.95rem; font-weight: 500; border-bottom: 2px solid var(--cyber-accent-cyan);
         }
         .comparison-table thead th:first-child { text-align: left; }
-        .comparison-table thead th:nth-child(3) { /* Standard col header */
+        .comparison-table thead th:nth-child(3) {
             background-color: var(--cyber-accent-cyan); color: var(--cyber-bg-dark); text-shadow: none;
         }
         .comparison-table tbody tr:not(.highlight-row):nth-child(even) td {
             background-color: rgba(13,2,33,0.3);
         }
 
-        .comparison-table tbody td:first-child { /* 機能名列 */
+        .comparison-table tbody td:first-child {
             text-align: left; font-weight: 500; color: var(--cyber-text-primary);
             background-color: var(--cyber-bg-light-hover);
         }
         .comparison-table tbody tr.highlight-row td:first-child {
-             background-color: var(--cyber-accent-purple-highlight-bg); /* Match highlight row bg */
+             background-color: var(--cyber-accent-purple-highlight-bg);
         }
 
         .comparison-table tbody td strong { color: var(--cyber-accent-pink); }
 
-        .comparison-table tbody td:nth-child(3) { /* スタンダード列のセル */
+        .comparison-table tbody td:nth-child(3) {
             background-color: rgba(0, 242, 234, 0.05);
             font-weight: 500;
         }
-        .comparison-table tbody tr.highlight-row td:nth-child(3) { /* スタンダード列のハイライト行セル */
-             background-color: var(--cyber-accent-purple-highlight-bg); /* Match highlight row bg */
+        .comparison-table tbody tr.highlight-row td:nth-child(3) {
+             background-color: var(--cyber-accent-purple-highlight-bg);
         }
-
-
         .comparison-table tbody td:nth-child(3) strong { color: var(--cyber-accent-cyan); }
 
         .comparison-table tbody tr.highlight-row td {
-            background-color: var(--cyber-accent-purple-highlight-bg);
+            background-color: var(--cyber-accent-purple-highlight-bg) !important; /* Override even striping */
             color: var(--cyber-text-primary);
             font-weight: 500;
             border-top: 1px solid var(--cyber-accent-purple-highlight-border);
@@ -505,14 +546,14 @@
                              0 0 20px var(--cyber-accent-cyan),
                              inset 0 0 0 1.5px var(--cyber-accent-cyan);
             }
+            .urgency-box p { font-size: 1.05rem; }
         }
         @media (max-width: 768px) {
             .container { padding: 40px 15px; }
             h1 { font-size: 2.2rem; } h2 { font-size: 1.8rem; }
             .final-cta h2 { font-size: 2rem; }
             .hero-section { padding: 60px 15px 40px; }
-            .hero-section .intro-text p { margin-top: 1em; } /* Adjusted for mobile */
-            .tagline { font-size: 1.15rem; }
+            .hero-section .intro-text p { margin-top: 1em; }
             .hero-section .intro-text p, .final-cta p { font-size: 1.05rem; }
             .features-overview { padding: 25px; }
             .features-list-header li { font-size: 1rem; padding-left: 30px;}
@@ -534,7 +575,9 @@
              .answer::before { margin-left: -3em;}
              .final-cta { padding: 50px 20px;}
              .btn { padding: 12px 28px; font-size: 0.95rem;}
-             .btn-cta { padding: 14px 32px; font-size: 1.05rem;}
+             .btn-cta { padding: 12px 28px; font-size: 1rem; line-height: 1.4;} /* Mobile CTA text adjust */
+             .urgency-box { padding: 15px; }
+             .urgency-box p { font-size: 1rem; }
         }
          @media (max-width: 480px) {
             body { font-size: 15px; }
@@ -551,16 +594,16 @@
             .coupon-notice-container .coupon-title {font-size: 1.1rem;}
             .coupon-notice-container .coupon-code {font-size: 1.5rem;}
             .coupon-notice-container .coupon-benefit {font-size: 1rem;}
-            .btn { padding: 12px 24px; }
-            .btn-cta { padding: 14px 28px; font-size: 1rem;}
+            .btn { padding: 12px 20px; font-size: 0.9rem;} /* Smaller padding for general buttons */
+            .btn-cta { padding: 12px 22px; font-size: 0.95rem;} /* Specific adjust for CTA */
             .comparison-table th, .comparison-table td { padding: 10px 8px; font-size: 0.85rem;}
+            .urgency-box p { font-size: 0.95rem; }
          }
     </style>
 </head>
 <body>
     <header class="hero-section">
         <div class="container">
-            <!-- <p class="tagline">Alpha Pips - 投資×AIで日常をアップデート。未来の錬金術をあなたに。</p> -->
             <h1>投資・トレードと<span class="highlight-ai">AI活用</span>で<br>人生の勝者ルートを最短攻略</h1>
             <div class="intro-text">
                 <p>労働収入だけでは先が見えない…そんな不安を抱えるあなたへ。<br>
@@ -608,12 +651,12 @@
                         <li>質問対応 (全体対応)</li>
                     </ul>
                     <div class="price-container">
-                        <span class="original-price">通常 5,980円/月</span>
-                        <span class="discounted-price">2,990円<span class="price-note">/ 月 (税込)</span></span>
+                        <span class="original-price">通常 7,980円/月</span>
+                        <span class="discounted-price">3,990円<span class="price-note">/ 月 (税込)</span></span>
                         <span class="coupon-applied-info">クーポン【AITRADE】適用で永久50%OFF!</span>
                     </div>
                     <div class="button-wrapper">
-                        <a href="#payment-light" class="btn btn-secondary btn-block">ライトコース (クーポンでお得に)</a>
+                        <a href="#payment-light" class="btn btn-secondary btn-block">クーポンで得する！</a>
                     </div>
                 </div>
 
@@ -633,14 +676,13 @@
                     </ul>
                     <div class="price-container">
                         <span class="free-trial-info">14日間 ¥0</span>
-                        <span class="original-price">通常 9,800円/月</span>
-                        <span class="discounted-price">4,900円<span class="price-note">/ 月 (税込)</span></span>
+                        <span class="original-price">通常 14,800円/月</span>
+                        <span class="discounted-price">7,400円<span class="price-note">/ 月 (税込)</span></span>
                         <span class="coupon-applied-info">クーポン【AITRADE】適用で永久50%OFF!</span>
                     </div>
                     <div class="button-wrapper">
-                        <a href="#payment-standard" class="btn btn-block">
-                            14日間無料 & クーポンでお得に体験
-                            <span class="subtext">最強AIツールを今すぐ試す！</span>
+                        <a href="#payment-standard" class="btn btn-block btn-cta"> <!-- Reverted to btn-cta for consistency -->
+                            クーポンで得して<br>さらに14日間無料体験しちゃう！
                         </a>
                     </div>
                 </div>
@@ -665,11 +707,19 @@
                         <span class="coupon-applied-info">クーポン【AITRADE】適用で永久50%OFF!</span>
                     </div>
                     <div class="button-wrapper">
-                        <a href="#payment-priority" class="btn btn-accent btn-block">VIPコース (クーポンでお得に)</a>
+                        <a href="#payment-priority" class="btn btn-accent btn-block">最大限クーポンで得する！</a>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Urgency Notice Section - NEW -->
+        <section class="urgency-notice-section">
+            <div class="urgency-box">
+                <p><span class="icon-alert">⚠️</span> クーポンは<strong>予告なく終了</strong>する場合があります。<br>この絶好のチャンスを<strong>お見逃しなく！</strong></p>
+            </div>
+        </section>
+        <!-- End Urgency Notice Section -->
 
         <section id="comparison" class="container">
             <h2>コース内容詳細比較</h2>
