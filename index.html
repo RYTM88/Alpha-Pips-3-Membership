@@ -118,7 +118,7 @@
             background: linear-gradient(135deg, #00e0c8, var(--cyber-accent-cyan));
             box-shadow: 0 8px 30px rgba(0, 242, 234, 0.4); transform: translateY(-4px);
         }
-        .btn .subtext {
+        .btn .subtext { /* For general subtext in buttons if needed elsewhere */
             display: block; font-size: 0.8em; font-weight: normal;
             opacity: 0.9; margin-top: 2px;
         }
@@ -178,11 +178,11 @@
         }
         .coupon-notice-container .coupon-code {
             display: inline-block;
-            font-family: var(--font-secondary), sans-serif; /* CHANGED: Gothic font */
+            font-family: var(--font-secondary), sans-serif;
             font-size: 1.8rem; font-weight: bold; color: var(--coupon-code-color);
             background-color: rgba(13, 2, 33, 0.7); padding: 8px 15px;
             border-radius: 5px; border: 1px solid var(--cyber-accent-pink);
-            margin-bottom: 10px; letter-spacing: 1px; /* Adjusted letter-spacing */
+            margin-bottom: 10px; letter-spacing: 1px;
             text-shadow: 0 0 8px var(--coupon-code-color);
         }
         .coupon-notice-container .coupon-benefit {
@@ -218,6 +218,7 @@
             font-weight: 500;
             color: var(--cyber-text-primary);
             margin: 0;
+            line-height: 1.5; /* Added for better readability of two lines */
         }
         .urgency-box p strong {
             color: var(--error);
@@ -272,11 +273,11 @@
         .standard .popular-badge .star-icon { margin-right: 5px; font-size: 1.1em; }
         .standard .free-trial-banner {
              position: absolute; top: 20px; right: -40px;
-             background: var(--cyber-accent-yellow-highlight); /* CHANGED to yellow */
-             color: var(--cyber-accent-yellow-highlight-text); /* CHANGED text color for yellow */
+             background: var(--cyber-accent-yellow-highlight);
+             color: var(--cyber-accent-yellow-highlight-text);
              padding: 6px 45px; transform: rotate(45deg);
              font-weight: bold; font-size: 0.9em;
-             box-shadow: 0 0 10px rgba(255, 217, 0, 0.4); /* Yellow shadow */
+             box-shadow: 0 0 10px rgba(255, 217, 0, 0.4);
              z-index: 1; overflow: hidden; letter-spacing: 0.5px;
         }
 
@@ -314,11 +315,11 @@
             font-weight: 500; margin-top: -5px; margin-bottom: 5px;
         }
         .price-container .free-trial-info {
-            background: var(--cyber-accent-yellow-highlight); /* CHANGED to yellow */
-            color: var(--cyber-accent-yellow-highlight-text); /* CHANGED text color for yellow */
+            background: var(--cyber-accent-yellow-highlight);
+            color: var(--cyber-accent-yellow-highlight-text);
             font-size: 0.9rem; padding: 5px 12px; border-radius: 5px;
             margin-right: 10px; font-weight: bold; vertical-align: middle;
-            box-shadow: 0 0 8px rgba(255, 217, 0, 0.3); /* Yellow shadow */
+            box-shadow: 0 0 8px rgba(255, 217, 0, 0.3);
             display: inline-block; margin-bottom: 5px;
         }
         .price-container .price-note {
@@ -643,11 +644,11 @@
 
     <main>
         <section id="courses" class="container">
-            <h2>あなたの未来をデザインする3つの選択肢</h2> <!-- Changed h2 -->
+            <h2>あなたの未来をデザインする3つの選択肢</h2>
             <div class="courses">
                 <!-- Light Course -->
                 <div class="course-card light">
-                    <h3>ライト</h3> <!-- Changed -->
+                    <h3>ライト</h3>
                     <p class="value-prop">まずはAIと投資の世界を手軽に体験。日常に役立つAIライフハックから始めたいあなたへ。</p>
                     <ul class="features-list">
                         <li>マイティ―のチャート考察</li>
@@ -669,7 +670,7 @@
                 <!-- Standard Course -->
                 <div class="course-card standard">
                     <div class="free-trial-banner">14日間無料</div>
-                    <h3>スタンダード <span class="popular-badge"><span class="star-icon">★</span>No.1 人気</span></h3> <!-- Changed -->
+                    <h3>スタンダード <span class="popular-badge"><span class="star-icon">★</span>No.1 人気</span></h3>
                     <p class="value-prop"><strong>本気で資産を増やし、人生を豊かにしたいあなたへ。</strong>AIトレードツールとプロのノウハウで最速で結果を目指す決定版！</p>
                     <ul class="features-list">
                         <li>マイティ―のチャート考察</li>
@@ -688,14 +689,14 @@
                     </div>
                     <div class="button-wrapper">
                         <a href="#payment-standard" class="btn btn-block btn-cta">
-                            クーポンで得して<br>さらに14日間無料体験！
+                            永久50％OFFと<br>14日間無料体験！
                         </a>
                     </div>
                 </div>
 
                 <!-- VIP Course -->
                 <div class="course-card priority">
-                    <h3>VIP <span class="limited-badge">（人数限定募集）</span></h3> <!-- Changed -->
+                    <h3>VIP <span class="limited-badge">（人数限定募集）</span></h3>
                     <p class="value-prop">講師マイティ―による<strong style="color: var(--accent-vip-color);">個別サポートと指導</strong>で、成功への「最短・最速ルート」を掴む特別プラン。</p>
                     <ul class="features-list">
                         <li>マイティ―のチャート考察</li>
@@ -721,7 +722,7 @@
 
         <section class="urgency-notice-section">
             <div class="urgency-box">
-                <p><span class="icon-alert">⚠️</span> クーポンは<strong>予告なく終了</strong>する場合があります。<br>この絶好のチャンスを<strong>お見逃しなく！</strong></p>
+                <p><span class="icon-alert">⚠️</span> 割引クーポンには限りがあります。<br>発行上限に達し次第終了とさせていただきます。</p>
             </div>
         </section>
 
@@ -872,7 +873,7 @@
             <h2>よくある質問</h2>
             <div class="faq-item">
                 <p class="question">クーポンコード【AITRADE】は本当に永久50%OFFですか？</p>
-                <p class="answer">はい、本当です。このページをご覧の方限定で、お申し込み時にクーポンコード「AITRADE」をご入力いただくと、<span class="highlight">ご選択いただいたプランの月額料金が永久に50%OFF</span>となります。大変お得なキャンペーンですので、ぜひご活用ください。ただし、予告なく終了する場合がございますのでお早めに。</p>
+                <p class="answer">はい、本当です。このページをご覧の方限定で、お申し込み時にクーポンコード「AITRADE」をご入力いただくと、<span class="highlight">ご選択いただいたプランの月額料金が永久に50%OFF</span>となります。大変お得なキャンペーンですので、ぜひご活用ください。ただし、クーポンの発行数には限りがあり、予告なく終了する場合がございますのでお早めに。</p>
             </div>
             <div class="faq-item">
                 <p class="question">全くのAI初心者・投資初心者でも大丈夫ですか？</p>
