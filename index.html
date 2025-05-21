@@ -1,18 +1,78 @@
-        /* Table comparison (既存のスタイルを確認・微調整) */
-        .comparison-table {
-            /* ... (既存スタイル) ... */
-        }
-        .comparison-table th, .comparison-table td {
-            /* ... (既存スタイル) ... */
-            /* white-space: nowrap; を削除または normal にして、長いテキストが折り返すようにするのも手 */
-        }
-        .comparison-table tbody td:nth-child(3) { /* スタンダード列のセル */
-            background-color: rgba(0, 242, 234, 0.05); /* Cyan tint for standard col cells */
-            font-weight: 500; /* 少し太字にしても良いかも */
-        }
-        .comparison-table tbody td:nth-child(3) strong {
-            color: var(--cyber-accent-cyan); /* Cyan for strong in standard col */
-        }
-        .comparison-table tbody td {
-            vertical-align: middle; /* セル内の垂直方向の揃えを中央に */
-        }
+         <!-- Course Detail Comparison -->
+        <section id="comparison" class="container">
+            <h2>コース内容詳細比較</h2>
+            <div class="table-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>機能 / サービス</th>
+                            <th>ライト</th>
+                            <th>スタンダード <small style="display:block; font-weight:normal;">(おすすめ)</small></th>
+                            <th>VIP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>マイティ―のチャート考察</td>
+                            <td>✓</td>
+                            <td><strong>✓</strong></td>
+                            <td><strong>✓</strong></td>
+                        </tr>
+                        <tr>
+                            <td>オリジナル手法解説</td>
+                            <td>✓</td>
+                            <td><strong>✓ フルアクセス</strong></td>
+                            <td><strong>✓ フルアクセス</strong></td>
+                        </tr>
+                        <tr>
+                            <td>メンバー交流部屋</td>
+                            <td>✓</td>
+                            <td><strong>✓</strong></td>
+                            <td><strong>✓</strong></td>
+                        </tr>
+                        <tr>
+                            <td>AI活用(ライフハック)情報</td>
+                            <td>基本編</td>
+                            <td><strong>✓ 応用編含む</strong></td>
+                            <td><strong>✓ 応用編含む</strong></td>
+                        </tr>
+                        <tr>
+                            <td>AIトレード支援ツール「AIマイティ―」</td>
+                            <td>-</td>
+                            <td><strong>✓ 利用可能</strong></td>
+                            <td><strong>✓ 利用可能</strong></td>
+                        </tr>
+                        <tr>
+                            <td>AIトレードセットアップ「ATZ System」</td>
+                            <td>-</td>
+                            <td><strong>✓ 利用可能</strong></td>
+                            <td><strong>✓ 利用可能</strong></td>
+                        </tr>
+                        <tr>
+                            <td>質問対応</td>
+                            <td>全体対応</td>
+                            <td><strong>全体対応</strong></td>
+                            <td><strong>個別優先対応</strong></td>
+                        </tr>
+                        <tr>
+                            <td>講師によるトレード個別指導</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td><strong>✓ マンツーマン</strong></td>
+                        </tr>
+                        <tr>
+                            <td>無料お試し期間</td>
+                            <td>-</td>
+                            <td><strong>✓ 14日間</strong></td>
+                            <td>-</td>
+                        </tr>
+                         <tr>
+                            <td>クーポン割引(永久50%OFF)</td>
+                            <td><strong>✓</strong></td>
+                            <td><strong>✓</strong></td>
+                            <td><strong>✓</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
