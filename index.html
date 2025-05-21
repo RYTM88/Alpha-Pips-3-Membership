@@ -1,4 +1,4 @@
-      <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -9,41 +9,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Reset and Base Styles */
+        /* Reset and Base Styles (前回のサイバーパンク風CSSをベースに調整) */
         :root {
             /* Cyberpunk Palette */
-            --cyber-bg-dark: #0d0221; /* Deep space blue/purple */
-            --cyber-bg-medium: #1a0a38; /* Slightly lighter bg for cards */
-            --cyber-bg-light-hover: #2a1053; /* Hover bg */
-
-            --cyber-text-primary: #e0fbfc; /* Very light cyan/white for main text */
-            --cyber-text-secondary: #a0b8d0; /* Lighter cool gray/blue for subtext */
-
-            --cyber-accent-cyan: #00f2ea; /* Bright electric cyan - Main AI Accent */
-            --cyber-accent-pink: #ff00e0; /* Bright magenta/pink - Secondary Accent */
-            --cyber-accent-purple: #7d26cb; /* Supporting purple */
-
-            --cyber-border-color: #3c1053; /* Border color */
-
-            /* Standard colors (retained for specific elements if needed) */
+            --cyber-bg-dark: #0d0221;
+            --cyber-bg-medium: #1a0a38;
+            --cyber-bg-light-hover: #2a1053;
+            --cyber-text-primary: #e0fbfc;
+            --cyber-text-secondary: #a0b8d0;
+            --cyber-accent-cyan: #00f2ea;
+            --cyber-accent-pink: #ff00e0;
+            --cyber-accent-purple: #7d26cb;
+            --cyber-border-color: #3c1053;
             --error: #e63946;
-            --accent-vip-color: var(--cyber-accent-pink); /* VIP can use pink, renamed to avoid confusion with --accent-vip class name */
-            --light-pink-course-color: var(--cyber-accent-pink); /* Light course can use pink, renamed */
+            --accent-vip-color: var(--cyber-accent-pink);
+            --light-pink-course-color: var(--cyber-accent-pink);
 
             --font-primary: 'Roboto', 'Noto Sans JP', sans-serif;
             --font-secondary: 'Noto Sans JP', sans-serif;
+
+            /* New for coupon */
+            --coupon-highlight-bg: rgba(0, 242, 234, 0.1); /* Cyan tint for coupon */
+            --coupon-code-color: var(--cyber-accent-pink); /* Pink for coupon code */
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-             scroll-behavior: smooth;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: var(--font-secondary);
             font-size: 16px;
@@ -51,19 +42,10 @@
             color: var(--cyber-text-primary);
             background-color: var(--cyber-bg-dark);
         }
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+        img { max-width: 100%; height: auto; }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* Typography */
+        /* Typography (前回同様) */
         h1, h2, h3, h4 {
             font-family: var(--font-primary);
             line-height: 1.3;
@@ -71,253 +53,180 @@
             color: var(--cyber-text-primary);
             font-weight: 700;
         }
-
         h1 {
-            font-size: 2.8rem;
-            font-weight: 900;
-            text-align: center;
-            margin-bottom: 0.5em;
-            letter-spacing: -0.5px;
-            text-shadow: 0 0 10px rgba(0, 242, 234, 0.3); /* Cyan glow */
+            font-size: 2.8rem; font-weight: 900; text-align: center; margin-bottom: 0.5em;
+            letter-spacing: -0.5px; text-shadow: 0 0 10px rgba(0, 242, 234, 0.3);
         }
-        h1 .highlight-ai {
-            color: var(--cyber-accent-cyan);
-        }
-
+        h1 .highlight-ai { color: var(--cyber-accent-cyan); }
         h2 {
-            font-size: 2.2rem;
-            margin: 2.5em 0 1.2em;
-            padding-bottom: 0.6em;
-            border-bottom: 2px solid var(--cyber-accent-cyan);
-            text-align: center;
+            font-size: 2.2rem; margin: 2.5em 0 1.2em; padding-bottom: 0.6em;
+            border-bottom: 2px solid var(--cyber-accent-cyan); text-align: center;
             text-shadow: 0 0 8px rgba(0, 242, 234, 0.2);
         }
-
-        h3 {
-            font-size: 1.6rem;
-            color: var(--cyber-accent-cyan); /* Default H3 to cyan */
-        }
+        h3 { font-size: 1.6rem; color: var(--cyber-accent-cyan); }
         .course-card h3 {
-            font-size: 1.8rem;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            min-height: 50px;
-            line-height: 1.4;
+            font-size: 1.8rem; margin-top: 10px; margin-bottom: 20px;
+            min-height: 50px; line-height: 1.4;
         }
-
-        p {
-            margin-bottom: 1.2em;
-            color: var(--cyber-text-secondary);
-        }
-        .intro-text p, .final-cta p { /* These p tags were already primary, kept for clarity */
-            font-size: 1.1rem;
-            color: var(--cyber-text-primary);
-        }
+        p { margin-bottom: 1.2em; color: var(--cyber-text-secondary); }
+        .intro-text p, .final-cta p { font-size: 1.1rem; color: var(--cyber-text-primary); }
 
 
-        /* Buttons */
+        /* Buttons (前回同様) */
         .btn {
-            display: inline-block;
-            padding: 14px 32px;
-            background: var(--cyber-accent-cyan);
-            color: var(--cyber-bg-dark); /* Text color for cyan button */
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 8px;
-            margin: 10px 0;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: 1px solid var(--cyber-accent-cyan);
-            font-family: var(--font-primary);
-            letter-spacing: 0.5px;
-            font-size: 1rem;
+            display: inline-block; padding: 14px 32px; background: var(--cyber-accent-cyan);
+            color: var(--cyber-bg-dark); font-weight: bold; text-decoration: none;
+            border-radius: 8px; margin: 10px 0; text-align: center; transition: all 0.3s ease;
+            cursor: pointer; border: 1px solid var(--cyber-accent-cyan);
+            font-family: var(--font-primary); letter-spacing: 0.5px; font-size: 1rem;
             box-shadow: 0 0 15px rgba(0, 242, 234, 0.3), inset 0 0 5px rgba(255,255,255,0.2);
         }
-
         .btn:hover {
-            background: transparent;
-            color: var(--cyber-accent-cyan);
-            transform: translateY(-3px);
+            background: transparent; color: var(--cyber-accent-cyan); transform: translateY(-3px);
             box-shadow: 0 0 20px rgba(0, 242, 234, 0.5), 0 0 5px var(--cyber-accent-cyan);
         }
-
         .btn-secondary {
-            background: var(--cyber-accent-pink);
-            border-color: var(--cyber-accent-pink);
-            color: var(--cyber-bg-dark); /* Text color for pink button */
+            background: var(--cyber-accent-pink); border-color: var(--cyber-accent-pink);
+            color: var(--cyber-bg-dark);
             box-shadow: 0 0 15px rgba(255, 0, 224, 0.3), inset 0 0 5px rgba(255,255,255,0.2);
         }
         .btn-secondary:hover {
-            background: transparent;
-            color: var(--cyber-accent-pink);
+            background: transparent; color: var(--cyber-accent-pink);
             box-shadow: 0 0 20px rgba(255, 0, 224, 0.5), 0 0 5px var(--cyber-accent-pink);
         }
-
-        .btn-accent { /* VIP button, using pink now */
-            background: var(--accent-vip-color);
-            border-color: var(--accent-vip-color);
-            color: var(--cyber-bg-dark); /* Text color for pink button */
+        .btn-accent {
+            background: var(--accent-vip-color); border-color: var(--accent-vip-color);
+            color: var(--cyber-bg-dark);
             box-shadow: 0 0 15px rgba(255, 0, 224, 0.3);
         }
          .btn-accent:hover {
-            background: transparent;
-            color: var(--accent-vip-color);
+            background: transparent; color: var(--accent-vip-color);
             box-shadow: 0 0 20px rgba(255, 0, 224, 0.5);
          }
-
-        .btn-block {
-            display: block;
-            width: 100%;
-        }
+        .btn-block { display: block; width: 100%; }
         .btn-cta {
-            padding: 16px 36px;
-            font-size: 1.15rem;
-            background: linear-gradient(135deg, var(--cyber-accent-cyan), #00b8d4); /* Adjusted gradient slightly */
-            border: none;
-            color: var(--cyber-bg-dark);
+            padding: 16px 36px; font-size: 1.15rem;
+            background: linear-gradient(135deg, var(--cyber-accent-cyan), #00b8d4);
+            border: none; color: var(--cyber-bg-dark);
             box-shadow: 0 5px 25px rgba(0, 242, 234, 0.3);
         }
         .btn-cta:hover {
-            background: linear-gradient(135deg, #00e0c8, var(--cyber-accent-cyan)); /* Adjusted hover gradient */
-            box-shadow: 0 8px 30px rgba(0, 242, 234, 0.4);
-            transform: translateY(-4px);
+            background: linear-gradient(135deg, #00e0c8, var(--cyber-accent-cyan));
+            box-shadow: 0 8px 30px rgba(0, 242, 234, 0.4); transform: translateY(-4px);
         }
         .btn .subtext {
-            display: block;
-            font-size: 0.8em;
-            font-weight: normal;
-            opacity: 0.9;
-            margin-top: 2px;
+            display: block; font-size: 0.8em; font-weight: normal;
+            opacity: 0.9; margin-top: 2px;
         }
 
-
-        /* Header Section */
+        /* Header Section (前回同様、価格訴求部分はHTML側で変更) */
         .hero-section {
-            text-align: center;
-            padding: 80px 20px 60px;
+            text-align: center; padding: 80px 20px 60px;
             background: linear-gradient(160deg, var(--cyber-bg-dark) 60%, var(--cyber-bg-medium) 100%);
             border-bottom: 1px solid var(--cyber-border-color);
         }
         .tagline {
-            font-size: 1.3rem;
-            color: var(--cyber-accent-cyan);
-            margin-bottom: 30px;
-            font-weight: 500;
-            text-shadow: 0 0 5px rgba(0, 242, 234, 0.3);
+            font-size: 1.3rem; color: var(--cyber-accent-cyan); margin-bottom: 30px;
+            font-weight: 500; text-shadow: 0 0 5px rgba(0, 242, 234, 0.3);
         }
         .hero-section .intro-text p {
-            max-width: 750px;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: var(--cyber-text-primary);
+            max-width: 750px; margin-left: auto; margin-right: auto;
+            font-size: 1.15rem; line-height: 1.8; color: var(--cyber-text-primary);
         }
         .hero-section .intro-text strong {
-            color: var(--cyber-accent-pink);
-            font-weight: bold;
+            color: var(--cyber-accent-pink); font-weight: bold;
             text-shadow: 0 0 8px rgba(255, 0, 224, 0.3);
         }
 
-        /* Features Box (選ばれる理由など) */
+        /* Features Box (前回同様) */
         .features-overview {
-            background-color: rgba(26, 10, 56, 0.7);
-            backdrop-filter: blur(5px);
-            padding: 30px;
-            border-radius: 12px;
-            margin: 40px auto;
-            max-width: 700px;
+            background-color: rgba(26, 10, 56, 0.7); backdrop-filter: blur(5px);
+            padding: 30px; border-radius: 12px; margin: 40px auto; max-width: 700px;
             box-shadow: 0 0 25px rgba(0, 242, 234, 0.1), 0 0 15px rgba(255,0,224,0.1);
             border: 1px solid var(--cyber-border-color);
         }
         .features-overview-title {
-             font-weight: 700;
-             margin-bottom: 25px;
-             text-align: center;
-             color: var(--cyber-text-primary);
-             font-size: 1.4rem;
+             font-weight: 700; margin-bottom: 25px; text-align: center;
+             color: var(--cyber-text-primary); font-size: 1.4rem;
         }
-        .features-list-header {
-            list-style-type: none;
-            padding-left: 0;
-        }
+        .features-list-header { list-style-type: none; padding-left: 0; }
         .features-list-header li {
-            margin-bottom: 15px;
-            position: relative;
-            padding-left: 35px;
-            font-size: 1.05rem;
-            color: var(--cyber-text-secondary);
+            margin-bottom: 15px; position: relative; padding-left: 35px;
+            font-size: 1.05rem; color: var(--cyber-text-secondary);
         }
         .features-list-header li::before {
-            content: "✧";
-            position: absolute;
-            left: 0;
-            top: 0px; /* Adjusted for better alignment */
-            color: var(--cyber-accent-cyan);
-            font-weight: bold;
-            font-size: 1.5em;
+            content: "✧"; position: absolute; left: 0; top: 0px;
+            color: var(--cyber-accent-cyan); font-weight: bold; font-size: 1.5em;
             text-shadow: 0 0 5px var(--cyber-accent-cyan);
         }
-         .features-list-header li .highlight {
-             color: var(--cyber-accent-pink);
-             font-weight: 500;
-         }
+         .features-list-header li .highlight { color: var(--cyber-accent-pink); font-weight: 500; }
 
-         /* Price Notice */
-         .price-notice {
-             font-size: 1.2rem;
-             font-weight: 500;
-             color: var(--cyber-accent-pink);
-             text-align: center;
-             margin-top: 2.5em;
-             margin-bottom: 1em;
-             padding: 15px;
-             background-color: rgba(255, 0, 224, 0.05);
-             border: 1px dashed var(--cyber-accent-pink);
-             border-radius: 8px;
-             text-shadow: 0 0 5px rgba(255,0,224,0.3);
-         }
-         .price-notice-subtext {
-            font-size: 0.95rem;
-            text-align: center;
+         /* NEW: Coupon Notice in Header */
+        .coupon-notice-container {
+            margin: 2.5em auto 1.5em;
+            padding: 20px;
+            background-color: var(--coupon-highlight-bg);
+            border: 2px dashed var(--cyber-accent-pink);
+            border-radius: 10px;
+            max-width: 600px;
+            box-shadow: 0 0 15px rgba(255, 0, 224, 0.2);
+        }
+        .coupon-notice-container .coupon-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--cyber-text-primary);
+            margin-bottom: 10px;
+            text-shadow: 0 0 5px var(--cyber-accent-cyan);
+        }
+        .coupon-notice-container .coupon-code-label {
+            font-size: 1rem;
             color: var(--cyber-text-secondary);
-            margin-bottom: 2em;
-         }
+            margin-bottom: 5px;
+            display: block;
+        }
+        .coupon-notice-container .coupon-code {
+            display: inline-block;
+            font-family: 'Courier New', Courier, monospace; /* Monospace for code */
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--coupon-code-color);
+            background-color: rgba(13, 2, 33, 0.7); /* Darker bg for code */
+            padding: 8px 15px;
+            border-radius: 5px;
+            border: 1px solid var(--cyber-accent-pink);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 8px var(--coupon-code-color);
+        }
+        .coupon-notice-container .coupon-benefit {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--cyber-text-primary);
+        }
+        .coupon-notice-container .coupon-benefit strong {
+            color: var(--cyber-accent-cyan); /* Cyan for "永久50%OFF" */
+            font-size: 1.2em;
+        }
 
 
-        /* Course cards */
+        /* Course cards: Price display adjustments */
         .courses {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-            align-items: stretch;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px; margin: 40px 0; align-items: stretch;
         }
-
         .course-card {
-            background-color: var(--cyber-bg-medium);
-            border: 1px solid var(--cyber-border-color);
-            border-radius: 12px;
-            padding: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 5px 20px rgba(13, 2, 33, 0.5),
-                        inset 0 0 0 1px var(--cyber-border-color);
+            background-color: var(--cyber-bg-medium); border: 1px solid var(--cyber-border-color);
+            border-radius: 12px; padding: 30px; transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative; display: flex; flex-direction: column;
+            box-shadow: 0 5px 20px rgba(13, 2, 33, 0.5), inset 0 0 0 1px var(--cyber-border-color);
         }
-
         .course-card:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: 0 10px 30px rgba(0, 242, 234, 0.15),
-                        0 0 20px var(--cyber-accent-cyan), /* Default hover glow */
+                        0 0 20px var(--cyber-accent-cyan),
                         inset 0 0 0 1px var(--cyber-accent-cyan);
         }
-
-        .course-card.light {
-            border-top: 5px solid var(--light-pink-course-color);
-        }
+        .course-card.light { border-top: 5px solid var(--light-pink-course-color); }
         .course-card.light:hover {
              box-shadow: 0 10px 30px rgba(255, 0, 224, 0.15),
                          0 0 20px var(--light-pink-course-color),
@@ -325,429 +234,265 @@
         }
         .course-card.light h3 { color: var(--light-pink-course-color); text-shadow: 0 0 5px var(--light-pink-course-color);}
 
-
         .course-card.standard {
-            border-top: 5px solid var(--cyber-accent-cyan);
-            transform: scale(1.03);
+            border-top: 5px solid var(--cyber-accent-cyan); transform: scale(1.03);
             box-shadow: 0 10px 35px rgba(0, 242, 234, 0.2),
                         0 0 15px var(--cyber-accent-cyan),
                         inset 0 0 0 1px var(--cyber-accent-cyan);
             z-index: 10;
         }
-        .course-card.standard:hover { /* Standard hover already has cyan glow from general .course-card:hover */
-            transform: scale(1.05) translateY(-10px);
-            /* box-shadow can be more intense if needed, but general hover is good */
-        }
-        .course-card.standard h3 {
-             color: var(--cyber-accent-cyan);
-             text-shadow: 0 0 8px var(--cyber-accent-cyan);
-        }
+        .course-card.standard h3 { color: var(--cyber-accent-cyan); text-shadow: 0 0 8px var(--cyber-accent-cyan); }
         .standard .popular-badge {
-            display: inline-flex;
-            align-items: center;
-            vertical-align: middle;
-            margin-left: 10px;
-            font-size: 0.7em;
-            font-weight: bold;
+            display: inline-flex; align-items: center; vertical-align: middle; margin-left: 10px;
+            font-size: 0.7em; font-weight: bold;
             background: linear-gradient(135deg, var(--cyber-accent-cyan), var(--cyber-accent-pink));
-            color: var(--cyber-bg-dark);
-            padding: 5px 12px;
-            border-radius: 15px;
+            color: var(--cyber-bg-dark); padding: 5px 12px; border-radius: 15px;
             box-shadow: 0 0 10px rgba(0, 242, 234, 0.3), 0 0 10px rgba(255,0,224,0.3);
         }
-        .standard .popular-badge .star-icon {
-            margin-right: 5px;
-            font-size: 1.1em;
-        }
+        .standard .popular-badge .star-icon { margin-right: 5px; font-size: 1.1em; }
         .standard .free-trial-banner {
-             position: absolute;
-             top: 20px;
-             right: -40px;
-             background: var(--cyber-accent-pink);
-             color: var(--cyber-bg-dark);
-             padding: 6px 45px;
-             transform: rotate(45deg);
-             font-weight: bold;
-             font-size: 0.9em;
-             box-shadow: 0 0 10px rgba(255,0,224,0.4);
-             z-index: 1; /* Ensure it's above card content */
-             overflow: hidden;
-             letter-spacing: 0.5px;
+             position: absolute; top: 20px; right: -40px; background: var(--cyber-accent-pink);
+             color: var(--cyber-bg-dark); padding: 6px 45px; transform: rotate(45deg);
+             font-weight: bold; font-size: 0.9em; box-shadow: 0 0 10px rgba(255,0,224,0.4);
+             z-index: 1; overflow: hidden; letter-spacing: 0.5px;
         }
 
-
-        .course-card.priority {
-            border-top: 5px solid var(--accent-vip-color);
-        }
-         .course-card.priority:hover {
+        .course-card.priority { border-top: 5px solid var(--accent-vip-color); }
+        .course-card.priority:hover {
              box-shadow: 0 10px 30px rgba(255, 0, 224, 0.15),
                          0 0 20px var(--accent-vip-color),
                          inset 0 0 0 1px var(--accent-vip-color);
         }
-        .course-card.priority h3 {
-            color: var(--accent-vip-color);
-            text-shadow: 0 0 8px var(--accent-vip-color);
-        }
-         .course-card.priority h3 .limited-badge {
-             display: inline-block;
-             font-size: 0.7em;
-             color: var(--cyber-accent-pink);
-             font-weight: bold;
-             margin-left: 8px;
-             vertical-align: middle;
-             background-color: rgba(255, 0, 224, 0.1);
-             padding: 3px 7px;
-             border-radius: 4px;
-             border: 1px solid var(--cyber-accent-pink);
+        .course-card.priority h3 { color: var(--accent-vip-color); text-shadow: 0 0 8px var(--accent-vip-color); }
+        .course-card.priority h3 .limited-badge {
+             display: inline-block; font-size: 0.7em; color: var(--cyber-accent-pink);
+             font-weight: bold; margin-left: 8px; vertical-align: middle;
+             background-color: rgba(255, 0, 224, 0.1); padding: 3px 7px;
+             border-radius: 4px; border: 1px solid var(--cyber-accent-pink);
          }
 
-
-        .price {
-            font-size: 1.8rem;
-            font-weight: 700;
+        .price-container { /* NEW container for price elements */
             margin: 25px 0 10px 0;
-            color: var(--cyber-text-primary);
         }
-        .course-card.light .price { color: var(--light-pink-course-color); }
-        .course-card.standard .price { color: var(--cyber-accent-cyan); }
-        .course-card.priority .price { color: var(--accent-vip-color); }
-
-        .price .free-trial-info {
-            background: var(--cyber-accent-pink);
-            color: var(--cyber-bg-dark);
-            font-size: 0.9rem;
-            padding: 5px 12px;
-            border-radius: 5px;
+        .price-container .original-price {
+            font-size: 1.1rem; /* Smaller for original price */
+            color: var(--cyber-text-secondary);
+            text-decoration: line-through;
             margin-right: 10px;
-            font-weight: bold;
-            vertical-align: middle;
-            box-shadow: 0 0 8px rgba(255,0,224,0.3);
+            display: block; /* Display on its own line or inline-block as needed */
         }
-        .price-note {
+        .price-container .discounted-price {
+            font-size: 1.8rem; /* Prominent discounted price */
+            font-weight: 700;
+            color: var(--cyber-text-primary); /* Default, overridden by card type */
+            display: inline-block;
+        }
+        .course-card.light .discounted-price { color: var(--light-pink-course-color); }
+        .course-card.standard .discounted-price { color: var(--cyber-accent-cyan); }
+        .course-card.priority .discounted-price { color: var(--accent-vip-color); }
+
+        .price-container .coupon-applied-info {
             display: block;
-            font-size: 0.85rem;
-            font-weight: normal;
+            font-size: 0.8rem;
+            color: var(--cyber-accent-cyan);
+            font-weight: 500;
+            margin-top: -5px; /* Adjust spacing */
+            margin-bottom: 5px;
+        }
+
+        .price-container .free-trial-info { /* Kept for standard plan */
+            background: var(--cyber-accent-pink); color: var(--cyber-bg-dark);
+            font-size: 0.9rem; padding: 5px 12px; border-radius: 5px;
+            margin-right: 10px; font-weight: bold; vertical-align: middle;
+            box-shadow: 0 0 8px rgba(255,0,224,0.3);
+            display: inline-block; /* Ensure it aligns well */
+            margin-bottom: 5px;
+        }
+        .price-container .price-note {
+            display: block; font-size: 0.85rem; font-weight: normal;
             color: var(--cyber-text-secondary);
         }
 
-        .features-list {
-            list-style-type: none;
-            margin: 20px 0;
-            padding: 0;
-            flex-grow: 1;
+        .features-list { /* (前回同様) */
+            list-style-type: none; margin: 20px 0; padding: 0; flex-grow: 1;
         }
         .features-list li {
-            margin-bottom: 14px;
-            position: relative;
-            padding-left: 30px;
-            font-size: 0.98rem;
-            line-height: 1.6;
-            color: var(--cyber-text-secondary);
+            margin-bottom: 14px; position: relative; padding-left: 30px;
+            font-size: 0.98rem; line-height: 1.6; color: var(--cyber-text-secondary);
         }
         .features-list li::before {
-            content: "»";
-            position: absolute;
-            left: 0;
-            top: 1px; /* Adjusted for better alignment */
-            color: var(--cyber-accent-cyan);
-            font-weight: bold;
-            font-size: 1.3em;
+            content: "»"; position: absolute; left: 0; top: 1px;
+            color: var(--cyber-accent-cyan); font-weight: bold; font-size: 1.3em;
             text-shadow: 0 0 3px var(--cyber-accent-cyan);
         }
-        .features-list li strong.highlight-feature {
-            color: var(--cyber-accent-cyan);
-            font-weight: 500;
-        }
-        .features-list li strong.highlight-vip {
-            color: var(--accent-vip-color);
-            font-weight: 500;
-        }
+        .features-list li strong.highlight-feature { color: var(--cyber-accent-cyan); font-weight: 500; }
+        .features-list li strong.highlight-vip { color: var(--accent-vip-color); font-weight: 500; }
 
-
-        .value-prop {
-            font-weight: 500;
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-            min-height: 70px; /* Adjust as needed */
-            line-height: 1.6;
-            color: var(--cyber-text-secondary);
+        .value-prop { /* (前回同様) */
+            font-weight: 500; margin-bottom: 20px; font-size: 1.05rem;
+            min-height: 70px; line-height: 1.6; color: var(--cyber-text-secondary);
         }
-         .value-prop strong {
-             color: var(--cyber-text-primary);
-         }
+         .value-prop strong { color: var(--cyber-text-primary); }
 
-        .course-card .button-wrapper {
-             margin-top: auto;
-             padding-top: 20px;
-        }
-        .course-card.standard .btn {
-            background: linear-gradient(135deg, var(--cyber-accent-cyan), #00b8d4); /* Consistent with .btn-cta */
-            color: var(--cyber-bg-dark);
-            padding: 15px 32px;
-            font-size: 1.05rem;
-            border: none; /* Remove border for gradient buttons if preferred */
-            box-shadow: 0 4px 20px rgba(0, 242, 234, 0.3);
+        .course-card .button-wrapper { margin-top: auto; padding-top: 20px; }
+        .course-card.standard .btn { /* (前回同様) */
+            background: linear-gradient(135deg, var(--cyber-accent-cyan), #00b8d4);
+            color: var(--cyber-bg-dark); padding: 15px 32px; font-size: 1.05rem;
+            border: none; box-shadow: 0 4px 20px rgba(0, 242, 234, 0.3);
         }
         .course-card.standard .btn:hover {
             background: linear-gradient(135deg, #00e0c8, var(--cyber-accent-cyan));
-            box-shadow: 0 6px 25px rgba(0, 242, 234, 0.4);
-            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0, 242, 234, 0.4); transform: translateY(-3px);
         }
 
-
-        /* Table comparison */
+        /* Table comparison (前回同様) */
         .table-container {
-            margin: 50px 0;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            background-color: var(--cyber-bg-medium);
-            border-radius: 10px;
-            border: 1px solid var(--cyber-border-color);
-            box-shadow: 0 0 20px rgba(13,2,33,0.4);
+            margin: 50px 0; overflow-x: auto; -webkit-overflow-scrolling: touch;
+            background-color: var(--cyber-bg-medium); border-radius: 10px;
+            border: 1px solid var(--cyber-border-color); box-shadow: 0 0 20px rgba(13,2,33,0.4);
         }
         .comparison-table {
-            border-collapse: collapse;
-            min-width: 700px;
-            width: 100%;
+            border-collapse: collapse; min-width: 700px; width: 100%;
         }
         .comparison-table th, .comparison-table td {
-            padding: 16px 20px;
-            text-align: center;
-            border: 1px solid var(--cyber-border-color);
-            white-space: nowrap;
-            color: var(--cyber-text-secondary);
+            padding: 16px 20px; text-align: center; border: 1px solid var(--cyber-border-color);
+            white-space: nowrap; color: var(--cyber-text-secondary);
         }
         .comparison-table thead th {
-            color: var(--cyber-text-primary);
-            background-color: var(--cyber-bg-light-hover);
-            font-size: 0.95rem;
-            font-weight: 500;
-            border-bottom: 2px solid var(--cyber-accent-cyan);
+            color: var(--cyber-text-primary); background-color: var(--cyber-bg-light-hover);
+            font-size: 0.95rem; font-weight: 500; border-bottom: 2px solid var(--cyber-accent-cyan);
         }
         .comparison-table thead th:first-child { text-align: left; }
-        .comparison-table thead th:nth-child(3) { /* Standard col header */
-            background-color: var(--cyber-accent-cyan);
-            color: var(--cyber-bg-dark);
-            text-shadow: none; /* Remove shadow for better readability on solid bg */
+        .comparison-table thead th:nth-child(3) {
+            background-color: var(--cyber-accent-cyan); color: var(--cyber-bg-dark); text-shadow: none;
         }
-        .comparison-table tbody tr:nth-child(even) td {
-            background-color: rgba(13,2,33,0.3);
-        }
+        .comparison-table tbody tr:nth-child(even) td { background-color: rgba(13,2,33,0.3); }
         .comparison-table tbody td:first-child {
-            text-align: left;
-            font-weight: 500;
-            color: var(--cyber-text-primary);
-            background-color: var(--cyber-bg-light-hover); /* Changed from dark */
+            text-align: left; font-weight: 500; color: var(--cyber-text-primary);
+            background-color: var(--cyber-bg-light-hover);
         }
         .comparison-table tbody td strong { color: var(--cyber-accent-pink); }
-        .comparison-table tbody td:nth-child(3) {
-            background-color: rgba(0, 242, 234, 0.05);
-        }
-        .comparison-table tbody td:nth-child(3) strong {
-            color: var(--cyber-accent-cyan);
-        }
+        .comparison-table tbody td:nth-child(3) { background-color: rgba(0, 242, 234, 0.05); }
+        .comparison-table tbody td:nth-child(3) strong { color: var(--cyber-accent-cyan); }
 
 
-        /* Feature Blocks */
-        .feature-block-section {
-            padding: 40px 0;
-        }
+        /* Feature Blocks (前回同様) */
+        .feature-block-section { padding: 40px 0; }
         .feature-block {
              margin-bottom: 35px;
              background: linear-gradient(145deg, var(--cyber-bg-medium), var(--cyber-bg-dark));
-             border-radius: 12px;
-             padding: 35px;
+             border-radius: 12px; padding: 35px;
              box-shadow: 0 0 25px rgba(13,2,33,0.6), inset 0 0 0 1px var(--cyber-border-color);
-             display: flex;
-             align-items: flex-start;
-             gap: 30px;
+             display: flex; align-items: flex-start; gap: 30px;
              border: 1px solid var(--cyber-border-color);
         }
         .feature-block .icon-container {
             background: linear-gradient(135deg, var(--cyber-accent-cyan), var(--cyber-accent-pink));
-            color: var(--cyber-bg-dark);
-            min-width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.8rem;
-            flex-shrink: 0;
+            color: var(--cyber-bg-dark); min-width: 60px; height: 60px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 1.8rem; flex-shrink: 0;
             box-shadow: 0 0 15px rgba(0, 242, 234, 0.3), 0 0 15px rgba(255,0,224,0.3);
         }
          .feature-block .text-content h3 {
-             margin: 0 0 12px 0;
-             font-size: 1.5rem;
-             color: var(--cyber-text-primary);
+             margin: 0 0 12px 0; font-size: 1.5rem; color: var(--cyber-text-primary);
              text-shadow: 0 0 5px var(--cyber-accent-cyan);
          }
          .feature-block .text-content h3 .sub-heading {
-             font-size: 0.7em;
-             color: var(--cyber-text-secondary);
-             font-weight: 400;
-             display: block;
-             text-shadow: none;
+             font-size: 0.7em; color: var(--cyber-text-secondary); font-weight: 400;
+             display: block; text-shadow: none;
          }
-        .feature-block .text-content p {
-            line-height: 1.8;
-            color: var(--cyber-text-secondary);
-        }
+        .feature-block .text-content p { line-height: 1.8; color: var(--cyber-text-secondary); }
         .feature-block .text-content p .highlight {
-            color: var(--cyber-accent-cyan);
-            font-weight: 500;
+            color: var(--cyber-accent-cyan); font-weight: 500;
             text-shadow: 0 0 3px var(--cyber-accent-cyan);
         }
         .feature-block .feature-image-placeholder {
-            margin-top: 15px;
-            background-color: var(--cyber-bg-light-hover);
-            height: 150px;
-            border-radius: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--cyber-text-secondary);
-            font-style: italic;
+            margin-top: 15px; background-color: var(--cyber-bg-light-hover);
+            height: 150px; border-radius: 8px; display: flex; justify-content: center;
+            align-items: center; color: var(--cyber-text-secondary); font-style: italic;
             border: 1px dashed var(--cyber-border-color);
         }
 
-
-        /* Testimonials */
+        /* Testimonials (前回同様) */
         .testimonials-section { padding: 40px 0; }
         .testimonial {
-            background: var(--cyber-bg-medium);
-            padding: 30px;
-            border-left: 5px solid var(--cyber-accent-pink);
-            margin: 30px 0;
-            border-radius: 0 8px 8px 0; /* Keep this style */
-            box-shadow: 0 0 20px rgba(255,0,224,0.1);
+            background: var(--cyber-bg-medium); padding: 30px;
+            border-left: 5px solid var(--cyber-accent-pink); margin: 30px 0;
+            border-radius: 0 8px 8px 0; box-shadow: 0 0 20px rgba(255,0,224,0.1);
         }
         .testimonial p {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: var(--cyber-text-secondary);
+            font-size: 1rem; line-height: 1.8; color: var(--cyber-text-secondary);
             margin-bottom: 1em;
         }
         .testimonial p .highlight {
-            background-color: rgba(0, 242, 234, 0.1);
-            padding: 2px 5px;
-            border-radius: 4px;
-            font-weight: 500;
-            color: var(--cyber-accent-cyan);
+            background-color: rgba(0, 242, 234, 0.1); padding: 2px 5px;
+            border-radius: 4px; font-weight: 500; color: var(--cyber-accent-cyan);
         }
         .testimonial-author {
-            font-weight: 500;
-            text-align: right;
-            margin-top: 15px;
-            color: var(--cyber-text-primary);
-            font-size: 0.95rem;
+            font-weight: 500; text-align: right; margin-top: 15px;
+            color: var(--cyber-text-primary); font-size: 0.95rem;
         }
-        .testimonial-author span {
-            font-weight: normal;
-            color: var(--cyber-text-secondary);
-        }
+        .testimonial-author span { font-weight: normal; color: var(--cyber-text-secondary); }
 
-        /* FAQ */
+        /* FAQ (前回同様) */
         .faq-section { padding: 40px 0; }
         .faq-item {
-            margin-bottom: 25px;
-            border-bottom: 1px solid var(--cyber-border-color);
+            margin-bottom: 25px; border-bottom: 1px solid var(--cyber-border-color);
             padding-bottom: 25px;
         }
         .faq-item:last-child { border-bottom: none; }
         .question {
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: var(--cyber-text-primary);
-            display: flex;
-            align-items: flex-start;
-            font-size: 1.2rem;
+            font-weight: 700; margin-bottom: 12px; color: var(--cyber-text-primary);
+            display: flex; align-items: flex-start; font-size: 1.2rem;
         }
         .question::before {
-            content: "Q ►";
-            margin-right: 0.8em;
-            font-weight: bold;
-            font-size: 1em; /* Adjusted size */
-            color: var(--cyber-accent-cyan);
+            content: "Q ►"; margin-right: 0.8em; font-weight: bold;
+            font-size: 1em; color: var(--cyber-accent-cyan);
         }
         .answer {
-            padding-left: 3.5em; /* Adjusted for new Q icon */
-            color: var(--cyber-text-secondary);
-            line-height: 1.8;
+            padding-left: 3.5em; color: var(--cyber-text-secondary); line-height: 1.8;
         }
         .answer::before {
-            content: "A ►";
-            font-weight: bold;
-            margin-right: 0.8em;
-            margin-left: -3.5em; /* Adjusted for new A icon */
-            color: var(--cyber-accent-pink);
+            content: "A ►"; font-weight: bold; margin-right: 0.8em;
+            margin-left: -3.5em; color: var(--cyber-accent-pink);
         }
-        .answer .highlight {
-            color: var(--cyber-accent-cyan);
-            font-weight: 500;
-        }
+        .answer .highlight { color: var(--cyber-accent-cyan); font-weight: 500; }
 
-        /* Final CTA */
+        /* Final CTA (前回同様) */
         .final-cta {
-            margin-top: 50px;
-            padding: 60px 30px;
+            margin-top: 50px; padding: 60px 30px;
             background: linear-gradient(145deg, var(--cyber-bg-medium), var(--cyber-bg-dark));
-            border-radius: 15px;
-            text-align: center;
+            border-radius: 15px; text-align: center;
             border-top: 3px solid var(--cyber-accent-cyan);
             box-shadow: 0 0 40px rgba(0, 242, 234, 0.15), 0 0 20px rgba(255,0,224,0.1);
         }
         .final-cta h2 {
-            font-size: 2.4rem;
-            color: var(--cyber-text-primary);
-            border-bottom: none; /* Ensure no accidental border */
-            margin-bottom: 0.8em;
-            text-shadow: 0 0 10px var(--cyber-accent-cyan);
+            font-size: 2.4rem; color: var(--cyber-text-primary); border-bottom: none;
+            margin-bottom: 0.8em; text-shadow: 0 0 10px var(--cyber-accent-cyan);
         }
         .final-cta p {
-            font-size: 1.15rem;
-            margin-bottom: 30px;
-            line-height: 1.9;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 1.15rem; margin-bottom: 30px; line-height: 1.9;
+            max-width: 800px; margin-left: auto; margin-right: auto;
             color: var(--cyber-text-primary);
         }
-        .final-cta p .highlight {
-            color: var(--cyber-accent-cyan);
-            font-weight: 500;
-        }
+        .final-cta p .highlight { color: var(--cyber-accent-cyan); font-weight: 500; }
         .final-cta p .highlight-strong {
-            color: var(--cyber-accent-pink);
-            font-weight: bold;
-            font-size: 1.1em;
-            padding: 2px 4px; /* Keep padding for bg effect if any */
-            text-shadow: 0 0 8px var(--cyber-accent-pink);
+            color: var(--cyber-accent-pink); font-weight: bold; font-size: 1.1em;
+            padding: 2px 4px; text-shadow: 0 0 8px var(--cyber-accent-pink);
         }
 
-
-        /* Footer */
+        /* Footer (前回同様) */
         .site-footer {
-            text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid var(--cyber-border-color);
-            margin-top: 50px;
+            text-align: center; padding: 40px 20px;
+            border-top: 1px solid var(--cyber-border-color); margin-top: 50px;
             background-color: var(--cyber-bg-dark);
         }
-        .site-footer p {
-            color: var(--cyber-text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-        }
-        .site-footer .risk-notice {
-            font-size: 0.8rem;
-            color: #7a8aa0; /* A bit lighter for very small text */
-        }
+        .site-footer p { color: var(--cyber-text-secondary); font-size: 0.9rem; margin-bottom: 8px; }
+        .site-footer .risk-notice { font-size: 0.8rem; color: #7a8aa0; }
 
-        /* Responsive adjustments */
+        /* Responsive adjustments (前回同様) */
         @media (max-width: 992px) {
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
+            h1 { font-size: 2.5rem; } h2 { font-size: 2rem; }
             .final-cta h2 { font-size: 2.2rem; }
             .course-card.standard { transform: scale(1); }
             .course-card.standard:hover {
@@ -757,59 +502,50 @@
                              inset 0 0 0 1.5px var(--cyber-accent-cyan);
             }
         }
-
         @media (max-width: 768px) {
             .container { padding: 40px 15px; }
-            h1 { font-size: 2.2rem; }
-            h2 { font-size: 1.8rem; }
+            h1 { font-size: 2.2rem; } h2 { font-size: 1.8rem; }
             .final-cta h2 { font-size: 2rem; }
             .hero-section { padding: 60px 15px 40px; }
             .tagline { font-size: 1.15rem; }
             .hero-section .intro-text p, .final-cta p { font-size: 1.05rem; }
             .features-overview { padding: 25px; }
             .features-list-header li { font-size: 1rem; padding-left: 30px;}
-
             .courses { grid-template-columns: 1fr; gap: 25px; }
             .course-card { padding: 25px; }
-            .course-card h3 { font-size: 1.6rem; min-height: auto; } /* Ensure min-height is auto for mobile */
+            .course-card h3 { font-size: 1.6rem; min-height: auto; }
              .standard .free-trial-banner { font-size: 0.85em; padding: 5px 35px; top: 15px; right: -35px;}
              .standard .popular-badge { font-size: 0.65em; }
-
             .comparison-table { min-width: auto; }
             .comparison-table th, .comparison-table td { white-space: normal; padding: 12px 15px; font-size: 0.9rem;}
-
              .feature-block {
-                 flex-direction: column;
-                 align-items: center;
-                 text-align: center;
-                 padding: 30px;
+                 flex-direction: column; align-items: center; text-align: center; padding: 30px;
              }
              .feature-block .icon-container { margin-bottom: 20px; }
              .feature-block .text-content h3 { text-align: center; font-size: 1.4rem;}
              .feature-block .text-content p { text-align: left; font-size: 0.95rem;}
-
              .question { font-size: 1.1rem; }
              .answer { padding-left: 3em; font-size: 0.95rem; }
              .answer::before { margin-left: -3em;}
-
              .final-cta { padding: 50px 20px;}
              .btn { padding: 12px 28px; font-size: 0.95rem;}
              .btn-cta { padding: 14px 32px; font-size: 1.05rem;}
         }
          @media (max-width: 480px) {
             body { font-size: 15px; }
-            h1 { font-size: 1.9rem; }
-            h2 { font-size: 1.6rem; }
+            h1 { font-size: 1.9rem; } h2 { font-size: 1.6rem; }
             .final-cta h2 { font-size: 1.8rem; }
             .course-card h3 { font-size: 1.5rem; }
-            .price {font-size: 1.6rem;}
+            .price-container .original-price { font-size: 1rem; } /* Adjust for mobile */
+            .price-container .discounted-price { font-size: 1.6rem; } /* Adjust for mobile */
              .standard .free-trial-banner { font-size: 0.8em; padding: 4px 30px; top: 12px; right: -30px;}
              .standard .popular-badge { font-size: 0.6em; }
-
             .hero-section .intro-text p, .final-cta p { font-size: 1rem; }
             .features-overview-title { font-size: 1.2rem; }
             .features-list-header li { font-size: 0.95rem; }
-
+            .coupon-notice-container .coupon-title {font-size: 1.1rem;}
+            .coupon-notice-container .coupon-code {font-size: 1.5rem;}
+            .coupon-notice-container .coupon-benefit {font-size: 1rem;}
             .btn { padding: 12px 24px; }
             .btn-cta { padding: 14px 28px; font-size: 1rem;}
             .comparison-table th, .comparison-table td { padding: 10px 8px; font-size: 0.85rem;}
@@ -819,8 +555,6 @@
 <body>
     <header class="hero-section">
         <div class="container">
-            <!-- ロゴがあればここに配置 -->
-            <!-- <img src="logo-cyberpunk.svg" alt="Alpha Pips Logo" style="width: 150px; margin-bottom: 20px; filter: drop-shadow(0 0 5px var(--cyber-accent-cyan));"> -->
             <p class="tagline">Alpha Pips - 投資×AIで日常をアップデート。未来の錬金術をあなたに。</p>
             <h1>もう、<span class="highlight-ai">時代遅れの稼ぎ方</span>で<br>消耗するのはやめにしませんか？</h1>
             <div class="intro-text">
@@ -844,8 +578,13 @@
                 今すぐ未来への投資を始める
                 <span class="subtext">AIと共に新しい自分へ</span>
             </a>
-            <p class="price-notice">この充実内容とサポートで、この価格は今だけの初期メンバー限定価格です！</p>
-            <p class="price-notice-subtext">将来的な値上げを予定しています。このチャンスをお見逃しなく。</p>
+            <!-- NEW Coupon Notice Section -->
+            <div class="coupon-notice-container">
+                <p class="coupon-title">このページを見ている方だけに<br>数量限定割引クーポンを配布中！</p>
+                <p class="coupon-code-label">クーポンコード:</p>
+                <p class="coupon-code">AITRADE</p>
+                <p class="coupon-benefit">申込の際にコードを入力すると<br>サブスク料金が<strong>永久に50％OFF</strong>になります。</p>
+            </div>
         </div>
     </header>
 
@@ -862,9 +601,13 @@
                         <li>メンバー限定交流部屋の閲覧</li>
                         <li><strong class="highlight-feature">AI活用（ライフハック）情報提供</strong><br><small>(ChatGPT基本操作、お得情報事例など)</small></li>
                     </ul>
-                    <p class="price">5,980円<span class="price-note">/ 月 (税込)</span></p>
+                    <div class="price-container">
+                        <span class="original-price">通常 5,980円/月</span>
+                        <span class="discounted-price">2,990円<span class="price-note">/ 月 (税込)</span></span>
+                        <span class="coupon-applied-info">クーポン【AITRADE】適用で永久50%OFF!</span>
+                    </div>
                     <div class="button-wrapper">
-                        <a href="#payment-light" class="btn btn-secondary btn-block">ライトコースから試す</a>
+                        <a href="#payment-light" class="btn btn-secondary btn-block">ライトコース (クーポンでお得に)</a>
                     </div>
                 </div>
 
@@ -882,14 +625,16 @@
                         <li>メンバー限定交流部屋 (投稿・交流可)</li>
                         <li><small>AIライフハック (応用編プロンプト等も提供)</small></li>
                     </ul>
-                    <p class="price">
+                    <div class="price-container">
                         <span class="free-trial-info">14日間 ¥0</span>
-                        9,800円<span class="price-note">/ 月 (税込)</span>
-                    </p>
+                        <span class="original-price">通常 9,800円/月</span>
+                        <span class="discounted-price">4,900円<span class="price-note">/ 月 (税込)</span></span>
+                        <span class="coupon-applied-info">クーポン【AITRADE】適用で永久50%OFF!</span>
+                    </div>
                     <div class="button-wrapper">
                         <a href="#payment-standard" class="btn btn-block">
-                            14日間無料で最強AI体験
-                            <span class="subtext">リスクゼロで新しい自分へ</span>
+                            14日間無料 & クーポンでお得に体験
+                            <span class="subtext">最強AIツールを今すぐ試す！</span>
                         </a>
                     </div>
                 </div>
@@ -903,14 +648,19 @@
                         <li><strong class="highlight-vip">Discordでの講師によるトレード個別指導</strong></li>
                         <li><strong class="highlight-vip">最優先での質問回答サポート</strong></li>
                     </ul>
-                    <p class="price">49,800円<span class="price-note">/ 月 (税込)</span></p>
+                    <div class="price-container">
+                        <span class="original-price">通常 49,800円/月</span>
+                        <span class="discounted-price">24,900円<span class="price-note">/ 月 (税込)</span></span>
+                        <span class="coupon-applied-info">クーポン【AITRADE】適用で永久50%OFF!</span>
+                    </div>
                     <div class="button-wrapper">
-                        <a href="#payment-priority" class="btn btn-accent btn-block">VIPコースで最速上達</a>
+                        <a href="#payment-priority" class="btn btn-accent btn-block">VIPコース (クーポンでお得に)</a>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Comparison, Why Alpha Pips, Testimonials, FAQ, Final CTA, Footer (前回と同様の内容) -->
         <section id="comparison" class="container">
             <h2>コース内容詳細比較</h2>
             <div class="table-container">
@@ -984,6 +734,12 @@
                             <td><strong>✓ 14日間</strong></td>
                             <td>-</td>
                         </tr>
+                         <tr>
+                            <td>クーポン割引(永久50%OFF)</td>
+                            <td><strong>✓</strong></td>
+                            <td><strong>✓</strong></td>
+                            <td><strong>✓</strong></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -992,7 +748,7 @@
         <section id="why-alpha-pips" class="container feature-block-section">
             <h2>Alpha Pipsで<span class="highlight-ai">未来の自分</span>を創造する</h2>
             <div class="feature-block">
-                <div class="icon-container">🧠</div> <!-- Icon: Brain / AI -->
+                <div class="icon-container">🧠</div>
                 <div class="text-content">
                     <h3>AIと共に進化するトレード戦略
                         <span class="sub-heading">「AIマイティ―」＆「AlgoX」があなたの右腕に</span>
@@ -1007,7 +763,7 @@
             </div>
 
             <div class="feature-block">
-                <div class="icon-container">💡</div> <!-- Icon: Lightbulb / Idea / Lifehack -->
+                <div class="icon-container">💡</div>
                 <div class="text-content">
                     <h3>日常をAIでハック。時間とお金を生み出す新習慣
                         <span class="sub-heading">ChatGPT初心者でも大丈夫！お得と効率を手に入れる</span>
@@ -1022,7 +778,7 @@
             </div>
 
             <div class="feature-block">
-                 <div class="icon-container">🚀</div> <!-- Icon: Rocket / Growth -->
+                 <div class="icon-container">🚀</div>
                 <div class="text-content">
                     <h3>論より証拠。講師のAI活用実績
                         <span class="sub-heading">トレード収益から日常のお得まで、リアルな成果を公開</span>
@@ -1041,21 +797,25 @@
         <section id="testimonials" class="container testimonials-section">
             <h2><span class="highlight-ai">AI</span>で人生が変わった！先輩たちの声</h2>
             <div class="testimonial">
-                <p>「正直、AIなんて自分には無縁だと思ってました。でもAlpha Pipsの<span class="highlight">分かりやすい解説でChatGPTを使い始めたら、世界が変わりました！</span>トレードの相談相手ができたみたいで心強いし、AIマイティ―のアドバイスで感情的な失敗トレードが激減。先日はAIに海外旅行のプランを組んでもらったら、<span class="highlight">航空券とホテル代が以前より5万円も安くなってビックリ！</span>トレードも日常も、こんなにお得になるなんて最高です！」</p>
+                <p>「正直、AIなんて自分には無縁だと思ってました。でもAlpha Pipsの<span class="highlight">分かりやすい解説でChatGPTを使い始めたら、世界が変わりました！</span>トレードの相談相手ができたみたいで心強いし、AIマイティ―のアドバイスで感情的な失敗トレードが激減。先日はAIに海外旅行のプランを組んでもらったら、<span class="highlight">航空券とホテル代が以前より5万円も安くなってビックリ！</span>しかもクーポンで半額で始められたので、本当に感謝しかありません！」</p>
                 <p class="testimonial-author">- K.Y. 様 (45歳・会社員) <span>スタンダードコース利用</span></p>
             </div>
             <div class="testimonial">
-                <p>「AlgoXの精度には驚かされています。今までインジケーターは色々試しましたが、<span class="highlight">AIが最適化してくれるというのは次元が違いますね。</span>エントリーに迷いがなくなり、安定して利益を出せるようになりました。また、コミュニティで共有されるライフハック情報も目からウロコ。<span class="highlight">AIを使って情報収集の時間が1/10くらいになった</span>ので、家族と過ごす時間が増えました。まさに一石二鳥以上の価値があります。」</p>
+                <p>「AlgoXの精度には驚かされています。<span class="highlight">AIが最適化してくれるというのは次元が違いますね。</span>エントリーに迷いがなくなり、安定して利益を出せるようになりました。クーポンで月額も永久に半額なので、<span class="highlight">実質コストパフォーマンスが最強すぎます。</span>AIを使って情報収集の時間も減り、家族と過ごす時間が増えました。」</p>
                 <p class="testimonial-author">- T.S. 様 (58歳・自営業) <span>スタンダードコース利用</span></p>
             </div>
              <div class="testimonial">
-                <p>「最初は『トレードもAIも学べてお得だな』くらいの軽い気持ちでスタンダードの無料体験に。でも、<span class="highlight">『AIマイティ―』が本当に優秀！</span>自分の分析に自信が持てなかったんですが、まるでベテラントレーダーが隣にいるような安心感。おかげで<span class="highlight">月々の収支がプラスに転じました。</span>ChatGPTも日常で使いまくりで、もう手放せません。この値段でこの内容は破格だと思います。」</p>
+                <p>「スタンダードの無料体験後、クーポンを使って入会しました。<span class="highlight">『AIマイティ―』が本当に優秀で、月々の収支がプラスに転じました！</span>ChatGPTも日常で使いまくり。この内容が永久に半額で続けられるなんて信じられません。もっと早く出会いたかったです。」</p>
                 <p class="testimonial-author">- M.N. 様 (39歳・主婦) <span>スタンダードコース利用</span></p>
             </div>
         </section>
 
         <section id="faq" class="container faq-section">
             <h2>よくある質問</h2>
+            <div class="faq-item">
+                <p class="question">クーポンコード【AITRADE】は本当につき永久50%OFFですか？</p>
+                <p class="answer">はい、本当です。このページをご覧の方限定で、お申し込み時にクーポンコード「AITRADE」をご入力いただくと、<span class="highlight">ご選択いただいたプランの月額料金が永久に50%OFF</span>となります。大変お得なキャンペーンですので、ぜひご活用ください。ただし、予告なく終了する場合がございますのでお早めに。</p>
+            </div>
             <div class="faq-item">
                 <p class="question">全くのAI初心者・投資初心者でも大丈夫ですか？</p>
                 <p class="answer">はい、もちろんです！Alpha Pipsは、AIや投資が初めての方でも安心して学べるように設計されています。特にChatGPTの使い方は基本から丁寧に解説しますし、<span class="highlight">投資手法もAIサポートでシンプルに実践できます。</span>多くの方が未経験からスタートしていますのでご安心ください。</p>
@@ -1066,7 +826,7 @@
             </div>
             <div class="faq-item">
                 <p class="question">スタンダードコースの14日間無料体験について詳しく教えてください。</p>
-                <p class="answer">スタンダードコースの<span class="highlight">全機能を14日間、完全に無料でお試しいただけます。</span>「AIマイティ―」や「AlgoX」の利用、オリジナル手法教材の閲覧、リアルタイム相場部屋や交流部屋への参加も可能です。もしご満足いただけない場合は、14日以内に解約すれば料金は一切発生しません。リスクなくAlpha Pipsの価値を体験してください。</p>
+                <p class="answer">スタンダードコースの<span class="highlight">全機能を14日間、完全に無料でお試しいただけます。</span>「AIマイティ―」や「AlgoX」の利用、オリジナル手法教材の閲覧、リアルタイム相場部屋や交流部屋への参加も可能です。もしご満足いただけない場合は、14日以内に解約すれば料金は一切発生しません。無料体験終了後、クーポンをご利用の上でご継続いただくと大変お得です。</p>
             </div>
             <div class="faq-item">
                 <p class="question">途中で解約できますか？料金は？</p>
@@ -1086,11 +846,11 @@
                     <span class="highlight-strong">AI初心者でも、投資未経験でも大丈夫。</span><br>
                     必要なのは「未来を変えたい」という、ほんの少しの勇気だけ。<br><br>
                     さあ、私たちと一緒に、<span class="highlight">経済的な自由と、心から楽しめる毎日</span>を創造しませんか？<br>
-                    <span class="highlight-strong">その第一歩を、今こそ踏み出しましょう！</span>
+                    <span class="highlight-strong" style="display:block; margin-top:10px;">クーポン【AITRADE】で永久50%OFF！<br>この絶好の機会を逃さず、第一歩を踏み出しましょう！</span>
                 </p>
                 <a href="#payment-standard" class="btn btn-block btn-cta">
-                    スタンダードコースを14日間無料で体験する
-                    <span class="subtext">AIと共に、新しい未来を掴む！</span>
+                    スタンダードコースをクーポンでお得に体験する
+                    <span class="subtext">永久50%OFF！AIと共に新しい未来へ！</span>
                 </a>
             </div>
         </section>
@@ -1102,13 +862,11 @@
             <p class="risk-notice">
                 当コミュニティで提供される情報は、教育および情報提供を目的としており、特定の金融商品の売買を推奨するものではありません。<br>
                 投資にはリスクが伴い、元本を失う可能性があります。AIツールやインジケーターは判断を補助するものであり、将来の利益を保証するものではありません。<br>
-                最終的な投資判断はご自身の責任において行ってください。
+                最終的な投資判断はご自身の責任において行ってください。クーポンキャンペーンは予告なく変更・終了する場合があります。
             </p>
-            <!-- 必要であればプライバシーポリシーや特商法へのリンクを記載 -->
         </div>
     </footer>
 
-    <!-- Placeholder for payment section anchors -->
     <div id="payment-light" style="height: 1px; margin-top: -1px;"></div>
     <div id="payment-standard" style="height: 1px; margin-top: -1px;"></div>
     <div id="payment-priority" style="height: 1px; margin-top: -1px;"></div>
