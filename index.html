@@ -21,13 +21,15 @@
             --cyber-accent-pink: #ff00e0;
             --cyber-accent-purple-highlight-bg: rgba(125, 38, 203, 0.2);
             --cyber-accent-purple-highlight-border: rgba(125, 38, 203, 0.5);
+            --cyber-accent-yellow-highlight: #ffd900; /* For trial banner */
+            --cyber-accent-yellow-highlight-text: #1a0a38; /* Text for yellow banner */
             --cyber-border-color: #3c1053;
             --error: #e63946; /* For urgency notice */
             --accent-vip-color: var(--cyber-accent-pink);
             --light-pink-course-color: var(--cyber-accent-pink);
 
             --font-primary: 'Roboto', 'Noto Sans JP', sans-serif;
-            --font-secondary: 'Noto Sans JP', sans-serif;
+            --font-secondary: 'Noto Sans JP', sans-serif; /* Gothic font */
 
             --coupon-highlight-bg: rgba(0, 242, 234, 0.1);
             --coupon-code-color: var(--cyber-accent-pink);
@@ -85,7 +87,7 @@
             background: transparent; color: var(--cyber-accent-cyan); transform: translateY(-3px);
             box-shadow: 0 0 20px rgba(0, 242, 234, 0.5), 0 0 5px var(--cyber-accent-cyan);
         }
-        .btn-secondary { /* Light course button */
+        .btn-secondary {
             background: var(--cyber-accent-pink); border-color: var(--cyber-accent-pink);
             color: var(--cyber-bg-dark);
             box-shadow: 0 0 15px rgba(255, 0, 224, 0.3), inset 0 0 5px rgba(255,255,255,0.2);
@@ -94,7 +96,7 @@
             background: transparent; color: var(--cyber-accent-pink);
             box-shadow: 0 0 20px rgba(255, 0, 224, 0.5), 0 0 5px var(--cyber-accent-pink);
         }
-        .btn-accent { /* VIP course button */
+        .btn-accent {
             background: var(--accent-vip-color); border-color: var(--accent-vip-color);
             color: var(--cyber-bg-dark);
             box-shadow: 0 0 15px rgba(255, 0, 224, 0.3);
@@ -104,7 +106,7 @@
             box-shadow: 0 0 20px rgba(255, 0, 224, 0.5);
          }
         .btn-block { display: block; width: 100%; }
-        .btn-cta { /* Main CTA, Standard course button */
+        .btn-cta {
             padding: 16px 32px;
             font-size: 1.05rem;
             line-height: 1.3;
@@ -175,11 +177,12 @@
             font-size: 1rem; color: var(--cyber-text-secondary); margin-bottom: 5px; display: block;
         }
         .coupon-notice-container .coupon-code {
-            display: inline-block; font-family: 'Courier New', Courier, monospace;
+            display: inline-block;
+            font-family: var(--font-secondary), sans-serif; /* CHANGED: Gothic font */
             font-size: 1.8rem; font-weight: bold; color: var(--coupon-code-color);
             background-color: rgba(13, 2, 33, 0.7); padding: 8px 15px;
             border-radius: 5px; border: 1px solid var(--cyber-accent-pink);
-            margin-bottom: 10px; letter-spacing: 2px;
+            margin-bottom: 10px; letter-spacing: 1px; /* Adjusted letter-spacing */
             text-shadow: 0 0 8px var(--coupon-code-color);
         }
         .coupon-notice-container .coupon-benefit {
@@ -268,9 +271,12 @@
         }
         .standard .popular-badge .star-icon { margin-right: 5px; font-size: 1.1em; }
         .standard .free-trial-banner {
-             position: absolute; top: 20px; right: -40px; background: var(--cyber-accent-pink);
-             color: var(--cyber-bg-dark); padding: 6px 45px; transform: rotate(45deg);
-             font-weight: bold; font-size: 0.9em; box-shadow: 0 0 10px rgba(255,0,224,0.4);
+             position: absolute; top: 20px; right: -40px;
+             background: var(--cyber-accent-yellow-highlight); /* CHANGED to yellow */
+             color: var(--cyber-accent-yellow-highlight-text); /* CHANGED text color for yellow */
+             padding: 6px 45px; transform: rotate(45deg);
+             font-weight: bold; font-size: 0.9em;
+             box-shadow: 0 0 10px rgba(255, 217, 0, 0.4); /* Yellow shadow */
              z-index: 1; overflow: hidden; letter-spacing: 0.5px;
         }
 
@@ -308,10 +314,11 @@
             font-weight: 500; margin-top: -5px; margin-bottom: 5px;
         }
         .price-container .free-trial-info {
-            background: var(--cyber-accent-pink); color: var(--cyber-bg-dark);
+            background: var(--cyber-accent-yellow-highlight); /* CHANGED to yellow */
+            color: var(--cyber-accent-yellow-highlight-text); /* CHANGED text color for yellow */
             font-size: 0.9rem; padding: 5px 12px; border-radius: 5px;
             margin-right: 10px; font-weight: bold; vertical-align: middle;
-            box-shadow: 0 0 8px rgba(255,0,224,0.3);
+            box-shadow: 0 0 8px rgba(255, 217, 0, 0.3); /* Yellow shadow */
             display: inline-block; margin-bottom: 5px;
         }
         .price-container .price-note {
@@ -614,11 +621,11 @@
              <div class="features-overview">
                 <p class="features-overview-title">Alpha Pipsが選ばれる理由：</p>
                 <ul class="features-list-header">
-                    <li><span class="highlight">未経験でも大丈夫！</span>ChatGPTから始めるAI活用入門！</li>
-                    <li>あなた専用のAI分析官<span class="highlight">「AIマイティ―」</span>がトレード判断を強力サポート！</li>
-                    <li>市場を先読み？AIトレードセットアップ<span class="highlight">「ATZ System」</span>で高精度トレード！</li>
-                    <li>投資も日常もAIで効率化！<span class="highlight">時間とお金を生み出す</span>ライフハック術！</li>
-                    <li><span class="highlight">講師と仲間がいる環境</span>だから、挫折せずに続けられる！</li>
+                    <li>講師はトレード歴10年以上の<span class="highlight">認定プロトレーダー！</span></li>
+                    <li>トレード初心者でもマスターできる<span class="highlight">再現性◎手法！</span></li>
+                    <li>AIを使った日常のライフハックで<span class="highlight">お得術が身につく！</span></li>
+                    <li>市場を先読み？<span class="highlight">AIトレードで世界が変わる！</span></li>
+                    <li>講師と仲間がいる環境だから、<span class="highlight">挫折せずに続けられる！</span></li>
                 </ul>
             </div>
             <a href="#courses" class="btn btn-cta">
@@ -636,11 +643,11 @@
 
     <main>
         <section id="courses" class="container">
-            <h2>あなたの未来をデザインする3つのコース</h2>
+            <h2>あなたの未来をデザインする3つの選択肢</h2> <!-- Changed h2 -->
             <div class="courses">
                 <!-- Light Course -->
                 <div class="course-card light">
-                    <h3>ライトコース</h3>
+                    <h3>ライト</h3> <!-- Changed -->
                     <p class="value-prop">まずはAIと投資の世界を手軽に体験。日常に役立つAIライフハックから始めたいあなたへ。</p>
                     <ul class="features-list">
                         <li>マイティ―のチャート考察</li>
@@ -662,7 +669,7 @@
                 <!-- Standard Course -->
                 <div class="course-card standard">
                     <div class="free-trial-banner">14日間無料</div>
-                    <h3>スタンダードコース <span class="popular-badge"><span class="star-icon">★</span>No.1 人気</span></h3>
+                    <h3>スタンダード <span class="popular-badge"><span class="star-icon">★</span>No.1 人気</span></h3> <!-- Changed -->
                     <p class="value-prop"><strong>本気で資産を増やし、人生を豊かにしたいあなたへ。</strong>AIトレードツールとプロのノウハウで最速で結果を目指す決定版！</p>
                     <ul class="features-list">
                         <li>マイティ―のチャート考察</li>
@@ -688,7 +695,7 @@
 
                 <!-- VIP Course -->
                 <div class="course-card priority">
-                    <h3>VIPコース <span class="limited-badge">（毎月限定5名）</span></h3>
+                    <h3>VIP <span class="limited-badge">（人数限定募集）</span></h3> <!-- Changed -->
                     <p class="value-prop">講師マイティ―による<strong style="color: var(--accent-vip-color);">個別サポートと指導</strong>で、成功への「最短・最速ルート」を掴む特別プラン。</p>
                     <ul class="features-list">
                         <li>マイティ―のチャート考察</li>
