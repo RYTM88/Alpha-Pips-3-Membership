@@ -125,13 +125,11 @@
             background: linear-gradient(160deg, var(--cyber-bg-dark) 60%, var(--cyber-bg-medium) 100%);
             border-bottom: 1px solid var(--cyber-border-color);
         }
-        .tagline {
-            font-size: 1.3rem; color: var(--cyber-accent-cyan); margin-bottom: 30px;
-            font-weight: 500; text-shadow: 0 0 5px rgba(0, 242, 234, 0.3);
-        }
+        /* .tagline class removed or commented out in HTML, so style is not needed */
         .hero-section .intro-text p {
             max-width: 750px; margin-left: auto; margin-right: auto;
             font-size: 1.15rem; line-height: 1.8; color: var(--cyber-text-primary);
+            margin-top: 1.5em; /* Added margin for spacing since tagline is removed */
         }
         .hero-section .intro-text strong {
             color: var(--cyber-accent-pink); font-weight: bold;
@@ -338,19 +336,19 @@
         .comparison-table thead th:nth-child(3) { /* Standard col header */
             background-color: var(--cyber-accent-cyan); color: var(--cyber-bg-dark); text-shadow: none;
         }
-        .comparison-table tbody tr:not(.highlight-row):nth-child(even) td { /* Exclude highlight-row from striping */
+        .comparison-table tbody tr:not(.highlight-row):nth-child(even) td {
             background-color: rgba(13,2,33,0.3);
         }
 
         .comparison-table tbody td:first-child { /* 機能名列 */
             text-align: left; font-weight: 500; color: var(--cyber-text-primary);
-            background-color: var(--cyber-bg-light-hover); /* Ensures it's distinct if not highlight-row */
+            background-color: var(--cyber-bg-light-hover);
         }
-        .comparison-table tbody tr.highlight-row td:first-child { /* Specific for first-child in highlight */
+        .comparison-table tbody tr.highlight-row td:first-child {
              background-color: var(--cyber-accent-purple-highlight-bg); /* Match highlight row bg */
         }
 
-        .comparison-table tbody td strong { color: var(--cyber-accent-pink); } /* Default strong */
+        .comparison-table tbody td strong { color: var(--cyber-accent-pink); }
 
         .comparison-table tbody td:nth-child(3) { /* スタンダード列のセル */
             background-color: rgba(0, 242, 234, 0.05);
@@ -363,22 +361,21 @@
 
         .comparison-table tbody td:nth-child(3) strong { color: var(--cyber-accent-cyan); }
 
-        /* Highlighted rows in comparison table */
         .comparison-table tbody tr.highlight-row td {
-            background-color: var(--cyber-accent-purple-highlight-bg); /* Subtle purple bg */
+            background-color: var(--cyber-accent-purple-highlight-bg);
             color: var(--cyber-text-primary);
             font-weight: 500;
-            border-top: 1px solid var(--cyber-accent-purple-highlight-border); /* Subtle border */
+            border-top: 1px solid var(--cyber-accent-purple-highlight-border);
             border-bottom: 1px solid var(--cyber-accent-purple-highlight-border);
         }
         .comparison-table tbody tr.highlight-row td strong {
-            color: var(--cyber-accent-cyan); /* Cyan for strong text in these specific rows */
+            color: var(--cyber-accent-cyan);
             text-shadow: 0 0 5px var(--cyber-accent-cyan);
         }
         .comparison-table .icon-placeholder {
             margin-right: 8px;
             font-size: 1.1em;
-            color: var(--cyber-accent-cyan); /* Cyan for icons */
+            color: var(--cyber-accent-cyan);
             filter: drop-shadow(0 0 4px var(--cyber-accent-cyan));
         }
 
@@ -514,6 +511,7 @@
             h1 { font-size: 2.2rem; } h2 { font-size: 1.8rem; }
             .final-cta h2 { font-size: 2rem; }
             .hero-section { padding: 60px 15px 40px; }
+            .hero-section .intro-text p { margin-top: 1em; } /* Adjusted for mobile */
             .tagline { font-size: 1.15rem; }
             .hero-section .intro-text p, .final-cta p { font-size: 1.05rem; }
             .features-overview { padding: 25px; }
@@ -562,13 +560,13 @@
 <body>
     <header class="hero-section">
         <div class="container">
-            <p class="tagline">Alpha Pips - 投資×AIで日常をアップデート。未来の錬金術をあなたに。</p>
-            <h1>もう、<span class="highlight-ai">時代遅れの稼ぎ方</span>で<br>消耗するのはやめにしませんか？</h1>
+            <!-- <p class="tagline">Alpha Pips - 投資×AIで日常をアップデート。未来の錬金術をあなたに。</p> -->
+            <h1>投資・トレードと<span class="highlight-ai">AI活用</span>で<br>人生の勝者ルートを最短攻略</h1>
             <div class="intro-text">
                 <p>労働収入だけでは先が見えない…そんな不安を抱えるあなたへ。<br>
                 Alpha Pipsは、<strong>投資トレード・AI活用・ライフハック</strong>の三本柱で、<br>
-                あなたの資産と人生を、<strong>次世代レベルへと引き上げます。</strong><br>
-                AI初心者でも大丈夫。私たちと一緒に、未来をデザインしましょう。
+                資産形成とお得な節約を両立し、さらに<strong>人生の満足度をアップデート</strong>します。<br>
+                AIやトレードが初心者でも大丈夫。私たちと一緒に、未来を先取りしましょう。
                 </p>
             </div>
              <div class="features-overview">
